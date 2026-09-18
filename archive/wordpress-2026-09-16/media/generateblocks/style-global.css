@@ -1,0 +1,1 @@
+.button-primary-dark-1{color:var(--wp--custom--color--text-on-dark-1);display:inline-flex;transition:all 0.5s ease 0s;border-left:3px solid var(--wp--preset--color--color-primary-600,#535353);padding:4px 16px}.button-primary-dark-1:is(:hover,:focus){color:var(--wp--preset--color--color-accent-900,#53FFCE);background-color:var(--wp--preset--color--color-primary-300,#202020)}

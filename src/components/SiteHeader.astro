@@ -1,0 +1,57 @@
+---
+import EloquentLogo from './EloquentLogo.astro';
+import { services } from '../data/services';
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Eloquent, inicio">
+      <EloquentLogo />
+    </a>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a href="/" aria-current="page">Inicio</a>
+      <details class="site-nav__services">
+        <summary>Servicios</summary>
+        <ul>
+          {
+            services.map((service) => (
+              <li>
+                <a href={`/#${service.id}`}>{service.shortName}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+      <a href="https://eloquent.es/trabajo/">Trabajo</a>
+      <a href="https://eloquent.es/dossier/">Dossier</a>
+    </nav>
+    <a class="header-contact" href="mailto:info@eloquent.es"
+      >Hablemos <span aria-hidden="true">↗</span></a
+    >
+  </div>
+</header>
+
+<script>
+  const servicesMenu = document.querySelector<HTMLDetailsElement>('.site-nav__services');
+
+  if (servicesMenu) {
+    document.addEventListener('click', (event) => {
+      if (servicesMenu.open && !event.composedPath().includes(servicesMenu)) {
+        servicesMenu.open = false;
+      }
+    });
+
+    servicesMenu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && servicesMenu.open) {
+        servicesMenu.open = false;
+        servicesMenu.querySelector('summary')?.focus();
+      }
+    });
+
+    for (const link of servicesMenu.querySelectorAll('a')) {
+      link.addEventListener('click', () => {
+        servicesMenu.open = false;
+      });
+    }
+  }
+</script>

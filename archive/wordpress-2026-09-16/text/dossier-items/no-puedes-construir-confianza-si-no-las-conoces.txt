@@ -1,0 +1,101 @@
+No puedes construir confianza si no las conoces
+https://eloquent.es/dossier/contenidos/no-puedes-construir-confianza-si-no-las-conoces/
+WordPress ID: 8580
+Original date: 2026-02-05T05:38:00
+
+Muchas organizaciones comunican sin entender bien a las personas a las que intentan llegar. No saben lo suficiente sobre ellas y no han meditado sobre algunas preguntas que son muy importantes para lograr una comunicación estratégica:
+¿Quiénes son estas personas?
+¿Qué les preocupa?
+¿Qué necesitan entender?
+¿Qué saben ya?
+¿Qué entienden mal?
+¿Qué haría que confiaran en nosotros?
+¿Qué lenguaje les resulta natural?
+¿Qué información necesitan antes de tomar una decisión?
+Cuándo la organización habla solo desde su perspectiva y no empatiza con su público, entonces la audiencia experimenta confusión, indiferencia o desconfianza.
+No se trata de ti, se trata de las personas a las que te diriges
+Un error común es empezar la comunicación de dentro hacia fuera. El mejor punto de partida es responder la siguiente pregunta:
+¿Quién necesita entendernos y qué necesita de nosotros?
+Esta pregunta cambia el ángulo de cómo la organización se comunica. Ya no es solo el acto de publicar información. Se convierte en una forma de crear entendimiento entre una organización y las personas a las que sirve.
+Esto es especialmente importante para organizaciones complejas como instituciones, organizaciones culturales, organismos científicos, iniciativas del sector público, equipos de sostenibilidad, fundaciones, asociaciones y empresas con propósito.
+Estas organizaciones suelen trabajar con conocimiento valioso y valor público, pero su trabajo no siempre es fácil de explicar. Pueden dirigirse a muchas audiencias diferentes a la vez: ciudadanos, usuarios, visitantes, financiadores, socios, periodistas, responsables políticos, empleados, comunidades o clientes.
+Y cada audiencia necesita algo diferente. Si la organización se comunica de la misma manera con todas sus audiencias, corre el riesgo de volverse genérica. Y la comunicación genérica rara vez conecta y genera confianza.
+¿Qué son los Customer Personas?
+Los Customer Personas (o arquetipos) son representaciones ficticias pero realistas de las personas que una organización necesita entender.
+En contextos comerciales, solemos llamarlos Customer Personas. En contextos institucionales, culturales, científicos o del sector público, puede resultar más útil llamarlos Audience Personas (personas de la audiencia), User Personas (personas usuarias) o Stakeholder Personas (personas de los grupos de interés).
+Un arquetipo ayuda a una organización a entender a un grupo específico de personas con mayor claridad. Aclara sus necesidades, motivaciones, dudas, expectativas, contexto y criterios de decisión.
+Los Customer Personas nos ayudan a:
+• Entender sus problemas y dolores (empatía)
+• Tomar mejores decisiones de comunicación
+• Diseñar mejores ofertas, servicios o productos
+Un arquetipo obliga a la organización a ser más precisa. En lugar de preguntarse: ¿Qué queremos decir? La organización empieza a preguntarse: ¿Qué necesita esta persona entender, creer, sentir o hacer?
+El riesgo de dar demasiado por sentado
+Uno de los mayores errores a la hora de crear arquetipos es llenarlos de suposiciones. Los equipos suelen creer que ya conocen a sus audiencias.
+A veces es así. Pero a menudo, solo las conocen parcialmente. Conocen a la audiencia desde la perspectiva de la organización, no desde la experiencia vivida por la propia audiencia. Esto puede dar lugar a una comunicación que suena bien a nivel interno pero fracasa a nivel externo.
+El verdadero valor de los arquetipos no es confirmar lo que la organización ya cree. El verdadero valor es descubrir lo que aún no ha entendido. Por esto es importante explorar, investigar y entrevistar a personas reales, esto nos aportará información verídica para crear los arquetipos.
+¿Qué información necesito para crear un arquetipo útil?
+Un buen arquetipo debe basarse en la investigación siempre que sea posible. Esa investigación puede incluir:
+• Entrevistas.
+• Encuestas.
+• Analítica web.
+• Datos de búsqueda.
+• Preguntas al servicio de atención al cliente.
+• Conversaciones de ventas.
+• Comentarios en redes sociales.
+• Opiniones en eventos (feedback).
+• Conocimiento del equipo interno.
+• Datos del CRM.
+• Reseñas públicas.
+• Observación directa.
+El objetivo de la investigación es obtener datos demográficos y psicográficos reales de nuestros clientes.
+¿Qué debe incluir un arquetipo?
+Vamos hacer un pequeño ejercicio para conocer qué aspecto tiene un buen arquetipo.
+Para este ejemplo nos pondremos en los zapatos de una clínica deportiva en Barcelona especializada en atletas de alto rendimiento.
+Su propuesta de valor es:
+“Ayudamos a atletas de alto rendimiento a mejorar su desempeño físico y prevenir lesiones mediante tratamientos personalizados de fisioterapia, técnicas avanzadas de recuperación y programas de rehabilitación diseñados para que alcancen su mejor versión y les permita competir al más alto nivel.”
+1. Dale un nombre
+Dale al arquetipo un nombre memorable y una breve descripción.
+Ej. Nombre: Jordi – “El Coach”
+— 🧠 Tip: incluye una imagen para ilustrar a la persona. Puedes buscar una en un banco de imágenes gratuito como por ejemplo Unsplash o utilizar ChatGPT para generar una.
+2. Describe su contexto
+¿Cuál es el perfil demográfico de este Customer Persona?
+Edad: 42 años
+Ubicación: Barcelona
+Ocupación: Entrenador personal y coach deportivo
+Estado civil: Casado, dos hijos
+Ingresos: 35.000€ anuales
+Educación: Licenciado en Ciencias del Deporte con certificaciones especializadas en rendimiento deportivo
+3. Sus dolores y necesidades
+¿Qué es lo que motiva a ésta persona? Piensa en cómo sus aspiraciones se relacionan con tu oferta.
+Aspiraciones
+• Convertirse en una figura clave para el éxito y el bienestar de sus atletas.
+• Asociarse con profesionales que ofrezcan servicios innovadores en recuperación y rehabilitación.
+• Mantener una reputación impecable en el mundo del deporte de alto rendimiento.
+• Integrar tratamientos de fisioterapia como un valor agregado en sus planes de entrenamiento personalizados.
+4. Sus objetivos y aspiraciones
+En éste apartado escribe las necesidades que pueda llegar a tener tu cliente en relación con tu negocio.
+Necesidades
+• Garantizar la recuperación rápida y efectiva de sus atletas para evitar interrupciones en sus entrenamientos.
+• Acceso a servicios de fisioterapia que entiendan las exigencias del alto rendimiento deportivo.
+• Programas de prevención de lesiones para mantener a sus atletas en su mejor forma física.
+• Horarios flexibles que se adapten a las competiciones y entrenamientos de los deportistas.
+5. Principales puntos de dolor
+Todo cliente tiene dolores específicos que podemos ayudarles a aliviar. ¿Cuáles son los dolores más fuertes de ésta persona en relación con nuestros servicios?
+Dolores
+• Preocupación por los costes asociados a tratamientos avanzados.
+• Desconfianza hacia servicios que no demuestren experiencia en alto rendimiento.
+• Falta de tiempo para coordinar visitas debido a su apretada agenda.
+• Deseo de resultados visibles y efectivos en un corto periodo de tiempo.
+6. ¿Dónde lo encontramos?
+Describe dónde podemos encontrar a este tipo de clientes. ¿Dónde es que se congregan?
+Se congrega en:
+• Instagram – sigue cuentas como Runner’s World o Sport Life.
+• Asiste cada año al FTP – Congreso Internacional de Fisioterapia y eventos similares.
+• Es miembro del gimnasio David Lloyd Turó.
+• Todos los años corre la Maratón de Barcelona.
+Resultado
+Listo, ya tenemos nuestra primera ficha de Customer Persona. ¿Puedes ver su potencial?
+Comprender a la audiencia no es un ejercicio superficial. Es estratégico.
+Las organizaciones que entienden a sus audiencias se comunican con más precisión. Desperdician menos esfuerzo. Diseñan mejores experiencias. Crean contenido más útil. Responden a mejores preguntas. Construyen relaciones más sólidas.
+Con este conocimiento, la organización no solo habla de aspectos propios, sino que se enfoca en lo que las personas en verdad necesitan. Y es através de este enfoque que se genera entendimiento, confianza y valor.
+La comunicación importa.

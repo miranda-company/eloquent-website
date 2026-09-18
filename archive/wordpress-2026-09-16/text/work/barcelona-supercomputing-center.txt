@@ -1,0 +1,39 @@
+Barcelona Supercomputing Center
+https://eloquent.es/trabajo/barcelona-supercomputing-center/
+WordPress ID: 8648
+Original date: 2026-05-21T09:12:45
+
+Sobre el proyecto
+Cliente: Barcelona Supercomputing Center
+Servicios ofrecidos: Arquitectura de información / Auditoría y estrategia / Comunicación estratégica / Consultoría / Diseño y desarrollo web / Estrategia digital / UX/UI
+El Barcelona Supercomputing Center – Centro Nacional de Supercomputación (BSC-CNS) es el principal centro de investigación de computación de alto rendimiento en España y uno de los principales de Europa.
+El reto de este proyecto era hacer más comprensible y accesible el conocimiento de dos de sus equipos de investigación meteorológica: uno enfocado en la predicción de huracanes y el otro en partículas de polvo provenientes del Sahara.
+El objetivo era poder traducir este conocimiento complejo en productos que fuesen útiles tanto para la comunidad científica como para la ciudadanía.
+Desde Eloquent acompañamos a la institución en el diseño y desarrollo de dos herramientas digitales para transformar información compleja en experiencias claras e interactivas.
+→ Mejora en la accesibilidad de la información para audiencias no especializadas.
+→ Diseño de procesos claros de publicación de datos.
+→ Aumento de la coherencia comunicativa mediante UX/UI.
+Problema
+El Barcelona Supercomputing Center opera como un nodo tecnológico fundamental en la investigación científica mundial, procesando modelos predictivos sobre fenómenos climáticos.
+Sin embargo, la infraestructura de difusión para estos datos no lograba comunicar con claridad ni hacía digerible el volumen masivo de datos, como las predicciones de huracanes o la evolución de tormentas de arena.
+El problema estratégico radicaba en la dificultad para traducir información científica altamente compleja en plataformas e interfaces digitales fáciles de utilizar sin sacrificar ningún detalle.
+Al dirigirse a distintos usuarios, desde investigadores e instituciones internacionales hasta la población general, el centro corría el riesgo de alienar a su audiencia por una sobrecarga de información, limitando así el impacto de sus investigaciones.
+Identificamos 3 puntos clave:
+• Experiencia ciudadana: Barreras para la comprensión de los datos climáticos en públicos no especializados. Dificultan la divulgación del conocimiento y la concienciación en sus públicos.
+• Coherencia institucional: Riesgo de fragmentar la autoridad de la marca al carecer de sistemas estandarizados de comunicación para proyectos de alcance global.
+• Operación interna: Fricción técnica en los flujos de actualización de la información y en la consolidación de datos provenientes de múltiples organismos meteorológicos internacionales.
+Solución
+Abordamos el desafío aplicando un enfoque basado en la experiencia de usuario (diseño UX) y la claridad en la arquitectura de la información. Priorizamos la colaboración directa con el equipo de producto del centro para garantizar el rigor científico en cada decisión de diseño.
+Diagnóstico
+Iniciamos el proceso auditando la complejidad estructural del proyecto, que albergaba más de 40 tipologías de visualizaciones, modelos predictivos y archivos en tiempo real. A partir de este diagnóstico, consensuamos unos principios de diseño centrados en la jerarquía de la información, la reducción del ruido visual y la integración de pautas de accesibilidad.
+Arquitectura y gobernanza del dato
+Estructuramos un nuevo modelo de la información para las plataformas WMO Barcelona Dust Regional Center y Seasonal Hurricane Predictions. En lugar de construir simples repositorios estáticos, diseñamos entornos interactivos que actúan como palancas de conocimiento. Definimos reglas de gobernanza claras para estandarizar la forma en que los distintos centros meteorológicos del mundo publican y comparan sus estimaciones anuales bajo un mismo marco normativo.
+Activación y transferencia
+Para garantizar la viabilidad del modelo, construimos un sistema escalable que se transfirió e integró fluidamente en la infraestructura tecnológica del cliente (gestor Plone). Esta transferencia técnica aseguró que el equipo interno pudiera asumir el control del ecosistema desde el primer día, consolidando la sostenibilidad operativa sin generar dependencias crónicas con agentes externos al BSC.
+Resultados
+Autonomía operativa: El equipo técnico e investigador del BSC dispone ahora de los procesos y el marco tecnológico para gestionar el ciclo de vida de sus plataformas con total independencia.
+Claridad para las audiencias: Se logró una reducción notable de la fricción cognitiva, permitiendo que tanto expertos como ciudadanos exploren datos complejos a través de herramientas de visualización claras.
+Eficiencia en la colaboración: El equipo ahora puede coordinar proyectos internacionales con mayor agilidad, ofreciendo a los centros asociados una plataforma estandarizada para publicar sus modelos predictivos.
+Coherencia institucional: Se estableció un lenguaje visual y de experiencia de usuario sólido y transversal, proyectando la misión divulgativa del centro con la máxima autoridad.
+Escalabilidad del servicio: La nueva arquitectura de la información permite la futura integración de nuevos módulos o indicadores meteorológicos sin fracturar la usabilidad del sistema.
+Cumplimiento normativo: La aplicación de estándares de diseño universal garantiza que la infraestructura cumpla con las exigencias de accesibilidad propias de un servicio público y científico global.

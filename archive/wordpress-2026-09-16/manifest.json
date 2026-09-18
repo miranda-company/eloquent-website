@@ -1,0 +1,1157 @@
+{
+  "source": "https://eloquent.es",
+  "captured_on": "2026-09-16",
+  "files": {
+    "sitemaps/sitemap_index.xml": {
+      "source": "https://eloquent.es/sitemap_index.xml",
+      "bytes": 654,
+      "sha256": "df32b114c8b18e246d9afd2b849132fe96888a71979ac3240fc6a93bac8603de"
+    },
+    "sitemaps/page-sitemap.xml": {
+      "source": "https://eloquent.es/page-sitemap.xml",
+      "bytes": 5602,
+      "sha256": "fbb6b1b12d14e4c410610d1f2608dc0468e97c394ed6275ef6520ec7c1ea7723"
+    },
+    "sitemaps/dossier_item-sitemap.xml": {
+      "source": "https://eloquent.es/dossier_item-sitemap.xml",
+      "bytes": 1394,
+      "sha256": "a3904a375ace91be6aae399d8c796d05ae50428a0c8cb95e88a4a868b9fcbc01"
+    },
+    "sitemaps/eloquent_work-sitemap.xml": {
+      "source": "https://eloquent.es/eloquent_work-sitemap.xml",
+      "bytes": 3920,
+      "sha256": "98a6300e57353b916fa4cbe9c7127eb97e248b09c299392aae26dbffc61f5edf"
+    },
+    "rest/pages.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/pages?per_page=100",
+      "bytes": 125299,
+      "sha256": "c503698469884728cbb2e8716d1079df3ae315b08543c808e79d88c258d26160"
+    },
+    "rest/dossier-items.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/dossier_item?per_page=100",
+      "bytes": 55985,
+      "sha256": "c8aafc97c55112824302bd5ef531aa852bd364425d88e6e5db069d7cfbf38852"
+    },
+    "rest/work.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/eloquent_work?per_page=100",
+      "bytes": 51697,
+      "sha256": "adbfba422b2b346f528cf2abc0bbdaa0624c65c016d56410ed6bb806f76e8099"
+    },
+    "rest/media.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/media?per_page=100",
+      "bytes": 189437,
+      "sha256": "705a7c75cd9735d655220c52b4213d21d043f61ae5c2744f6123deafd9894845"
+    },
+    "rest/issues.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/dossier_issue?per_page=100",
+      "bytes": 1738,
+      "sha256": "3c27fb331bf5f30ee57b561478636fc700bca955e9eac2d6a81a1b3feb67b0c4"
+    },
+    "rest/dossier-formats.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/dossier_format?per_page=100",
+      "bytes": 1402,
+      "sha256": "231bf36f079fc7360c05a0e187ed03683cff674003dbd8922b7ef496faa57cba"
+    },
+    "rest/dossier-topics.json": {
+      "source": "https://eloquent.es/wp-json/wp/v2/dossier_topic?per_page=100",
+      "bytes": 8624,
+      "sha256": "c9ceafc2574e9b1d98e291914c1d1911af050cb554fb472659b36ffdfc144bdb"
+    },
+    "html/home/index.html": {
+      "source": "https://eloquent.es/",
+      "bytes": 176947,
+      "sha256": "fc2f4bb0b52cfc6fcd9c42673b4f443963c2cd495b86dbcaf0bebdd002d40800"
+    },
+    "html/dossier/index.html": {
+      "source": "https://eloquent.es/dossier/",
+      "bytes": 116537,
+      "sha256": "c74a11dcbc6997aebde7f6f032987afd4cf8f442540827bc6e03c3ab63ce1cc4"
+    },
+    "html/dossier/comunicacion-de-crisis/index.html": {
+      "source": "https://eloquent.es/dossier/comunicacion-de-crisis/",
+      "bytes": 104922,
+      "sha256": "86bae7942c24ce623e5210a16fdfc0e34d55584f5dd8ef7601531d5a60c25d7f"
+    },
+    "html/dossier/contenidos/index.html": {
+      "source": "https://eloquent.es/dossier/contenidos/",
+      "bytes": 115721,
+      "sha256": "6ceff00d0bd11e1793eac044d657b535a0748d76d4397144efd6d07183f08517"
+    },
+    "html/dossier/contenidos/como-aclarar-el-valor-de-tu-organizacion/index.html": {
+      "source": "https://eloquent.es/dossier/contenidos/como-aclarar-el-valor-de-tu-organizacion/",
+      "bytes": 116453,
+      "sha256": "ca57379fc1fca99d9ff606645c2a8880d6cd87258f8e8e04922588c48c5f9ac1"
+    },
+    "html/dossier/contenidos/no-puedes-construir-confianza-si-no-las-conoces/index.html": {
+      "source": "https://eloquent.es/dossier/contenidos/no-puedes-construir-confianza-si-no-las-conoces/",
+      "bytes": 122330,
+      "sha256": "55e83f378a789b7a5ee2fca4bec0c1dd43e16fe2e4e85a1e07e673a9ce238ddf"
+    },
+    "html/dossier/contenidos/que-sucede-cuando-la-comunicacion-no-tiene-estrategia/index.html": {
+      "source": "https://eloquent.es/dossier/contenidos/que-sucede-cuando-la-comunicacion-no-tiene-estrategia/",
+      "bytes": 120482,
+      "sha256": "956ba71cb5c7f161a2c33c50cc48c6cedd3bbbafea7f5755cb44f680627dd0cd"
+    },
+    "html/dossier/contenidos/una-marca-es-mas-que-un-logotipo-es-un-sistema-de-confianza/index.html": {
+      "source": "https://eloquent.es/dossier/contenidos/una-marca-es-mas-que-un-logotipo-es-un-sistema-de-confianza/",
+      "bytes": 121703,
+      "sha256": "91540a67fc61b63d61324c6b121cd47c109aa133d899d7df9cea0dace6ea9480"
+    },
+    "html/dossier/formato/articulo/index.html": {
+      "source": "https://eloquent.es/dossier/formato/articulo/",
+      "bytes": 116018,
+      "sha256": "05fec53cfbfb586c54a67df1792e5d61c3ef26ea7010425bd8956ab442f40ae5"
+    },
+    "html/dossier/formato/podcast/index.html": {
+      "source": "https://eloquent.es/dossier/formato/podcast/",
+      "bytes": 101806,
+      "sha256": "32a74478126352d29f97b817d59e1cae0abdb2de05c55e0277df3e939dcaec86"
+    },
+    "html/dossier/fundamentos-de-la-comunicacion/index.html": {
+      "source": "https://eloquent.es/dossier/fundamentos-de-la-comunicacion/",
+      "bytes": 112295,
+      "sha256": "1174a006eee3ffb824d8a7cfd877b8c5e1ce797ad47928e67bda051068678169"
+    },
+    "html/dossier/tema/comunicacion-de-crisis/index.html": {
+      "source": "https://eloquent.es/dossier/tema/comunicacion-de-crisis/",
+      "bytes": 101996,
+      "sha256": "2bf53a0f911ca968191b723808c1ca418a89e2df3d58a808a27e9e52ef240654"
+    },
+    "html/dossier/tema/comunicacion-estrategica/index.html": {
+      "source": "https://eloquent.es/dossier/tema/comunicacion-estrategica/",
+      "bytes": 116221,
+      "sha256": "77ac743c8f7a6f862bf9c9706367e224dc8c09da7dbedd3b330f667760bef252"
+    },
+    "html/dossier/tema/comunicacion-interna/index.html": {
+      "source": "https://eloquent.es/dossier/tema/comunicacion-interna/",
+      "bytes": 101966,
+      "sha256": "a9d878b7595da047b04da7d8e2cf9067afabf345115b73f14e681a88bb704b12"
+    },
+    "html/dossier/tema/desinformacion/index.html": {
+      "source": "https://eloquent.es/dossier/tema/desinformacion/",
+      "bytes": 101876,
+      "sha256": "e35f517cc2dd1aa3b93178fff165f273b242e716b211455ead66bdc24dc91443"
+    },
+    "html/dossier/tema/estudio-de-caso/index.html": {
+      "source": "https://eloquent.es/dossier/tema/estudio-de-caso/",
+      "bytes": 101879,
+      "sha256": "8777eea4b67ff62321a4b32aa5ea09687c46d0b0d6796fce87c5f4ff21eb9901"
+    },
+    "html/dossier/tema/ia/index.html": {
+      "source": "https://eloquent.es/dossier/tema/ia/",
+      "bytes": 101852,
+      "sha256": "85047c9754cb0a3e4f1fc96bbdf3b99f18decadb7256168b237f70f4574cafdb"
+    },
+    "html/dossier/tema/liderazgo-y-marca-personal/index.html": {
+      "source": "https://eloquent.es/dossier/tema/liderazgo-y-marca-personal/",
+      "bytes": 102044,
+      "sha256": "94c0010c630e233802a6f0b96960b28f8dfd6af631fddb1ba26eb3d801a630e8"
+    },
+    "html/dossier/tema/marca/index.html": {
+      "source": "https://eloquent.es/dossier/tema/marca/",
+      "bytes": 117151,
+      "sha256": "4469134203616bd4129a98b24c63eff35982b78fce3c83d83d4d8cf48875cbe9"
+    },
+    "html/dossier/tema/medios-y-canales/index.html": {
+      "source": "https://eloquent.es/dossier/tema/medios-y-canales/",
+      "bytes": 102034,
+      "sha256": "95b398647c68c19049d98b045162abb383bec02b8826ff036d06bf91587f5602"
+    },
+    "html/dossier/tema/metodologias/index.html": {
+      "source": "https://eloquent.es/dossier/tema/metodologias/",
+      "bytes": 111978,
+      "sha256": "b5f00def9e81a9c4b9395f039241c5fffcfc0ba415cae8667134d12a3396e245"
+    },
+    "html/dossier/tema/rse-sostenibilidad/index.html": {
+      "source": "https://eloquent.es/dossier/tema/rse-sostenibilidad/",
+      "bytes": 102033,
+      "sha256": "7892d584cdc36ee79f0f4dc34b56f5c14b1a2033528f6fe967ad24066514b5e1"
+    },
+    "html/dossier/tema/ux/index.html": {
+      "source": "https://eloquent.es/dossier/tema/ux/",
+      "bytes": 117580,
+      "sha256": "b2f0373cfc5c64db04bbc7387ca1e92f0ab0bc2d09320c1af6cc3ad4a60f9aac"
+    },
+    "html/politica-de-cookies/index.html": {
+      "source": "https://eloquent.es/politica-de-cookies/",
+      "bytes": 141467,
+      "sha256": "b091ede0977fef5b7f9453bceecb2f856a6128ebb88f2e22f06ee493a3a5fb36"
+    },
+    "html/politica-de-privacidad/index.html": {
+      "source": "https://eloquent.es/politica-de-privacidad/",
+      "bytes": 104056,
+      "sha256": "c6105c886eccda73d3242d5b44dd03cffaa722d3d9e8c422c3e8d7516f9da16c"
+    },
+    "html/trabajo/index.html": {
+      "source": "https://eloquent.es/trabajo/",
+      "bytes": 112635,
+      "sha256": "2259f5eb9f1b7fa968d2b815c25c41df001f6b142ccd117ffc51bb502e5b85c4"
+    },
+    "html/trabajo/barcelona-supercomputing-center/index.html": {
+      "source": "https://eloquent.es/trabajo/barcelona-supercomputing-center/",
+      "bytes": 127569,
+      "sha256": "632fb89fb1b4239f315914eadc6af055d9dbd5f09890bf7f566711fec7e9f465"
+    },
+    "html/trabajo/cn-sant-andreu/index.html": {
+      "source": "https://eloquent.es/trabajo/cn-sant-andreu/",
+      "bytes": 128824,
+      "sha256": "f1eb52fa762c54051a9389b9e821d3e95d00177dcbe298cdfa34d0534e5444ec"
+    },
+    "html/trabajo/museu-de-lhospitalet/index.html": {
+      "source": "https://eloquent.es/trabajo/museu-de-lhospitalet/",
+      "bytes": 124375,
+      "sha256": "988dfb208a7fed63b1c0847feca6f813884154f97d8f90f1bd2a9c5de3239f58"
+    },
+    "media/2024/12/post-featured-img-1-1024x203.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-1-1024x203.jpg",
+      "bytes": 21930,
+      "sha256": "50987fc5cec14d11b5d4b2c3471799d5dc79bcf85c9ed24ad33f610edc38cb8c"
+    },
+    "media/2024/12/post-featured-img-1-1536x304.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-1-1536x304.jpg",
+      "bytes": 37701,
+      "sha256": "14d55be74b73947d2e5c638de65d3c249637517965a634289a142b32f762fd76"
+    },
+    "media/2024/12/post-featured-img-1-300x59.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-1-300x59.jpg",
+      "bytes": 6176,
+      "sha256": "65a01ec501474c9c6025a3c769d2153ae00d228bcf808ecdacdeebddd400cca4"
+    },
+    "media/2024/12/post-featured-img-1-768x152.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-1-768x152.jpg",
+      "bytes": 15139,
+      "sha256": "7db59032d17c8612eed44fb74d9d95f60e0debb4fadbb6c1475a3f501952791e"
+    },
+    "media/2024/12/post-featured-img-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-1.jpg",
+      "bytes": 42237,
+      "sha256": "3bd9802e659400d372f0ee9a28495534773668a781533a7d233acb95b3bfe21f"
+    },
+    "media/2024/12/post-featured-img-5.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-5.jpg",
+      "bytes": 34102,
+      "sha256": "ece2fca89fd1adb7bbfc2907854c69b6d34f8f4a87c956fcb08462f764fb9b76"
+    },
+    "media/2024/12/post-featured-img-6-1024x203.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-6-1024x203.jpg",
+      "bytes": 22033,
+      "sha256": "61c047c9c43a4a65cad1d873a7f59d9b9218113e39cf7f368380e7a499ba574e"
+    },
+    "media/2024/12/post-featured-img-6-1536x304.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-6-1536x304.jpg",
+      "bytes": 37457,
+      "sha256": "5c8bf224d150538c213ba526faa1a34bfc8d67f6fbfa816e346b362b4e8f8fd4"
+    },
+    "media/2024/12/post-featured-img-6-300x59.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-6-300x59.jpg",
+      "bytes": 6416,
+      "sha256": "1fc14ff5e88b61dc8344d502d5f08393fcf75e9725d20acda5653e7130bd9d11"
+    },
+    "media/2024/12/post-featured-img-6-768x152.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-6-768x152.jpg",
+      "bytes": 15259,
+      "sha256": "bf2db3daa318f99ab9c5abb6c1b25f328de39bdb9ca02ec1ca78fb867ec7e589"
+    },
+    "media/2024/12/post-featured-img-6.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-6.jpg",
+      "bytes": 31726,
+      "sha256": "0f069e2722721af45a9fe72219b680fc7f07b42cfabf06ce36af425aa47f760b"
+    },
+    "media/2024/12/post-featured-img-7-1024x203.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-7-1024x203.jpg",
+      "bytes": 49362,
+      "sha256": "8860856c6a71c5ea59e9961f67ad52bdcdde2b2641a42a4e8600f0dd09ffab3b"
+    },
+    "media/2024/12/post-featured-img-7-1536x304.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-7-1536x304.jpg",
+      "bytes": 102958,
+      "sha256": "8ab7d28c523643b418fb45783e7b0ccf297f4055b01d7ab3ce9387862e9306dc"
+    },
+    "media/2024/12/post-featured-img-7-300x59.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-7-300x59.jpg",
+      "bytes": 8560,
+      "sha256": "f4d1536d0518dd0b9768ff8d19d90a5030fb531b500edffc5e2cb13f61300d77"
+    },
+    "media/2024/12/post-featured-img-7-768x152.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-7-768x152.jpg",
+      "bytes": 29009,
+      "sha256": "146df628687a42427afc7bac3329b6f6e6c5aab66883196b5e244e42378ef2c5"
+    },
+    "media/2024/12/post-featured-img-7.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2024/12/post-featured-img-7.jpg",
+      "bytes": 101966,
+      "sha256": "8b617197a30569939a143522cf4855b452fdfebb96edcceeb554a2db3ca763ee"
+    },
+    "media/2025/10/post-featured-img-4-1024x203.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2025/10/post-featured-img-4-1024x203.jpg",
+      "bytes": 106359,
+      "sha256": "497481330eaae4bdcb15187a0d3a615e82d06a5db2330d466cd30b6d5412fabe"
+    },
+    "media/2025/10/post-featured-img-4-1536x304.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2025/10/post-featured-img-4-1536x304.jpg",
+      "bytes": 201872,
+      "sha256": "c891b173658dd25349050279c6e0328885ad6dfa8e176d2e65db223ed6918815"
+    },
+    "media/2025/10/post-featured-img-4-300x59.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2025/10/post-featured-img-4-300x59.jpg",
+      "bytes": 12597,
+      "sha256": "fdab7f557fce359140c4af304d86eb1e13e17cedd41237b497695c6430742d1a"
+    },
+    "media/2025/10/post-featured-img-4-768x152.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2025/10/post-featured-img-4-768x152.jpg",
+      "bytes": 62758,
+      "sha256": "516621ded0a943b1003223fdc91bb3fb4666f2fb4361adc9b866f1ab8963bb05"
+    },
+    "media/2025/10/post-featured-img-4.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2025/10/post-featured-img-4.jpg",
+      "bytes": 268571,
+      "sha256": "b00cd8d75f61efd4d0aec67218f2f175103f750805457aa0b6519918629d56b5"
+    },
+    "media/2026/05/case-study-thumb-bsc.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/case-study-thumb-bsc.jpg",
+      "bytes": 226030,
+      "sha256": "77269b1678d0b5dc2566ba63cbe2433cd24ffa30685bd9a9c0d288f1f168088b"
+    },
+    "media/2026/05/case-study-thumb-cn-sant-andreu.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/case-study-thumb-cn-sant-andreu.jpg",
+      "bytes": 113127,
+      "sha256": "82a599b1909decce4620cc0f83bef5383cff6fc2cd638467fe848b6ea4095e75"
+    },
+    "media/2026/05/case-study-thumb-icm.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/case-study-thumb-icm.jpg",
+      "bytes": 194324,
+      "sha256": "4b23696f2fe0e747bcc8e7406ceb200412be06dbecd78ac396019f63d2b741a9"
+    },
+    "media/2026/05/case-study-thumb-museu-lh.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/case-study-thumb-museu-lh.jpg",
+      "bytes": 432021,
+      "sha256": "f9faeafe061ad7f1d6f77643b5edeeb9c1e7292ded7f940f1b2743fc7aa8342d"
+    },
+    "media/2026/05/cropped-eloquent-favicon-180x180.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/cropped-eloquent-favicon-180x180.jpg",
+      "bytes": 4408,
+      "sha256": "fb7210ad68d113d18cc5772896aa53773391f203a4e10e2da5ae03ed9fd5204b"
+    },
+    "media/2026/05/cropped-eloquent-favicon-192x192.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/cropped-eloquent-favicon-192x192.jpg",
+      "bytes": 4448,
+      "sha256": "6a00fa1f6f7161bd2cb20e8cd9bb556cef4cd7106c64d438b17edcf4a8f57f16"
+    },
+    "media/2026/05/cropped-eloquent-favicon-270x270.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/cropped-eloquent-favicon-270x270.jpg",
+      "bytes": 4729,
+      "sha256": "4d3f95ea06714b211fe4395f7edccaa0cb8d45126d8a7c04f1ceb122ef294721"
+    },
+    "media/2026/05/cropped-eloquent-favicon-32x32.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/cropped-eloquent-favicon-32x32.jpg",
+      "bytes": 3586,
+      "sha256": "775ab4b0613e1c2cbea9253fae9e26fea8d8fb4ab0b7a38d6a970793ddfb5395"
+    },
+    "media/2026/05/cropped-eloquent-favicon.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/cropped-eloquent-favicon.jpg",
+      "bytes": 6160,
+      "sha256": "f001f319a5a92e5d2248219912f038d563854a2dd1fb181b4cb44aaf5b7d09ea"
+    },
+    "media/2026/05/eloquent-favicon.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/eloquent-favicon.jpg",
+      "bytes": 11408,
+      "sha256": "d1b8ba5473dd0e56cc38688fa570e37bb3462d14e23fd3c6fe3c9fb336ef5211"
+    },
+    "media/2026/05/equipo-montse-pereda-grillo-150x150.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-montse-pereda-grillo-150x150.jpg",
+      "bytes": 7228,
+      "sha256": "b62f8a32b7c06d10e84c61b04e66b59128659ecc93d8c5e5edbddbe85df960a5"
+    },
+    "media/2026/05/equipo-montse-pereda-grillo-300x300.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-montse-pereda-grillo-300x300.jpg",
+      "bytes": 15091,
+      "sha256": "aab7c3d7b41e1062a921b83a0081fe3dbf7632fc679d757e741dc563ae95179d"
+    },
+    "media/2026/05/equipo-montse-pereda-grillo-768x768.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-montse-pereda-grillo-768x768.jpg",
+      "bytes": 67150,
+      "sha256": "383066a32df126694c2565b46f1fb0fb159c23f5c4f3ec828a3c39a2b25f9e2c"
+    },
+    "media/2026/05/equipo-montse-pereda-grillo.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-montse-pereda-grillo.jpg",
+      "bytes": 63028,
+      "sha256": "12def18f9b272beb2ac49aff26dbc28570bbe5e45e8b00a431d843b8e1218976"
+    },
+    "media/2026/05/equipo-rodolfo-miranda-company-150x150.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-rodolfo-miranda-company-150x150.jpg",
+      "bytes": 7606,
+      "sha256": "c6e121b353b7a79c1ba5ce6931ea811c05153453ac65519db8406cb192e7dbda"
+    },
+    "media/2026/05/equipo-rodolfo-miranda-company-300x300.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-rodolfo-miranda-company-300x300.jpg",
+      "bytes": 15447,
+      "sha256": "fd7455de50c7bb6001683c446a4b02e183fdd05d464c7c3e7136909119e641f2"
+    },
+    "media/2026/05/equipo-rodolfo-miranda-company-768x768.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-rodolfo-miranda-company-768x768.jpg",
+      "bytes": 58242,
+      "sha256": "90d3c8cb1071df8fd879cee72aec25257ffc67973d474111dcd82d8b9671a3ae"
+    },
+    "media/2026/05/equipo-rodolfo-miranda-company.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/equipo-rodolfo-miranda-company.jpg",
+      "bytes": 65208,
+      "sha256": "2be318c2a3ae08b20092d8bf1d0508f4b2b3fa6e97b467384db56c53976a749b"
+    },
+    "media/2026/05/logo-ajuntament-lh-300x68.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-ajuntament-lh-300x68.png",
+      "bytes": 6204,
+      "sha256": "8e1549ce1f6d163972ba303b7c76507e1261fe979453d7a016ee2cc154747c56"
+    },
+    "media/2026/05/logo-ajuntament-lh.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-ajuntament-lh.png",
+      "bytes": 5758,
+      "sha256": "020f8961a4896a73ee0a87f09d8b135469659fd2979ed48550ac4466feeacb72"
+    },
+    "media/2026/05/logo-bsc-300x74.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-bsc-300x74.png",
+      "bytes": 9286,
+      "sha256": "f2a47904be8d3d6b04601c6bd5d36dd4f9f6014963a8ef571907d9afe38119e0"
+    },
+    "media/2026/05/logo-bsc.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-bsc.png",
+      "bytes": 9462,
+      "sha256": "c74af6c2fe4ab2c170455e1afbe8fc9026cc93101899551a3372f368b1fb51b2"
+    },
+    "media/2026/05/logo-cn-sant-andreu-300x71.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-cn-sant-andreu-300x71.png",
+      "bytes": 10859,
+      "sha256": "8fc417947aa881b73d12524584258b564a4283e2cd3fe55eeca634bad473d17e"
+    },
+    "media/2026/05/logo-cn-sant-andreu.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-cn-sant-andreu.png",
+      "bytes": 14370,
+      "sha256": "54874b39129d395f8174df77896b85218d45afc8955e9b0679c1ba61ccc5079f"
+    },
+    "media/2026/05/logo-efb-300x74.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-efb-300x74.png",
+      "bytes": 7398,
+      "sha256": "726233664c5569c1d8b1ad7b17212e0d00b2e968b42d73f6a1ab9b619c5183b3"
+    },
+    "media/2026/05/logo-efb.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-efb.png",
+      "bytes": 5955,
+      "sha256": "8d1d37b09d670359901bee9fd48f64cf7b39bfa12c70c1d042a3a9805328240f"
+    },
+    "media/2026/05/logo-gpo-hem-300x108.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-gpo-hem-300x108.png",
+      "bytes": 8682,
+      "sha256": "97fba238bfa25ea778e32622a1966b9056b23881d43f569dfd1a5dd6acb07c79"
+    },
+    "media/2026/05/logo-gpo-hem.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-gpo-hem.png",
+      "bytes": 4645,
+      "sha256": "3865b67e78b65327657d1891ad999a1839a3df5b2dda578668011d5a8b59e9b4"
+    },
+    "media/2026/05/logo-hcv-300x71.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-hcv-300x71.png",
+      "bytes": 6182,
+      "sha256": "6908876ec0d506608a859500ae456561f1aeb014dfbff740fd1e0e32e7cdc72f"
+    },
+    "media/2026/05/logo-hcv.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-hcv.png",
+      "bytes": 4721,
+      "sha256": "3d5bff81bd74ea72d4172611537f0346b2b44e195e2cc18753295fc387a66296"
+    },
+    "media/2026/05/logo-icm-300x83.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-icm-300x83.png",
+      "bytes": 8144,
+      "sha256": "78cf816a0c5b8787021a088904dbbcd0f900ccb68677901c0325831b5618a596"
+    },
+    "media/2026/05/logo-icm.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-icm.png",
+      "bytes": 5635,
+      "sha256": "0566c76bf0f121c69f98cc888446d59e05bb262631a147e0e605fe63717fb5b7"
+    },
+    "media/2026/05/logo-museu-lh-300x83.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-museu-lh-300x83.png",
+      "bytes": 9917,
+      "sha256": "7eb89025ce93245cc46830a5240ba9cd7f9cd9812e14ffcab3714c505732de52"
+    },
+    "media/2026/05/logo-museu-lh.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-museu-lh.png",
+      "bytes": 7426,
+      "sha256": "fb86dc80fb0355ae776a282c0ba04ef659931a6cbf8218a65ea763f7b6c9aaf0"
+    },
+    "media/2026/05/logo-syra-300x68.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-syra-300x68.png",
+      "bytes": 5676,
+      "sha256": "cc8554df456dfe5db744ab4eb3f7689a7f1d6a608d756ca4d08dbcf9c6b3c653"
+    },
+    "media/2026/05/logo-syra.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-syra.png",
+      "bytes": 4538,
+      "sha256": "7e2ea837062b3dfbbf03b7fdd99343159b833d3d417ed85b019676de10a661a1"
+    },
+    "media/2026/05/logo-tecla-sala-300x78.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-tecla-sala-300x78.png",
+      "bytes": 4671,
+      "sha256": "86583206e32ee7af1391bc55ce2645f2b72a90ffc5d145d2969cce3e0cf53da1"
+    },
+    "media/2026/05/logo-tecla-sala.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-tecla-sala.png",
+      "bytes": 4029,
+      "sha256": "182ef4860f6272fce600ed19c8e58c1167a2cfece34315746f4d1b81a31f67f2"
+    },
+    "media/2026/05/logo-un-300x86.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-un-300x86.png",
+      "bytes": 10050,
+      "sha256": "ecea3c7a04f5fc509a65bbe35d6af090f5ad4bc71376ad75289ce96599c2d509"
+    },
+    "media/2026/05/logo-un.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/logo-un.png",
+      "bytes": 7559,
+      "sha256": "cb98c3f20c6d16a40662e68ace0f9c408749516e4bc9ca05e5f53ba5d98ec149"
+    },
+    "media/2026/05/work-featured-img-bsc-1-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-bsc-1-1024x576.jpg",
+      "bytes": 130865,
+      "sha256": "57049b849dc7a5033d34e3fb32f121b2f43ba52b3df1e85dfed5b902309278ee"
+    },
+    "media/2026/05/work-featured-img-bsc-1-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-bsc-1-1536x864.jpg",
+      "bytes": 249437,
+      "sha256": "fa814e855e7727dbf7ee5debb573679f22d824ae0b9ada0d754572667ddc0091"
+    },
+    "media/2026/05/work-featured-img-bsc-1-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-bsc-1-300x169.jpg",
+      "bytes": 18256,
+      "sha256": "6232e64c3909898b5c2b51a059c0b9d6728b34eee31495ecf662a1233015a646"
+    },
+    "media/2026/05/work-featured-img-bsc-1-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-bsc-1-768x432.jpg",
+      "bytes": 79920,
+      "sha256": "431eddb84d5d7e6b10a23c99315ca35c7654204e0ffcf6015e71bbbe1db934ce"
+    },
+    "media/2026/05/work-featured-img-bsc-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-bsc-1.jpg",
+      "bytes": 182893,
+      "sha256": "21fe6a7aea9a72c93bd38046bc6c17825fdee43c4083dab7a35676235edef197"
+    },
+    "media/2026/05/work-featured-img-cn-sant-andreu-1-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-cn-sant-andreu-1-1024x576.jpg",
+      "bytes": 88596,
+      "sha256": "b17460a8f36b2b32a05af861e2d71ba8996e458a788a34a044f0826a469fac3b"
+    },
+    "media/2026/05/work-featured-img-cn-sant-andreu-1-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-cn-sant-andreu-1-1536x864.jpg",
+      "bytes": 156455,
+      "sha256": "b3cd87dfa5d6d6e8b7edc047180d2496fada56cd61e54e5aef9daf642da428aa"
+    },
+    "media/2026/05/work-featured-img-cn-sant-andreu-1-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-cn-sant-andreu-1-300x169.jpg",
+      "bytes": 17162,
+      "sha256": "0ad3bfa9e92c23a3d039cc778e708c642cb39e2c094b70c6e06580467679f1d3"
+    },
+    "media/2026/05/work-featured-img-cn-sant-andreu-1-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-cn-sant-andreu-1-768x432.jpg",
+      "bytes": 58528,
+      "sha256": "4e012559b294acdb14c66d1ea42e7bfbdd4b5645e168bca72527b6202c7b96ed"
+    },
+    "media/2026/05/work-featured-img-cn-sant-andreu-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-cn-sant-andreu-1.jpg",
+      "bytes": 98018,
+      "sha256": "0e35f0d6f8c08e72d95fe4bcf2fd2549d9ad96407186e1b93ea93b22864c7270"
+    },
+    "media/2026/05/work-featured-img-museu-1-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-museu-1-1024x576.jpg",
+      "bytes": 86533,
+      "sha256": "a3ef7063fca3002a051f659205cd0763b2a6767db39794551d2cfe04477d93c2"
+    },
+    "media/2026/05/work-featured-img-museu-1-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-museu-1-1536x864.jpg",
+      "bytes": 155452,
+      "sha256": "580d0d4ebae53ed271f79f346167a80cfa0dbb146638a468a62c98cc2f1c82f2"
+    },
+    "media/2026/05/work-featured-img-museu-1-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-museu-1-300x169.jpg",
+      "bytes": 14917,
+      "sha256": "c5f985e886fd0e474e749353a0b6d32539c407cd0b6c2d396bfa6f5bad69f3f3"
+    },
+    "media/2026/05/work-featured-img-museu-1-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-museu-1-768x432.jpg",
+      "bytes": 55902,
+      "sha256": "0ebed0e169ac1358e25eb627e1bc62287e7458d50330255687ec7862fbd547c1"
+    },
+    "media/2026/05/work-featured-img-museu-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-featured-img-museu-1.jpg",
+      "bytes": 95781,
+      "sha256": "df85cf56ad908cfe47c2442a4b1a29711dc6a7762c5c48b6d613bb2e7c460575"
+    },
+    "media/2026/05/work-img-bsc-1-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-1-1024x576.jpg",
+      "bytes": 46463,
+      "sha256": "dc437268cada67f8c3e6e64cfbd57243e0d953ce49a2be34f193e8a1643a7b33"
+    },
+    "media/2026/05/work-img-bsc-1-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-1-1536x864.jpg",
+      "bytes": 78923,
+      "sha256": "b215659184f6df5ea5e9ed1d997544f431562f58cd81526ff94857aa437fcc77"
+    },
+    "media/2026/05/work-img-bsc-1-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-1-300x169.jpg",
+      "bytes": 9973,
+      "sha256": "a238c185f7f0c69093750624e7c77c0113c076aabec2c93e940ac8c0795cd3a1"
+    },
+    "media/2026/05/work-img-bsc-1-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-1-768x432.jpg",
+      "bytes": 30877,
+      "sha256": "27ef61c96c0fc11017b33db76920dc73f8ab145be99229647d30987f9cd1504b"
+    },
+    "media/2026/05/work-img-bsc-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-1.jpg",
+      "bytes": 52158,
+      "sha256": "63ce96e51782566ce7aba682d7ad7f711ffc776034eb778be2e660dcb872c238"
+    },
+    "media/2026/05/work-img-bsc-2-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-2-1024x576.jpg",
+      "bytes": 95635,
+      "sha256": "43b48c8208e6d4dcf57e0799466256503d6bdb187c682ec70561c87259ff98e6"
+    },
+    "media/2026/05/work-img-bsc-2-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-2-1536x864.jpg",
+      "bytes": 184517,
+      "sha256": "b0642213c4377ebea7d45be26fb6a813d5b1d5b8a3835f088bed4e3a3574a461"
+    },
+    "media/2026/05/work-img-bsc-2-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-2-300x169.jpg",
+      "bytes": 13653,
+      "sha256": "c252cdd0ce145f361447f656efdfff318e2821ae39bb01d15d3d21aacfcb2c65"
+    },
+    "media/2026/05/work-img-bsc-2-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-2-768x432.jpg",
+      "bytes": 57012,
+      "sha256": "75876c542f45c74e500a625da20db01725835105491d1c367ad238ce9999fbd0"
+    },
+    "media/2026/05/work-img-bsc-2.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-2.jpg",
+      "bytes": 157041,
+      "sha256": "8f98780eea2d9169a4693a289058f193a2e9f53e96403d41a96b5ec42c9e2f14"
+    },
+    "media/2026/05/work-img-bsc-3-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-3-1024x576.jpg",
+      "bytes": 44166,
+      "sha256": "31b53cd712d8d67aaa4bd0a3ca542fedc383c2a50d77b54aa7890ec45e0a6b18"
+    },
+    "media/2026/05/work-img-bsc-3-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-3-1536x864.jpg",
+      "bytes": 80131,
+      "sha256": "671b78d6e7978ffa7e21f9048d8c509b23d34de108fb6e7c8c25d88ca70e3223"
+    },
+    "media/2026/05/work-img-bsc-3-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-3-300x169.jpg",
+      "bytes": 9506,
+      "sha256": "0ea9ca856529d8a28739cd0d35f9df7b1dcd8ea08de3e4034c2fedcfdc995e83"
+    },
+    "media/2026/05/work-img-bsc-3-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-3-768x432.jpg",
+      "bytes": 28560,
+      "sha256": "3edc22b7f0abcf4781c0d48de812f5591d33b9f81683d27bbde40224f35ff0dc"
+    },
+    "media/2026/05/work-img-bsc-3.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-3.jpg",
+      "bytes": 66108,
+      "sha256": "d63dd61859bb20a2eaad689a666076fe97ad28aab84674148da40c7826c950e7"
+    },
+    "media/2026/05/work-img-bsc-4-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-4-1024x576.jpg",
+      "bytes": 178967,
+      "sha256": "226ba7877b4361a9393bd1dc2bcb0d8997908583dfdb510a5242b93de962f435"
+    },
+    "media/2026/05/work-img-bsc-4-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-4-1536x864.jpg",
+      "bytes": 315733,
+      "sha256": "7a441be32749597d27a237ad5151583e87328416156112c8d61c3376d2a1503b"
+    },
+    "media/2026/05/work-img-bsc-4-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-4-300x169.jpg",
+      "bytes": 19266,
+      "sha256": "563177f92a8ddc0f09df7ec3fa2b35882b1f04921fd2f71085e5998f101775cd"
+    },
+    "media/2026/05/work-img-bsc-4-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-4-768x432.jpg",
+      "bytes": 110704,
+      "sha256": "49eb92c1604a0beb61b0f8718b974fb9f97f592e29ae64df6aa96d886f3d53f0"
+    },
+    "media/2026/05/work-img-bsc-4.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-4.jpg",
+      "bytes": 259866,
+      "sha256": "20d269e9e2be517d7ad8937feaf0d4b3a367005925a37ff48a080a86d0b348e5"
+    },
+    "media/2026/05/work-img-bsc-5-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-5-1024x576.jpg",
+      "bytes": 75051,
+      "sha256": "78d91498eb4b52a1628637b2bbb064706359c2478a609bb31e5bbe6b7ff29d2b"
+    },
+    "media/2026/05/work-img-bsc-5-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-5-1536x864.jpg",
+      "bytes": 128577,
+      "sha256": "3ff44ac9263a6ccc336b094eb6cffad09aa3b8db5dcfcb647753018ccc50d178"
+    },
+    "media/2026/05/work-img-bsc-5-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-5-300x169.jpg",
+      "bytes": 10534,
+      "sha256": "bf165a7a40968a8430df6f7578cc1c1fe6feb24d4b65054d16502570ad6afac8"
+    },
+    "media/2026/05/work-img-bsc-5-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-5-768x432.jpg",
+      "bytes": 46792,
+      "sha256": "b88b9e395b7566c415576bed1162379356ce8bd370f9515e4e6ab58371ef01d0"
+    },
+    "media/2026/05/work-img-bsc-5.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-5.jpg",
+      "bytes": 95645,
+      "sha256": "838d58e41ba5544572c36b1000fb0c3e89f23373a2f792ae1c957ca72cd497da"
+    },
+    "media/2026/05/work-img-bsc-6-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-6-1024x576.jpg",
+      "bytes": 87272,
+      "sha256": "f714646a542b544f69be2d081269b1c6dd03810356e516362dad552d310c93b1"
+    },
+    "media/2026/05/work-img-bsc-6-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-6-1536x864.jpg",
+      "bytes": 165621,
+      "sha256": "03ad18cb32d8e50ce140aea2adc84567ed4f77766d14ccf5fa8d6cb719a73b61"
+    },
+    "media/2026/05/work-img-bsc-6-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-6-300x169.jpg",
+      "bytes": 14503,
+      "sha256": "4b6820697851a06fe3b42fb476dd74013300e84b0ae6f124abc015b3974c56f1"
+    },
+    "media/2026/05/work-img-bsc-6-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-6-768x432.jpg",
+      "bytes": 55078,
+      "sha256": "6a624ee100f9e40fca3ec0b817a2c1a7a74f38c6b5ec121e8ea555775f565b03"
+    },
+    "media/2026/05/work-img-bsc-6.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-6.jpg",
+      "bytes": 116335,
+      "sha256": "8e74998d4b6462c76395f544547bb3ea073c7d0ebf527c219db48ad9830d9e19"
+    },
+    "media/2026/05/work-img-bsc-7-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-7-1024x576.jpg",
+      "bytes": 95080,
+      "sha256": "75dd790da8a3f7fa2ccca466087c6d91de594d29575ac89dfb100c2f68598afc"
+    },
+    "media/2026/05/work-img-bsc-7-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-7-1536x864.jpg",
+      "bytes": 171343,
+      "sha256": "92ea0dd4e888b95971463d58113b8ecded77cb6dea7dfa901da3ce228f783aef"
+    },
+    "media/2026/05/work-img-bsc-7-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-7-300x169.jpg",
+      "bytes": 13314,
+      "sha256": "b856cdbd532e1ab348ea0c6f48fda917674e3b034fd3bad76beb27d7e0fbeb60"
+    },
+    "media/2026/05/work-img-bsc-7-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-7-768x432.jpg",
+      "bytes": 58687,
+      "sha256": "cfb40faee7e3bd86d047411147b8b02e9242204120c3bdb9a64e4099813ba84e"
+    },
+    "media/2026/05/work-img-bsc-7.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-7.jpg",
+      "bytes": 133545,
+      "sha256": "a5ac4e7e94c8768b0c40dc47258deb67663d962e2107091306c7c980da78f92a"
+    },
+    "media/2026/05/work-img-bsc-8-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-8-1024x576.jpg",
+      "bytes": 92448,
+      "sha256": "64106d5fe92247f51eb3d7b1b93de4bf3dfe6478ebc8ca753b4535ef88e8eb9b"
+    },
+    "media/2026/05/work-img-bsc-8-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-8-1536x864.jpg",
+      "bytes": 167974,
+      "sha256": "46f6f136e721943504d87d65ac5246a17b6e47df224fd13549d8961e6d3d1a21"
+    },
+    "media/2026/05/work-img-bsc-8-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-8-300x169.jpg",
+      "bytes": 13793,
+      "sha256": "c55a9d90d2b2796b60b03fac52a5a4519df8d6e0a2ea4e6b99551af4ca7d3749"
+    },
+    "media/2026/05/work-img-bsc-8-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-8-768x432.jpg",
+      "bytes": 59044,
+      "sha256": "08fa1d0b29b21e6613de429d854641596f8c26a7226d99207bbdc84c7b70ee67"
+    },
+    "media/2026/05/work-img-bsc-8.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-bsc-8.jpg",
+      "bytes": 118681,
+      "sha256": "a89cecfcbcfc4e1d751d0eeb06b5014d7f8347238971e900961da138d4c4238a"
+    },
+    "media/2026/05/work-img-project-museu-img-1-1024x707.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-1-1024x707.jpg",
+      "bytes": 138740,
+      "sha256": "dd6f600abe9dc5d36b6eeef2c56b2c96f35616d4b322442dd30a9358ce9dacfe"
+    },
+    "media/2026/05/work-img-project-museu-img-1-300x207.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-1-300x207.jpg",
+      "bytes": 19790,
+      "sha256": "dfecda5caf9b194beec677688d3dcce1fd080f9b26e1f357c987c282ee7cd75d"
+    },
+    "media/2026/05/work-img-project-museu-img-1-768x530.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-1-768x530.jpg",
+      "bytes": 88072,
+      "sha256": "0e835c94ee127ddbb81e1d9958c5e6a3c53301ff79a00c6a6e19fb009b9051d4"
+    },
+    "media/2026/05/work-img-project-museu-img-1.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-1.jpg",
+      "bytes": 179130,
+      "sha256": "8032ad8ea6006ecee7390b90cdbeaaebc2804dae38f3330494fa67b58c77b5b0"
+    },
+    "media/2026/05/work-img-project-museu-img-2-1024x707.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-2-1024x707.jpg",
+      "bytes": 93852,
+      "sha256": "bde8e51e5f93e350f2a2a2d81b169c9980d31457a95a6f5e518a26d7735d010f"
+    },
+    "media/2026/05/work-img-project-museu-img-2-300x207.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-2-300x207.jpg",
+      "bytes": 15192,
+      "sha256": "ae12a90993950fb2c801325feb2039e0aaed82b1966525e522a704efd5eecc46"
+    },
+    "media/2026/05/work-img-project-museu-img-2-768x530.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-2-768x530.jpg",
+      "bytes": 59941,
+      "sha256": "baadf2458980b34b3458ea8643e21b435804395048123b7356daa087127ac041"
+    },
+    "media/2026/05/work-img-project-museu-img-2.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-2.jpg",
+      "bytes": 123979,
+      "sha256": "ba639614c9998d65fb0f745330daa62a899d5af97596636caf3f1803ffcf441b"
+    },
+    "media/2026/05/work-img-project-museu-img-3-1024x707.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-3-1024x707.jpg",
+      "bytes": 157865,
+      "sha256": "e2840fa6ba1b7bc1a04ebfe728e5c8e5ab85edc1682a727f8e83e21bd0203dbe"
+    },
+    "media/2026/05/work-img-project-museu-img-3-300x207.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-3-300x207.jpg",
+      "bytes": 20043,
+      "sha256": "86e1f433af612cab8cd9d25b46a8efd393609bc94d83891640eeeb0bc4a256dd"
+    },
+    "media/2026/05/work-img-project-museu-img-3-768x530.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-3-768x530.jpg",
+      "bytes": 97097,
+      "sha256": "e46a6d860c3ce926aaa88b6670fbd83d9f7a28ca1526a43401f9c1f32f32f8a2"
+    },
+    "media/2026/05/work-img-project-museu-img-3.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-3.jpg",
+      "bytes": 211366,
+      "sha256": "4f1f3cf902d0611d82b1791ef2adfe4614e3917bd204818ce4295bb05e3877d7"
+    },
+    "media/2026/05/work-img-project-museu-img-4-1024x707.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-4-1024x707.jpg",
+      "bytes": 110933,
+      "sha256": "51d1a00ebdd640489ae2e9ff0df653ef4d686ea45af7c9c235e731cd79fcabe1"
+    },
+    "media/2026/05/work-img-project-museu-img-4-300x207.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-4-300x207.jpg",
+      "bytes": 19044,
+      "sha256": "2de5f8f1425e1ea40bfc0cf684cccc0e662d79a0ccc524c07489e855116d034d"
+    },
+    "media/2026/05/work-img-project-museu-img-4-768x530.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-4-768x530.jpg",
+      "bytes": 72739,
+      "sha256": "256768fff17628cb4bf34b1825dfc64d95ccd65252cf0a30fe4286b516370071"
+    },
+    "media/2026/05/work-img-project-museu-img-4.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-4.jpg",
+      "bytes": 134099,
+      "sha256": "75c66d452795d9bf352849396a626c74dee9308a7053f36ee10057000b0d11bf"
+    },
+    "media/2026/05/work-img-project-museu-img-5-1024x701.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-5-1024x701.jpg",
+      "bytes": 60454,
+      "sha256": "8291dd9dab1cc3d821347162fa11ed79d4f162a5d522108cfab3b9332a0c1e40"
+    },
+    "media/2026/05/work-img-project-museu-img-5-300x205.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-5-300x205.jpg",
+      "bytes": 12058,
+      "sha256": "cd9119abcb703de7bb4fcd3d2917914aed19aa3de41238f041ce0c76e10567ed"
+    },
+    "media/2026/05/work-img-project-museu-img-5-768x526.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-5-768x526.jpg",
+      "bytes": 40085,
+      "sha256": "b904cf14ae80aae03b32989bc6802054cf377512eba103910ba2c523efded152"
+    },
+    "media/2026/05/work-img-project-museu-img-5.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-5.jpg",
+      "bytes": 109295,
+      "sha256": "9850797ce93cfb44a2be412a75fc9dae400aa2feffcd7092ce2160af5eeb5b11"
+    },
+    "media/2026/05/work-img-project-museu-img-6-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-6-1024x576.jpg",
+      "bytes": 154269,
+      "sha256": "ed5b99df8a641375983c8a66973be83e9f79c8a8b72dd80af97d9576101127e5"
+    },
+    "media/2026/05/work-img-project-museu-img-6-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-6-300x169.jpg",
+      "bytes": 17340,
+      "sha256": "1f16eed39babc185c67846d635b4294ce04bdde8ad9f8d1576f992e5a0ac3a23"
+    },
+    "media/2026/05/work-img-project-museu-img-6-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-6-768x432.jpg",
+      "bytes": 89358,
+      "sha256": "4ffd4009ec2135edeb2bfc4738bd4a7d87238cd7e2eaeca398f5769829eaac03"
+    },
+    "media/2026/05/work-img-project-museu-img-6.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-project-museu-img-6.jpg",
+      "bytes": 240971,
+      "sha256": "9775dfbe531a555c9b4ab32b2055f58296fa3daa0d14beaa1aa0f1eccd8bfc66"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-01-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-01-1024x576.jpg",
+      "bytes": 115556,
+      "sha256": "bab6a18dce83f9389ee0dd72d06adddda0fe3560a575747278b88cbb3e5bc370"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-01-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-01-1536x864.jpg",
+      "bytes": 214151,
+      "sha256": "4a82aff54472b08768cb2dfa8b73dd370bbba5bc4ffeab0125376809267e5335"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-01-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-01-300x169.jpg",
+      "bytes": 17777,
+      "sha256": "7acc3dc9bac4883f6bb579138a69f18b6f00461b11bbfff61ddd46d3dd01dc64"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-01-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-01-768x432.jpg",
+      "bytes": 73225,
+      "sha256": "ec8b87ddb04c6724b7139056d80c96b246d88f648a4f9f764efd7426935c2af4"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-01.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-01.jpg",
+      "bytes": 167110,
+      "sha256": "90eed61580d5a732c84ffc32b1453f74c6d7f628f06160bdeb660a12d5e827de"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-10-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-10-1024x576.jpg",
+      "bytes": 49633,
+      "sha256": "8c9c6b4e60d9bc8bbb08145b8c05474ee31b1ee49493a60e39b7dab37404a82e"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-10-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-10-1536x864.jpg",
+      "bytes": 84068,
+      "sha256": "c091150c657f75e098752b1b5988ed09c198a557430aca048932df2855546759"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-10-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-10-300x169.jpg",
+      "bytes": 10618,
+      "sha256": "248fa5f199138bcfdb6bc0674b2c576e89e86d14a5c8f793821f625e35e5be0b"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-10-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-10-768x432.jpg",
+      "bytes": 33203,
+      "sha256": "c5c1e6abef12cb29479a0a1d6e6ad0ba1f93cc0ef51fbe9ac508dc33be3dc7fa"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-10.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-10.jpg",
+      "bytes": 65375,
+      "sha256": "607469d8c02c41026b4d5efc2906e1e63da08606aacc3aef4bad2df1a2717224"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-2-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-2-1024x576.jpg",
+      "bytes": 114015,
+      "sha256": "0187a0c592fdc9b55f2f053a7844990b0f21cab22ede68b4c0c9e826819e7cd1"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-2-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-2-1536x864.jpg",
+      "bytes": 201398,
+      "sha256": "5e17779b89afd11e5a5c908b99d03f0ef8988fbb8d25e6a8db474e6d5fcebe1a"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-2-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-2-300x169.jpg",
+      "bytes": 19296,
+      "sha256": "7f2f64de0b1c7c946370b996b15f4ddccea014a6e124a429f1f7ac1a4ac81ca0"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-2-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-2-768x432.jpg",
+      "bytes": 74045,
+      "sha256": "fc1e29be7d40e236e6a6b5a2a5e9ac1cd79c807e6758b4eb58b5e5d13def4ee6"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-2.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-2.jpg",
+      "bytes": 145874,
+      "sha256": "d652f8bb49f90ab4f659af0edef4329283607727b6012181c8d23c7e0a1107ac"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-3-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-3-1024x576.jpg",
+      "bytes": 43694,
+      "sha256": "07540a9c01cfa7ab93575624ca3e909023f08087c80a86f5d81ac9f357f25498"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-3-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-3-1536x864.jpg",
+      "bytes": 74075,
+      "sha256": "cae41986893ab5da03f6b259229a9e08f97601de4dca6a3f26b8f63b3173b255"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-3-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-3-300x169.jpg",
+      "bytes": 10518,
+      "sha256": "bc79afaed74dc67a54d092f100941931b90f75e72c3b548f3dd09bcb8211888f"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-3-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-3-768x432.jpg",
+      "bytes": 30677,
+      "sha256": "7cda75cbd87d92588fc2fbb91d64f6a9d457cc4989c8f41145d15a60d78cbe5c"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-3.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-3.jpg",
+      "bytes": 56940,
+      "sha256": "ed6dc0760f89ec9db3f7c8d1c1fa154c67b65f2dc064e16321356e34c90c66d4"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-4-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-4-1024x576.jpg",
+      "bytes": 95460,
+      "sha256": "81dd10562aab9db8e89c853c3a0a8ac40a8ec7b3cb657702b107d90ff40801b8"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-4-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-4-1536x864.jpg",
+      "bytes": 171282,
+      "sha256": "eaeac7e8d4828a7261585bfc45050c7ffccb9579ea7b28154518918934169f24"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-4-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-4-300x169.jpg",
+      "bytes": 16930,
+      "sha256": "aba367277115c00b26315195137f38838c7a09e672ed5d00e27ff5d527f4bfe9"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-4-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-4-768x432.jpg",
+      "bytes": 61978,
+      "sha256": "8b5568de60d2715765d9a5747a867a404eb8c3fafd895d54421ad256ff6dc841"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-4.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-4.jpg",
+      "bytes": 107091,
+      "sha256": "6c2f1cd9c7d4d1f9a1452ea1c2643ea0a0678ba11ccac70068412c3446e0edb7"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-6-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-6-1024x576.jpg",
+      "bytes": 76516,
+      "sha256": "fa711b69c16fec4a784faa18b6f999c1a37e689bd556d68510dc8ae1bbf256e2"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-6-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-6-1536x864.jpg",
+      "bytes": 136528,
+      "sha256": "d3b94916d7ea2a1fbb5e4c2abc0e422dad0931e6d7f0e95f1bfdb81bbc4a87b8"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-6-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-6-300x169.jpg",
+      "bytes": 12852,
+      "sha256": "f2a2ac4080b89876e463c33e5e37bc1c2e1734ed136f50ce34f7da87e176ae78"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-6-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-6-768x432.jpg",
+      "bytes": 48142,
+      "sha256": "af2603bb4968945edd8dacfd6077828e6f041014f1fa9ce17f4f11412623fdce"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-6.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-6.jpg",
+      "bytes": 117843,
+      "sha256": "9b00eab5f88e1c23bfaf8eabe42c0c4a4d61d678097f34d2bad6f752b191bec0"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-8-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-8-1024x576.jpg",
+      "bytes": 79560,
+      "sha256": "2c6821f6bf16fe67fd3511933f4ffbf1df755c127a7340ca217d02b0d8cbd556"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-8-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-8-1536x864.jpg",
+      "bytes": 138196,
+      "sha256": "3c1985cec8adc1b28d39c6a47a23f87d11c8bd43e3d8bae6ac3ae43a3a18c6ee"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-8-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-8-300x169.jpg",
+      "bytes": 13193,
+      "sha256": "940002b722bb6d738eec3877a06e062867f85a8945f8034dc466ff38b7321e90"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-8-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-8-768x432.jpg",
+      "bytes": 52928,
+      "sha256": "b58c15ce52ee10c82b5ecc2116f9199c3cd14d0bc8b4b6fc2d18a800234ef86e"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-8.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-8.jpg",
+      "bytes": 108922,
+      "sha256": "d9f0ba0044081dcab6f6495221fb63687d3eba7cc0335f530788e092c6051753"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-9-1024x576.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-9-1024x576.jpg",
+      "bytes": 80599,
+      "sha256": "ea2bb6dca5f0a9227fc437e5ef759fb58b6d9311ebefc176e92963c576a43cc3"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-9-1536x864.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-9-1536x864.jpg",
+      "bytes": 142459,
+      "sha256": "85bdb5e2d5cc92cea22148afcaae4e85f96162e51eaf707d46ad16af34c7788b"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-9-300x169.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-9-300x169.jpg",
+      "bytes": 12915,
+      "sha256": "767af522e42b6e894d4a7da1cd5df8d0b2364c589107374f94c0312ba2c3f418"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-9-768x432.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-9-768x432.jpg",
+      "bytes": 51409,
+      "sha256": "e3d561ebd0ab610fd7fbae029c92dabcc1f2945185c261e8a8ab6e692c909eb7"
+    },
+    "media/2026/05/work-img-sn-sant-andreu-9.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/05/work-img-sn-sant-andreu-9.jpg",
+      "bytes": 116895,
+      "sha256": "b5e00eab99c56dc84ec848521c1c7863f04af9e91447b594a1922088ea6c5cdf"
+    },
+    "media/2026/06/opengraph-eloquent.jpg": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/06/opengraph-eloquent.jpg",
+      "bytes": 67046,
+      "sha256": "6e1c21a5fa2de5ac4b527c16a53e3a7048e69b35a8982692e8979142b682f14c"
+    },
+    "media/2026/08/img-dcc-image-1-150x150.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/08/img-dcc-image-1-150x150.png",
+      "bytes": 11064,
+      "sha256": "be837c108c6a78e80e544c35acf95a88dc0d9f18470c510a5a51a7ae480a950a"
+    },
+    "media/2026/08/img-dcc-image-1-300x300.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/08/img-dcc-image-1-300x300.png",
+      "bytes": 33658,
+      "sha256": "f717710945d1b657c8978bef1b996149aa2ef055050f8f8086f57c882da3c146"
+    },
+    "media/2026/08/img-dcc-image-1.png": {
+      "source": "https://eloquent.es/wp-content/uploads/2026/08/img-dcc-image-1.png",
+      "bytes": 140520,
+      "sha256": "2a71177fb2f1c9eea383e04aadec2320ed1e36f14e143cf4085e918cbd4e55c0"
+    },
+    "media/complianz/css/banner-1-optin.css": {
+      "source": "https://eloquent.es/wp-content/uploads/complianz/css/banner-1-optin.css?ver=1787132675",
+      "bytes": 14392,
+      "sha256": "457c4d9d386303704dbc046a4d15bd7001efdd5216ecc2966b0b1a7eabdcb48b"
+    },
+    "media/fonts/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6aXp-p7K5ILg.woff2": {
+      "source": "https://eloquent.es/wp-content/uploads/fonts/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq3p6aXp-p7K5ILg.woff2",
+      "bytes": 105624,
+      "sha256": "0ebac1a30262fc0ce94efaeec90a86247a8c1d5925b108626a60faf49b9fa0a1"
+    },
+    "media/fonts/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9aXp-p7K5ILg.woff2": {
+      "source": "https://eloquent.es/wp-content/uploads/fonts/JTUFjIg1_i6t8kCHKm459Wx7xQYXK0vOoz6jq6R9aXp-p7K5ILg.woff2",
+      "bytes": 104044,
+      "sha256": "a97c064d92eb15855f6b43bbf9a79766ebbb9afcb836d731b81d62d464542e3f"
+    },
+    "media/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew7Y3tcoqK5.woff2": {
+      "source": "https://eloquent.es/wp-content/uploads/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew7Y3tcoqK5.woff2",
+      "bytes": 98468,
+      "sha256": "84f8b6ff2cb5d57ea5e2b0804578a4619ae632599dabfa0451321f146626a969"
+    },
+    "media/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w7Y3tcoqK5.woff2": {
+      "source": "https://eloquent.es/wp-content/uploads/fonts/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w7Y3tcoqK5.woff2",
+      "bytes": 100164,
+      "sha256": "5a66fc8a6b315ed6b406a54dd19bb53addd601cf47f5e9b5fad0a6dd6598cc2c"
+    },
+    "media/generateblocks/style-global.css": {
+      "source": "https://eloquent.es/wp-content/uploads/generateblocks/style-global.css?ver=1779177073",
+      "bytes": 376,
+      "sha256": "b99b762aaf3ea015a5e0665c20054e89653f04f174a3732366f9d4af5eafe9fe"
+    }
+  },
+  "errors": []
+}

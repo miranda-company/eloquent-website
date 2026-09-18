@@ -1,0 +1,517 @@
+Política de cookies
+https://eloquent.es/politica-de-cookies/
+WordPress ID: 9076
+Original date: 2026-07-09T14:27:14
+
+Política de cookies
+Esta política de cookies fue actualizada por última vez el 09/07/2026 y se aplica a los ciudadanos y residentes legales permanentes del Espacio Económico Europeo y Suiza.
+1. Introducción
+Nuestra web, https://eloquent.es (en adelante: «la web») utiliza cookies y otras tecnologías relacionadas (para mayor comodidad, todas las tecnologías se denominan «cookies»). Las cookies también son colocadas por terceros a los que hemos contratado. En el siguiente documento te informamos sobre el uso de cookies en nuestra web.
+2. ¿Qué son las cookies?
+Una cookie es un pequeño archivo que se envía junto con las páginas de esta web y que tu navegador almacena en el disco duro de su ordenador u otro dispositivo. La información almacenada puede ser devuelta a nuestros servidores o a los servidores de terceros apropiados durante una visita posterior.
+3. ¿Qué son los scripts?
+Un script es un fragmento de código de programa que se utiliza para hacer que nuestra web funcione correctamente y de forma interactiva. Este código se ejecuta en nuestro servidor o en tu dispositivo.
+4. ¿Qué es una baliza web?
+Una baliza web (o una etiqueta de píxel) es una pequeña e invisible pieza de texto o imagen en una web que se utiliza para monitorear el tráfico en una web. Para ello, se almacenan varios datos sobre usted mediante estas balizas web.
+5. Cookies
+5.1 Cookies técnicas o funcionales
+Algunas cookies aseguran que ciertas partes de la web funcionen correctamente y que tus preferencias de usuario sigan recordándose. Al colocar cookies funcionales, te facilitamos la visita a nuestra web. De esta manera, no necesitas introducir repetidamente la misma información cuando visitas nuestra web y, por ejemplo, los artículos permanecen en tu cesta de la compra hasta que hayas pagado. Podemos colocar estas cookies sin tu consentimiento.
+5.2 Cookies de estadísticas
+Utilizamos cookies estadísticas para optimizar la experiencia de la web para nuestros usuarios. Con estas cookies estadísticas obtenemos información sobre el uso de nuestra web. Te pedimos tu permiso para colocar cookies de estadísticas.
+5.3 Cookies de marketing/seguimiento
+Las cookies de marketing/seguimiento son cookies, o cualquier otra forma de almacenamiento local, usadas para crear perfiles de usuario para mostrar publicidad o para hacer el seguimiento del usuario en esta web o en varias webs con fines de marketing similares.
+5.4 Redes sociales
+En nuestra web hemos incluido contenido de Facebook, LinkedIn, WhatsApp y Instagram para promover páginas web (p.ej.: «Me gusta», «Pinear») o compartir (p.ej.: «tuitear») en redes sociales como Facebook, LinkedIn, WhatsApp y Instagram. Este contenido está incrustado con código derivado de Facebook, LinkedIn, WhatsApp y Instagram y guarda cookies. Este contenido podría procesar cierta información para anuncios personalizados.
+Por favor lea la política de privacidad de estas redes sociales (que puede cambiar frecuentemente) para saber que hacen con sus datos (personales) que procesan usando estas cookies. Los datos que reciben son anonimizados lo máximo posible. Facebook, LinkedIn, WhatsApp y Instagram están ubicados en los Estados Unidos.
+6. Cookies usadas
+WordPress
+Funcional
+Consent to service wordpress
+Uso
+Usamos WordPress para desarrollo de sitios web. Leer más acerca de WordPress
+Compartir datos
+Estos datos no se comparten con terceros.
+Funcional
+Nombre
+wpEmojiSettingsSupports
+Caducidad
+sesión
+Función
+Guardar detalles del navegador
+Nombre
+wp-settings-time-*
+Caducidad
+1 year
+Función
+Store user preferences
+Nombre
+wp-settings-*
+Caducidad
+persistent
+Función
+Store user preferences
+Nombre
+wordpress_logged_in_*
+Caducidad
+persistent
+Función
+Store logged in users
+Nombre
+wordpress_test_cookie
+Caducidad
+sesión
+Función
+Chequear si se pueden instalar cookies
+Nombre
+wp_lang
+Caducidad
+sesión
+Función
+Guardar configuraciones de lenguaje
+Google Analytics
+Estadísticas
+Consent to service google-analytics
+Uso
+Usamos Google Analytics para estadísticas del sitio web. Leer más acerca de Google Analytics
+Compartir datos
+Para más información, por favor, lee la política de privacidad de Google Analytics.
+Estadísticas
+Nombre
+_ga
+Caducidad
+2 years
+Función
+Store and count pageviews
+Nombre
+_ga_*
+Caducidad
+1 year
+Función
+Store and count pageviews
+WPForms
+Preferencias
+Consent to service wpforms
+Uso
+Usamos WPForms para formularios web. Leer más acerca de WPForms
+Compartir datos
+Estos datos no se comparten con terceros.
+Preferencias
+Nombre
+_wpfuuid
+Caducidad
+11 años
+Función
+Almacenar un ID de usuario único
+Facebook
+Marketing, Funcional
+Consent to service facebook
+Uso
+Usamos Facebook para mostrar publicaciones sociales recientes y/o botones sociales para compartir en redes sociales. Leer más acerca de Facebook
+Compartir datos
+Para más información, por favor, lee la política de privacidad de Facebook.
+Marketing
+Nombre
+_fbp
+Caducidad
+3 months
+Función
+Store and track visits across websites
+Nombre
+_fbc
+Caducidad
+2 años
+Función
+Almacenar la última visita
+Nombre
+fbm*
+Caducidad
+1 año
+Función
+Guardar detalles de la cuenta
+Nombre
+xs
+Caducidad
+3 meses
+Función
+Almacena una ID de sesión única
+Nombre
+fr
+Caducidad
+3 meses
+Función
+Habilitar la publicación de anuncios o retargeting
+Nombre
+act
+Caducidad
+90 días
+Función
+Mantener los usuarios logeados
+Nombre
+datr
+Caducidad
+2 años
+Función
+Proporcionar prevención de fraude
+Nombre
+c_user
+Caducidad
+30 días
+Función
+Almacenar un ID de usuario único
+Nombre
+sb
+Caducidad
+2 años
+Función
+Guardar detalles del navegador
+Nombre
+*_fbm_
+Caducidad
+1 año
+Función
+Guardar detalles de la cuenta
+Funcional
+Nombre
+wd
+Caducidad
+1 semana
+Función
+Determinar la resolución de pantalla
+Nombre
+csm
+Caducidad
+90 días
+Función
+Proporcionar prevención de fraude
+Nombre
+actppresence
+Caducidad
+sesión
+Función
+Almacenar y rastrear si la pestaña del navegador está activa
+Google Fonts
+Marketing
+Consent to service google-fonts
+Uso
+Usamos Google Fonts para mostrar fuentes web. Leer más acerca de Google Fonts
+Compartir datos
+Para más información, por favor, lee la política de privacidad de Google Fonts.
+Marketing
+Nombre
+Google Fonts API
+Caducidad
+nada
+Función
+Solicitar la dirección IP del usuario
+LinkedIn
+Funcional, Marketing, Estadísticas, Preferencias
+Consent to service linkedin
+Uso
+Usamos LinkedIn para mostrar publicaciones sociales recientes y/o botones sociales para compartir en redes sociales. Leer más acerca de LinkedIn
+Compartir datos
+Para más información, por favor, lee la política de privacidad de LinkedIn.
+Funcional
+Nombre
+sdsc
+Caducidad
+sesión
+Función
+Cargar la funcionalidad de equilibrio de carga
+Nombre
+li_gc
+Caducidad
+6 meses
+Función
+Guardar preferencias de consentimiento de cookies
+Nombre
+BizographicsOptOut
+Caducidad
+10 años
+Función
+Guardar preferencias de privacidad
+Marketing
+Nombre
+lms_ads
+Caducidad
+30 días
+Función
+Almacenar y realizar un seguimiento de las visitas a través de múltiples sitios web
+Nombre
+_guid
+Caducidad
+90 días
+Función
+Almacenar y rastrear la identidad de un visitante
+Nombre
+li-oatml
+Caducidad
+1 mes
+Función
+Habilitar la publicación de anuncios o retargeting
+Nombre
+li_sugr
+Caducidad
+90 días
+Función
+Almacenar y rastrear la identidad de un visitante
+Nombre
+UserMatchHistory
+Caducidad
+30 días
+Función
+Habilitar la publicación de anuncios o retargeting
+Estadísticas
+Nombre
+lms_analytics
+Caducidad
+30 días
+Función
+Almacenar y rastrear la identidad de un visitante
+Nombre
+AnalyticsSyncHistory
+Caducidad
+30 días
+Función
+Almacenar y realizar un seguimiento de las visitas a través de múltiples sitios web
+Preferencias
+Nombre
+li_alerts
+Caducidad
+1 año
+Función
+Guardar si un mensaje ha sido mostrado
+Nombre
+bcookie
+Caducidad
+1 año
+Función
+Guardar detalles del navegador
+Nombre
+lidc
+Caducidad
+1 día
+Función
+Cargar la funcionalidad de equilibrio de carga
+Nombre
+bscookie
+Caducidad
+1 año
+Función
+Mantener los usuarios logeados
+WhatsApp
+Funcional
+Consent to service whatsapp
+Uso
+Usamos WhatsApp para soporte por chat. Leer más acerca de WhatsApp
+Compartir datos
+Para más información, por favor, lee la política de privacidad de WhatsApp.
+Funcional
+Nombre
+wa_lang_pref
+Caducidad
+6 días
+Función
+Guardar configuraciones de lenguaje
+Nombre
+wa_ul
+Caducidad
+sesión
+Función
+Provide access
+Complianz
+Funcional
+Consent to service complianz
+Uso
+Usamos Complianz para gestión del consentimiento de cookies. Leer más acerca de Complianz
+Compartir datos
+Estos datos no se comparten con terceros. Para más información, por favor, lee la política de privacidad de Complianz.
+Funcional
+Nombre
+cmplz_functional
+Caducidad
+365 días
+Función
+Store cookie consent preferences
+Nombre
+cmplz_statistics
+Caducidad
+365 días
+Función
+Store cookie consent preferences
+Nombre
+cmplz_preferences
+Caducidad
+365 días
+Función
+Store cookie consent preferences
+Nombre
+cmplz_marketing
+Caducidad
+365 días
+Función
+Store cookie consent preferences
+Nombre
+cmplz_consented_services
+Caducidad
+365 días
+Función
+Store cookie consent preferences
+Nombre
+cmplz_policy_id
+Caducidad
+365 días
+Función
+Store accepted cookie policy ID
+Nombre
+cmplz_banner-status
+Caducidad
+365 días
+Función
+Store if the cookie banner has been dismissed
+Google Tag Manager for WordPress
+Funcional
+Consent to service google-tag-manager-for-wordpress
+Uso
+Usamos Google Tag Manager for WordPress para estadísticas del sitio web. Leer más acerca de Google Tag Manager for WordPress
+Compartir datos
+Estos datos no se comparten con terceros.
+Funcional
+Nombre
+__TAG_ASSISTANT
+Caducidad
+Función
+Provide admin functions
+Propósito pendiente de investigación
+Nombre
+Nueva cookie 60
+Caducidad
+Función
+Varios
+Propósito pendiente de investigación
+Consent to service varios
+Uso
+Compartir datos
+El intercambio de datos está pendiente de investigación
+Propósito pendiente de investigación
+Nombre
+lastExternalReferrer
+Caducidad
+Función
+Nombre
+generateblocksPanels
+Caducidad
+Función
+Nombre
+lastExternalReferrerTime
+Caducidad
+Función
+Nombre
+generateblocksDeviceType
+Caducidad
+Función
+Nombre
+loglevel
+Caducidad
+Función
+Nombre
+multiFbc
+Caducidad
+Función
+Nombre
+generateblocksCustomInputs
+Caducidad
+Función
+Nombre
+WP_DATA_USER_2
+Caducidad
+Función
+Nombre
+cmplz_task_filter
+Caducidad
+365 días
+Función
+Nombre
+ucData
+Caducidad
+Función
+Nombre
+ucString
+Caducidad
+Función
+Nombre
+rank-math-option-general-index
+Caducidad
+Función
+Nombre
+rank-math-option-sitemap-index
+Caducidad
+Función
+Nombre
+topicsLastReferenceTime
+Caducidad
+Función
+Nombre
+WP_PREFERENCES_USER_2
+Caducidad
+Función
+Nombre
+rank-math-option-titles-index
+Caducidad
+Función
+Nombre
+rank-math-option-search-index
+Caducidad
+Función
+Nombre
+_grecaptcha
+Caducidad
+Función
+Nombre
+generateGlobalColors
+Caducidad
+Función
+Nombre
+gb-color-picker-palettes
+Caducidad
+Función
+Nombre
+wp-autosave-block-editor-post-2406
+Caducidad
+Función
+Nombre
+wp-autosave-block-editor-post-1341
+Caducidad
+Función
+Nombre
+ampforwp_hide_deactivate_feedback
+Caducidad
+Función
+Nombre
+_iub_previous_preference_id
+Caducidad
+Función
+7. Consentimiento
+Cuando visites nuestra web por primera vez, te mostraremos una ventana emergente con una explicación sobre las cookies. Tan pronto como hagas clic en «Aceptar», aceptas que usemos todas las cookies y plugins tal como se describe en la ventana emergente y en esta política de cookies. Puedes desactivar el uso de cookies a través de tu navegador, pero, por favor, ten en cuenta que nuestra web puede dejar de funcionar correctamente.
+7.1 Gestiona tus ajustes de consentimiento
+Has cargado la política de cookies sin compatibilidad con JavaScript. En AMP, puedes utilizar el botón de gestionar el consentimiento en la parte inferior de la página.
+8. Activación/desactivación y borrado de cookies
+Puedes utilizar tu navegador de Internet para eliminar las cookies de forma automática o manual. También puedes especificar que ciertas cookies no pueden ser colocadas. Otra opción es cambiar los ajustes de tu navegador de Internet para que recibas un mensaje cada vez que se coloca una cookie. Para obtener más información sobre estas opciones, consulta las instrucciones de la sección «Ayuda» de tu navegador.
+Ten en cuenta que nuestra web puede no funcionar correctamente si todas las cookies están desactivadas. Si borras las cookies de tu navegador, se volverán a colocar después de tu consentimiento cuando vuelvas a visitar nuestras webs.
+9. Tus derechos con respecto a los datos personales
+Tienes los siguientes derechos con respecto a tus datos personales:
+• Tiene derecho a saber por qué se necesitan tus datos personales, qué sucederá con ellos y durante cuánto tiempo se conservarán.
+• Derecho de acceso: tienes derecho a acceder a tus datos personales que conocemos.
+• Derecho de rectificación: tienes derecho a completar, rectificar, borrar o bloquear tus datos personales cuando lo desees.
+• Si nos das tu consentimiento para procesar tus datos, tienes derecho a revocar dicho consentimiento y a que se eliminen tus datos personales.
+• Derecho de cesión de tus datos: tienes derecho a solicitar todos tus datos personales al responsable del tratamiento y a transferirlos íntegramente a otro responsable del tratamiento.
+• Derecho de oposición: puedes oponerte al tratamiento de tus datos. Nosotros cumplimos con esto, a menos que existan motivos justificados para el procesamiento.
+Para ejercer estos derechos, por favor, contacta con nosotros. Por favor, consulta los detalles de contacto en la parte inferior de esta política de cookies. Si tienes alguna queja sobre cómo gestionamos tus datos, nos gustaría que nos la hicieras saber, pero también tienes derecho a enviar una queja a la autoridad supervisora (la autoridad de protección de datos).
+10. Datos de contacto
+Para preguntas y/o comentarios sobre nuestra política de cookies y esta declaración, por favor, contacta con nosotros usando los siguientes datos de contacto:
+La Baula S.C.P.
+Carrer de la Riera d’Horta, 38 1B
+España
+Web: https://eloquent.es
+Correo electrónico: info@ex.comeloquent.es
+Número de teléfono: 933514162
+Esta política de cookies se ha sincronizado con cookiedatabase.org el (no está sincronizado aún).

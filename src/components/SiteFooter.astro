@@ -1,0 +1,24 @@
+---
+import EloquentLogo from './EloquentLogo.astro';
+---
+
+<footer class="site-footer" id="contacto">
+  <div class="container">
+    <p class="eyebrow eyebrow--light" data-reveal>Hablemos / 06</p>
+    <h2 data-reveal>La comunicación<br /><em>importa.</em></h2>
+    <a class="footer-mail" href="mailto:info@eloquent.es" data-reveal
+      >info@eloquent.es <span aria-hidden="true">↗</span></a
+    >
+    <div class="site-footer__bottom">
+      <a class="brand brand--footer" href="/" aria-label="Eloquent, inicio">
+        <EloquentLogo />
+      </a>
+      <p>Consultoría de comunicación y experiencia digital.</p>
+      <nav aria-label="Enlaces legales">
+        <a href="https://eloquent.es/politica-de-privacidad/">Privacidad</a>
+        <a href="https://eloquent.es/politica-de-cookies/">Cookies</a>
+      </nav>
+      <small>© {new Date().getFullYear()} Eloquent</small>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,109 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image = '/brand/opengraph-eloquent.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, 'https://eloquent.es').toString();
+const imageUrl = new URL(image, 'https://eloquent.es').toString();
+const staging = import.meta.env.PUBLIC_STAGING === 'true';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/brand/favicon.jpg" type="image/jpeg" />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={staging ? 'noindex, nofollow' : 'index, follow'} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Eloquent" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <SiteHeader />
+    <main id="contenido"><slot /></main>
+    <SiteFooter />
+    <a class="back-to-top" href="#top" aria-label="Volver arriba">
+      <span aria-hidden="true">↑</span>
+    </a>
+    <script>
+      import { scrollThresholds } from '../design/interaction';
+
+      const header = document.querySelector<HTMLElement>('.site-header');
+      const backToTop = document.querySelector<HTMLElement>('.back-to-top');
+
+      if (header && backToTop) {
+        let headerHeight = header.offsetHeight;
+
+        const syncScrollControls = () => {
+          if (window.scrollY >= scrollThresholds.stickyHeaderPx) {
+            header.classList.add('is-sticky');
+          } else if (window.scrollY <= headerHeight) {
+            // Release it when the original header position comes back into view.
+            header.classList.remove('is-sticky');
+          }
+
+          backToTop.classList.toggle('is-visible', window.scrollY >= scrollThresholds.backToTopPx);
+        };
+
+        window.addEventListener('scroll', syncScrollControls, { passive: true });
+        window.addEventListener('resize', () => {
+          headerHeight = header.offsetHeight;
+          syncScrollControls();
+        });
+        syncScrollControls();
+      }
+    </script>
+    <script>
+      import { initiallyVisibleViewportFraction, revealObserver } from '../design/interaction';
+
+      if (
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+        'IntersectionObserver' in window
+      ) {
+        const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+
+            const target = entry.target as HTMLElement;
+            target.classList.remove('reveal-pending');
+            target.classList.add('reveal-visible');
+            observer.unobserve(target);
+          }
+        }, revealObserver);
+
+        for (const target of revealTargets) {
+          if (
+            target.getBoundingClientRect().top <
+            window.innerHeight * initiallyVisibleViewportFraction
+          ) {
+            continue;
+          }
+
+          target.classList.add('reveal-pending');
+          observer.observe(target);
+        }
+      }
+    </script>
+  </body>
+</html>
