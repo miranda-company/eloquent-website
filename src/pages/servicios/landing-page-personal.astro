@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
 import '../../styles/landing-page-personal.css';
 
 const contactHref = 'mailto:info@eloquent.es?subject=Consulta%20Landing%20Page%20Personal';
@@ -38,39 +39,23 @@ const structuredData = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-  <section class="personal-hero" aria-labelledby="personal-title">
-    <div class="container">
-      <nav class="personal-breadcrumb" aria-label="Ruta de navegación">
-        <ol>
-          <li><a href="/">Inicio</a></li>
-          <li aria-current="page">Landing Page Personal</li>
-        </ol>
-      </nav>
-      <p class="eyebrow eyebrow--light">Landing Page Personal</p>
-      <h1 id="personal-title">
-        Una presencia profesional para poner{' '}
-        <em>tu marca personal en marcha.</em>
-      </h1>
-      <p class="personal-hero__lead">
-        Una sola página, un proceso claro y todo lo necesario para presentar tu experiencia con
-        confianza.
-      </p>
-      <p class="personal-hero__intro">
-        Pensada para profesionales que están empezando una nueva actividad, desarrollando un
-        proyecto paralelo o dando forma a una marca personal y necesitan existir online sin asumir
-        todavía el coste y la complejidad de una web completa.
-      </p>
-      <div class="personal-hero__actions">
-        <a class="button button--light" href={contactHref}>
-          Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
-        </a>
-        <a class="text-link text-link--light" href="#incluye">Ver qué incluye</a>
-      </div>
-      <p class="personal-hero__fact">
-        Desde 965 € + IVA <span aria-hidden="true">·</span> Hasta 15 días laborables
-      </p>
-    </div>
-  </section>
+  <PageHero
+    titleId="personal-title"
+    eyebrow="Landing Page Personal"
+    lead="Una web ágil, un proceso claro y todo lo que necesitas para presentarte con confianza y construir tu reputación."
+    breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Landing Page Personal' }]}
+  >
+    <Fragment slot="title">Tu marca personal <em>online y en marcha.</em></Fragment>
+    <Fragment slot="actions">
+      <a class="button button--light" href={contactHref}>
+        Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+      </a>
+      <a class="text-link text-link--light" href="#incluye">Ver qué incluye</a>
+    </Fragment>
+    <Fragment slot="footnote">
+      Desde 965 € + IVA <span aria-hidden="true">·</span> Hasta 15 días laborables
+    </Fragment>
+  </PageHero>
 
   <section class="personal-stage" aria-labelledby="stage-title">
     <div class="container personal-stage__grid">
@@ -306,8 +291,8 @@ const structuredData = {
       </div>
       <div data-reveal>
         <p>
-          Para profesionales que tienen algo real que ofrecer, pero todavía no necesitan una
-          infraestructura digital compleja.
+          Para profesionales que tienen algo real que ofrecer y que necesitan consolidar su marca
+          personal y su presencia digital.
         </p>
         <p>
           Puede ser tu caso si estás poniendo en marcha una actividad profesional, desarrollando un
@@ -315,8 +300,8 @@ const structuredData = {
           necesitas una presencia online propia que explique mejor lo que haces.
         </p>
         <p class="personal-audience__closing">
-          No importa que el proyecto todavía sea pequeño. Lo importante es que, cuando alguien
-          quiera saber más, encuentre algo que represente bien tu trabajo.
+          Lo importante es que, cuando alguien quiera saber más, encuentre algo que represente bien
+          tu experiencia profesional.
         </p>
       </div>
     </div>

@@ -32,7 +32,6 @@
   --text-body-large: 1.0625rem;
   --text-icon: 1.5rem;
   --text-h1: clamp(2.75rem, 5.2vw, 5.75rem);
-  --text-service-h1: clamp(2.5rem, 4.2vw, 4.4rem);
   --text-h2: clamp(2rem, 3.7vw, 4.1rem);
   --text-h3: clamp(1.3rem, 1.75vw, 1.85rem);
   --text-display-footer: clamp(2.9rem, 6.5vw, 6.8rem);
@@ -121,7 +120,6 @@
   --measure-service-title: 13ch;
   --measure-dossier-title: 13ch;
   --measure-hero-title: 14ch;
-  --measure-service-hero-title: 22ch;
   --measure-proposition-title: 14ch;
   --measure-about-title: 15ch;
   --measure-section-intro: 31ch;

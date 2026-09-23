@@ -1,79 +1,7 @@
 @layer sections {
-  .personal-hero {
-    padding-block: var(--space-8) var(--section-space);
-    color: var(--color-surface);
-    background: var(--color-ink);
-  }
-
-  .personal-breadcrumb ol {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    color: var(--color-on-dark-muted);
-    font-size: var(--text-sm);
-  }
-
-  .personal-breadcrumb li + li::before {
-    margin-right: var(--space-2);
-    color: var(--color-on-dark-muted);
-    content: '/';
-  }
-
-  .personal-breadcrumb a:hover {
-    color: var(--color-accent);
-  }
-
-  .personal-hero .eyebrow {
-    margin-top: var(--hero-top-space);
-  }
-
-  .personal-hero h1 {
-    max-width: var(--measure-service-hero-title);
-    margin-top: var(--space-7);
-    font-size: var(--text-service-h1);
-  }
-
-  .personal-hero h1 em,
   .personal-growth h2 em,
   .personal-final h2 em {
     color: var(--color-accent);
-  }
-
-  .personal-hero__lead {
-    max-width: var(--measure-hero-copy);
-    margin-top: var(--space-9);
-    font-size: var(--text-hero-lead);
-    line-height: var(--leading-copy);
-  }
-
-  .personal-hero__intro {
-    max-width: var(--prose-width);
-    margin-top: var(--space-5);
-    color: var(--color-on-dark-lead);
-    line-height: var(--leading-relaxed);
-  }
-
-  .personal-hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-8);
-    margin-top: var(--space-9);
-  }
-
-  .personal-hero__fact {
-    margin-top: var(--hero-footnote-space);
-    padding-top: var(--space-5);
-    color: var(--color-on-dark-muted);
-    border-top: var(--stroke) solid var(--color-line-on-dark-strong);
-    font-size: var(--text-sm);
-  }
-
-  .personal-hero__fact span {
-    margin-inline: var(--space-2);
   }
 
   .personal-stage,
@@ -485,23 +413,6 @@
   }
 
   @media (max-width: 600px) {
-    .personal-hero {
-      padding-top: var(--space-5);
-    }
-
-    .personal-hero__actions {
-      align-items: stretch;
-      gap: var(--space-5);
-    }
-
-    .personal-hero__actions .button {
-      width: 100%;
-    }
-
-    .personal-hero__fact {
-      margin-top: var(--space-16);
-    }
-
     .personal-simplicity__facts,
     .personal-included__groups,
     .personal-examples__list,

@@ -25,7 +25,11 @@ npm run format
 npm run build
 ```
 
-The visual rules and how to extend them are in [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md).
+## Architecture contract
+
+[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) defines the mandatory implementation contract for every feature, component, element, section, and page. Reuse or extend shared components before adding markup or CSS. Shared components live in `src/components/`, own their semantic DOM and internal styling, and consume values from `src/styles/tokens.css`. Page stylesheets may compose components but must not redefine their internals.
+
+The homepage and service-page heroes both use `PageHero.astro`; this pattern applies to every repeated section introduced in later layouts.
 
 To build a temporary public staging copy, set `PUBLIC_STAGING=true` before `npm run build`; this adds a `noindex, nofollow` meta tag. Staging must also be password protected at the web server. The production build omits that variable.
 

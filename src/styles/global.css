@@ -386,6 +386,59 @@
     color: var(--color-surface);
   }
 
+  .page-hero {
+    padding-block: var(--hero-top-space) var(--space-10);
+    color: var(--color-surface);
+    background: var(--color-ink);
+  }
+
+  .page-hero__title {
+    max-width: var(--measure-hero-title);
+    margin-top: var(--space-7);
+  }
+
+  .page-hero__title em {
+    color: var(--color-accent);
+  }
+
+  .page-hero__copy {
+    max-width: var(--prose-width);
+    margin-top: var(--space-8);
+  }
+
+  .page-hero__lead {
+    max-width: var(--measure-hero-copy);
+    color: var(--color-on-dark-lead);
+    font-size: var(--text-hero-lead);
+    line-height: var(--leading-copy);
+  }
+
+  .page-hero__intro {
+    margin-top: var(--space-5);
+    color: var(--color-on-dark-lead);
+    line-height: var(--leading-relaxed);
+  }
+
+  .page-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-8);
+    margin-top: var(--space-9);
+  }
+
+  .page-hero__footnote {
+    margin-top: var(--hero-footnote-space);
+    padding-top: var(--space-5);
+    color: var(--color-on-dark-muted);
+    border-top: var(--stroke) solid var(--color-line-on-dark-strong);
+    font-size: var(--text-sm);
+  }
+
+  .page-hero__footnote span {
+    margin-inline: var(--space-2);
+  }
+
   .section-heading {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
@@ -497,6 +550,15 @@
       gap: var(--space-6);
     }
 
+    .page-hero__actions {
+      align-items: stretch;
+      gap: var(--space-5);
+    }
+
+    .page-hero__actions .button {
+      width: 100%;
+    }
+
     .site-footer__bottom {
       grid-template-columns: 1fr;
       gap: var(--space-4);
@@ -517,6 +579,15 @@
   @media (prefers-reduced-motion: no-preference) {
     .site-header.is-sticky {
       animation: header-enter var(--motion-header) var(--ease-out) both;
+    }
+
+    .page-hero__title {
+      animation: rise-in var(--motion-reveal) var(--ease-out) both;
+    }
+
+    .page-hero__copy,
+    .page-hero__actions {
+      animation: rise-in var(--motion-reveal) var(--ease-out) var(--motion-hero-delay) both;
     }
 
     [data-reveal].reveal-pending {

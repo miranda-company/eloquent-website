@@ -14,6 +14,8 @@ Rebuild Eloquent as a static Astro site on the current server. Archive the publi
 
 Adapt [Material Design principles](https://m3.material.io/) to Eloquent's editorial identity through consistent type, spacing, color roles, responsive behavior, interaction states, and restrained motion. Use Astro, plain CSS, and light strict TypeScript.
 
+The implementation contract in [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) applies to every feature, component, element, section, and page. Before adding markup or CSS, check the shared inventory and reuse or extend an existing component. Repeated patterns use one semantic DOM and one styling owner; pages supply content and compose components without redefining their internals. A pattern is extracted when it reaches a second page, or earlier when a later approved layout is already known to need it.
+
 Each section owns its full-width surface and vertical spacing. One `.container` supplies horizontal gutters and a maximum width of `85rem` (1360px at the default root size) for grids or `70ch` for sustained prose. Use semantic sections, articles, figures, headings, and lists in reading order; add wrappers only for a layout or semantic purpose. Keep comments focused on non-obvious intent.
 
 Build a responsive browser preview, revise it with the owner, and wait for explicit approval before starting the next layout:
@@ -39,7 +41,7 @@ Re-review approved layouts when a shared change visibly affects them. Provide an
 
 ## Verification and launch
 
-At every layout approval gate, run type, lint, format, and build checks; inspect semantic DOM, keyboard and focus behavior, mobile layout, reduced motion, no-JavaScript reading, and that layout's metadata and links. Before launch, crawl every route, verify redirects and the 410 response, validate sitemap, canonicals, robots rules, and structured data, and target mobile Lighthouse scores of at least 90 for performance and accessibility on representative pages.
+At every layout approval gate, run type, lint, design-token, format, and build checks. Inspect component reuse and page-style boundaries, semantic DOM, keyboard and focus behavior, mobile layout, reduced motion, no-JavaScript reading, and that layout's metadata and links. Recheck every existing page that uses a changed shared component. Before launch, crawl every route, verify redirects and the 410 response, validate sitemap, canonicals, robots rules, and structured data, and target mobile Lighthouse scores of at least 90 for performance and accessibility on representative pages.
 
 Remove newsletter and contact forms, reCAPTCHA, and visitor tracking. Contact links use `mailto:info@eloquent.es` until a booking URL exists; DCC remains a smaller link to its separate site. Use replacement legal text supplied and approved by the owner. After production approval, submit the sitemap and monitor indexing errors and search performance.
 

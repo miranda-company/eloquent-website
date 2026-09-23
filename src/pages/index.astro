@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 import bscImage from '../assets/barcelona-supercomputing-center.jpg';
 import museumImage from '../assets/museu-lhospitalet.jpg';
 import swimImage from '../assets/cn-sant-andreu.jpg';
@@ -28,25 +29,24 @@ const organization = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />
 
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="container">
-      <p class="eyebrow eyebrow--light">Consultoría de comunicación y experiencia digital</p>
-      <h1 id="hero-title">Ayudamos a organizaciones a <em>explicarse mejor.</em></h1>
-      <p class="hero__lead">
-        Clarificamos lo que saben, lo que hacen y por qué importa, transformándolo en comunicación
-        clara, creíble y útil.
-      </p>
-      <div class="hero__actions">
-        <a class="button button--light" href="mailto:info@eloquent.es">
-          Cuéntanos tu reto <span aria-hidden="true">↗</span>
-        </a>
-        <a class="text-link text-link--light" href="https://dcc.eloquent.es/">
-          Explora el DCC <span aria-hidden="true">↗</span>
-        </a>
-      </div>
-      <p class="hero__footnote">Ideas claras. Sistemas conectados. Confianza que se construye.</p>
-    </div>
-  </section>
+  <PageHero
+    titleId="hero-title"
+    eyebrow="Consultoría de comunicación y experiencia digital"
+    lead="Clarificamos lo que saben, lo que hacen y por qué importa, transformándolo en comunicación clara, creíble y útil."
+  >
+    <Fragment slot="title">Ayudamos a organizaciones a <em>explicarse mejor.</em></Fragment>
+    <Fragment slot="actions">
+      <a class="button button--light" href="mailto:info@eloquent.es">
+        Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+      </a>
+      <a class="text-link text-link--light" href="https://dcc.eloquent.es/">
+        Explora el DCC <span aria-hidden="true">↗</span>
+      </a>
+    </Fragment>
+    <Fragment slot="footnote">
+      Ideas claras. Sistemas conectados. Confianza que se construye.
+    </Fragment>
+  </PageHero>
 
   <section class="proposition" aria-labelledby="proposition-title">
     <div class="container proposition__grid">
