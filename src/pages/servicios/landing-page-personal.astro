@@ -8,28 +8,17 @@ const exampleSlots = ['01', '02', '03'] as const;
 const pageUrl = 'https://eloquent.es/servicios/landing-page-personal/';
 const structuredData = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Service',
-      name: 'Landing Page Personal',
-      serviceType: 'Diseño y puesta en marcha de una landing page profesional',
-      description:
-        'Una página profesional para presentar una nueva actividad, un proyecto paralelo o una marca personal.',
-      provider: {
-        '@type': 'Organization',
-        name: 'Eloquent',
-        url: 'https://eloquent.es/',
-      },
-      url: pageUrl,
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://eloquent.es/' },
-        { '@type': 'ListItem', position: 2, name: 'Landing Page Personal', item: pageUrl },
-      ],
-    },
-  ],
+  '@type': 'Service',
+  name: 'Landing Page Personal',
+  serviceType: 'Diseño y puesta en marcha de una landing page profesional',
+  description:
+    'Una página profesional para presentar una nueva actividad, un proyecto paralelo o una marca personal.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Eloquent',
+    url: 'https://eloquent.es/',
+  },
+  url: pageUrl,
 };
 ---
 
@@ -43,7 +32,6 @@ const structuredData = {
     titleId="personal-title"
     eyebrow="Landing Page Personal"
     lead="Una web ágil, un proceso claro y todo lo que necesitas para presentarte con confianza y construir tu reputación."
-    breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Landing Page Personal' }]}
   >
     <Fragment slot="title">Tu marca personal <em>online y en marcha.</em></Fragment>
     <Fragment slot="actions">

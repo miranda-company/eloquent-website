@@ -4,6 +4,7 @@ import { services } from '../data/services';
 
 const isHome = Astro.url.pathname === '/';
 const isPersonalPage = Astro.url.pathname === '/servicios/landing-page-personal/';
+const isWorkPage = Astro.url.pathname.startsWith('/trabajo/');
 ---
 
 <header class="site-header">
@@ -33,7 +34,9 @@ const isPersonalPage = Astro.url.pathname === '/servicios/landing-page-personal/
           </li>
         </ul>
       </details>
-      <a href="https://eloquent.es/trabajo/">Trabajo</a>
+      <a href="https://eloquent.es/trabajo/" aria-current={isWorkPage ? 'page' : undefined}
+        >Trabajo</a
+      >
       <a href="https://eloquent.es/dossier/">Dossier</a>
     </nav>
     <a class="header-contact" href="mailto:info@eloquent.es"

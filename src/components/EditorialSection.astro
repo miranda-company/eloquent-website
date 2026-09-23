@@ -1,0 +1,45 @@
+---
+interface Props {
+  id: string;
+  label?: string;
+  title: string;
+  surface?: 'paper' | 'surface' | 'sage' | 'accent' | 'dark';
+  contentWidth?: 'prose' | 'wide';
+}
+
+const { id, label, title, surface = 'paper', contentWidth = 'prose' } = Astro.props;
+const titleId = `${id}-title`;
+const isDark = surface === 'dark';
+const hasAside = Astro.slots.has('aside');
+---
+
+<section
+  id={id}
+  class:list={['editorial-section', `editorial-section--${surface}`]}
+  aria-labelledby={titleId}
+>
+  <div class="container editorial-section__grid">
+    <header class="editorial-section__header" data-reveal>
+      {label && <p class:list={['eyebrow', { 'eyebrow--light': isDark }]}>{label}</p>}
+      <h2 id={titleId}>{title}</h2>
+    </header>
+    <div
+      class:list={[
+        'editorial-section__content',
+        { 'editorial-section__content--wide': contentWidth === 'wide' },
+        { 'editorial-section__content--with-aside': hasAside },
+      ]}
+    >
+      <div class="editorial-section__main" data-reveal>
+        <slot />
+      </div>
+      {
+        hasAside && (
+          <aside class="editorial-section__aside" data-reveal>
+            <slot name="aside" />
+          </aside>
+        )
+      }
+    </div>
+  </div>
+</section>

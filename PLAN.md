@@ -41,10 +41,10 @@ Re-review approved layouts when a shared change visibly affects them. Provide an
 
 ## Verification and launch
 
-At every layout approval gate, run type, lint, design-token, format, and build checks. Inspect component reuse and page-style boundaries, semantic DOM, keyboard and focus behavior, mobile layout, reduced motion, no-JavaScript reading, and that layout's metadata and links. Recheck every existing page that uses a changed shared component. Before launch, crawl every route, verify redirects and the 410 response, validate sitemap, canonicals, robots rules, and structured data, and target mobile Lighthouse scores of at least 90 for performance and accessibility on representative pages.
+At every layout approval gate, run type, lint, design-token, format, and build checks. Inspect component reuse and page-style boundaries, semantic DOM, keyboard and focus behavior, mobile layout, reduced motion, no-JavaScript reading, and that layout's metadata and links. For enlarged images, verify click and keyboard activation, Escape and backdrop closing, focus restoration, responsive sizing, accurate alternative text and captions, and the full-image link fallback. Recheck every existing page that uses a changed shared component. Before launch, crawl every route, verify redirects and the 410 response, validate sitemap, canonicals, robots rules, and structured data, and target mobile Lighthouse scores of at least 90 for performance and accessibility on representative pages.
 
 Remove newsletter and contact forms, reCAPTCHA, and visitor tracking. Contact links use `mailto:info@eloquent.es` until a booking URL exists; DCC remains a smaller link to its separate site. Use replacement legal text supplied and approved by the owner. After production approval, submit the sitemap and monitor indexing errors and search performance.
 
 ## Current gate
 
-Foundation and layout 1 (shared shell and homepage) and the separately authorized Landing Page Personal service page are implemented and under review. Do not implement layouts 2–8 until each preceding layout is explicitly approved.
+Foundation and layout 1 (shared shell and homepage), the separately authorized Landing Page Personal service page, and layout 7's first Case Study at `/trabajo/cn-sant-andreu/` are implemented. The Case Study now defines the current review baseline: a distinct full-width hero, evidence-led editorial sections, responsive media galleries, and reusable image enlargement. Layouts 2–6 and 8 remain unimplemented until separately authorized.

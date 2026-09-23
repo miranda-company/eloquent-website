@@ -1,0 +1,53 @@
+---
+import type { ImageMetadata } from 'astro';
+import LightboxImage from './LightboxImage.astro';
+
+interface GalleryImage {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  images: readonly GalleryImage[];
+  label: string;
+  layout?: 'single' | 'duo' | 'triptych';
+  surface?: 'paper' | 'surface' | 'sage' | 'accent' | 'dark';
+  eager?: boolean;
+}
+
+const { images, label, layout = 'single', surface = 'paper', eager = false } = Astro.props;
+const imageWidths = [480, 900, 1360, 1920];
+const fullImageSizes = '100vw';
+const splitImageSizes = '(max-width: 600px) 100vw, 50vw';
+---
+
+<div
+  class:list={['media-gallery', `media-gallery--${layout}`, `media-gallery--${surface}`]}
+  role="group"
+  aria-label={label}
+>
+  <div class="container">
+    <ul class="media-gallery__list">
+      {
+        images.map((image, index) => {
+          const spansGrid = layout === 'triptych' && index === 0;
+          const sizes = layout === 'single' || spansGrid ? fullImageSizes : splitImageSizes;
+
+          return (
+            <li data-reveal>
+              <figure>
+                <LightboxImage
+                  src={image.src}
+                  alt={image.alt}
+                  widths={imageWidths}
+                  sizes={sizes}
+                  eager={eager}
+                />
+              </figure>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>

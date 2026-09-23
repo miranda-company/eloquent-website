@@ -1,0 +1,54 @@
+<dialog class="image-lightbox" aria-label="Visualizador de imagen" data-image-lightbox>
+  <button
+    class="image-lightbox__close"
+    type="button"
+    aria-label="Cerrar imagen"
+    data-lightbox-close
+  >
+    <span aria-hidden="true">×</span>
+  </button>
+  <figure>
+    <img alt="" data-lightbox-image />
+    <figcaption data-lightbox-caption></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  const initializeImageLightbox = () => {
+    const dialog = document.querySelector<HTMLDialogElement>('[data-image-lightbox]');
+    const image = dialog?.querySelector<HTMLImageElement>('[data-lightbox-image]');
+    const caption = dialog?.querySelector<HTMLElement>('[data-lightbox-caption]');
+    const closeButton = dialog?.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+
+    if (!dialog || !image || !caption || !closeButton || typeof dialog.showModal !== 'function') {
+      return;
+    }
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const trigger = target.closest<HTMLAnchorElement>('[data-lightbox-trigger]');
+      if (!trigger) return;
+
+      event.preventDefault();
+      const triggerImage = trigger.querySelector('img');
+      image.src = trigger.href;
+      image.alt = triggerImage?.alt ?? '';
+      caption.textContent = trigger.dataset.lightboxCaption ?? '';
+      dialog.showModal();
+    });
+
+    closeButton.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      image.removeAttribute('src');
+      image.alt = '';
+      caption.textContent = '';
+    });
+  };
+
+  initializeImageLightbox();
+</script>

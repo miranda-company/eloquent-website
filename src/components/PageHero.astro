@@ -19,6 +19,19 @@ const hasFootnote = Astro.slots.has('footnote');
 
 <section class="page-hero" aria-labelledby={titleId}>
   <div class="container page-hero__inner">
+    {
+      breadcrumbs.length > 0 && (
+        <nav class="page-hero__breadcrumb" aria-label="Ruta de navegación">
+          <ol>
+            {breadcrumbs.map((item, index) => (
+              <li aria-current={index === breadcrumbs.length - 1 ? 'page' : undefined}>
+                {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
     <div class="page-hero__body">
       <p class="eyebrow eyebrow--light">{eyebrow}</p>
       <h1 class="page-hero__title" id={titleId}><slot name="title" /></h1>

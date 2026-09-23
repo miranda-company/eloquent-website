@@ -4,7 +4,7 @@ Static Astro redesign of [eloquent.es](https://eloquent.es). Work proceeds one a
 
 ## Current status
 
-The WordPress copy, media, and URL inventory are archived in `archive/wordpress-2026-09-16/`. The shared shell and homepage are ready for review. The Landing Page Personal service page is available at `/servicios/landing-page-personal/`; it includes three unlinked example placeholders awaiting final projects and images. Dossier, work, case study, and legal layouts are intentionally waiting for their respective approval stages. Links to those unfinished pages currently lead to the published site.
+The WordPress copy, media, and URL inventory are archived in `archive/wordpress-2026-09-16/`. The shared shell and homepage are ready for review. The Landing Page Personal service page is available at `/servicios/landing-page-personal/`; it includes three unlinked example placeholders awaiting final projects and images. The first Case Study is available at `/trabajo/cn-sant-andreu/` with a full-width image hero, evidence-led editorial sections, responsive project galleries, and accessible image enlargement. Dossier, work index, and legal layouts remain at their respective approval stages. Links to those unfinished pages currently lead to the published site.
 
 ## Run locally
 
@@ -27,9 +27,11 @@ npm run build
 
 ## Architecture contract
 
+[AGENTS.md](AGENTS.md) is the repository-wide guide for coding agents. It defines the required workflow, commands, architecture boundaries, accessibility checks, content safeguards, and deployment restrictions.
+
 [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) defines the mandatory implementation contract for every feature, component, element, section, and page. Reuse or extend shared components before adding markup or CSS. Shared components live in `src/components/`, own their semantic DOM and internal styling, and consume values from `src/styles/tokens.css`. Page stylesheets may compose components but must not redefine their internals.
 
-The homepage and service-page heroes both use `PageHero.astro`; this pattern applies to every repeated section introduced in later layouts.
+The homepage and service-page heroes use `PageHero.astro`. Case Studies use `CaseStudyHero.astro`, `EditorialSection.astro`, and `MediaGallery.astro`. Case Study evidence and gallery images use `LightboxImage.astro`; `BaseLayout.astro` supplies the single shared `ImageLightbox.astro` dialog.
 
 To build a temporary public staging copy, set `PUBLIC_STAGING=true` before `npm run build`; this adds a `noindex, nofollow` meta tag. Staging must also be password protected at the web server. The production build omits that variable.
 

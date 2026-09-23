@@ -1,6 +1,6 @@
 # Eloquent design system
 
-The source of truth for visual values is [`src/styles/tokens.css`](src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](src/styles/home.css) and [`src/styles/landing-page-personal.css`](src/styles/landing-page-personal.css); both use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
+The source of truth for visual values is [`src/styles/tokens.css`](src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](src/styles/home.css), [`src/styles/landing-page-personal.css`](src/styles/landing-page-personal.css), and [`src/styles/case-study.css`](src/styles/case-study.css); all use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
 
 ## Implementation contract
 
@@ -53,27 +53,48 @@ Each section owns its full-width surface and vertical padding. Its first layout 
 - Apply Grid or Flex directly to the container or semantic collection when possible.
 - Add a wrapper only when it groups content or performs a real layout role.
 - Keep decorative geometry in CSS or an aria-hidden SVG.
-- Use the shared PageHero component for the primary hero of every standard page.
+- Use the shared PageHero component for standard pages and CaseStudyHero for case studies.
 
 ### Page contract
 
-Every indexable page uses BaseLayout and supplies a distinct title, description, canonical URL, and appropriate social metadata. It composes SiteHeader, PageHero where applicable, reusable sections, and SiteFooter through shared implementations. Pages own their copy and structured data; shared components own recurring markup, styling, and behavior.
+Every indexable page uses BaseLayout and supplies a distinct title, description, canonical URL, and appropriate social metadata. It composes SiteHeader, the hero component assigned to its page type, reusable sections, and SiteFooter through shared implementations. BaseLayout also owns the single shared image-lightbox dialog. Pages own their copy and structured data; shared components own recurring markup, styling, and behavior.
 
 The optional parts of a component do not change its core contract. For example, PageHero can render breadcrumbs or an additional introduction, while its hero body always keeps the same eyebrow, H1, copy, actions, and footnote structure.
 
+### Case Study contract
+
+- `CaseStudyHero` owns the full-width project image, readable overlay, H1, lead, and compact metadata strip.
+- `EditorialSection` uses the shared section heading and accepts prose-width content, wide content, or an optional evidence rail. Its semantic reading order remains heading, narrative, then evidence when the responsive layout becomes one column.
+- `MediaGallery` owns the semantic list and optimized responsive thumbnails. Pages provide image data and layout intent (`single`, `duo`, or `triptych`).
+- Case Study-specific narrative patterns such as facts, findings, phases, and results live in `case-study.css` and use shared tokens. They do not redefine shared component internals.
+- Verified qualitative findings may use structured cards. Numerical outcomes are shown only when the source material supports them.
+
+### Image enlargement contract
+
+- Use `LightboxImage` for Case Study evidence and gallery images. It renders an optimized responsive thumbnail inside a normal link to the original asset.
+- `ImageLightbox` is rendered once by `BaseLayout`. JavaScript enhances a lightbox link with the native `dialog` element and loads the full image only when opened.
+- Click and keyboard activation open the dialog. The close control, Escape key, and backdrop close it; native dialog behavior restores focus to the trigger.
+- The trigger supplies accurate alternative text and a useful caption. When JavaScript or `dialog.showModal()` is unavailable, the normal full-image link remains usable.
+- Hover, focus, and touch treatments communicate that the image can be enlarged. Motion and colors use shared tokens.
+
 ### Current component inventory
 
-| Component or element   | Responsibility                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| BaseLayout             | Document shell, metadata, skip link, shared header and footer, reveal behavior, and back-to-top control             |
-| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                         |
-| SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                |
-| EloquentLogo           | One accessible, reusable logo implementation                                                                        |
-| PageHero               | Breadcrumbs, eyebrow, H1, lead and optional introduction, actions, footnote, responsive layout, and entrance motion |
-| .container             | Shared horizontal gutters and maximum content width                                                                 |
-| .eyebrow               | Section label typography                                                                                            |
-| .button and .text-link | Shared action hierarchy and interaction states                                                                      |
-| .section-heading       | Reusable heading and supporting-content alignment                                                                   |
+| Component or element   | Responsibility                                                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| BaseLayout             | Document shell, metadata, skip link, shared header/footer, lightbox dialog, reveal behavior, and back-to-top control |
+| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                          |
+| SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                 |
+| EloquentLogo           | One accessible, reusable logo implementation                                                                         |
+| PageHero               | Breadcrumbs, eyebrow, H1, lead and optional introduction, actions, footnote, responsive layout, and entrance motion  |
+| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                             |
+| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                |
+| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                    |
+| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                         |
+| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                 |
+| .container             | Shared horizontal gutters and maximum content width                                                                  |
+| .eyebrow               | Section label typography                                                                                             |
+| .button and .text-link | Shared action hierarchy and interaction states                                                                       |
+| .section-heading       | Reusable heading and supporting-content alignment                                                                    |
 
 ## Where to change things
 
@@ -86,7 +107,7 @@ The optional parts of a component do not change its core contract. For example, 
 | Borders, corners, shadows or stacking                 | `tokens.css` edges and elevation |
 | Animation distance, duration or easing                | `tokens.css` motion              |
 | Scroll thresholds and reveal trigger                  | `interaction.ts`                 |
-| Shared components and responsive composition          | `components/` and `global.css`   |
+| Shared components, lightbox behavior, and composition | `components/` and `global.css`   |
 | Page-specific composition                             | The page stylesheet              |
 
 The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` is `1rem`, and `--space-8` is `2rem`. Half steps handle compact controls. Use semantic fluid tokens such as `--page-gutter`, `--section-space`, and `--collection-top-space` when the value changes with the viewport.
@@ -108,8 +129,8 @@ Text uses `--text-*` sizes, `--leading-*` line heights, and `--tracking-*` lette
 
 Do not put raw colors, lengths, font sizes, radii, shadows, or animation durations in component rules. The design check enforces this for src/styles/*.css. Breakpoint numbers remain in media rules because CSS custom properties cannot be used in media-query conditions. Numeric grid fractions, column counts, percentages, and zero are structural CSS and may stay with the layout.
 
-The current layout breakpoints are 1100px for the service grid, 850px for the header and two-column compositions, 600px for the phone layout, and 360px for narrow-phone type. Shared responsive rules stay in the responsive layer of global.css; page-specific responsive rules stay in that page stylesheet.
+The current layout breakpoints are 1100px for service and Case Study content grids, 850px for the header and two-column compositions, 600px for the phone layout, and 360px for narrow-phone type. Shared responsive rules stay in the responsive layer of global.css; page-specific responsive rules stay in that page stylesheet.
 
 ## Motion and accessibility
 
-The homepage and Landing Page Personal reveal content as it enters view. Content is present and visible in static HTML; JavaScript only adds motion. The `prefers-reduced-motion` rule removes animation and smooth scrolling. Interactive controls use the focus and touch-size tokens. Review color contrast when changing the palette; a token name does not guarantee sufficient contrast by itself.
+Pages use the shared reveal behavior for content entering the viewport. Content is present and visible in static HTML; JavaScript only adds motion. The `prefers-reduced-motion` rule removes animation and smooth scrolling. Interactive controls use the focus and touch-size tokens. The image lightbox uses a native dialog, preserves a full-image link fallback, supports Escape and backdrop closing, and restores focus after closing. Review color contrast when changing the palette; a token name does not guarantee sufficient contrast by itself.

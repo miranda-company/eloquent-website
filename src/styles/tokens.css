@@ -21,6 +21,13 @@
   --color-line-on-dark: rgba(255, 255, 255, 0.17);
   --color-line-on-dark-footer: rgba(255, 255, 255, 0.2);
   --color-line-on-dark-strong: rgba(255, 255, 255, 0.22);
+  --color-overlay: rgba(0, 0, 0, 0.88);
+  --scrim-case-study: linear-gradient(
+    180deg,
+    rgba(23, 27, 24, 0.06) 10%,
+    rgba(23, 27, 24, 0.22) 42%,
+    rgba(23, 27, 24, 0.92) 100%
+  );
 
   /* Font families, sizes, weight, and rhythm */
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -32,6 +39,7 @@
   --text-body-large: 1.0625rem;
   --text-icon: 1.5rem;
   --text-h1: clamp(2.75rem, 5.2vw, 5.75rem);
+  --text-case-study-h1: clamp(3rem, 7.5vw, 7.5rem);
   --text-h2: clamp(2rem, 3.7vw, 4.1rem);
   --text-h3: clamp(1.3rem, 1.75vw, 1.85rem);
   --text-display-footer: clamp(2.9rem, 6.5vw, 6.8rem);
@@ -112,6 +120,12 @@
   --button-height: var(--space-14);
   --button-min-width: 13rem;
   --back-to-top-size: 3.25rem;
+  --lightbox-close-size: var(--space-12);
+  --lightbox-inline-size: 92vw;
+  --lightbox-block-size: 90vh;
+  --lightbox-image-inline-size: 88vw;
+  --lightbox-image-block-size: 82vh;
+  --case-study-hero-height: clamp(36rem, 76svh, 55rem);
   --service-card-height: 22rem;
   --service-card-height-compact: 15rem;
   --service-anchor-offset: var(--space-24);
