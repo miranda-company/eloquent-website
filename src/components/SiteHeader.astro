@@ -1,6 +1,9 @@
 ---
 import EloquentLogo from './EloquentLogo.astro';
 import { services } from '../data/services';
+
+const isHome = Astro.url.pathname === '/';
+const isPersonalPage = Astro.url.pathname === '/servicios/landing-page-personal/';
 ---
 
 <header class="site-header">
@@ -9,7 +12,7 @@ import { services } from '../data/services';
       <EloquentLogo />
     </a>
     <nav class="site-nav" aria-label="Navegación principal">
-      <a href="/" aria-current="page">Inicio</a>
+      <a href="/" aria-current={isHome ? 'page' : undefined}>Inicio</a>
       <details class="site-nav__services">
         <summary>Servicios</summary>
         <ul>
@@ -20,6 +23,14 @@ import { services } from '../data/services';
               </li>
             ))
           }
+          <li>
+            <a
+              href="/servicios/landing-page-personal/"
+              aria-current={isPersonalPage ? 'page' : undefined}
+            >
+              Landing Page Personal
+            </a>
+          </li>
         </ul>
       </details>
       <a href="https://eloquent.es/trabajo/">Trabajo</a>
@@ -48,10 +59,11 @@ import { services } from '../data/services';
       }
     });
 
-    for (const link of servicesMenu.querySelectorAll('a')) {
-      link.addEventListener('click', () => {
+    servicesMenu.addEventListener('click', (event) => {
+      const target = event.target;
+      if (target instanceof Element && target.closest('a')) {
         servicesMenu.open = false;
-      });
-    }
+      }
+    });
   }
 </script>

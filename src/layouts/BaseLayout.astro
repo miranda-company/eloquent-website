@@ -46,41 +46,46 @@ const staging = import.meta.env.PUBLIC_STAGING === 'true';
       <span aria-hidden="true">↑</span>
     </a>
     <script>
-      import { scrollThresholds } from '../design/interaction';
+      import {
+        initiallyVisibleViewportFraction,
+        revealObserver,
+        scrollThresholds,
+      } from '../design/interaction';
 
-      const header = document.querySelector<HTMLElement>('.site-header');
-      const backToTop = document.querySelector<HTMLElement>('.back-to-top');
+      const initializeScrollControls = () => {
+        const header = document.querySelector<HTMLElement>('.site-header');
+        const backToTop = document.querySelector<HTMLElement>('.back-to-top');
+        if (!header || !backToTop) return;
 
-      if (header && backToTop) {
         let headerHeight = header.offsetHeight;
-
-        const syncScrollControls = () => {
+        const sync = () => {
           if (window.scrollY >= scrollThresholds.stickyHeaderPx) {
             header.classList.add('is-sticky');
           } else if (window.scrollY <= headerHeight) {
-            // Release it when the original header position comes back into view.
+            // Release the sticky header when its original position is visible again.
             header.classList.remove('is-sticky');
           }
 
           backToTop.classList.toggle('is-visible', window.scrollY >= scrollThresholds.backToTopPx);
         };
 
-        window.addEventListener('scroll', syncScrollControls, { passive: true });
+        window.addEventListener('scroll', sync, { passive: true });
         window.addEventListener('resize', () => {
           headerHeight = header.offsetHeight;
-          syncScrollControls();
+          sync();
         });
-        syncScrollControls();
-      }
-    </script>
-    <script>
-      import { initiallyVisibleViewportFraction, revealObserver } from '../design/interaction';
+        sync();
+      };
 
-      if (
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
-        'IntersectionObserver' in window
-      ) {
-        const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const initializeReveals = () => {
+        if (
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+          !('IntersectionObserver' in window)
+        ) {
+          return;
+        }
+
+        const targets = document.querySelectorAll<HTMLElement>('[data-reveal]');
         const observer = new IntersectionObserver((entries) => {
           for (const entry of entries) {
             if (!entry.isIntersecting) continue;
@@ -92,18 +97,19 @@ const staging = import.meta.env.PUBLIC_STAGING === 'true';
           }
         }, revealObserver);
 
-        for (const target of revealTargets) {
-          if (
+        for (const target of targets) {
+          const startsInViewport =
             target.getBoundingClientRect().top <
-            window.innerHeight * initiallyVisibleViewportFraction
-          ) {
-            continue;
-          }
+            window.innerHeight * initiallyVisibleViewportFraction;
+          if (startsInViewport) continue;
 
           target.classList.add('reveal-pending');
           observer.observe(target);
         }
-      }
+      };
+
+      initializeScrollControls();
+      initializeReveals();
     </script>
   </body>
 </html>

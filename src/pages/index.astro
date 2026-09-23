@@ -5,6 +5,12 @@ import bscImage from '../assets/barcelona-supercomputing-center.jpg';
 import museumImage from '../assets/museu-lhospitalet.jpg';
 import swimImage from '../assets/cn-sant-andreu.jpg';
 import { services } from '../data/services';
+import '../styles/home.css';
+
+const featuredImageWidths = [480, 920, 1360];
+const cardImageWidths = [480, 720];
+const featuredImageSizes = '100vw';
+const cardImageSizes = '(max-width: 600px) 100vw, 50vw';
 
 const organization = {
   '@context': 'https://schema.org',
@@ -102,8 +108,10 @@ const organization = {
               <Image
                 src={swimImage}
                 alt="Nadador del Club Natació Sant Andreu en la piscina"
-                width={920}
+                widths={featuredImageWidths}
+                sizes={featuredImageSizes}
                 format="webp"
+                quality={65}
                 loading="lazy"
               />
               <figcaption>
@@ -120,8 +128,10 @@ const organization = {
               <Image
                 src={museumImage}
                 alt="Detalle de una escultura en el Museu de L’Hospitalet"
-                width={920}
+                widths={cardImageWidths}
+                sizes={cardImageSizes}
                 format="webp"
+                quality={65}
                 loading="lazy"
               />
               <figcaption>
@@ -138,8 +148,10 @@ const organization = {
               <Image
                 src={bscImage}
                 alt="Instalación de computación del Barcelona Supercomputing Center"
-                width={920}
+                widths={cardImageWidths}
+                sizes={cardImageSizes}
                 format="webp"
+                quality={65}
                 loading="lazy"
               />
               <figcaption>

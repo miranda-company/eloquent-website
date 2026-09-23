@@ -1,11 +1,13 @@
 ---
 import EloquentLogo from './EloquentLogo.astro';
+
+const isHome = Astro.url.pathname === '/';
 ---
 
 <footer class="site-footer" id="contacto">
   <div class="container">
-    <p class="eyebrow eyebrow--light" data-reveal>Hablemos / 06</p>
-    <h2 data-reveal>La comunicación<br /><em>importa.</em></h2>
+    <p class="eyebrow eyebrow--light" data-reveal>Hablemos{isHome && ' / 06'}</p>
+    <h2 data-reveal>La comunicación<br />{' '}<em>importa.</em></h2>
     <a class="footer-mail" href="mailto:info@eloquent.es" data-reveal
       >info@eloquent.es <span aria-hidden="true">↗</span></a
     >

@@ -36,4 +36,4 @@ An issue can refer to an article already used in another issue. The build valida
 
 ## Before publishing
 
-Run `npm run check`, `npm run lint`, `npm run format`, and `npm run build`. Review the rendered article and every issue that references it. The original text and publication details are in `archive/wordpress-2026-09-16/`.
+Run `npm run check`, `npm run lint`, `npm run design:check`, `npm run format`, and `npm run build`. Review the rendered article and every issue that references it. The original text and publication details are in `archive/wordpress-2026-09-16/`.

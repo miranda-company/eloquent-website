@@ -1,10 +1,10 @@
-# Eloquent Website 3.0
+# Eloquent website
 
 Static Astro redesign of [eloquent.es](https://eloquent.es). Work proceeds one approved layout at a time; see [PLAN.md](PLAN.md).
 
 ## Current status
 
-The WordPress copy, media, and URL inventory are archived in `archive/wordpress-2026-09-16/`. The shared shell and homepage are ready for the first review. Dossier, work, case study, and legal layouts are intentionally waiting for their respective approval stages. Links to those unfinished pages currently lead to the published site.
+The WordPress copy, media, and URL inventory are archived in `archive/wordpress-2026-09-16/`. The shared shell and homepage are ready for review. The Landing Page Personal service page is available at `/servicios/landing-page-personal/`; it includes three unlinked example placeholders awaiting final projects and images. Dossier, work, case study, and legal layouts are intentionally waiting for their respective approval stages. Links to those unfinished pages currently lead to the published site.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ npm install
 npm run dev
 ```
 
-Open the localhost URL printed by Astro. Build a production-sized static site with `npm run build`; the output is `dist/`.
+Open the localhost URL printed by Astro. The repository tracks `package-lock.json`; pnpm can also run the same scripts. Build a production-sized static site with `npm run build`; the output is `dist/`.
 
 Before each approval gate, run:
 

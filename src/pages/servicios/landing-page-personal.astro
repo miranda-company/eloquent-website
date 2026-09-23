@@ -1,0 +1,400 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/landing-page-personal.css';
+
+const contactHref = 'mailto:info@eloquent.es?subject=Consulta%20Landing%20Page%20Personal';
+const exampleSlots = ['01', '02', '03'] as const;
+const pageUrl = 'https://eloquent.es/servicios/landing-page-personal/';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Landing Page Personal',
+      serviceType: 'Diseño y puesta en marcha de una landing page profesional',
+      description:
+        'Una página profesional para presentar una nueva actividad, un proyecto paralelo o una marca personal.',
+      provider: {
+        '@type': 'Organization',
+        name: 'Eloquent',
+        url: 'https://eloquent.es/',
+      },
+      url: pageUrl,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://eloquent.es/' },
+        { '@type': 'ListItem', position: 2, name: 'Landing Page Personal', item: pageUrl },
+      ],
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Landing Page Personal para profesionales | Eloquent"
+  description="Una presencia profesional adecuada al momento en el que estás. Una página, un proceso claro y todo lo necesario para presentar tu experiencia con confianza."
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <section class="personal-hero" aria-labelledby="personal-title">
+    <div class="container">
+      <nav class="personal-breadcrumb" aria-label="Ruta de navegación">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li aria-current="page">Landing Page Personal</li>
+        </ol>
+      </nav>
+      <p class="eyebrow eyebrow--light">Landing Page Personal</p>
+      <h1 id="personal-title">
+        Una presencia profesional para poner{' '}
+        <em>tu marca personal en marcha.</em>
+      </h1>
+      <p class="personal-hero__lead">
+        Una sola página, un proceso claro y todo lo necesario para presentar tu experiencia con
+        confianza.
+      </p>
+      <p class="personal-hero__intro">
+        Pensada para profesionales que están empezando una nueva actividad, desarrollando un
+        proyecto paralelo o dando forma a una marca personal y necesitan existir online sin asumir
+        todavía el coste y la complejidad de una web completa.
+      </p>
+      <div class="personal-hero__actions">
+        <a class="button button--light" href={contactHref}>
+          Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+        </a>
+        <a class="text-link text-link--light" href="#incluye">Ver qué incluye</a>
+      </div>
+      <p class="personal-hero__fact">
+        Desde 965 € + IVA <span aria-hidden="true">·</span> Hasta 15 días laborables
+      </p>
+    </div>
+  </section>
+
+  <section class="personal-stage" aria-labelledby="stage-title">
+    <div class="container personal-stage__grid">
+      <p class="eyebrow" data-reveal>El momento adecuado</p>
+      <h2 id="stage-title" data-reveal>
+        La web que necesitas hoy para tu <em>marca personal.</em>
+      </h2>
+      <div class="personal-stage__copy" data-reveal>
+        <p>Cuando un proyecto está empezando, es difícil saber hasta dónde llegará.</p>
+        <p>
+          Quizá todavía no tienes ingresos recurrentes. Quizá estás compaginándolo con tu actividad
+          principal. O simplemente necesitas empezar a presentarte de forma profesional antes de
+          decidir cuánto quieres invertir en él.
+        </p>
+      </div>
+      <p class="personal-stage__answer" data-reveal>
+        Necesitas una presencia profesional adecuada al momento en el que estás. Landing Page
+        Personal te permite empezar bien, sin sobredimensionar la inversión.
+      </p>
+    </div>
+  </section>
+
+  <section class="personal-presence" aria-labelledby="presence-title">
+    <div class="container personal-presence__grid">
+      <div data-reveal>
+        <p class="eyebrow">Una URL propia</p>
+        <h2 id="presence-title">Una URL que puedas compartir <em>con confianza.</em></h2>
+      </div>
+      <div class="personal-presence__copy" data-reveal>
+        <p class="personal-presence__statement">
+          Tu proyecto puede estar empezando. Tu experiencia, no.
+        </p>
+        <p>
+          Cuando alguien te pregunta qué haces, busca tu nombre o quiere conocer mejor tus
+          servicios, necesitas un lugar al que poder dirigirle.
+        </p>
+        <p>
+          Una página propia te permite reunir en un mismo espacio quién eres, qué haces, cómo puedes
+          ayudar y cómo contactar contigo. Sin depender únicamente de LinkedIn, Instagram o un PDF.
+        </p>
+        <p>
+          Una presencia digital sencilla que esté a la altura de la autoridad que ya tienes fuera de
+          internet.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-simplicity" aria-labelledby="simplicity-title">
+    <div class="container">
+      <p class="eyebrow" data-reveal>Un formato definido</p>
+      <div class="personal-simplicity__intro" data-reveal>
+        <h2 id="simplicity-title">Sin convertir la web en <em>otro trabajo.</em></h2>
+        <p>
+          Crear una web suele traer consigo decenas de decisiones: qué páginas necesitas, qué
+          estructura utilizar, qué escribir, qué imágenes elegir, qué tecnología contratar y qué
+          revisar. Por eso Landing Page Personal tiene un formato cerrado.
+        </p>
+      </div>
+      <ul class="personal-simplicity__facts" aria-label="El formato de Landing Page Personal">
+        <li data-reveal><strong>Una página</strong><span>Una presencia propia y clara.</span></li>
+        <li data-reveal>
+          <strong>Hasta siete secciones</strong><span>Para explicar lo esencial.</span>
+        </li>
+        <li data-reveal>
+          <strong>Dos rondas de revisión</strong><span>Para ajustar el resultado contigo.</span>
+        </li>
+      </ul>
+      <p class="personal-simplicity__closing" data-reveal>
+        Nosotros ponemos la estructura, te ayudamos a ordenar el contenido y nos encargamos de
+        construirla. Tú puedes seguir concentrándote en tu trabajo.
+      </p>
+    </div>
+  </section>
+
+  <section class="personal-included" id="incluye" aria-labelledby="included-title">
+    <div class="container">
+      <p class="eyebrow" data-reveal>El alcance</p>
+      <div class="section-heading" data-reveal>
+        <h2 id="included-title">Todo lo necesario <em>para empezar.</em></h2>
+        <p>Una página profesional, el acompañamiento necesario y la puesta en marcha.</p>
+      </div>
+      <div class="personal-included__groups">
+        <section aria-labelledby="included-page-title" data-reveal>
+          <h3 id="included-page-title">La página</h3>
+          <ul>
+            <li>Una landing page profesional en un idioma.</li>
+            <li>
+              Hasta 7 secciones para estructurar tu propuesta, experiencia, servicios y contacto.
+            </li>
+            <li>Diseño adaptado a ordenador, tablet y móvil.</li>
+            <li>Sistema visual básico.</li>
+            <li>Logotipo tipográfico sencillo, si lo necesitas.</li>
+            <li>Formulario básico de contacto y enlaces a redes sociales o WhatsApp.</li>
+          </ul>
+        </section>
+        <section aria-labelledby="included-support-title" data-reveal>
+          <h3 id="included-support-title">El acompañamiento</h3>
+          <ul>
+            <li>Ayuda para ordenar, adaptar y revisar los textos que nos proporciones.</li>
+            <li>Dos rondas de revisión.</li>
+            <li>Integración de páginas legales básicas en formato borrador.</li>
+            <li>Optimización técnica básica para SEO, AEO y GEO.</li>
+          </ul>
+        </section>
+        <section aria-labelledby="included-launch-title" data-reveal>
+          <h3 id="included-launch-title">La puesta en marcha</h3>
+          <ul>
+            <li>Configuración técnica de dominio, hosting y certificado SSL.</li>
+            <li>Licencias necesarias para el funcionamiento de la página.</li>
+            <li>Publicación y puesta en marcha.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-growth" aria-labelledby="growth-title">
+    <div class="container personal-growth__grid">
+      <div data-reveal>
+        <p class="eyebrow eyebrow--light">Una base para seguir</p>
+        <h2 id="growth-title">Diseñada para empezar. <em>Preparada para crecer.</em></h2>
+      </div>
+      <div class="personal-growth__copy" data-reveal>
+        <p>
+          Landing Page Personal no está planteada como una solución desechable. Es un punto de
+          partida.
+        </p>
+        <p>
+          Si tu actividad crece y más adelante necesitas nuevas páginas, servicios, contenidos,
+          idiomas o funcionalidades, la presencia digital puede evolucionar contigo.
+        </p>
+        <p class="personal-growth__statement">
+          Empiezas con una solución proporcionada al momento actual, sin cerrar las puertas de
+          mañana.
+        </p>
+      </div>
+      <div class="personal-growth__search" data-reveal>
+        <h3>Preparada para ser entendida y encontrada.</h3>
+        <p>
+          La página se construye siguiendo buenas prácticas técnicas de SEO, AEO y GEO, con una
+          estructura pensada para facilitar que tanto los buscadores tradicionales como los nuevos
+          sistemas de búsqueda y asistentes basados en inteligencia artificial puedan comprender e
+          interpretar mejor tu contenido.
+        </p>
+        <p>
+          No podemos garantizar posiciones o apariciones concretas. Sí podemos asegurarnos de que
+          partes de una base correctamente preparada.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-examples" aria-labelledby="examples-title">
+    <div class="container">
+      <p class="eyebrow" data-reveal>En la práctica</p>
+      <div class="section-heading" data-reveal>
+        <h2 id="examples-title">Ejemplos de <em>Landing Page Personal.</em></h2>
+        <p>
+          Una selección de tres proyectos para ver cómo este formato puede adaptarse a distintas
+          actividades profesionales.
+        </p>
+      </div>
+      <ul class="personal-examples__list">
+        {
+          exampleSlots.map((number) => (
+            <li data-reveal>
+              <figure>
+                <div class="personal-examples__placeholder" aria-hidden="true">
+                  <span>Imagen pendiente</span>
+                </div>
+                <figcaption>
+                  <h3>Ejemplo {number}</h3>
+                  <p>Proyecto por seleccionar</p>
+                </figcaption>
+              </figure>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="personal-process" aria-labelledby="process-title">
+    <div class="container">
+      <p class="eyebrow" data-reveal>De principio a fin</p>
+      <h2 id="process-title" data-reveal>Un proceso <em>sencillo.</em></h2>
+      <ol class="personal-process__steps">
+        <li data-reveal>
+          <h3>Nos cuentas tu proyecto</h3>
+          <p>
+            Empezamos entendiendo qué estás construyendo, a quién quieres dirigirte y qué necesita
+            comprender alguien cuando llegue a tu página.
+          </p>
+        </li>
+        <li data-reveal>
+          <h3>Ordenamos la información</h3>
+          <p>Definimos la estructura y te ayudamos a reunir y organizar el contenido necesario.</p>
+        </li>
+        <li data-reveal>
+          <h3>Diseñamos y construimos</h3>
+          <p>
+            Convertimos esa información en una página clara, profesional y adaptada a cualquier
+            dispositivo.
+          </p>
+        </li>
+        <li data-reveal>
+          <h3>Revisamos contigo</h3>
+          <p>
+            Dispones de dos rondas de revisión para ajustar el resultado dentro del alcance
+            acordado.
+          </p>
+        </li>
+        <li data-reveal>
+          <h3>La ponemos en marcha</h3>
+          <p>
+            Configuramos la infraestructura, revisamos los aspectos técnicos y publicamos la página
+            para que puedas empezar a compartirla.
+          </p>
+        </li>
+      </ol>
+      <p class="personal-process__time" data-reveal>
+        Plazo estimado: hasta 15 días laborables desde la recepción de todo el material necesario.
+      </p>
+    </div>
+  </section>
+
+  <section class="personal-audience" aria-labelledby="audience-title">
+    <div class="container personal-audience__grid">
+      <div data-reveal>
+        <p class="eyebrow">Para quién</p>
+        <h2 id="audience-title">¿Para quién está <em>pensada?</em></h2>
+      </div>
+      <div data-reveal>
+        <p>
+          Para profesionales que tienen algo real que ofrecer, pero todavía no necesitan una
+          infraestructura digital compleja.
+        </p>
+        <p>
+          Puede ser tu caso si estás poniendo en marcha una actividad profesional, desarrollando un
+          proyecto paralelo, empezando a ofrecer tus servicios de forma independiente o simplemente
+          necesitas una presencia online propia que explique mejor lo que haces.
+        </p>
+        <p class="personal-audience__closing">
+          No importa que el proyecto todavía sea pequeño. Lo importante es que, cuando alguien
+          quiera saber más, encuentre algo que represente bien tu trabajo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <p class="eyebrow" data-reveal>Inversión</p>
+      <h2 id="pricing-title" data-reveal>
+        Una inversión proporcionada al momento en el que <em>estás.</em>
+      </h2>
+      <div class="personal-pricing__options">
+        <div data-reveal>
+          <h3>Landing Page Personal</h3>
+          <p class="personal-pricing__amount">965 € <span>+ IVA</span></p>
+          <p>Pago único por diseño, desarrollo y puesta en marcha.</p>
+          <p>50 % al comenzar. 50 % antes de la publicación.</p>
+        </div>
+        <div data-reveal>
+          <h3>Infraestructura y mantenimiento técnico</h3>
+          <p class="personal-pricing__amount">380 € <span>+ IVA / año</span></p>
+          <p>
+            Incluye alojamiento, dominio, licencias, certificado SSL, copias de seguridad y
+            mantenimiento técnico de la infraestructura.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-scope" aria-labelledby="scope-title">
+    <div class="container personal-scope__grid">
+      <div data-reveal>
+        <p class="eyebrow">Un alcance claro</p>
+        <h2 id="scope-title">Lo que no necesitas pagar <em>todavía.</em></h2>
+      </div>
+      <div data-reveal>
+        <p>
+          Landing Page Personal está deliberadamente limitada para que el proyecto siga siendo
+          sencillo.
+        </p>
+        <p>
+          No incluye una web corporativa completa, ecommerce, sistemas avanzados de reservas, áreas
+          privadas, blog, varios idiomas, páginas adicionales, identidad visual completa o
+          copywriting profesional desde cero.
+        </p>
+        <p>
+          Si llega un momento en el que necesitas alguno de estos elementos, podemos ampliar la
+          solución.
+        </p>
+        <p class="personal-scope__closing">
+          La idea no es venderte hoy todo lo que podrías necesitar algún día. Es construir bien lo
+          que necesitas ahora.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="personal-final" aria-labelledby="final-title">
+    <div class="container">
+      <p class="eyebrow eyebrow--light" data-reveal>El siguiente paso</p>
+      <h2 id="final-title" data-reveal>
+        Empieza sin hacer de la web <em>una gran decisión.</em>
+      </h2>
+      <p class="personal-final__lead" data-reveal>
+        Tu presencia digital no debería ser una barrera para empezar. Tampoco necesita ser perfecta,
+        enorme o definitiva desde el primer día. Necesita explicar bien quién eres, qué haces y por
+        qué alguien debería hablar contigo.
+      </p>
+      <p class="personal-final__statement" data-reveal>
+        Una página para empezar bien. Una base para seguir creciendo.
+      </p>
+      <a class="button button--light" href={contactHref} data-reveal>
+        Cuéntanos tu proyecto <span aria-hidden="true">↗</span>
+      </a>
+      <p class="personal-final__microcopy" data-reveal>
+        Te responderemos para entender qué necesitas y comprobar si este formato encaja contigo.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

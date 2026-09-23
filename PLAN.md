@@ -14,7 +14,7 @@ Rebuild Eloquent as a static Astro site on the current server. Archive the publi
 
 Adapt [Material Design principles](https://m3.material.io/) to Eloquent's editorial identity through consistent type, spacing, color roles, responsive behavior, interaction states, and restrained motion. Use Astro, plain CSS, and light strict TypeScript.
 
-Each section owns its full-width surface and vertical spacing. One `.container` supplies horizontal gutters and a width of about `80rem` for grids or `70ch` for sustained prose. Use semantic sections, articles, figures, headings, and lists in reading order; add wrappers only for a layout or semantic purpose. Keep comments focused on non-obvious intent.
+Each section owns its full-width surface and vertical spacing. One `.container` supplies horizontal gutters and a maximum width of `85rem` (1360px at the default root size) for grids or `70ch` for sustained prose. Use semantic sections, articles, figures, headings, and lists in reading order; add wrappers only for a layout or semantic purpose. Keep comments focused on non-obvious intent.
 
 Build a responsive browser preview, revise it with the owner, and wait for explicit approval before starting the next layout:
 
@@ -45,4 +45,4 @@ Remove newsletter and contact forms, reCAPTCHA, and visitor tracking. Contact li
 
 ## Current gate
 
-Foundation and layout 1 (shared shell and homepage) are authorized. Do not implement layouts 2–8 until each preceding layout is explicitly approved.
+Foundation and layout 1 (shared shell and homepage) and the separately authorized Landing Page Personal service page are implemented and under review. Do not implement layouts 2–8 until each preceding layout is explicitly approved.
