@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<li class="project-card" data-reveal>
+  <article>
+    <a href={project.href} aria-label={`Ver el caso de ${project.title}`}>
+      <figure>
+        <div class="project-card__media">
+          <Image
+            src={project.image}
+            alt={project.imageAlt}
+            widths={[480, 720, 960]}
+            sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+            format="webp"
+            quality={70}
+            loading="lazy"
+          />
+        </div>
+        <figcaption>
+          <p class="project-card__sector">{project.sector}</p>
+          <h3>{project.title}</h3>
+          <p class="project-card__summary">{project.summary}</p>
+          <span class="project-card__link">
+            Ver proyecto <span aria-hidden="true">↗</span>
+          </span>
+        </figcaption>
+      </figure>
+    </a>
+  </article>
+</li>

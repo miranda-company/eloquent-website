@@ -48,7 +48,7 @@ A component may expose a variant only when the variation changes meaning, hierar
 
 Each section owns its full-width surface and vertical padding. Its first layout child is one .container, which owns horizontal gutters and maximum width. Within that container:
 
-- Use section for a headed topic, article for standalone content, figure for meaningful media, and ul or ol for collections.
+- Use `section` for a named topic, `article` for standalone content, `figure` for meaningful media, and `ul` or `ol` for collections. Prefer a visible section heading; when an approved layout intentionally omits it, supply an accurate accessible label.
 - Keep headings and reading order logical without relying on visual placement.
 - Apply Grid or Flex directly to the container or semantic collection when possible.
 - Add a wrapper only when it groups content or performs a real layout role.
@@ -59,7 +59,15 @@ Each section owns its full-width surface and vertical padding. Its first layout 
 
 Every indexable page uses BaseLayout and supplies a distinct title, description, canonical URL, and appropriate social metadata. It composes SiteHeader, the hero component assigned to its page type, reusable sections, and SiteFooter through shared implementations. BaseLayout also owns the single shared image-lightbox dialog. Pages own their copy and structured data; shared components own recurring markup, styling, and behavior.
 
-The optional parts of a component do not change its core contract. For example, PageHero can render breadcrumbs or an additional introduction, while its hero body always keeps the same eyebrow, H1, copy, actions, and footnote structure.
+The optional parts of a component do not change its core contract. `PageHero` always renders its eyebrow and H1. It renders the copy container, breadcrumbs, actions, and footnote only when the page supplies that content, avoiding empty DOM elements.
+
+### Work index contract
+
+- `src/data/projects.ts` is the shared source for project titles, summaries, destinations, classifications, images, and alternative text used by the homepage and Work index.
+- `ProjectCard` owns each preview's semantic DOM, optimized responsive image, descriptive link, and internal styling in `global.css`.
+- `work-index.css` owns only the Work page surface and responsive three-, two-, and one-column grid composition.
+- The collection currently has no visible section heading or count. Its section uses an accessible label, and the project cards supply the collection's visible hierarchy.
+- Until their local Case Study pages are implemented, the Museu de L’Hospitalet and Barcelona Supercomputing Center cards link to their existing published URLs.
 
 ### Case Study contract
 
@@ -85,10 +93,11 @@ The optional parts of a component do not change its core contract. For example, 
 | SiteHeader             | Primary navigation, services menu, logo, and contact action                                                          |
 | SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                 |
 | EloquentLogo           | One accessible, reusable logo implementation                                                                         |
-| PageHero               | Breadcrumbs, eyebrow, H1, lead and optional introduction, actions, footnote, responsive layout, and entrance motion  |
+| PageHero               | Breadcrumbs, eyebrow, H1, optional lead and introduction, actions, footnote, responsive layout, and entrance motion  |
 | CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                             |
 | EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                |
 | MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                    |
+| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                 |
 | LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                         |
 | ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                 |
 | .container             | Shared horizontal gutters and maximum content width                                                                  |
@@ -110,7 +119,7 @@ The optional parts of a component do not change its core contract. For example, 
 | Shared components, lightbox behavior, and composition | `components/` and `global.css`   |
 | Page-specific composition                             | The page stylesheet              |
 
-The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` is `1rem`, and `--space-8` is `2rem`. Half steps handle compact controls. Use semantic fluid tokens such as `--page-gutter`, `--section-space`, and `--collection-top-space` when the value changes with the viewport.
+The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` is `1rem`, and `--space-8` is `2rem`. Half steps handle compact controls. Use semantic fluid tokens when the value changes with the viewport: `--section-space` supplies standard section rhythm, `--section-space-compact` supplies tighter collection rhythm, `--collection-top-space` separates collection content, and `--page-gutter` controls responsive page edges.
 
 Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
 

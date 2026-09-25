@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+import '../../styles/work-index.css';
+
+const title = 'Trabajo seleccionado | Eloquent';
+const description =
+  'Una selección de trabajos de estrategia, comunicación y experiencia digital desarrollados por Eloquent.';
+
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Trabajo seleccionado de Eloquent',
+  numberOfItems: projects.length,
+  itemListElement: projects.map((project, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: project.title,
+    url: new URL(project.href, 'https://eloquent.es').toString(),
+  })),
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(itemList)} />
+
+  <PageHero titleId="work-page-title" eyebrow="Trabajo">
+    <Fragment slot="title">Trabajo <em>seleccionado.</em></Fragment>
+  </PageHero>
+
+  <section class="work-index" aria-label="Proyectos seleccionados">
+    <div class="container">
+      <ul class="project-grid">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

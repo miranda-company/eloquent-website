@@ -2,9 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import bscImage from '../assets/barcelona-supercomputing-center.jpg';
-import museumImage from '../assets/museu-lhospitalet.jpg';
-import swimImage from '../assets/cn-sant-andreu.jpg';
+import { projects } from '../data/projects';
 import { services } from '../data/services';
 import '../styles/home.css';
 
@@ -12,6 +10,7 @@ const featuredImageWidths = [480, 920, 1360];
 const cardImageWidths = [480, 720];
 const featuredImageSizes = '100vw';
 const cardImageSizes = '(max-width: 600px) 100vw, 50vw';
+const [swimProject, museumProject, bscProject] = projects;
 
 const organization = {
   '@context': 'https://schema.org',
@@ -74,8 +73,8 @@ const organization = {
           Sistemas de comunicación para generar <em>claridad y confianza.</em>
         </h2>
         <p>
-          Ayudamos a organizaciones complejas a convertir conocimiento en confianza mediante
-          diagnósticos, metodologías y sistemas de comunicación.
+          Ayudamos a organizaciones a convertir conocimiento en confianza mediante diagnósticos,
+          metodologías y sistemas de comunicación.
         </p>
       </div>
       <ul class="service-list">
@@ -97,17 +96,17 @@ const organization = {
       <p class="eyebrow" data-reveal>En la práctica / 03</p>
       <div class="section-heading section-heading--work" data-reveal>
         <h2 id="work-title">Trabajo <em>seleccionado.</em></h2>
-        <a class="text-link" href="https://eloquent.es/trabajo/">
+        <a class="text-link" href="/trabajo/">
           Ver todo el trabajo <span aria-hidden="true">↗</span>
         </a>
       </div>
       <ul class="work-list">
         <li data-reveal>
-          <a href="/trabajo/cn-sant-andreu/">
+          <a href={swimProject.href}>
             <figure>
               <Image
-                src={swimImage}
-                alt="Nadador del Club Natació Sant Andreu en la piscina"
+                src={swimProject.image}
+                alt={swimProject.imageAlt}
                 widths={featuredImageWidths}
                 sizes={featuredImageSizes}
                 format="webp"
@@ -115,19 +114,19 @@ const organization = {
                 loading="lazy"
               />
               <figcaption>
-                <span>Deporte · Estrategia de comunicación</span>
-                <h3>Club Natació Sant Andreu <span aria-hidden="true">↗</span></h3>
-                <p>Auditoría y estrategia de comunicación para un club de natación en Barcelona.</p>
+                <span>{swimProject.sector}</span>
+                <h3>{swimProject.title} <span aria-hidden="true">↗</span></h3>
+                <p>{swimProject.homeSummary}</p>
               </figcaption>
             </figure>
           </a>
         </li>
         <li data-reveal>
-          <a href="https://eloquent.es/trabajo/museu-de-lhospitalet/">
+          <a href={museumProject.href}>
             <figure>
               <Image
-                src={museumImage}
-                alt="Detalle de una escultura en el Museu de L’Hospitalet"
+                src={museumProject.image}
+                alt={museumProject.imageAlt}
                 widths={cardImageWidths}
                 sizes={cardImageSizes}
                 format="webp"
@@ -135,19 +134,19 @@ const organization = {
                 loading="lazy"
               />
               <figcaption>
-                <span>Cultura · Estrategia y equipo</span>
-                <h3>Museu de L’Hospitalet <span aria-hidden="true">↗</span></h3>
-                <p>Una estrategia de comunicación compartida para alinear al equipo.</p>
+                <span>{museumProject.sector}</span>
+                <h3>{museumProject.title} <span aria-hidden="true">↗</span></h3>
+                <p>{museumProject.homeSummary}</p>
               </figcaption>
             </figure>
           </a>
         </li>
         <li data-reveal>
-          <a href="https://eloquent.es/trabajo/barcelona-supercomputing-center/">
+          <a href={bscProject.href}>
             <figure>
               <Image
-                src={bscImage}
-                alt="Instalación de computación del Barcelona Supercomputing Center"
+                src={bscProject.image}
+                alt={bscProject.imageAlt}
                 widths={cardImageWidths}
                 sizes={cardImageSizes}
                 format="webp"
@@ -155,9 +154,9 @@ const organization = {
                 loading="lazy"
               />
               <figcaption>
-                <span>Ciencia · Accesibilidad de la información</span>
-                <h3>Barcelona Supercomputing Center <span aria-hidden="true">↗</span></h3>
-                <p>Información meteorológica más accesible para públicos no especializados.</p>
+                <span>{bscProject.sector}</span>
+                <h3>{bscProject.title} <span aria-hidden="true">↗</span></h3>
+                <p>{bscProject.homeSummary}</p>
               </figcaption>
             </figure>
           </a>
