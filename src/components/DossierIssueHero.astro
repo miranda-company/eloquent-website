@@ -1,0 +1,33 @@
+---
+interface Props {
+  titleId: string;
+  title: string;
+  number: number;
+  articleCount: number;
+}
+
+const { titleId, title, number, articleCount } = Astro.props;
+const issueNumber = String(number).padStart(2, '0');
+const articleLabel = articleCount === 1 ? 'artículo' : 'artículos';
+---
+
+<header class="dossier-issue-hero">
+  <div class="container">
+    <a class="text-link text-link--back" href="/dossier/">
+      <span aria-hidden="true">←</span> Volver al Dossier
+    </a>
+
+    <div class="dossier-issue-hero__grid">
+      <div>
+        <p class="eyebrow">Exploración {issueNumber}</p>
+        <h1 id={titleId}>{title}</h1>
+      </div>
+      <div class="dossier-issue-hero__intro">
+        <div class="dossier-issue-hero__prose">
+          <slot />
+        </div>
+        <p class="dossier-issue-hero__count">{articleCount} {articleLabel}</p>
+      </div>
+    </div>
+  </div>
+</header>

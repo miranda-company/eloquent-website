@@ -1,0 +1,115 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import DossierArticleHero from '../../../components/DossierArticleHero.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/dossier-article.css';
+
+interface IssueLink {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+  issues: IssueLink[];
+}
+
+export async function getStaticPaths() {
+  const [articles, issues] = await Promise.all([
+    getCollection('articles'),
+    getCollection('issues'),
+  ]);
+
+  return articles.map((article) => ({
+    params: { slug: article.id.replace(/\.(md|mdx)$/, '') },
+    props: {
+      article,
+      issues: issues
+        .filter((issue) => issue.data.articles.some((reference) => reference.id === article.id))
+        .sort((a, b) => b.data.number - a.data.number)
+        .map((issue) => ({
+          title: issue.data.title,
+          href: `/dossier/${issue.id.replace(/\.(md|mdx)$/, '')}/`,
+        })),
+    },
+  }));
+}
+
+const { article, issues } = Astro.props;
+const { Content } = await render(article);
+const slug = article.id.replace(/\.(md|mdx)$/, '');
+const canonicalUrl = `https://eloquent.es/dossier/contenidos/${slug}/`;
+const publicationDate = article.data.date.toISOString().slice(0, 10);
+const modificationDate = article.data.updated.toISOString().slice(0, 10);
+const socialImage = article.data.image?.src;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: article.data.title,
+  description: article.data.summary,
+  url: canonicalUrl,
+  mainEntityOfPage: canonicalUrl,
+  datePublished: publicationDate,
+  dateModified: modificationDate,
+  author: {
+    '@type': 'Person',
+    name: article.data.author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Eloquent',
+    url: 'https://eloquent.es/',
+  },
+  ...(socialImage && { image: new URL(socialImage, 'https://eloquent.es').toString() }),
+  ...(issues.length > 0 && {
+    isPartOf: issues.map((issue) => ({
+      '@type': 'CreativeWorkSeries',
+      name: issue.title,
+      url: new URL(issue.href, 'https://eloquent.es').toString(),
+    })),
+  }),
+};
+---
+
+<BaseLayout
+  title={`${article.data.title} | Eloquent`}
+  description={article.data.summary}
+  image={socialImage}
+  type="article"
+  publishedTime={publicationDate}
+  modifiedTime={modificationDate}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <article class="dossier-article">
+    <DossierArticleHero
+      titleId="article-title"
+      title={article.data.title}
+      summary={article.data.summary}
+      author={article.data.author}
+      date={article.data.date}
+      updated={article.data.updated}
+      image={article.data.image}
+      issues={issues}
+    />
+
+    <div class="dossier-article__content">
+      <div class="container dossier-article__grid">
+        <nav class="dossier-article__navigation" aria-label="Navegación del artículo">
+          <a class="text-link text-link--back" href="/dossier/">
+            <span aria-hidden="true">←</span> Volver al Dossier
+          </a>
+          <a class="text-link" href="/dossier/contenidos/">
+            Todos los artículos <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+
+        <div class="dossier-article__prose" data-reveal>
+          <Content />
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

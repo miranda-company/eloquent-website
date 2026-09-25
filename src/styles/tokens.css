@@ -148,6 +148,8 @@
   --image-ratio-landscape: 1.75;
   --image-ratio-work-feature: 2.25;
   --image-ratio-work-mobile: 1.45;
+  --image-ratio-article-feature: 5;
+  --image-ratio-article-feature-mobile: 1.8;
 
   /* Edges, elevation, and stacking */
   --stroke: 1px;

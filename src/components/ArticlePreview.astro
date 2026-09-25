@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+  href: string;
+  index: number;
+  variant?: 'compact' | 'archive' | 'media';
+}
+
+const { article, href, index, variant = 'compact' } = Astro.props;
+const media = variant === 'media' ? article.data.image : undefined;
+const articleNumber = String(index + 1).padStart(2, '0');
+const publicationDate = article.data.date.toISOString().slice(0, 10);
+const publicationLabel = new Intl.DateTimeFormat('es-ES', {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+}).format(article.data.date);
+---
+
+<li class:list={['article-preview', `article-preview--${variant}`]} data-reveal>
+  <article>
+    <a href={href}>
+      {
+        media && (
+          <figure class="article-preview__media">
+            <Image
+              src={media}
+              alt=""
+              widths={[480, 720, 960]}
+              sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
+              format="webp"
+              quality={76}
+              loading="lazy"
+            />
+          </figure>
+        )
+      }
+      <span class="article-preview__number" aria-hidden="true">{articleNumber}</span>
+      <div class="article-preview__body">
+        <p class="article-preview__meta">
+          Artículo · <time datetime={publicationDate}>{publicationLabel}</time>
+        </p>
+        <h3>{article.data.title}</h3>
+        <p class="article-preview__summary">{article.data.summary}</p>
+      </div>
+      <span class="article-preview__arrow" aria-hidden="true">↗</span>
+    </a>
+  </article>
+</li>

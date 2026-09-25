@@ -4,13 +4,20 @@ import { z } from 'astro/zod';
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/articles' }),
-  schema: z.object({
-    title: z.string().min(1),
-    summary: z.string().min(1),
-    date: z.coerce.date(),
-    author: z.string().min(1),
-    image: z.string().optional(),
-  }),
+  schema: ({ image }) =>
+    z
+      .object({
+        title: z.string().min(1),
+        summary: z.string().min(1),
+        date: z.coerce.date(),
+        updated: z.coerce.date(),
+        author: z.string().min(1),
+        image: image().optional(),
+      })
+      .refine((article) => article.updated >= article.date, {
+        message: 'The updated date cannot be earlier than the publication date.',
+        path: ['updated'],
+      }),
 });
 
 const issues = defineCollection({

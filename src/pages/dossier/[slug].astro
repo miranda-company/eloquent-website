@@ -1,0 +1,94 @@
+---
+import { getCollection, getEntries, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import ArticlePreview from '../../components/ArticlePreview.astro';
+import CollectionHeading from '../../components/CollectionHeading.astro';
+import DossierIssueHero from '../../components/DossierIssueHero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/dossier-issue.css';
+
+interface Props {
+  issue: CollectionEntry<'issues'>;
+  articles: CollectionEntry<'articles'>[];
+}
+
+export async function getStaticPaths() {
+  const issues = await getCollection('issues');
+
+  return Promise.all(
+    issues.map(async (issue) => ({
+      params: { slug: issue.id.replace(/\.(md|mdx)$/, '') },
+      props: {
+        issue,
+        articles: await getEntries(issue.data.articles),
+      },
+    })),
+  );
+}
+
+const { issue, articles } = Astro.props;
+const { Content } = await render(issue);
+const slug = issue.id.replace(/\.(md|mdx)$/, '');
+const canonicalUrl = `https://eloquent.es/dossier/${slug}/`;
+const articleUrl = (id: string) => `/dossier/contenidos/${id.replace(/\.(md|mdx)$/, '')}/`;
+
+const collectionPage = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: issue.data.title,
+  description: issue.data.summary,
+  url: canonicalUrl,
+  isPartOf: {
+    '@type': 'CollectionPage',
+    name: 'Dossier de comunicación',
+    url: 'https://eloquent.es/dossier/',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: articles.length,
+    itemListElement: articles.map((article, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: article.data.title,
+      url: new URL(articleUrl(article.id), 'https://eloquent.es').toString(),
+    })),
+  },
+};
+---
+
+<BaseLayout title={`${issue.data.title} | Eloquent`} description={issue.data.summary}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionPage)} />
+
+  <DossierIssueHero
+    titleId="issue-title"
+    title={issue.data.title}
+    number={issue.data.number}
+    articleCount={articles.length}
+  >
+    <Content />
+  </DossierIssueHero>
+
+  <section class="dossier-issue-page__articles" aria-labelledby="issue-contents-title">
+    <div class="container">
+      <CollectionHeading
+        titleId="issue-contents-title"
+        eyebrow="Contenidos"
+        title="Dentro de esta exploración."
+        description={`Una lectura ordenada sobre ${issue.data.title.toLocaleLowerCase('es-ES')}.`}
+      />
+
+      <ol class="dossier-issue-page__grid">
+        {
+          articles.map((article, index) => (
+            <ArticlePreview
+              article={article}
+              href={articleUrl(article.id)}
+              index={index}
+              variant="media"
+            />
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

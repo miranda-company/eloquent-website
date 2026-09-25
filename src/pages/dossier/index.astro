@@ -1,0 +1,99 @@
+---
+import { getCollection, getEntries } from 'astro:content';
+import ArticlePreview from '../../components/ArticlePreview.astro';
+import PageHero from '../../components/PageHero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/dossier-index.css';
+
+const issues = (await getCollection('issues')).sort((a, b) => b.data.number - a.data.number);
+
+if (issues.length === 0) {
+  throw new Error('Dossier requires at least one issue.');
+}
+
+const issueGroups = await Promise.all(
+  issues.map(async (issue) => {
+    const slug = issue.id.replace(/\.(md|mdx)$/, '');
+
+    return {
+      issue,
+      slug,
+      articles: await getEntries(issue.data.articles),
+      url: `/dossier/${slug}/`,
+      number: String(issue.data.number).padStart(2, '0'),
+    };
+  }),
+);
+
+const articleArchiveUrl = '/dossier/contenidos/';
+const articleUrl = (id: string) => `/dossier/contenidos/${id.replace(/\.(md|mdx)$/, '')}/`;
+
+const title = 'Dossier de comunicación | Eloquent';
+const description =
+  'Exploraciones sobre cómo las organizaciones pueden generar claridad, credibilidad y confianza en un mundo complejo.';
+
+const collectionPage = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Dossier de comunicación',
+  description,
+  url: 'https://eloquent.es/dossier/',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: issues.length,
+    itemListElement: issues.map((issue, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: issue.data.title,
+      url: `https://eloquent.es/dossier/${issue.id.replace(/\.(md|mdx)$/, '')}/`,
+    })),
+  },
+};
+---
+
+<BaseLayout title={title} description={description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionPage)} />
+
+  <PageHero
+    titleId="dossier-title"
+    eyebrow="Dossier"
+    lead="Una serie de exploraciones sobre cómo las organizaciones pueden generar claridad, credibilidad y confianza en un mundo complejo."
+  >
+    <Fragment slot="title">Dossier de <em>comunicación.</em></Fragment>
+  </PageHero>
+
+  {
+    issueGroups.map(({ issue, slug, articles, url, number }) => (
+      <section class="dossier-issue" aria-labelledby={`${slug}-title`}>
+        <div class="container dossier-issue__grid">
+          <header class="dossier-issue__intro" data-reveal>
+            <p class="eyebrow">
+              Exploración {number} · {articles.length} artículos
+            </p>
+            <h2 id={`${slug}-title`}>{issue.data.title}</h2>
+            <p>{issue.data.summary}</p>
+            <div class="dossier-issue__actions">
+              <a class="button button--dark" href={url}>
+                Abrir exploración <span aria-hidden="true">↗</span>
+              </a>
+              <a class="text-link" href={articleArchiveUrl}>
+                Todos los artículos <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </header>
+
+          <div class="dossier-issue__contents">
+            <p class="eyebrow" data-reveal>
+              Dentro de esta exploración
+            </p>
+            <ol class="article-list">
+              {articles.map((article, index) => (
+                <ArticlePreview article={article} href={articleUrl(article.id)} index={index} />
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+    ))
+  }
+</BaseLayout>

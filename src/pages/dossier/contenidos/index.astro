@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import ArticlePreview from '../../../components/ArticlePreview.astro';
+import CollectionHeading from '../../../components/CollectionHeading.astro';
+import PageHero from '../../../components/PageHero.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import '../../../styles/dossier-archive.css';
+
+const articles = (await getCollection('articles')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const articleUrl = (id: string) => `/dossier/contenidos/${id.replace(/\.(md|mdx)$/, '')}/`;
+const title = 'Todos los contenidos del Dossier | Eloquent';
+const description =
+  'Archivo de artículos de Eloquent sobre estrategia, comunicación, marca, públicos y confianza.';
+
+const collectionPage = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Todos los contenidos del Dossier',
+  description,
+  url: 'https://eloquent.es/dossier/contenidos/',
+  isPartOf: {
+    '@type': 'CollectionPage',
+    name: 'Dossier de comunicación',
+    url: 'https://eloquent.es/dossier/',
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: articles.length,
+    itemListOrder: 'https://schema.org/ItemListOrderDescending',
+    itemListElement: articles.map((article, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: article.data.title,
+      url: new URL(articleUrl(article.id), 'https://eloquent.es').toString(),
+    })),
+  },
+};
+
+const articleCountLabel = articles.length === 1 ? '1 artículo' : `${articles.length} artículos`;
+---
+
+<BaseLayout title={title} description={description}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionPage)} />
+
+  <PageHero
+    titleId="article-archive-title"
+    eyebrow="Dossier"
+    lead="Ideas, herramientas y reflexiones sobre comunicación reunidas en un archivo abierto."
+  >
+    <Fragment slot="title">Todos los <em>contenidos.</em></Fragment>
+    <Fragment slot="actions">
+      <a class="text-link text-link--light text-link--back" href="/dossier/">
+        <span aria-hidden="true">←</span> Volver al Dossier
+      </a>
+    </Fragment>
+  </PageHero>
+
+  <section class="dossier-archive" aria-labelledby="article-list-title">
+    <div class="container">
+      <CollectionHeading
+        titleId="article-list-title"
+        eyebrow="Archivo"
+        title="Lecturas para generar claridad."
+        description={`${articleCountLabel}, del más reciente al más antiguo.`}
+      />
+
+      <ol class="dossier-archive__list">
+        {
+          articles.map((article, index) => (
+            <ArticlePreview
+              article={article}
+              href={articleUrl(article.id)}
+              index={index}
+              variant="archive"
+            />
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

@@ -15,6 +15,7 @@ Read these project documents before making relevant changes:
 - `README.md`: current implementation status and local workflow.
 - `PLAN.md`: scope, URL requirements, approval sequence, SEO, and launch requirements.
 - `DESIGN_SYSTEM.md`: mandatory component, DOM, token, layout, and interaction contracts.
+- `PAGE_LAYOUTS.md`: semantic composition, component assignment, responsive behavior, and styling ownership for each page type.
 - `CONTENT_GUIDE.md`: Dossier article and issue authoring rules.
 
 The archived WordPress copy, media, and URL inventory under `archive/wordpress-2026-09-16/` are source material. Treat the archive as read-only.

@@ -1,0 +1,14 @@
+@layer sections;
+
+@layer sections {
+  .dossier-archive {
+    padding-block: var(--section-space-compact);
+    background: var(--color-paper);
+  }
+
+  .dossier-archive__list {
+    margin: var(--collection-top-space) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}

@@ -61,6 +61,8 @@ Every indexable page uses BaseLayout and supplies a distinct title, description,
 
 The optional parts of a component do not change its core contract. `PageHero` always renders its eyebrow and H1. It renders the copy container, breadcrumbs, actions, and footnote only when the page supplies that content, avoiding empty DOM elements.
 
+[PAGE_LAYOUTS.md](PAGE_LAYOUTS.md) defines the complete page-level contract for the homepage, service detail, Work index, Case Study, Dossier landing, Dossier issue, article archive, Dossier article, and pending legal template. It is the source of truth for semantic section order, hero assignment, collection layout, responsive behavior, and page-style ownership. Update it together with any structural implementation change.
+
 ### Work index contract
 
 - `src/data/projects.ts` is the shared source for project titles, summaries, destinations, classifications, images, and alternative text used by the homepage and Work index.
@@ -68,6 +70,19 @@ The optional parts of a component do not change its core contract. `PageHero` al
 - `work-index.css` owns only the Work page surface and responsive three-, two-, and one-column grid composition.
 - The collection currently has no visible section heading or count. Its section uses an accessible label, and the project cards supply the collection's visible hierarchy.
 - Until their local Case Study pages are implemented, the Museu de L’Hospitalet and Barcelona Supercomputing Center cards link to their existing published URLs.
+
+### Dossier contract
+
+- `src/content/issues/` is the source for issue titles, numbers, summaries, introductions, and ordered article references.
+- `src/content/articles/` stores each canonical article once. An issue reuses an article by reference; it never copies the article body.
+- Astro content collection references validate every issue-to-article relationship during type checking and builds.
+- `ArticlePreview` owns one article link's semantic DOM, publication metadata, title, summary, and internal styling in `global.css`. Its compact variant supports constrained editorial lists; its archive variant lets titles and summaries use the full row width; its media variant lets text use the full card column and supports issue collections with optimized images in a responsive three-, two-, and one-column grid.
+- `DossierIssueHero` owns the issue navigation, exploration number, H1, Markdown introduction, article count, and responsive behavior.
+- `DossierArticleHero` owns the article H1, summary, author, publication and update dates, derived issue links, full-width optimized feature image, and responsive behavior.
+- The dynamic article route renders every canonical Markdown body inside one restrained prose template and publishes matching `Article` structured data.
+- `dossier-index.css`, `dossier-issue.css`, `dossier-archive.css`, and `dossier-article.css` own only their respective page compositions.
+- The article archive sorts canonical articles by original publication date, newest first, and reuses the compact `ArticlePreview` variant.
+- Issue, archive, and article previews link to local canonical routes.
 
 ### Case Study contract
 
@@ -87,23 +102,27 @@ The optional parts of a component do not change its core contract. `PageHero` al
 
 ### Current component inventory
 
-| Component or element   | Responsibility                                                                                                       |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| BaseLayout             | Document shell, metadata, skip link, shared header/footer, lightbox dialog, reveal behavior, and back-to-top control |
-| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                          |
-| SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                 |
-| EloquentLogo           | One accessible, reusable logo implementation                                                                         |
-| PageHero               | Breadcrumbs, eyebrow, H1, optional lead and introduction, actions, footnote, responsive layout, and entrance motion  |
-| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                             |
-| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                |
-| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                    |
-| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                 |
-| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                         |
-| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                 |
-| .container             | Shared horizontal gutters and maximum content width                                                                  |
-| .eyebrow               | Section label typography                                                                                             |
-| .button and .text-link | Shared action hierarchy and interaction states                                                                       |
-| .section-heading       | Reusable heading and supporting-content alignment                                                                    |
+| Component or element   | Responsibility                                                                                                      |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| BaseLayout             | Document shell, page or article metadata, shared chrome, lightbox dialog, reveal behavior, and back-to-top control  |
+| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                         |
+| SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                |
+| EloquentLogo           | One accessible, reusable logo implementation                                                                        |
+| PageHero               | Breadcrumbs, eyebrow, H1, optional lead and introduction, actions, footnote, responsive layout, and entrance motion |
+| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                            |
+| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior               |
+| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                   |
+| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                |
+| CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections        |
+| ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination         |
+| DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout   |
+| DossierArticleHero     | Shared article title, summary, publication metadata, issue relationships, and optimized feature image               |
+| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                        |
+| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                |
+| .container             | Shared horizontal gutters and maximum content width                                                                 |
+| .eyebrow               | Section label typography                                                                                            |
+| .button and .text-link | Shared action hierarchy and interaction states                                                                      |
+| .section-heading       | Reusable heading and supporting-content alignment                                                                   |
 
 ## Where to change things
 
