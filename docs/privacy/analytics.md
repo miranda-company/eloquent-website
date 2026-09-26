@@ -1,6 +1,6 @@
 # Analytics, advertising, and consent
 
-This file records Eloquent-specific identifiers and live configuration. The reusable implementation, legal-input worksheet, release sequence, and full test matrix are defined in `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md`.
+This file records Eloquent-specific identifiers and live configuration. The reusable implementation, legal-input worksheet, release sequence, and full test matrix are defined in `docs/privacy/privacy-analytics-legal-playbook.md`.
 
 ## Runtime contract
 

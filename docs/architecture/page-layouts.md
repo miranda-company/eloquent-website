@@ -1,6 +1,6 @@
 # Page layout contracts
 
-This document defines the stable composition of each page type in the Eloquent website. It complements [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md), which owns tokens and component rules, and [CONTENT_GUIDE.md](CONTENT_GUIDE.md), which owns Dossier authoring.
+This document defines the stable composition of each page type in the Eloquent website. It complements [design system](design-system.md), which owns tokens and component rules, and [Dossier content guide](../content/dossier-content-guide.md), which owns Dossier authoring.
 
 A layout contract describes semantic order, shared components, width, responsive behavior, and styling ownership. Copy, images, and collection length may change without changing the contract. When a new page matches an existing type, reuse that contract before creating a new layout.
 
@@ -255,7 +255,7 @@ LegalPageLayout
 ```
 
 - `LegalPageLayout` owns the repeated page structure, metadata handoff, standard hero, optional notice and summary, contents navigation, and article slot.
-- Legal content and consent behavior follow `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md`; this section owns only the layout contract.
+- Legal content and consent behavior follow `docs/privacy/privacy-analytics-legal-playbook.md`; this section owns only the layout contract.
 - The hero supplies the single `h1`, introduction, and optional visible update date.
 - The summary uses a semantic definition list. It remains three columns through tablet widths and becomes one column below 600px.
 - The content uses a three-to-nine desktop proportion. At 850px it becomes one column and the table of contents stops being sticky.

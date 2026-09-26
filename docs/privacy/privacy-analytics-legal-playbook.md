@@ -12,14 +12,14 @@ Eloquent's company details into another website.
 
 Use these documents together:
 
-| Document                              | Purpose                                                                                          |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md` | Reusable architecture, implementation sequence, legal inputs, test matrix, and maintenance rules |
-| `ANALYTICS.md`                        | Current Eloquent identifiers, enabled products, GA4 settings, and site-specific verification     |
-| `DATA_RETENTION.md`                   | Eloquent's approved email-retention periods and Google Workspace Business Standard process       |
-| `PAGE_LAYOUTS.md`                     | DOM and responsive contract for Eloquent's legal pages                                           |
-| `DESIGN_SYSTEM.md`                    | Tokens, shared-component ownership, controls, focus, and responsive rules                        |
-| `AGENTS.md`                           | Mandatory repository workflow and safeguards                                                     |
+| Document                                           | Purpose                                                                                          |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `docs/privacy/privacy-analytics-legal-playbook.md` | Reusable architecture, implementation sequence, legal inputs, test matrix, and maintenance rules |
+| `docs/privacy/analytics.md`                        | Current Eloquent identifiers, enabled products, GA4 settings, and site-specific verification     |
+| `docs/privacy/data-retention.md`                   | Eloquent's approved email-retention periods and Google Workspace Business Standard process       |
+| `docs/architecture/page-layouts.md`                | DOM and responsive contract for Eloquent's legal pages                                           |
+| `docs/architecture/design-system.md`               | Tokens, shared-component ownership, controls, focus, and responsive rules                        |
+| `AGENTS.md`                                        | Mandatory repository workflow and safeguards                                                     |
 
 When adapting this pattern, create a site-specific analytics document and retention document. Keep
 this playbook generic.
@@ -733,7 +733,7 @@ As of 26 September 2026:
 | Vault              | Not included in the current plan                                    |
 | DPO contact        | `rodolfo@eloquent.es`                                               |
 
-Site-specific company identity and retention details remain in the legal pages and `DATA_RETENTION.md`.
+Site-specific company identity and retention details remain in the legal pages and `docs/privacy/data-retention.md`.
 
 ## 18. Authoritative references
 

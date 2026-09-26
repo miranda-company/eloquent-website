@@ -72,16 +72,16 @@ These commands cover Astro and TypeScript diagnostics, linting, design-token use
 
 Read the relevant contracts before making changes:
 
-| Document                                                                   | Responsibility                                                                       |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [AGENTS.md](AGENTS.md)                                                     | Required workflow, code rules, verification, safeguards, and deployment boundaries   |
-| [PLAN.md](PLAN.md)                                                         | Approved scope, layout sequence, URL preservation, SEO, GEO, and launch requirements |
-| [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)                                       | Tokens, typography, spacing, components, interactions, and styling ownership         |
-| [PAGE_LAYOUTS.md](PAGE_LAYOUTS.md)                                         | DOM and responsive contract for every page type                                      |
-| [CONTENT_GUIDE.md](CONTENT_GUIDE.md)                                       | Dossier issue and article frontmatter and authoring workflow                         |
-| [PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) | Reusable consent, GTM, GA4, legal-page, testing, and maintenance implementation      |
-| [ANALYTICS.md](ANALYTICS.md)                                               | Eloquent-specific identifiers, enabled products, settings, and verification          |
-| [DATA_RETENTION.md](DATA_RETENTION.md)                                     | Approved email-retention periods and operational process                             |
+| Document                                                                                   | Responsibility                                                                       |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| [AGENTS.md](AGENTS.md)                                                                     | Required workflow, code rules, verification, safeguards, and deployment boundaries   |
+| [PLAN.md](PLAN.md)                                                                         | Approved scope, layout sequence, URL preservation, SEO, GEO, and launch requirements |
+| [Design system](docs/architecture/design-system.md)                                        | Tokens, typography, spacing, components, interactions, and styling ownership         |
+| [Page layouts](docs/architecture/page-layouts.md)                                          | DOM and responsive contract for every page type                                      |
+| [Dossier content guide](docs/content/dossier-content-guide.md)                             | Dossier issue and article frontmatter and authoring workflow                         |
+| [Privacy, analytics, and legal playbook](docs/privacy/privacy-analytics-legal-playbook.md) | Reusable consent, GTM, GA4, legal-page, testing, and maintenance implementation      |
+| [Analytics configuration](docs/privacy/analytics.md)                                       | Eloquent-specific identifiers, enabled products, settings, and verification          |
+| [Data retention](docs/privacy/data-retention.md)                                           | Approved email-retention periods and operational process                             |
 
 ## Architecture
 
@@ -99,13 +99,13 @@ Shared components live in `src/components/`, own their semantic DOM and internal
 
 Issues are stored in `src/content/issues/`; articles are stored in `src/content/articles/`. Use `.md` by default and `.mdx` only when an entry needs a reusable visual component. Issue files contain ordered article references, while each article exists once at its canonical URL. The build validates frontmatter and references through `src/content.config.ts`.
 
-See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) before adding or changing content. The original publication text remains available in the archive's `text/` directory, with unchanged REST and HTML captures alongside it.
+See [Dossier content guide](docs/content/dossier-content-guide.md) before adding or changing content. The original publication text remains available in the archive's `text/` directory, with unchanged REST and HTML captures alongside it.
 
 ## Analytics and consent
 
 The shared shell integrates Google Tag Manager container `GTM-MPRT28KC` and GA4 measurement ID `G-H60YXKMYVE` through separate analytics and advertising choices. All optional Consent Mode states default to denied. GTM is requested only after at least one optional category is accepted, rejection makes no request to Google, and visitors can reopen preferences from the footer.
 
-Read [PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) before changing tracking, consent, cookies, providers, retention, or legal copy. Record Eloquent-specific changes in [ANALYTICS.md](ANALYTICS.md) and retention changes in [DATA_RETENTION.md](DATA_RETENTION.md).
+Read [Privacy, analytics, and legal playbook](docs/privacy/privacy-analytics-legal-playbook.md) before changing tracking, consent, cookies, providers, retention, or legal copy. Record Eloquent-specific changes in [Analytics configuration](docs/privacy/analytics.md) and retention changes in [Data retention](docs/privacy/data-retention.md).
 
 ## Staging and production
 

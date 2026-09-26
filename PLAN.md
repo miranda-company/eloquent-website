@@ -14,9 +14,9 @@ Rebuild Eloquent as a static Astro site on the current server. Archive the publi
 
 Adapt [Material Design principles](https://m3.material.io/) to Eloquent's editorial identity through consistent type, spacing, color roles, responsive behavior, interaction states, and restrained motion. Use Astro, plain CSS, and light strict TypeScript.
 
-The implementation contract in [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) applies to every feature, component, element, section, and page. Before adding markup or CSS, check the shared inventory and reuse or extend an existing component. Repeated patterns use one semantic DOM and one styling owner; pages supply content and compose components without redefining their internals. A pattern is extracted when it reaches a second page, or earlier when a later approved layout is already known to need it.
+The implementation contract in [design system](docs/architecture/design-system.md) applies to every feature, component, element, section, and page. Before adding markup or CSS, check the shared inventory and reuse or extend an existing component. Repeated patterns use one semantic DOM and one styling owner; pages supply content and compose components without redefining their internals. A pattern is extracted when it reaches a second page, or earlier when a later approved layout is already known to need it.
 
-The route-level contracts in [PAGE_LAYOUTS.md](PAGE_LAYOUTS.md) define each page type's semantic order, hero assignment, width model, responsive behavior, and stylesheet ownership. Update that reference with any approved structural layout change.
+The route-level contracts in [page-layout contracts](docs/architecture/page-layouts.md) define each page type's semantic order, hero assignment, width model, responsive behavior, and stylesheet ownership. Update that reference with any approved structural layout change.
 
 Each section owns its full-width surface and vertical spacing. One `.container` supplies horizontal gutters and a maximum width of `85rem` (1360px at the default root size) for grids or `70ch` for sustained prose. Use semantic sections, articles, figures, headings, and lists in reading order; add wrappers only for a layout or semantic purpose. Keep comments focused on non-obvious intent.
 

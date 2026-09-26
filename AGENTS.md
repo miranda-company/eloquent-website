@@ -14,12 +14,12 @@ Read these project documents before making relevant changes:
 
 - `README.md`: current implementation status and local workflow.
 - `PLAN.md`: scope, URL requirements, approval sequence, SEO, and launch requirements.
-- `DESIGN_SYSTEM.md`: mandatory component, DOM, token, layout, and interaction contracts.
-- `PAGE_LAYOUTS.md`: semantic composition, component assignment, responsive behavior, and styling ownership for each page type.
-- `CONTENT_GUIDE.md`: Dossier article and issue authoring rules.
-- `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md`: mandatory consent, GTM, GA4, legal-page, reuse, testing, and change-management contract.
-- `ANALYTICS.md`: Eloquent-specific identifiers, live product settings, and verification record.
-- `DATA_RETENTION.md`: approved email-retention periods and operational process.
+- `docs/architecture/design-system.md`: mandatory component, DOM, token, layout, and interaction contracts.
+- `docs/architecture/page-layouts.md`: semantic composition, component assignment, responsive behavior, and styling ownership for each page type.
+- `docs/content/dossier-content-guide.md`: Dossier article and issue authoring rules.
+- `docs/privacy/privacy-analytics-legal-playbook.md`: mandatory consent, GTM, GA4, legal-page, reuse, testing, and change-management contract.
+- `docs/privacy/analytics.md`: Eloquent-specific identifiers, live product settings, and verification record.
+- `docs/privacy/data-retention.md`: approved email-retention periods and operational process.
 
 The archived WordPress copy, media, and URL inventory under `archive/wordpress-2026-09-16/` are source material. Treat the archive as read-only.
 
@@ -51,7 +51,7 @@ npm run build
 - Keep semantic DOM and reading order stable. Use `section`, `article`, `figure`, headings, and lists according to their meaning.
 - Use `src/styles/tokens.css` for shared visual values. Shared component rules belong in `src/styles/global.css`; page stylesheets only own page-specific composition.
 - Do not add raw colors, spacing, font sizes, radii, shadows, or motion durations to component CSS. Run `npm run design:check` after CSS changes.
-- Use the shared `.container`, spacing scale, typography, surface roles, interaction states, and responsive breakpoints documented in `DESIGN_SYSTEM.md`.
+- Use the shared `.container`, spacing scale, typography, surface roles, interaction states, and responsive breakpoints documented in `docs/architecture/design-system.md`.
 - Prefer focused components and direct names. Add comments only for non-obvious intent.
 - Let Prettier and ESLint define syntax details. Do not introduce another formatter, CSS framework, component library, or client framework without an approved requirement.
 - Use Astro image components for local content images, responsive sources, dimensions, and lazy loading. Reserve eager loading for the primary above-the-fold image.
@@ -79,8 +79,8 @@ npm run build
 ## SEO, privacy, and deployment
 
 - Keep canonical content and internal links in static HTML. Maintain sitemap and crawler rules described in `PLAN.md`.
-- Follow `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md` before changing consent, GTM, GA4, advertising, cookies, providers, retention, or legal pages.
-- Google Tag Manager uses the basic-consent integration documented in the playbook and `ANALYTICS.md`. All optional consent states default to denied. Do not request GTM before at least one optional category is accepted, and do not let a tag fire without its matching consent.
+- Follow `docs/privacy/privacy-analytics-legal-playbook.md` before changing consent, GTM, GA4, advertising, cookies, providers, retention, or legal pages.
+- Google Tag Manager uses the basic-consent integration documented in the playbook and `docs/privacy/analytics.md`. All optional consent states default to denied. Do not request GTM before at least one optional category is accepted, and do not let a tag fire without its matching consent.
 - Update the published-tag inventory, legal disclosures, cookie table, visible update dates, and verification record whenever tracking or a data-processing feature changes. Never infer advertising consent from analytics or a legacy generic acceptance.
 - Do not add other visitor tracking, reCAPTCHA, newsletter forms, contact forms, booking, chat, payments, or third-party embeds without reviewing their purpose, category, provider, retention, consent, and legal disclosure.
 - Contact actions use `mailto:info@eloquent.es` until an approved booking URL exists.
@@ -92,5 +92,5 @@ npm run build
 - Keep commits focused and use concise imperative commit messages consistent with the existing history.
 - Do not commit, push, deploy, or create a pull request unless the user requests it.
 - Do not edit or commit generated `dist/`, `.astro/`, `node_modules/`, logs, or operating-system files.
-- Update `README.md`, `PLAN.md`, `DESIGN_SYSTEM.md`, or `CONTENT_GUIDE.md` when a change affects their contracts or current-status statements.
+- Update `README.md`, `PLAN.md`, `docs/architecture/design-system.md`, or `docs/content/dossier-content-guide.md` when a change affects their contracts or current-status statements.
 - Update review screenshots only when a visual layout change makes the existing captures stale.

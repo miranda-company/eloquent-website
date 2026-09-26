@@ -1,6 +1,6 @@
 # Eloquent design system
 
-The source of truth for visual values is [`src/styles/tokens.css`](src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](src/styles/home.css), [`src/styles/landing-page-personal.css`](src/styles/landing-page-personal.css), and [`src/styles/case-study.css`](src/styles/case-study.css); all use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
+The source of truth for visual values is [`src/styles/tokens.css`](../../src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](../../src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](../../src/styles/home.css), [`src/styles/landing-page-personal.css`](../../src/styles/landing-page-personal.css), and [`src/styles/case-study.css`](../../src/styles/case-study.css); all use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](../../src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
 
 ## Implementation contract
 
@@ -8,13 +8,13 @@ This contract applies to every feature, component, element, section, and page. N
 
 ### Architecture layers
 
-| Layer            | Owns                                                                               | Location                                          |
-| ---------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------- |
-| Tokens           | Color, type, spacing, measures, borders, elevation, motion, and shared sizes       | [src/styles/tokens.css](src/styles/tokens.css)    |
-| Elements         | Container, eyebrow, buttons, text links, focus treatment, and base typography      | [src/styles/global.css](src/styles/global.css)    |
-| Components       | Repeatable semantic DOM, typed inputs, interaction states, and responsive behavior | [src/components/](src/components/) and global.css |
-| Page composition | Relationships unique to one approved layout                                        | A clearly named page stylesheet                   |
-| Pages            | Content, metadata, structured data, and composition of shared components           | [src/pages/](src/pages/)                          |
+| Layer            | Owns                                                                               | Location                                                |
+| ---------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| Tokens           | Color, type, spacing, measures, borders, elevation, motion, and shared sizes       | [src/styles/tokens.css](../../src/styles/tokens.css)    |
+| Elements         | Container, eyebrow, buttons, text links, focus treatment, and base typography      | [src/styles/global.css](../../src/styles/global.css)    |
+| Components       | Repeatable semantic DOM, typed inputs, interaction states, and responsive behavior | [src/components/](../../src/components/) and global.css |
+| Page composition | Relationships unique to one approved layout                                        | A clearly named page stylesheet                         |
+| Pages            | Content, metadata, structured data, and composition of shared components           | [src/pages/](../../src/pages/)                          |
 
 Dependencies point upward in this table: pages use components, components use elements and tokens, and page styles never reach into a shared component to redefine its internal typography or spacing.
 
@@ -63,7 +63,7 @@ Every indexable page uses BaseLayout and supplies a distinct title, description,
 
 The optional parts of a component do not change its core contract. `PageHero` always renders its eyebrow and H1. It renders the copy container, breadcrumbs, actions, and footnote only when the page supplies that content, avoiding empty DOM elements.
 
-[PAGE_LAYOUTS.md](PAGE_LAYOUTS.md) defines the complete page-level contract for the homepage, service detail, Work index, Case Study, Dossier landing, Dossier issue, article archive, Dossier article, and pending legal template. It is the source of truth for semantic section order, hero assignment, collection layout, responsive behavior, and page-style ownership. Update it together with any structural implementation change.
+The [page layout contracts](page-layouts.md) document defines the complete page-level contract for the homepage, service detail, Work index, Case Study, Dossier landing, Dossier issue, article archive, Dossier article, and legal pages. It is the source of truth for semantic section order, hero assignment, collection layout, responsive behavior, and page-style ownership. Update it together with any structural implementation change.
 
 ### Work index contract
 
