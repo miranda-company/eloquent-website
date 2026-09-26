@@ -40,6 +40,8 @@ Every shared component must provide:
 - Reduced-motion behavior and readable content without JavaScript.
 - Accessible names, heading order, landmarks, alternative text, and ARIA only where native HTML is insufficient.
 - Static primary content and links for SEO and generative search.
+- Explicit whitespace around inline Astro elements. When prose and an inline link are split across
+  lines, render `{' '}` at the boundary instead of relying on source indentation.
 - A short entry in the component inventory when introduced.
 
 A component may expose a variant only when the variation changes meaning, hierarchy, or layout across multiple uses. A variant must not be used to bypass the type, spacing, or color system.
@@ -102,27 +104,29 @@ The optional parts of a component do not change its core contract. `PageHero` al
 
 ### Current component inventory
 
-| Component or element   | Responsibility                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| BaseLayout             | Document shell, page or article metadata, shared chrome, lightbox dialog, reveal behavior, and back-to-top control  |
-| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                         |
-| SiteFooter             | Shared contact, legal navigation, DCC link, and logo                                                                |
-| EloquentLogo           | One accessible, reusable logo implementation                                                                        |
-| PageHero               | Breadcrumbs, eyebrow, H1, optional lead and introduction, actions, footnote, responsive layout, and entrance motion |
-| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                            |
-| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior               |
-| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                   |
-| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                |
-| CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections        |
-| ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination         |
-| DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout   |
-| DossierArticleHero     | Shared article title, summary, publication metadata, issue relationships, and optimized feature image               |
-| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                        |
-| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                |
-| .container             | Shared horizontal gutters and maximum content width                                                                 |
-| .eyebrow               | Section label typography                                                                                            |
-| .button and .text-link | Shared action hierarchy and interaction states                                                                      |
-| .section-heading       | Reusable heading and supporting-content alignment                                                                   |
+| Component or element   | Responsibility                                                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| BaseLayout             | Document shell, metadata, consent defaults, shared chrome, lightbox dialog, reveal behavior, and back-to-top control |
+| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                          |
+| SiteFooter             | Shared contact, legal navigation, analytics preference control, DCC link, and logo                                   |
+| EloquentLogo           | One accessible, reusable logo implementation                                                                         |
+| PageHero               | Breadcrumbs, eyebrow, H1, optional lead and introduction, actions, footnote, responsive layout, and entrance motion  |
+| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                             |
+| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                |
+| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                    |
+| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                 |
+| CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections         |
+| ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination          |
+| DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout    |
+| DossierArticleHero     | Shared article title, summary, publication metadata, issue relationships, and optimized feature image                |
+| LegalPageLayout        | Shared legal hero, optional status summary, contents navigation, article slot, and responsive composition            |
+| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                         |
+| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                 |
+| ConsentBanner          | Explicit analytics choice, persistent preference, policy link, and consent-change event                              |
+| .container             | Shared horizontal gutters and maximum content width                                                                  |
+| .eyebrow               | Section label typography                                                                                             |
+| .button and .text-link | Shared action hierarchy and interaction states                                                                       |
+| .section-heading       | Reusable heading and supporting-content alignment                                                                    |
 
 ## Where to change things
 
@@ -160,5 +164,7 @@ Do not put raw colors, lengths, font sizes, radii, shadows, or animation duratio
 The current layout breakpoints are 1100px for service and Case Study content grids, 850px for the header and two-column compositions, 600px for the phone layout, and 360px for narrow-phone type. Shared responsive rules stay in the responsive layer of global.css; page-specific responsive rules stay in that page stylesheet.
 
 ## Motion and accessibility
+
+The shared `ConsentBanner` is the single consent interface. It uses the color, spacing, control, focus, elevation, and stacking tokens; pages do not restyle or duplicate it. It appears only when no preference exists or when the footer control reopens it. Analytics and advertising are independent choices, accept and reject have equal prominence, keyboard focus moves into the reopened interface, and all optional processing remains off without JavaScript.
 
 Pages use the shared reveal behavior for content entering the viewport. Content is present and visible in static HTML; JavaScript only adds motion. The `prefers-reduced-motion` rule removes animation and smooth scrolling. Interactive controls use the focus and touch-size tokens. The image lightbox uses a native dialog, preserves a full-image link fallback, supports Escape and backdrop closing, and restores focus after closing. Review color contrast when changing the palette; a token name does not guarantee sufficient contrast by itself.

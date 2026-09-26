@@ -239,9 +239,32 @@ article.dossier-article
 
 ## Legal page template
 
-**Status:** Pending owner approval and implementation.
+**Routes:** `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`
 
-The intended contract is a standard `PageHero` followed by one compact section containing a `.container` and restrained prose. Legal content uses supplied and approved text, logical headings, visible effective dates when provided, and ordinary links. Once implemented, record its exact route, DOM, metadata, and responsive behavior here before considering the layout complete.
+```text
+LegalPageLayout
+├── PageHero
+├── optional overview section
+│   ├── draft or status notice
+│   └── three-item summary definition list
+└── legal content section
+    └── two-column container
+        ├── sticky table of contents
+        └── article
+            └── legal-section × n
+```
+
+- `LegalPageLayout` owns the repeated page structure, metadata handoff, standard hero, optional notice and summary, contents navigation, and article slot.
+- Legal content and consent behavior follow `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md`; this section owns only the layout contract.
+- The hero supplies the single `h1`, introduction, and optional visible update date.
+- The summary uses a semantic definition list. It remains three columns through tablet widths and becomes one column below 600px.
+- The content uses a three-to-nine desktop proportion. At 850px it becomes one column and the table of contents stops being sticky.
+- The table of contents is an ordered list of in-page links. Every target section has a stable ID, matching `aria-labelledby`, and sticky-header scroll offset.
+- Legal prose remains within `--prose-width`; sections use `h2`, dividers, and restrained vertical rhythm. Cookie inventories use the shared legal table treatment and scroll horizontally when their intrinsic columns exceed the viewport.
+- Legal copy uses verified company and provider details and the approved retention periods. Recheck the copy whenever providers, processing purposes, advertising settings, or company registration details change.
+- The legal notice identifies the site owner and governs access, content rights, links, responsibility, and applicable law.
+- The cookie route documents the consent-controlled GTM integration with separate analytics and advertising categories. The shared `ConsentBanner` owns preference controls, while the footer supplies the persistent “Gestionar cookies” trigger. Neither legal page owns analytics JavaScript or consent styling.
+- `legal-page.css` owns the legal overview, table of contents, article composition, and responsive behavior. `PageHero` and `BaseLayout` retain their shared ownership.
 
 ## Adding or changing a page layout
 

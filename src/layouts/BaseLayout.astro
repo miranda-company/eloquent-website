@@ -1,4 +1,5 @@
 ---
+import ConsentBanner from '../components/ConsentBanner.astro';
 import ImageLightbox from '../components/ImageLightbox.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
@@ -49,8 +50,80 @@ const staging = import.meta.env.PUBLIC_STAGING === 'true';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <script is:inline>
+      (() => {
+        const consentKey = 'eloquent:consent-preferences';
+        const legacyConsentKey = 'eloquent:analytics-consent';
+        const containerId = 'GTM-MPRT28KC';
+        const dataLayer = (window.dataLayer = window.dataLayer || []);
+        const gtag = (...args) => dataLayer.push(args);
+        let gtmLoaded = false;
+
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+        });
+
+        const loadGtm = () => {
+          if (gtmLoaded) return;
+
+          gtmLoaded = true;
+          dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtm.js?id=' + containerId;
+          document.head.append(script);
+        };
+
+        const readPreferences = () => {
+          try {
+            const stored = window.localStorage.getItem(consentKey);
+            if (stored) {
+              const parsed = JSON.parse(stored);
+              if (parsed.version === 2) {
+                return {
+                  analytics: parsed.analytics === true,
+                  marketing: parsed.marketing === true,
+                };
+              }
+            }
+
+            const legacyChoice = window.localStorage.getItem(legacyConsentKey);
+            if (legacyChoice === 'granted' || legacyChoice === 'denied') {
+              return { analytics: legacyChoice === 'granted', marketing: false };
+            }
+          } catch {
+            // Storage can be unavailable in restricted browser contexts.
+          }
+
+          return { analytics: false, marketing: false };
+        };
+
+        const applyConsent = (preferences) => {
+          const analytics = preferences.analytics === true;
+          const marketing = preferences.marketing === true;
+          gtag('consent', 'update', {
+            ad_storage: marketing ? 'granted' : 'denied',
+            ad_user_data: marketing ? 'granted' : 'denied',
+            ad_personalization: marketing ? 'granted' : 'denied',
+            analytics_storage: analytics ? 'granted' : 'denied',
+          });
+
+          if (analytics || marketing) loadGtm();
+        };
+
+        applyConsent(readPreferences());
+        document.addEventListener('eloquent:consent-change', (event) => {
+          applyConsent(event.detail);
+        });
+      })();
+    </script>
   </head>
   <body id="top">
+    <ConsentBanner />
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <SiteHeader />
     <main id="contenido"><slot /></main>

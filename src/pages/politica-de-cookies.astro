@@ -1,0 +1,184 @@
+---
+import LegalPageLayout from '../layouts/LegalPageLayout.astro';
+
+const navigation = [
+  { id: 'responsable', label: 'Responsable' },
+  { id: 'que-son', label: 'Qué son estas tecnologías' },
+  { id: 'inventario', label: 'Cookies y almacenamiento' },
+  { id: 'consentimiento', label: 'Consentimiento' },
+  { id: 'terceros', label: 'Servicios de terceros' },
+  { id: 'contacto', label: 'Contacto' },
+] as const;
+
+const summary = [
+  { label: 'Necesarias', value: 'Mantienen las preferencias elegidas.' },
+  { label: 'Analítica', value: 'Google Analytics 4 solo tras aceptación.' },
+  { label: 'Publicidad', value: 'Google Ads y Signals solo tras aceptación.' },
+] as const;
+---
+
+<LegalPageLayout
+  title="Política de cookies"
+  metaTitle="Política de cookies | Eloquent"
+  description="Información sobre las cookies y tecnologías de medición y publicidad utilizadas en el sitio web de Eloquent."
+  intro="Qué tecnologías utiliza Eloquent, para qué sirven y cómo puedes aceptar, rechazar o retirar cada consentimiento."
+  updated="26 de septiembre de 2026"
+  navigation={navigation}
+  summary={summary}
+>
+  <section id="responsable" class="legal-section" aria-labelledby="responsable-title" data-reveal>
+    <h2 id="responsable-title">1. Responsable</h2>
+    <address>
+      <strong>La Baula S.C.P.</strong><br />
+      NIF/CIF: J55332829<br />
+      Carrer Servet 25, 2-4a<br />
+      08030 Barcelona, España<br />
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a>
+    </address>
+  </section>
+
+  <section id="que-son" class="legal-section" aria-labelledby="que-son-title" data-reveal>
+    <h2 id="que-son-title">2. Qué son las cookies y el almacenamiento local</h2>
+    <p>
+      Las cookies son pequeños archivos que un sitio o un servicio de terceros guarda en el
+      navegador. El almacenamiento local permite recordar información en el dispositivo sin enviarla
+      automáticamente al servidor.
+    </p>
+    <p>
+      Eloquent utiliza almacenamiento local necesario para recordar las preferencias. Google puede
+      crear cookies de analítica o publicidad solo después de aceptar la categoría correspondiente.
+    </p>
+  </section>
+
+  <section id="inventario" class="legal-section" aria-labelledby="inventario-title" data-reveal>
+    <h2 id="inventario-title">3. Cookies y almacenamiento utilizados</h2>
+    <div class="legal-table-wrap" tabindex="0">
+      <table class="legal-table">
+        <caption>Inventario de tecnologías del sitio</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Proveedor</th>
+            <th scope="col">Finalidad</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>eloquent:consent-preferences</code></td>
+            <td>Eloquent</td>
+            <td>Recordar las categorías aceptadas o rechazadas.</td>
+            <td>Hasta cambiar la elección o borrar el almacenamiento del navegador.</td>
+            <td>Almacenamiento local necesario</td>
+          </tr>
+          <tr>
+            <td><code>_ga</code></td>
+            <td>Google Analytics 4</td>
+            <td>Distinguir usuarios mediante un identificador seudónimo.</td>
+            <td>Hasta 2 años, sujeta a límites del navegador.</td>
+            <td>Analítica</td>
+          </tr>
+          <tr>
+            <td><code>_ga_H60YXKMYVE</code></td>
+            <td>Google Analytics 4</td>
+            <td>Mantener el estado de la sesión de la propiedad.</td>
+            <td>Hasta 2 años, sujeta a límites del navegador.</td>
+            <td>Analítica</td>
+          </tr>
+          <tr>
+            <td><code>_gcl_*</code> / <code>_gac_*</code></td>
+            <td>Google</td>
+            <td>Medir campañas, clics y conversiones de Google Ads.</td>
+            <td>Hasta 90 días.</td>
+            <td>Publicidad</td>
+          </tr>
+          <tr>
+            <td><code>IDE</code></td>
+            <td>Google / DoubleClick</td>
+            <td>Mostrar y medir publicidad cuando la configuración de Google lo requiera.</td>
+            <td>Hasta 13 meses en el EEE, Reino Unido y Suiza.</td>
+            <td>Publicidad de terceros</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Las cookies publicitarias concretas dependen de las etiquetas publicadas, del navegador y de
+      los servicios de Google utilizados. El inventario se revisará cuando cambie el contenedor.
+    </p>
+    <p>
+      Google Tag Manager, contenedor <code>GTM-MPRT28KC</code>, administra las etiquetas. Google
+      Analytics 4 utiliza el identificador <code>G-H60YXKMYVE</code>. El contenedor no se solicita
+      hasta que se acepta al menos una categoría opcional. La etiqueta LinkedIn Insight fue
+      eliminada del contenedor publicado.
+    </p>
+  </section>
+
+  <section
+    id="consentimiento"
+    class="legal-section"
+    aria-labelledby="consentimiento-title"
+    data-reveal
+  >
+    <h2 id="consentimiento-title">4. Cómo gestionar el consentimiento</h2>
+    <ul>
+      <li>
+        En la primera visita puedes aceptar todas las categorías, rechazar las opcionales o
+        configurar por separado analítica y publicidad.
+      </li>
+      <li>Antes de elegir, no se solicita Google Tag Manager ni se instalan cookies opcionales.</li>
+      <li>
+        Puedes volver a abrir el panel mediante “Gestionar cookies” en el pie de cualquier página.
+      </li>
+      <li>
+        Al retirar una categoría, el sitio elimina las cookies propias reconocibles asociadas y
+        recarga la página sin esa autorización. Las cookies de terceros deben borrarse desde el
+        navegador.
+      </li>
+    </ul>
+    <p>
+      La elección se aplica mediante Consent Mode v2: <code>analytics_storage</code> controla la analítica
+      y
+      <code>ad_storage</code>, <code>ad_user_data</code> y <code>ad_personalization</code> controlan publicidad.
+    </p>
+  </section>
+
+  <section id="terceros" class="legal-section" aria-labelledby="terceros-title" data-reveal>
+    <h2 id="terceros-title">5. Servicios de terceros</h2>
+    <p>
+      Google Analytics 4 mide visitas e interacciones con consentimiento de analítica. Con
+      consentimiento de publicidad, Google Ads y Google Signals pueden medir campañas, asociar
+      actividad entre dispositivos y personalizar publicidad conforme a la configuración de la
+      cuenta de Google Ads y Analytics.
+    </p>
+    <p>
+      Puedes consultar la
+      {' '}
+      <a href="https://support.google.com/analytics/answer/11397207?hl=es" rel="noreferrer"
+        >información de Google sobre las cookies de GA4</a
+      >, la
+      {' '}
+      <a href="https://policies.google.com/technologies/cookies?hl=es" rel="noreferrer"
+        >información de Google sobre cookies publicitarias</a
+      >, sus
+      {' '}
+      <a href="https://policies.google.com/privacy" rel="noreferrer">políticas de privacidad</a> y sus
+      {' '}
+      <a href="https://policies.google.com/privacy/frameworks" rel="noreferrer"
+        >mecanismos para transferencias internacionales</a
+      >.
+    </p>
+  </section>
+
+  <section id="contacto" class="legal-section" aria-labelledby="contacto-title" data-reveal>
+    <h2 id="contacto-title">6. Contacto</h2>
+    <p>
+      Para consultas sobre esta política o el tratamiento de datos, escribe a
+      {' '}
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a>, contacta con el delegado de protección
+      de datos en <a href="mailto:rodolfo@eloquent.es">rodolfo@eloquent.es</a> o escribe a La Baula S.C.P.
+      en Carrer Servet 25, 2-4a, 08030 Barcelona, España.
+    </p>
+  </section>
+</LegalPageLayout>

@@ -1,0 +1,126 @@
+---
+import LegalPageLayout from '../layouts/LegalPageLayout.astro';
+
+const navigation = [
+  { id: 'titular', label: 'Titular del sitio' },
+  { id: 'finalidad', label: 'Finalidad y condiciones de uso' },
+  { id: 'propiedad', label: 'Propiedad intelectual' },
+  { id: 'enlaces', label: 'Enlaces externos' },
+  { id: 'responsabilidad', label: 'Responsabilidad' },
+  { id: 'normativa', label: 'Normativa y contacto' },
+] as const;
+
+const summary = [
+  { label: 'Titular', value: 'La Baula S.C.P.' },
+  { label: 'NIF', value: 'J55332829' },
+  { label: 'Contacto', value: 'info@eloquent.es' },
+] as const;
+---
+
+<LegalPageLayout
+  title="Aviso legal"
+  metaTitle="Aviso legal | Eloquent"
+  description="Información legal y condiciones de uso del sitio web de Eloquent."
+  intro="Identificación del titular, condiciones de acceso y reglas aplicables al uso del sitio web de Eloquent."
+  updated="26 de septiembre de 2026"
+  navigation={navigation}
+  summary={summary}
+>
+  <section id="titular" class="legal-section" aria-labelledby="titular-title" data-reveal>
+    <h2 id="titular-title">1. Titular del sitio</h2>
+    <p>La Baula S.C.P. es responsable del sitio web de Eloquent.</p>
+    <address>
+      <strong>La Baula S.C.P.</strong><br />
+      NIF/CIF: J55332829<br />
+      IVA intracomunitario: ESJ55332829<br />
+      Carrer Servet 25, 2-4a<br />
+      08030 Barcelona, España<br />
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a>
+    </address>
+    <p>
+      No se ofrecen servicios sujetos a autorización administrativa ni se ejerce mediante este sitio
+      una profesión regulada. El sitio no permite contratar ni pagar servicios en línea.
+    </p>
+  </section>
+
+  <section id="finalidad" class="legal-section" aria-labelledby="finalidad-title" data-reveal>
+    <h2 id="finalidad-title">2. Finalidad y condiciones de uso</h2>
+    <p>
+      Este sitio presenta los servicios, proyectos y contenidos editoriales de Eloquent. El acceso
+      es libre y atribuye a quien lo utiliza la condición de persona usuaria, que acepta estas
+      condiciones mientras navega por el sitio.
+    </p>
+    <p>
+      Debes utilizar el sitio de forma lícita, sin dañar su funcionamiento, intentar acceder a zonas
+      restringidas ni emplear sus contenidos para vulnerar derechos de La Baula S.C.P. o de
+      terceros.
+    </p>
+  </section>
+
+  <section id="propiedad" class="legal-section" aria-labelledby="propiedad-title" data-reveal>
+    <h2 id="propiedad-title">3. Propiedad intelectual e industrial</h2>
+    <p>
+      Salvo que se indique otra autoría, los textos, diseños, identidad visual, código y demás
+      elementos originales del sitio pertenecen a La Baula S.C.P. o se utilizan con la autorización
+      correspondiente. Las marcas, imágenes y materiales de clientes conservan la titularidad que
+      corresponda a sus respectivos propietarios.
+    </p>
+    <p>
+      Puedes enlazar las páginas públicas y citar fragmentos breves con atribución y enlace a la
+      fuente. Cualquier reproducción, transformación, distribución o explotación más amplia requiere
+      autorización previa de la persona titular de los derechos, salvo que la ley permita
+      expresamente ese uso.
+    </p>
+  </section>
+
+  <section id="enlaces" class="legal-section" aria-labelledby="enlaces-title" data-reveal>
+    <h2 id="enlaces-title">4. Enlaces externos</h2>
+    <p>
+      El sitio puede enlazar recursos o sitios de terceros para ampliar información. La Baula S.C.P.
+      no controla sus contenidos, disponibilidad ni políticas y no responde de los cambios que esos
+      terceros introduzcan. La inclusión de un enlace no implica patrocinio ni aprobación de todo el
+      contenido del sitio enlazado.
+    </p>
+  </section>
+
+  <section
+    id="responsabilidad"
+    class="legal-section"
+    aria-labelledby="responsabilidad-title"
+    data-reveal
+  >
+    <h2 id="responsabilidad-title">5. Disponibilidad y responsabilidad</h2>
+    <p>
+      La información se revisa para mantenerla clara y actualizada, pero puede contener errores
+      puntuales o quedar temporalmente desactualizada. La Baula S.C.P. puede corregir, actualizar,
+      suspender o retirar contenidos y funciones del sitio.
+    </p>
+    <p>
+      Se aplican medidas razonables para proteger y mantener disponible el sitio. No puede
+      garantizarse la ausencia absoluta de interrupciones, errores o elementos dañinos derivados de
+      Internet o de servicios de terceros. Nada de este aviso limita derechos imperativos de
+      consumidores o personas usuarias.
+    </p>
+  </section>
+
+  <section id="normativa" class="legal-section" aria-labelledby="normativa-title" data-reveal>
+    <h2 id="normativa-title">6. Normativa aplicable y contacto</h2>
+    <p>
+      Este aviso se rige por la legislación española. Cualquier controversia se someterá a los
+      juzgados y tribunales que correspondan conforme a la normativa aplicable, incluidos los fueros
+      imperativos de consumidores cuando procedan.
+    </p>
+    <p>
+      Para comunicar una incidencia legal o solicitar autorización sobre contenidos, escribe a
+      {' '}
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a>.
+    </p>
+    <p>
+      El tratamiento de datos personales y el uso de tecnologías de medición se explican en la
+      {' '}
+      <a href="/politica-de-privacidad/">política de privacidad</a> y la
+      {' '}
+      <a href="/politica-de-cookies/">política de cookies</a>.
+    </p>
+  </section>
+</LegalPageLayout>

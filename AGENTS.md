@@ -17,6 +17,9 @@ Read these project documents before making relevant changes:
 - `DESIGN_SYSTEM.md`: mandatory component, DOM, token, layout, and interaction contracts.
 - `PAGE_LAYOUTS.md`: semantic composition, component assignment, responsive behavior, and styling ownership for each page type.
 - `CONTENT_GUIDE.md`: Dossier article and issue authoring rules.
+- `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md`: mandatory consent, GTM, GA4, legal-page, reuse, testing, and change-management contract.
+- `ANALYTICS.md`: Eloquent-specific identifiers, live product settings, and verification record.
+- `DATA_RETENTION.md`: approved email-retention periods and operational process.
 
 The archived WordPress copy, media, and URL inventory under `archive/wordpress-2026-09-16/` are source material. Treat the archive as read-only.
 
@@ -62,6 +65,8 @@ npm run build
 - Keep page titles, descriptions, canonical URLs, social metadata, visible headings, and structured data consistent.
 - Add `BreadcrumbList` structured data only when breadcrumbs are visible. Add factual schema only when supported by the rendered content.
 - Use descriptive links and accurate alternative text. Avoid generic link labels when the destination can be named.
+- Preserve visible spaces around inline links in Astro prose. Use an explicit `{' '}` when a text and
+  element boundary spans source lines.
 
 ## Accessibility and interaction
 
@@ -74,7 +79,10 @@ npm run build
 ## SEO, privacy, and deployment
 
 - Keep canonical content and internal links in static HTML. Maintain sitemap and crawler rules described in `PLAN.md`.
-- Do not add analytics, visitor tracking, reCAPTCHA, newsletter forms, or contact forms.
+- Follow `PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md` before changing consent, GTM, GA4, advertising, cookies, providers, retention, or legal pages.
+- Google Tag Manager uses the basic-consent integration documented in the playbook and `ANALYTICS.md`. All optional consent states default to denied. Do not request GTM before at least one optional category is accepted, and do not let a tag fire without its matching consent.
+- Update the published-tag inventory, legal disclosures, cookie table, visible update dates, and verification record whenever tracking or a data-processing feature changes. Never infer advertising consent from analytics or a legacy generic acceptance.
+- Do not add other visitor tracking, reCAPTCHA, newsletter forms, contact forms, booking, chat, payments, or third-party embeds without reviewing their purpose, category, provider, retention, consent, and legal disclosure.
 - Contact actions use `mailto:info@eloquent.es` until an approved booking URL exists.
 - Staging uses `PUBLIC_STAGING=true` and must also be password protected at the server.
 - Do not deploy or launch production without explicit user approval. Do not promise rankings or AI citations.

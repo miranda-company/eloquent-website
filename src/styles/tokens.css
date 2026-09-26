@@ -164,10 +164,12 @@
   --shadow-header: 0 var(--space-2) var(--space-6) rgba(0, 0, 0, 0.16);
   --shadow-menu: 0 var(--space-4) var(--space-8) rgba(0, 0, 0, 0.14);
   --shadow-floating: 0 var(--space-2) var(--space-6) rgba(0, 0, 0, 0.2);
+  --shadow-consent: 0 var(--space-4) var(--space-12) rgba(0, 0, 0, 0.22);
   --layer-header: 2;
   --layer-menu: 5;
   --layer-header-sticky: 20;
   --layer-floating: 30;
+  --layer-consent: 40;
   --layer-skip-link: 50;
 
   /* Motion */

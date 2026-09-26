@@ -1,0 +1,173 @@
+<aside
+  class="consent-banner"
+  role="dialog"
+  aria-labelledby="consent-title"
+  aria-describedby="consent-description"
+  hidden
+  data-consent-banner
+>
+  <div class="consent-banner__content">
+    <p class="consent-banner__title" id="consent-title">Privacidad y cookies</p>
+    <p id="consent-description">
+      Puedes permitir la medición del sitio y, por separado, las funciones publicitarias de Google.
+      Las cookies necesarias siempre están activas. Puedes cambiar tu elección en cualquier momento.
+      {' '}
+      <a href="/politica-de-cookies/">Más información sobre las cookies</a>.
+    </p>
+  </div>
+
+  <fieldset class="consent-banner__categories">
+    <legend class="sr-only">Categorías de consentimiento</legend>
+    <div class="consent-banner__category">
+      <div>
+        <strong>Analítica</strong>
+        <span>Ayuda a entender el uso del sitio mediante Google Analytics 4.</span>
+      </div>
+      <label class="consent-banner__toggle">
+        <input type="checkbox" data-consent-analytics />
+        <span>Permitir</span>
+      </label>
+    </div>
+    <div class="consent-banner__category">
+      <div>
+        <strong>Publicidad</strong>
+        <span>Permite medir campañas y usar funciones publicitarias de Google.</span>
+      </div>
+      <label class="consent-banner__toggle">
+        <input type="checkbox" data-consent-marketing />
+        <span>Permitir</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="consent-banner__actions">
+    <button
+      class="consent-banner__button consent-banner__button--primary"
+      type="button"
+      data-consent-accept
+    >
+      Aceptar todas
+    </button>
+    <button
+      class="consent-banner__button consent-banner__button--primary"
+      type="button"
+      data-consent-reject
+    >
+      Rechazar opcionales
+    </button>
+    <button class="consent-banner__button" type="button" data-consent-save>
+      Guardar preferencias
+    </button>
+  </div>
+</aside>
+
+<script>
+  type ConsentPreferences = {
+    version: 2;
+    analytics: boolean;
+    marketing: boolean;
+  };
+
+  const consentKey = 'eloquent:consent-preferences';
+  const legacyConsentKey = 'eloquent:analytics-consent';
+  const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
+  const acceptButton = banner?.querySelector<HTMLButtonElement>('[data-consent-accept]');
+  const rejectButton = banner?.querySelector<HTMLButtonElement>('[data-consent-reject]');
+  const saveButton = banner?.querySelector<HTMLButtonElement>('[data-consent-save]');
+  const analyticsInput = banner?.querySelector<HTMLInputElement>('[data-consent-analytics]');
+  const marketingInput = banner?.querySelector<HTMLInputElement>('[data-consent-marketing]');
+  const manageButton = document.querySelector<HTMLButtonElement>('[data-consent-preferences]');
+
+  if (banner && acceptButton && rejectButton && saveButton && analyticsInput && marketingInput) {
+    const readPreferences = (): ConsentPreferences | null => {
+      try {
+        const stored = window.localStorage.getItem(consentKey);
+        if (stored) {
+          const parsed = JSON.parse(stored) as Partial<ConsentPreferences>;
+          if (parsed.version === 2) {
+            return {
+              version: 2,
+              analytics: parsed.analytics === true,
+              marketing: parsed.marketing === true,
+            };
+          }
+        }
+
+        const legacyChoice = window.localStorage.getItem(legacyConsentKey);
+        if (legacyChoice === 'granted' || legacyChoice === 'denied') {
+          return {
+            version: 2,
+            analytics: legacyChoice === 'granted',
+            marketing: false,
+          };
+        }
+      } catch {
+        // Storage can be unavailable in restricted browser contexts.
+      }
+
+      return null;
+    };
+
+    const writePreferences = (preferences: ConsentPreferences) => {
+      try {
+        window.localStorage.setItem(consentKey, JSON.stringify(preferences));
+        window.localStorage.removeItem(legacyConsentKey);
+      } catch {
+        // The choice still applies to the current page when storage is unavailable.
+      }
+    };
+
+    const clearCookies = (prefixes: readonly string[]) => {
+      for (const cookie of document.cookie.split(';')) {
+        const name = cookie.split('=')[0]?.trim();
+        if (!name || !prefixes.some((prefix) => name.startsWith(prefix))) continue;
+
+        document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+        document.cookie = name + '=; Max-Age=0; path=/; domain=.eloquent.es; SameSite=Lax';
+      }
+    };
+
+    let currentPreferences = readPreferences();
+
+    const syncInputs = (preferences: ConsentPreferences | null) => {
+      analyticsInput.checked = preferences?.analytics ?? false;
+      marketingInput.checked = preferences?.marketing ?? false;
+    };
+
+    const showBanner = (moveFocus = false) => {
+      syncInputs(currentPreferences);
+      banner.hidden = false;
+      if (moveFocus) analyticsInput.focus();
+    };
+
+    const savePreferences = (preferences: ConsentPreferences) => {
+      const requiresReload =
+        (currentPreferences?.analytics === true && !preferences.analytics) ||
+        (currentPreferences?.marketing === true && !preferences.marketing);
+
+      currentPreferences = preferences;
+      writePreferences(preferences);
+      document.dispatchEvent(new CustomEvent('eloquent:consent-change', { detail: preferences }));
+      banner.hidden = true;
+
+      if (!preferences.analytics) clearCookies(['_ga']);
+      if (!preferences.marketing) clearCookies(['_gcl', '_gac', 'FPAU']);
+      if (requiresReload) window.location.reload();
+    };
+
+    const createPreferences = (analytics: boolean, marketing: boolean): ConsentPreferences => ({
+      version: 2,
+      analytics,
+      marketing,
+    });
+
+    acceptButton.addEventListener('click', () => savePreferences(createPreferences(true, true)));
+    rejectButton.addEventListener('click', () => savePreferences(createPreferences(false, false)));
+    saveButton.addEventListener('click', () =>
+      savePreferences(createPreferences(analyticsInput.checked, marketingInput.checked)),
+    );
+    manageButton?.addEventListener('click', () => showBanner(true));
+
+    if (!currentPreferences) showBanner();
+  }
+</script>

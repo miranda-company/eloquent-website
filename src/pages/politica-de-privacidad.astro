@@ -1,0 +1,185 @@
+---
+import LegalPageLayout from '../layouts/LegalPageLayout.astro';
+
+const navigation = [
+  { id: 'responsable', label: 'Responsable del tratamiento' },
+  { id: 'datos', label: 'Datos tratados' },
+  { id: 'finalidades', label: 'Finalidades y legitimación' },
+  { id: 'destinatarios', label: 'Destinatarios y transferencias' },
+  { id: 'conservacion', label: 'Conservación' },
+  { id: 'derechos', label: 'Derechos' },
+] as const;
+
+const summary = [
+  { label: 'Responsable', value: 'La Baula S.C.P.' },
+  { label: 'DPD', value: 'rodolfo@eloquent.es' },
+  { label: 'Medición y publicidad', value: 'Solo con el consentimiento correspondiente.' },
+] as const;
+---
+
+<LegalPageLayout
+  title="Política de privacidad"
+  metaTitle="Política de privacidad | Eloquent"
+  description="Información sobre el tratamiento de datos personales en el sitio web de Eloquent."
+  intro="Cómo trata La Baula S.C.P. los datos personales al visitar el sitio web de Eloquent o contactar por correo electrónico."
+  updated="26 de septiembre de 2026"
+  navigation={navigation}
+  summary={summary}
+>
+  <section id="responsable" class="legal-section" aria-labelledby="responsable-title" data-reveal>
+    <h2 id="responsable-title">1. Responsable del tratamiento</h2>
+    <address>
+      <strong>La Baula S.C.P.</strong><br />
+      NIF/CIF: J55332829<br />
+      IVA intracomunitario: ESJ55332829<br />
+      Carrer Servet 25, 2-4a<br />
+      08030 Barcelona, España<br />
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a>
+    </address>
+    <p>
+      <strong>Delegado de protección de datos:</strong> Rodolfo Miranda Company,
+      {' '}
+      <a href="mailto:rodolfo@eloquent.es">rodolfo@eloquent.es</a>.
+    </p>
+  </section>
+
+  <section id="datos" class="legal-section" aria-labelledby="datos-title" data-reveal>
+    <h2 id="datos-title">2. Qué datos tratamos</h2>
+    <p>Este sitio no incluye cuentas, formularios, suscripciones, newsletter ni reCAPTCHA.</p>
+    <ul>
+      <li>
+        <strong>Consultas por correo:</strong> si escribes a
+        {' '}
+        <a href="mailto:info@eloquent.es">info@eloquent.es</a>, trataremos la dirección de correo,
+        el nombre que facilites y el contenido de la comunicación.
+      </li>
+      <li>
+        <strong>Registros técnicos:</strong> el alojamiento puede registrar la dirección IP, la URL solicitada,
+        fecha y hora, navegador, dispositivo y estado de la respuesta para entregar y proteger el sitio.
+      </li>
+      <li>
+        <strong>Analítica consentida:</strong> Google Analytics 4 puede recoger identificadores seudónimos
+        de usuario y sesión, páginas visitadas, interacciones, datos del navegador y dispositivo, y ubicación
+        aproximada. Google indica que no registra ni almacena direcciones IP individuales de visitantes
+        de la Unión Europea.
+      </li>
+      <li>
+        <strong>Publicidad consentida:</strong> las funciones publicitarias de Google pueden utilizar
+        identificadores de cookies, información de campaña, clics, conversiones y audiencias para medir
+        publicidad y personalizarla cuando se haya autorizado esta categoría.
+      </li>
+      <li>
+        <strong>Preferencias:</strong> el navegador guarda localmente las categorías aceptadas o rechazadas
+        para respetar la elección en visitas posteriores.
+      </li>
+    </ul>
+  </section>
+
+  <section id="finalidades" class="legal-section" aria-labelledby="finalidades-title" data-reveal>
+    <h2 id="finalidades-title">3. Finalidades y legitimación</h2>
+    <ul>
+      <li>
+        <strong>Responder consultas y solicitudes:</strong> atender el correo recibido y, cuando corresponda,
+        aplicar medidas precontractuales solicitadas por la persona interesada.
+      </li>
+      <li>
+        <strong>Operar y proteger el sitio:</strong> entregar las páginas, prevenir abusos y resolver
+        incidencias técnicas. La base jurídica es el interés legítimo en mantener un sitio seguro y funcional.
+      </li>
+      <li>
+        <strong>Medir y mejorar el sitio:</strong> conocer de forma agregada cómo se utiliza mediante
+        Google Analytics 4. La base jurídica es el consentimiento de analítica.
+      </li>
+      <li>
+        <strong>Medir y personalizar publicidad:</strong> atribuir campañas y utilizar Google Signals
+        y otras funciones de Google Ads. La base jurídica es el consentimiento de publicidad.
+      </li>
+      <li>
+        <strong>Recordar la elección:</strong> conservar localmente las preferencias para aplicarlas en
+        visitas posteriores. Este almacenamiento es necesario para respetar la decisión de la persona
+        usuaria.
+      </li>
+    </ul>
+    <p>
+      Los consentimientos pueden retirarse en cualquier momento y de forma independiente. No
+      utilizamos la información del sitio para tomar decisiones automatizadas con efectos jurídicos
+      o similares sobre las personas.
+    </p>
+  </section>
+
+  <section
+    id="destinatarios"
+    class="legal-section"
+    aria-labelledby="destinatarios-title"
+    data-reveal
+  >
+    <h2 id="destinatarios-title">4. Destinatarios y transferencias</h2>
+    <p>
+      <strong>Nominalia Internet S.L.</strong> presta el alojamiento como encargado del tratamiento. Su
+      acuerdo público regula el tratamiento de datos de clientes y el recurso a subencargados.
+    </p>
+    <p>
+      <strong>Google Workspace</strong> presta el correo electrónico conforme a la entidad contractual
+      y al acuerdo de tratamiento aplicables a la cuenta de La Baula S.C.P. Google puede tratar datos
+      en países donde operen sus instalaciones o subencargados, con las garantías contractuales y de transferencia
+      descritas en su acuerdo.
+    </p>
+    <p>
+      <strong>Google Tag Manager, Google Analytics 4 y Google Ads</strong> reciben datos únicamente cuando
+      se autoriza la categoría correspondiente. La propiedad de Analytics está enlazada con Search Console
+      y Google Ads. Google Signals, la ubicación y dispositivo granulares y la personalización publicitaria
+      pueden estar disponibles solo bajo consentimiento de publicidad. Google puede realizar transferencias
+      internacionales conforme a los mecanismos descritos en sus condiciones y políticas.
+    </p>
+  </section>
+
+  <section id="conservacion" class="legal-section" aria-labelledby="conservacion-title" data-reveal>
+    <h2 id="conservacion-title">5. Plazos de conservación</h2>
+    <p>
+      Las consultas generales que no den lugar a una relación profesional se conservarán durante 12
+      meses desde el último contacto. Las propuestas o negociaciones que no prosperen se conservarán
+      durante 24 meses. Si se inicia una relación profesional, las comunicaciones relevantes se
+      incorporarán al expediente del cliente y se conservarán durante los plazos contractuales,
+      fiscales y legales aplicables. Una obligación legal, auditoría o reclamación puede suspender
+      la eliminación.
+    </p>
+    <p>
+      Google Analytics 4 está configurado para conservar los datos de usuario y eventos durante 14
+      meses y reiniciar el plazo cuando existe nueva actividad. Las cookies y tecnologías de Google
+      tienen la duración indicada en la
+      {' '}
+      <a href="/politica-de-cookies/">política de cookies</a>.
+    </p>
+    <p>
+      Nominalia conserva registros técnicos durante los plazos exigidos por la normativa y durante
+      el tiempo necesario para prestar el servicio, prevenir fraude y gestionar reclamaciones. El
+      plazo concreto puede depender del tipo de registro y debe consultarse en la cuenta o
+      solicitarse a Nominalia.
+    </p>
+  </section>
+
+  <section id="derechos" class="legal-section" aria-labelledby="derechos-title" data-reveal>
+    <h2 id="derechos-title">6. Derechos y contacto</h2>
+    <p>
+      Puedes solicitar el acceso, rectificación, supresión, portabilidad, limitación u oposición al
+      tratamiento de tus datos. También puedes retirar por separado los consentimientos de analítica
+      y publicidad desde “Gestionar cookies” en el pie de cualquier página.
+    </p>
+    <p>
+      Para ejercer estos derechos, escribe a
+      {' '}
+      <a href="mailto:info@eloquent.es">info@eloquent.es</a> o utiliza la dirección postal indicada en
+      el apartado del responsable. También puedes dirigirte al delegado de protección de datos, Rodolfo
+      Miranda Company, en
+      {' '}
+      <a href="mailto:rodolfo@eloquent.es">rodolfo@eloquent.es</a>. La solicitud debe permitir
+      verificar la identidad de quien la presenta.
+    </p>
+    <p>
+      Si consideras que el tratamiento no respeta la normativa, puedes presentar una reclamación
+      ante la
+      {' '}
+      <a href="https://www.aepd.es/" rel="noreferrer">Agencia Española de Protección de Datos</a>.
+    </p>
+  </section>
+</LegalPageLayout>
