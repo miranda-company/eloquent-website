@@ -1,21 +1,46 @@
 # Eloquent website
 
-Static Astro redesign of [eloquent.es](https://eloquent.es). Work proceeds one approved layout at a time; see [PLAN.md](PLAN.md).
+Static Astro redesign of [eloquent.es](https://eloquent.es). The project replaces WordPress with typed content collections, reusable layouts, plain CSS, light TypeScript, and a consent-controlled analytics setup. Design and implementation proceed one approved layout at a time; see [PLAN.md](PLAN.md).
 
-## Current status
+## Project status
 
-The WordPress copy, media, and URL inventory are archived in `archive/wordpress-2026-09-16/`. The shared shell and homepage are ready for review. The Landing Page Personal service page is available at `/servicios/landing-page-personal/`; it includes three unlinked example placeholders awaiting final projects and images. The Work index is available at `/trabajo/` with the three published projects in a responsive grid. The first Case Study is available at `/trabajo/cn-sant-andreu/` with a full-width image hero, evidence-led editorial sections, responsive project galleries, and accessible image enlargement. The two remaining Work cards continue to link to their published pages until their Case Study layouts are implemented. The Dossier landing page is available at `/dossier/`, and every issue is generated at `/dossier/<slug>/` from its Markdown file with an ordered article collection. The chronological article archive is available at `/dossier/contenidos/`, and the four canonical article pages are generated from Markdown at `/dossier/contenidos/<slug>/` with shared editorial structure and issue relationships derived from the issue files. The reusable legal layout is available at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`. Google Tag Manager container `GTM-MPRT28KC` is integrated behind separate analytics and advertising consent for GA4 measurement ID `G-H60YXKMYVE`, with persistent preferences available from the footer.
+Implemented in the repository:
+
+- Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens.
+- Landing Page Personal service page at `/servicios/landing-page-personal/`.
+- Work index at `/trabajo/` and the Club Natació Sant Andreu Case Study at `/trabajo/cn-sant-andreu/`.
+- Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
+- Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
+- A reusable cookie-preference interface, Google Consent Mode v2, and conditional loading of Google Tag Manager and GA4.
+- Sitemap generation, canonical metadata, crawler rules, structured data, responsive images, reduced-motion support, and no-JavaScript content rendering.
+- An immutable archive of the WordPress copy, media, REST responses, HTML, and URL inventory under `archive/wordpress-2026-09-16/`.
+
+Content still awaiting completion:
+
+- The three Landing Page Personal examples use image placeholders and have no external destinations.
+- The Museu de L’Hospitalet and Barcelona Supercomputing Center cards still point to their existing published pages until their local Case Studies are built.
+- The content collection currently contains one Dossier issue and four canonical articles.
+
+Before production launch, configure the server redirects and HTTP 410 response described in [PLAN.md](PLAN.md), password-protect staging, crawl every route, complete the launch verification, and obtain explicit production approval.
 
 ## Run locally
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-Open the localhost URL printed by Astro. The repository tracks `package-lock.json`, so use npm for dependency and script commands. Build a production-sized static site with `npm run build`; the output is `dist/`.
+Open the localhost URL printed by Astro. The repository tracks `package-lock.json`, so use npm for dependency and script commands. If Astro reports that a development server is already running, stop it with `npx astro dev stop` before starting another.
 
-Before each approval gate, run:
+Create the static production output in `dist/` with:
+
+```sh
+npm run build
+```
+
+## Quality gates
+
+Run all checks before each layout approval or release candidate:
 
 ```sh
 npm run check
@@ -25,24 +50,69 @@ npm run format
 npm run build
 ```
 
-## Architecture contract
+These commands cover Astro and TypeScript diagnostics, linting, design-token use, formatting, and the production build.
 
-[AGENTS.md](AGENTS.md) is the repository-wide guide for coding agents. It defines the required workflow, commands, architecture boundaries, accessibility checks, content safeguards, and deployment restrictions.
+## Route inventory
 
-[DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) defines the mandatory implementation contract for every feature, component, element, section, and page. Reuse or extend shared components before adding markup or CSS. Shared components live in `src/components/`, own their semantic DOM and internal styling, and consume values from `src/styles/tokens.css`. Page stylesheets may compose components but must not redefine their internals.
+| Route                                 | Source                                            | Status                               |
+| ------------------------------------- | ------------------------------------------------- | ------------------------------------ |
+| `/`                                   | `src/pages/index.astro`                           | Implemented                          |
+| `/servicios/landing-page-personal/`   | `src/pages/servicios/landing-page-personal.astro` | Implemented; example content pending |
+| `/trabajo/`                           | `src/pages/trabajo/index.astro`                   | Implemented                          |
+| `/trabajo/cn-sant-andreu/`            | `src/pages/trabajo/cn-sant-andreu.astro`          | Implemented                          |
+| `/dossier/`                           | `src/pages/dossier/index.astro`                   | Implemented                          |
+| `/dossier/<issue-slug>/`              | `src/pages/dossier/[slug].astro`                  | Generated from issue files           |
+| `/dossier/contenidos/`                | `src/pages/dossier/contenidos/index.astro`        | Implemented                          |
+| `/dossier/contenidos/<article-slug>/` | `src/pages/dossier/contenidos/[slug].astro`       | Generated from article files         |
+| `/aviso-legal/`                       | `src/pages/aviso-legal.astro`                     | Implemented                          |
+| `/politica-de-privacidad/`            | `src/pages/politica-de-privacidad.astro`          | Implemented                          |
+| `/politica-de-cookies/`               | `src/pages/politica-de-cookies.astro`             | Implemented                          |
 
-[PAGE_LAYOUTS.md](PAGE_LAYOUTS.md) is the route-by-route layout reference. It records each page type's semantic order, assigned hero and shared components, width model, responsive grid, and CSS ownership. Update it whenever a page's structural contract changes.
+## Repository contracts
 
-[PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) is the reusable human-and-agent implementation guide for consent, GTM, GA4, advertising, legal pages, client discovery, release testing, and maintenance. Read it before changing any tracking, cookie, provider, retention, or legal feature.
+Read the relevant contracts before making changes:
 
-The homepage, service page, Work index, and Dossier landing page use `PageHero.astro`; its lead, introduction, actions, and footnote are optional. Work previews use `ProjectCard.astro`, with shared content and image references in `src/data/projects.ts`. Dossier article links use the compact and media variants of `ArticlePreview.astro`, while issues own their ordered article references in the content collection. Issue pages use `DossierIssueHero.astro`; article pages use `DossierArticleHero.astro` and one Markdown body template. Case Studies use `CaseStudyHero.astro`, `EditorialSection.astro`, and `MediaGallery.astro`. Case Study evidence and gallery images use `LightboxImage.astro`; `BaseLayout.astro` supplies the single shared `ImageLightbox.astro` dialog.
+| Document                                                                   | Responsibility                                                                       |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [AGENTS.md](AGENTS.md)                                                     | Required workflow, code rules, verification, safeguards, and deployment boundaries   |
+| [PLAN.md](PLAN.md)                                                         | Approved scope, layout sequence, URL preservation, SEO, GEO, and launch requirements |
+| [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md)                                       | Tokens, typography, spacing, components, interactions, and styling ownership         |
+| [PAGE_LAYOUTS.md](PAGE_LAYOUTS.md)                                         | DOM and responsive contract for every page type                                      |
+| [CONTENT_GUIDE.md](CONTENT_GUIDE.md)                                       | Dossier issue and article frontmatter and authoring workflow                         |
+| [PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) | Reusable consent, GTM, GA4, legal-page, testing, and maintenance implementation      |
+| [ANALYTICS.md](ANALYTICS.md)                                               | Eloquent-specific identifiers, enabled products, settings, and verification          |
+| [DATA_RETENTION.md](DATA_RETENTION.md)                                     | Approved email-retention periods and operational process                             |
 
-To build a temporary public staging copy, set `PUBLIC_STAGING=true` before `npm run build`; this adds a `noindex, nofollow` meta tag. Staging must also be password protected at the web server. The production build omits that variable.
+## Architecture
+
+Shared components live in `src/components/`, own their semantic DOM and internal styling, and consume the variables in `src/styles/tokens.css`. Page stylesheets may compose shared components but must not redefine their internals.
+
+- `BaseLayout.astro` owns metadata, the shared header and footer, consent defaults, the conditional GTM loader, the cookie-preference interface, and the image lightbox.
+- `PageHero.astro` provides the common homepage, service, Work-index, and Dossier-landing hero contract.
+- `ProjectCard.astro` renders project previews from `src/data/projects.ts`.
+- `DossierIssueHero.astro`, `DossierArticleHero.astro`, and `ArticlePreview.astro` own the Dossier presentation patterns.
+- `CaseStudyHero.astro`, `EditorialSection.astro`, `MediaGallery.astro`, and `LightboxImage.astro` compose Case Studies.
+- `LegalPageLayout.astro` owns the shared legal-page hero, summary, table of contents, and article structure.
+- `ConsentBanner.astro` owns cookie categories, preference persistence, withdrawal, and the footer settings trigger.
+
+## Dossier content
+
+Issues are stored in `src/content/issues/`; articles are stored in `src/content/articles/`. Use `.md` by default and `.mdx` only when an entry needs a reusable visual component. Issue files contain ordered article references, while each article exists once at its canonical URL. The build validates frontmatter and references through `src/content.config.ts`.
+
+See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) before adding or changing content. The original publication text remains available in the archive's `text/` directory, with unchanged REST and HTML captures alongside it.
 
 ## Analytics and consent
 
-The shared shell integrates Google Tag Manager container `GTM-MPRT28KC` with separate analytics and advertising consent for GA4 measurement ID `G-H60YXKMYVE`. GTM is requested only after a visitor accepts at least one optional category; rejection makes no request to Google, and the footer control reopens the preferences. See [PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) for the reusable implementation contract, [ANALYTICS.md](ANALYTICS.md) for Eloquent-specific settings and verification, and [DATA_RETENTION.md](DATA_RETENTION.md) for the approved email-retention process.
+The shared shell integrates Google Tag Manager container `GTM-MPRT28KC` and GA4 measurement ID `G-H60YXKMYVE` through separate analytics and advertising choices. All optional Consent Mode states default to denied. GTM is requested only after at least one optional category is accepted, rejection makes no request to Google, and visitors can reopen preferences from the footer.
 
-## Content
+Read [PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md](PRIVACY_ANALYTICS_LEGAL_PLAYBOOK.md) before changing tracking, consent, cookies, providers, retention, or legal copy. Record Eloquent-specific changes in [ANALYTICS.md](ANALYTICS.md) and retention changes in [DATA_RETENTION.md](DATA_RETENTION.md).
 
-See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for the issue and article frontmatter. The original publication text is in the archive's `text/` folder, with unchanged REST and HTML copies alongside it.
+## Staging and production
+
+Set `PUBLIC_STAGING=true` when building a temporary public staging copy:
+
+```sh
+PUBLIC_STAGING=true npm run build
+```
+
+This adds `noindex, nofollow`; staging must also be password protected at the server. Production builds omit the variable. Do not deploy or launch production without explicit approval.
