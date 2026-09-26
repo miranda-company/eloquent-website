@@ -135,7 +135,7 @@ PageHero
 
 ## Case Study
 
-**Current route:** `/trabajo/cn-sant-andreu/`
+**Routes:** `/trabajo/<project-slug>/`
 
 ```text
 CaseStudyHero
@@ -154,6 +154,8 @@ CaseStudyHero
 - Galleries use `MediaGallery` and `LightboxImage`; layout intent is `single`, `duo`, or `triptych`.
 - Every enlarged image retains a full-image link fallback, accurate alternative text, and a caption.
 - Results reflect source material; do not add unsupported numerical impact.
+- Every project page follows this sequence and reuses the shared components; project-specific files
+  supply only copy, metadata, imagery, alternative text, and gallery layout choices.
 - `case-study.css` owns Case Study narrative composition. Hero, editorial section, gallery, and lightbox internals remain shared.
 
 ## Dossier landing

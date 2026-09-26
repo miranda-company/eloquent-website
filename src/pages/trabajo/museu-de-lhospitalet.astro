@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyHero from '../../components/CaseStudyHero.astro';
+import EditorialSection from '../../components/EditorialSection.astro';
+import MediaGallery from '../../components/MediaGallery.astro';
+import heroImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-featured-img-museu-1.jpg';
+import brandSystemImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-5.jpg';
+import identityImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-6.jpg';
+import sculpturePostImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-1.jpg';
+import researchPostImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-2.jpg';
+import documentationImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-3.jpg';
+import virtualRealityImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-project-museu-img-4.jpg';
+import '../../styles/case-study.css';
+
+const projectImages = [
+  {
+    src: brandSystemImage,
+    alt: 'Aplicaciones digitales del sistema de marca creado para el Museu de L’Hospitalet.',
+  },
+  {
+    src: identityImage,
+    alt: 'Identidad del Museu de L’Hospitalet aplicada sobre la imagen de una calle de la ciudad.',
+  },
+];
+
+const problemImages = [
+  {
+    src: sculpturePostImage,
+    alt: 'Publicación del Museu de L’Hospitalet con el detalle de una escultura de piedra.',
+  },
+  {
+    src: researchPostImage,
+    alt: 'Publicación divulgativa del Museu de L’Hospitalet sobre el análisis de una camisa.',
+  },
+];
+
+const solutionImages = [
+  {
+    src: documentationImage,
+    alt: 'Equipo del Museu de L’Hospitalet documentando una pieza sobre una mesa de trabajo.',
+  },
+  {
+    src: virtualRealityImage,
+    alt: 'Participantes de una actividad del Museu de L’Hospitalet utilizando visores de realidad virtual.',
+  },
+];
+---
+
+<BaseLayout
+  title="Museu de L’Hospitalet | Eloquent"
+  description="Cómo ayudamos al Museu de L’Hospitalet a mejorar su comunicación con una estrategia, un sistema de marca y una metodología de contenidos."
+  image={heroImage.src}
+>
+  <CaseStudyHero
+    titleId="case-study-title"
+    eyebrow="Caso de estudio · Cultura"
+    lead="Ayudamos al museo a comunicar su labor con mayor claridad mediante una estrategia, un sistema de marca y una metodología práctica de contenidos."
+    image={heroImage}
+    imageAlt="Detalle de una escultura de piedra del Museu de L’Hospitalet."
+    meta={[
+      { label: 'Cliente', value: 'Museu de L’Hospitalet' },
+      { label: 'Proyecto', value: 'Estrategia y sistema de contenidos' },
+      { label: 'Años', value: '2022–2023' },
+    ]}
+  >
+    <Fragment slot="title">Museu de <em>L’Hospitalet</em></Fragment>
+  </CaseStudyHero>
+
+  <EditorialSection id="proyecto" label="Proyecto / 01" title="Sobre el proyecto" surface="paper">
+    <div class="case-study-prose">
+      <p>
+        El Museu de l’Hospitalet contactó con Eloquent con la necesidad de mejorar su comunicación y
+        proyectar con coherencia su papel como institución de patrimonio público.
+      </p>
+      <p>
+        El objetivo era ayudar al museo a comunicar su labor con mayor claridad a un público
+        diverso, desde residentes locales e investigadores hasta socios institucionales y
+        organizaciones culturales internacionales.
+      </p>
+      <p>
+        En Eloquent, apoyamos al museo mediante una auditoría y una estrategia de comunicación por
+        fases, un sistema de marca para sus líneas de actuación y una metodología práctica para la
+        planificación y producción de contenidos.
+      </p>
+    </div>
+
+    <Fragment slot="aside">
+      <dl class="case-study-facts">
+        <div>
+          <dt>Cliente</dt>
+          <dd>Museu de L’Hospitalet</dd>
+        </div>
+        <div>
+          <dt>Servicios</dt>
+          <dd>
+            Analítica y medición / Auditoría y estrategia / Comunicación de crisis / Comunicación
+            estratégica / Consultoría / Estrategia de contenidos / Estrategia digital / Gestión de
+            Redes Sociales
+          </dd>
+        </div>
+        <div>
+          <dt>Años</dt>
+          <dd>2022, 2023</dd>
+        </div>
+      </dl>
+    </Fragment>
+  </EditorialSection>
+  <MediaGallery
+    images={projectImages}
+    label="Sistema de marca del Museu de L’Hospitalet"
+    layout="duo"
+    surface="surface"
+  />
+
+  <EditorialSection id="problema" label="El reto / 02" title="Problema" surface="sage">
+    <div class="case-study-prose">
+      <p>
+        El Museu de l’Hospitalet trabaja en un contexto público y cultural complejo, donde el
+        patrimonio, la memoria, la investigación, la educación y la colaboración institucional deben
+        comunicarse a públicos muy diversos.
+      </p>
+      <p>
+        El museo carecía de un sistema de comunicación que explicase de forma clara sus líneas de
+        trabajo y que les permitiese mantener una presencia pública coherente a lo largo del tiempo.
+      </p>
+      <p>
+        El riesgo estaba en que el buen trabajo de gestión patrimonial permaneciese fragmentado, mal
+        explicado o invisible, limitando la capacidad del museo para generar reconocimiento,
+        fortalecer relaciones y proyectar su valor público.
+      </p>
+    </div>
+
+    <Fragment slot="aside">
+      <p class="case-study-aside-label">Tres puntos clave</p>
+      <ul class="case-study-findings">
+        <li>
+          <strong>Claridad institucional</strong>
+          <span>
+            El museo necesitaba una estructura más sólida para explicar su misión, proyectos y
+            líneas de trabajo sin diluir su papel patrimonial.
+          </span>
+        </li>
+        <li>
+          <strong>Coherencia comunicacional</strong>
+          <span>
+            La falta de directrices visuales, editoriales y metodológicas compartidas generaba
+            inconsistencias entre los materiales y canales.
+          </span>
+        </li>
+        <li>
+          <strong>Autonomía operativa</strong>
+          <span>
+            El equipo necesitaba un sistema práctico para encargar, producir y publicar contenido
+            sin depender de recursos externos permanentes.
+          </span>
+        </li>
+      </ul>
+    </Fragment>
+  </EditorialSection>
+  <MediaGallery
+    images={problemImages}
+    label="Ejemplos de comunicación de proyectos del museo"
+    layout="duo"
+    surface="sage"
+  />
+
+  <EditorialSection
+    id="solucion"
+    label="El enfoque / 03"
+    title="Solución"
+    surface="paper"
+    contentWidth="wide"
+  >
+    <p class="case-study-solution-intro">
+      Abordamos el desafío combinando estrategia de comunicación, diseño de un sistema para
+      gestionar su marca y una metodología operativa. El objetivo no era solo producir mejor
+      contenido, sino también crear una estructura flexible que el museo pudiera seguir utilizando a
+      lo largo del tiempo.
+    </p>
+
+    <div class="case-study-phases">
+      <article>
+        <h3>Diagnóstico y Auditoría de Comunicación</h3>
+        <div>
+          <p>
+            Comenzamos con una auditoría de comunicación interna y externa para comprender cómo se
+            presentaba el museo, cómo se comunicaban sus proyectos y dónde surgían las principales
+            fricciones. Nos reunimos con miembros clave del equipo para comprender cada línea de
+            trabajo, sus objetivos, público objetivo y necesidades de comunicación.
+          </p>
+        </div>
+      </article>
+      <article>
+        <h3>Estrategia, Identidad y Sistema de Contenidos</h3>
+        <div>
+          <p>
+            A partir de la auditoría, diseñamos una estrategia digital personalizada y una
+            metodología flexible para mantener la comunicación a lo largo del tiempo. También
+            creamos un manual de marca y una guía de estilo para asegurar que todos los materiales
+            publicados compartieran una voz común, una lógica visual y criterios editoriales
+            definidos.
+          </p>
+        </div>
+      </article>
+      <article>
+        <h3>Activación y Transferencia</h3>
+        <div>
+          <p>
+            Activamos el plan de contenido, reorganizamos la presencia digital del museo y
+            comenzamos a comunicar los proyectos estratégicos con mayor claridad. Esto incluyó la
+            documentación de iniciativas como la instalación de la primera Stolpersteine en
+            L’Hospitalet y otras colaboraciones que demuestran la relevancia local e institucional
+            del museo.
+          </p>
+        </div>
+      </article>
+    </div>
+  </EditorialSection>
+
+  <MediaGallery
+    images={solutionImages}
+    label="Producción y activación de contenidos del museo"
+    layout="duo"
+    surface="surface"
+  />
+
+  <EditorialSection
+    id="resultados"
+    label="El impacto / 04"
+    title="Resultados"
+    surface="accent"
+    contentWidth="wide"
+  >
+    <dl class="case-study-results">
+      <div>
+        <dt>Claridad estratégica</dt>
+        <dd>
+          El museo ahora cuenta con un marco más claro para explicar su misión, líneas de acción y
+          valor institucional.
+        </dd>
+      </div>
+      <div>
+        <dt>Coherencia en la comunicación</dt>
+        <dd>
+          El manual de marca, la guía de estilo y el sistema visual ayudan a garantizar que los
+          materiales en todos los canales transmitan un mensaje más consistente.
+        </dd>
+      </div>
+      <div>
+        <dt>Autonomía operativa</dt>
+        <dd>
+          El equipo dispone de una metodología práctica para planificar, encargar, producir y
+          publicar contenido sin depender de apoyo externo permanente.
+        </dd>
+      </div>
+      <div>
+        <dt>Mayor presencia pública</dt>
+        <dd>
+          Ahora se pueden comunicar los proyectos estratégicos con mayor estructura, relevancia y
+          continuidad.
+        </dd>
+      </div>
+      <div>
+        <dt>Sistema de contenido escalable</dt>
+        <dd>
+          La identidad visual basada en colores para cada línea de acción crea una base flexible
+          para el futuro sitio web del museo y la fase de comunicación digital.
+        </dd>
+      </div>
+    </dl>
+  </EditorialSection>
+</BaseLayout>

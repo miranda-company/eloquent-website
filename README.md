@@ -8,7 +8,7 @@ Implemented in the repository:
 
 - Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens.
 - Landing Page Personal service page at `/servicios/landing-page-personal/`.
-- Work index at `/trabajo/` and the Club Natació Sant Andreu Case Study at `/trabajo/cn-sant-andreu/`.
+- Work index at `/trabajo/` and three Case Studies at `/trabajo/<project-slug>/`.
 - Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
 - Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
 - A reusable cookie-preference interface, Google Consent Mode v2, and conditional loading of Google Tag Manager and GA4.
@@ -18,7 +18,6 @@ Implemented in the repository:
 Content still awaiting completion:
 
 - The three Landing Page Personal examples use image placeholders and have no external destinations.
-- The Museu de L’Hospitalet and Barcelona Supercomputing Center cards still point to their existing published pages until their local Case Studies are built.
 - The content collection currently contains one Dossier issue and four canonical articles.
 
 Before production launch, configure the server redirects and HTTP 410 response described in [PLAN.md](PLAN.md), password-protect staging, crawl every route, complete the launch verification, and obtain explicit production approval.
@@ -54,19 +53,21 @@ These commands cover Astro and TypeScript diagnostics, linting, design-token use
 
 ## Route inventory
 
-| Route                                 | Source                                            | Status                               |
-| ------------------------------------- | ------------------------------------------------- | ------------------------------------ |
-| `/`                                   | `src/pages/index.astro`                           | Implemented                          |
-| `/servicios/landing-page-personal/`   | `src/pages/servicios/landing-page-personal.astro` | Implemented; example content pending |
-| `/trabajo/`                           | `src/pages/trabajo/index.astro`                   | Implemented                          |
-| `/trabajo/cn-sant-andreu/`            | `src/pages/trabajo/cn-sant-andreu.astro`          | Implemented                          |
-| `/dossier/`                           | `src/pages/dossier/index.astro`                   | Implemented                          |
-| `/dossier/<issue-slug>/`              | `src/pages/dossier/[slug].astro`                  | Generated from issue files           |
-| `/dossier/contenidos/`                | `src/pages/dossier/contenidos/index.astro`        | Implemented                          |
-| `/dossier/contenidos/<article-slug>/` | `src/pages/dossier/contenidos/[slug].astro`       | Generated from article files         |
-| `/aviso-legal/`                       | `src/pages/aviso-legal.astro`                     | Implemented                          |
-| `/politica-de-privacidad/`            | `src/pages/politica-de-privacidad.astro`          | Implemented                          |
-| `/politica-de-cookies/`               | `src/pages/politica-de-cookies.astro`             | Implemented                          |
+| Route                                       | Source                                                    | Status                               |
+| ------------------------------------------- | --------------------------------------------------------- | ------------------------------------ |
+| `/`                                         | `src/pages/index.astro`                                   | Implemented                          |
+| `/servicios/landing-page-personal/`         | `src/pages/servicios/landing-page-personal.astro`         | Implemented; example content pending |
+| `/trabajo/`                                 | `src/pages/trabajo/index.astro`                           | Implemented                          |
+| `/trabajo/cn-sant-andreu/`                  | `src/pages/trabajo/cn-sant-andreu.astro`                  | Implemented                          |
+| `/trabajo/museu-de-lhospitalet/`            | `src/pages/trabajo/museu-de-lhospitalet.astro`            | Implemented                          |
+| `/trabajo/barcelona-supercomputing-center/` | `src/pages/trabajo/barcelona-supercomputing-center.astro` | Implemented                          |
+| `/dossier/`                                 | `src/pages/dossier/index.astro`                           | Implemented                          |
+| `/dossier/<issue-slug>/`                    | `src/pages/dossier/[slug].astro`                          | Generated from issue files           |
+| `/dossier/contenidos/`                      | `src/pages/dossier/contenidos/index.astro`                | Implemented                          |
+| `/dossier/contenidos/<article-slug>/`       | `src/pages/dossier/contenidos/[slug].astro`               | Generated from article files         |
+| `/aviso-legal/`                             | `src/pages/aviso-legal.astro`                             | Implemented                          |
+| `/politica-de-privacidad/`                  | `src/pages/politica-de-privacidad.astro`                  | Implemented                          |
+| `/politica-de-cookies/`                     | `src/pages/politica-de-cookies.astro`                     | Implemented                          |
 
 ## Repository contracts
 

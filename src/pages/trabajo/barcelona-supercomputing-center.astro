@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyHero from '../../components/CaseStudyHero.astro';
+import EditorialSection from '../../components/EditorialSection.astro';
+import MediaGallery from '../../components/MediaGallery.astro';
+import heroImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-featured-img-bsc-1.jpg';
+import hurricaneInterfaceImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-1.jpg';
+import hurricaneMapImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-2.jpg';
+import forecastImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-3.jpg';
+import sourceDataImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-4.jpg';
+import codeImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-5.jpg';
+import dustInterfaceImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-6.jpg';
+import centerPageImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-7.jpg';
+import accessImage from '../../../archive/wordpress-2026-09-16/media/2026/05/work-img-bsc-8.jpg';
+import '../../styles/case-study.css';
+
+const projectImages = [
+  {
+    src: sourceDataImage,
+    alt: 'Tabla de datos meteorológicos utilizada como fuente en las herramientas del BSC.',
+  },
+  {
+    src: codeImage,
+    alt: 'Código de la infraestructura digital desarrollada para los proyectos meteorológicos del BSC.',
+  },
+];
+
+const problemImages = [
+  {
+    src: hurricaneInterfaceImage,
+    alt: 'Interfaz de predicción estacional de huracanes desarrollada para el BSC.',
+  },
+  {
+    src: hurricaneMapImage,
+    alt: 'Mapa meteorológico interactivo dentro de la herramienta de predicción de huracanes.',
+  },
+  {
+    src: forecastImage,
+    alt: 'Comparativa visual de modelos de predicción de huracanes en la plataforma del BSC.',
+  },
+];
+
+const solutionImages = [
+  {
+    src: dustInterfaceImage,
+    alt: 'Panel cartográfico para explorar predicciones de polvo sahariano.',
+  },
+  {
+    src: accessImage,
+    alt: 'Pantalla de acceso a la plataforma Barcelona Dust Regional Center.',
+  },
+  {
+    src: centerPageImage,
+    alt: 'Página informativa sobre la infraestructura del Barcelona Supercomputing Center.',
+  },
+];
+---
+
+<BaseLayout
+  title="Barcelona Supercomputing Center | Eloquent"
+  description="Cómo ayudamos al Barcelona Supercomputing Center a transformar información meteorológica compleja en herramientas digitales claras e interactivas."
+  image={heroImage.src}
+>
+  <CaseStudyHero
+    titleId="case-study-title"
+    eyebrow="Caso de estudio · Ciencia"
+    lead="Diseñamos y desarrollamos dos herramientas digitales para transformar información científica compleja en experiencias claras e interactivas."
+    image={heroImage}
+    imageAlt="Instalación del Barcelona Supercomputing Center en el interior de la capilla Torre Girona."
+    meta={[
+      { label: 'Cliente', value: 'Barcelona Supercomputing Center' },
+      { label: 'Proyecto', value: 'Herramientas digitales meteorológicas' },
+      { label: 'Año', value: '2022' },
+    ]}
+  >
+    <Fragment slot="title">Barcelona <em>Supercomputing Center</em></Fragment>
+  </CaseStudyHero>
+
+  <EditorialSection id="proyecto" label="Proyecto / 01" title="Sobre el proyecto" surface="paper">
+    <div class="case-study-prose">
+      <p>
+        El Barcelona Supercomputing Center – Centro Nacional de Supercomputación (BSC-CNS) es el
+        principal centro de investigación de computación de alto rendimiento en España y uno de los
+        principales de Europa.
+      </p>
+      <p>
+        El reto de este proyecto era hacer más comprensible y accesible el conocimiento de dos de
+        sus equipos de investigación meteorológica: uno enfocado en la predicción de huracanes y el
+        otro en partículas de polvo provenientes del Sahara.
+      </p>
+      <p>
+        El objetivo era poder traducir este conocimiento complejo en productos que fuesen útiles
+        tanto para la comunidad científica como para la ciudadanía.
+      </p>
+      <p>
+        Desde Eloquent acompañamos a la institución en el diseño y desarrollo de dos herramientas
+        digitales para transformar información compleja en experiencias claras e interactivas.
+      </p>
+    </div>
+
+    <Fragment slot="aside">
+      <dl class="case-study-facts">
+        <div>
+          <dt>Cliente</dt>
+          <dd>Barcelona Supercomputing Center</dd>
+        </div>
+        <div>
+          <dt>Servicios</dt>
+          <dd>
+            Arquitectura de información / Auditoría y estrategia / Comunicación estratégica /
+            Consultoría / Diseño y desarrollo web / Estrategia digital / UX/UI
+          </dd>
+        </div>
+        <div>
+          <dt>Año</dt>
+          <dd>2022</dd>
+        </div>
+      </dl>
+    </Fragment>
+  </EditorialSection>
+  <MediaGallery
+    images={projectImages}
+    label="Fuentes de datos e infraestructura del proyecto"
+    layout="duo"
+    surface="surface"
+  />
+
+  <EditorialSection id="problema" label="El reto / 02" title="Problema" surface="sage">
+    <div class="case-study-prose">
+      <p>
+        El Barcelona Supercomputing Center opera como un nodo tecnológico fundamental en la
+        investigación científica mundial, procesando modelos predictivos sobre fenómenos climáticos.
+      </p>
+      <p>
+        Sin embargo, la infraestructura de difusión para estos datos no lograba comunicar con
+        claridad ni hacía digerible el volumen masivo de datos, como las predicciones de huracanes o
+        la evolución de tormentas de arena.
+      </p>
+      <p>
+        El problema estratégico radicaba en la dificultad para traducir información científica
+        altamente compleja en plataformas e interfaces digitales fáciles de utilizar sin sacrificar
+        ningún detalle.
+      </p>
+      <p>
+        Al dirigirse a distintos usuarios, desde investigadores e instituciones internacionales
+        hasta la población general, el centro corría el riesgo de alienar a su audiencia por una
+        sobrecarga de información, limitando así el impacto de sus investigaciones.
+      </p>
+    </div>
+
+    <Fragment slot="aside">
+      <p class="case-study-aside-label">Tres puntos clave</p>
+      <ul class="case-study-findings">
+        <li>
+          <strong>Experiencia ciudadana</strong>
+          <span>
+            Barreras para la comprensión de los datos climáticos en públicos no especializados.
+            Dificultan la divulgación del conocimiento y la concienciación en sus públicos.
+          </span>
+        </li>
+        <li>
+          <strong>Coherencia institucional</strong>
+          <span>
+            Riesgo de fragmentar la autoridad de la marca al carecer de sistemas estandarizados de
+            comunicación para proyectos de alcance global.
+          </span>
+        </li>
+        <li>
+          <strong>Operación interna</strong>
+          <span>
+            Fricción técnica en los flujos de actualización de la información y en la consolidación
+            de datos provenientes de múltiples organismos meteorológicos internacionales.
+          </span>
+        </li>
+      </ul>
+    </Fragment>
+  </EditorialSection>
+  <MediaGallery
+    images={problemImages}
+    label="Interfaz de predicción estacional de huracanes"
+    layout="triptych"
+    surface="sage"
+  />
+
+  <EditorialSection
+    id="solucion"
+    label="El enfoque / 03"
+    title="Solución"
+    surface="paper"
+    contentWidth="wide"
+  >
+    <p class="case-study-solution-intro">
+      Abordamos el desafío aplicando un enfoque basado en la experiencia de usuario (diseño UX) y la
+      claridad en la arquitectura de la información. Priorizamos la colaboración directa con el
+      equipo de producto del centro para garantizar el rigor científico en cada decisión de diseño.
+    </p>
+
+    <div class="case-study-phases">
+      <article>
+        <h3>Diagnóstico</h3>
+        <div>
+          <p>
+            Iniciamos el proceso auditando la complejidad estructural del proyecto, que albergaba
+            más de 40 tipologías de visualizaciones, modelos predictivos y archivos en tiempo real.
+            A partir de este diagnóstico, consensuamos unos principios de diseño centrados en la
+            jerarquía de la información, la reducción del ruido visual y la integración de pautas de
+            accesibilidad.
+          </p>
+        </div>
+      </article>
+      <article>
+        <h3>Arquitectura y gobernanza del dato</h3>
+        <div>
+          <p>
+            Estructuramos un nuevo modelo de la información para las plataformas WMO Barcelona Dust
+            Regional Center y Seasonal Hurricane Predictions. En lugar de construir simples
+            repositorios estáticos, diseñamos entornos interactivos que actúan como palancas de
+            conocimiento. Definimos reglas de gobernanza claras para estandarizar la forma en que
+            los distintos centros meteorológicos del mundo publican y comparan sus estimaciones
+            anuales bajo un mismo marco normativo.
+          </p>
+        </div>
+      </article>
+      <article>
+        <h3>Activación y transferencia</h3>
+        <div>
+          <p>
+            Para garantizar la viabilidad del modelo, construimos un sistema escalable que se
+            transfirió e integró fluidamente en la infraestructura tecnológica del cliente (gestor
+            Plone). Esta transferencia técnica aseguró que el equipo interno pudiera asumir el
+            control del ecosistema desde el primer día, consolidando la sostenibilidad operativa sin
+            generar dependencias crónicas con agentes externos al BSC.
+          </p>
+        </div>
+      </article>
+    </div>
+  </EditorialSection>
+
+  <MediaGallery
+    images={solutionImages}
+    label="Aplicación del sistema en las plataformas meteorológicas"
+    layout="triptych"
+    surface="surface"
+  />
+
+  <EditorialSection
+    id="resultados"
+    label="El impacto / 04"
+    title="Resultados"
+    surface="accent"
+    contentWidth="wide"
+  >
+    <dl class="case-study-results">
+      <div>
+        <dt>Autonomía operativa</dt>
+        <dd>
+          El equipo técnico e investigador del BSC dispone ahora de los procesos y el marco
+          tecnológico para gestionar el ciclo de vida de sus plataformas con total independencia.
+        </dd>
+      </div>
+      <div>
+        <dt>Claridad para las audiencias</dt>
+        <dd>
+          Se logró una reducción notable de la fricción cognitiva, permitiendo que tanto expertos
+          como ciudadanos exploren datos complejos a través de herramientas de visualización claras.
+        </dd>
+      </div>
+      <div>
+        <dt>Eficiencia en la colaboración</dt>
+        <dd>
+          El equipo ahora puede coordinar proyectos internacionales con mayor agilidad, ofreciendo a
+          los centros asociados una plataforma estandarizada para publicar sus modelos predictivos.
+        </dd>
+      </div>
+      <div>
+        <dt>Coherencia institucional</dt>
+        <dd>
+          Se estableció un lenguaje visual y de experiencia de usuario sólido y transversal,
+          proyectando la misión divulgativa del centro con la máxima autoridad.
+        </dd>
+      </div>
+      <div>
+        <dt>Escalabilidad del servicio</dt>
+        <dd>
+          La nueva arquitectura de la información permite la futura integración de nuevos módulos o
+          indicadores meteorológicos sin fracturar la usabilidad del sistema.
+        </dd>
+      </div>
+      <div>
+        <dt>Cumplimiento normativo</dt>
+        <dd>
+          La aplicación de estándares de diseño universal garantiza que la infraestructura cumpla
+          con las exigencias de accesibilidad propias de un servicio público y científico global.
+        </dd>
+      </div>
+    </dl>
+  </EditorialSection>
+</BaseLayout>

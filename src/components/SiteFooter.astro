@@ -12,10 +12,12 @@ const isHome = Astro.url.pathname === '/';
       >info@eloquent.es <span aria-hidden="true">↗</span></a
     >
     <div class="site-footer__bottom">
-      <a class="brand brand--footer" href="/" aria-label="Eloquent, inicio">
-        <EloquentLogo />
-      </a>
-      <p>Consultoría de comunicación y experiencia digital.</p>
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="/" aria-label="Eloquent, inicio">
+          <EloquentLogo />
+        </a>
+        <p>Consultoría de comunicación y experiencia digital.</p>
+      </div>
       <nav aria-label="Enlaces legales">
         <a href="/aviso-legal/">Aviso legal</a>
         <a href="/politica-de-privacidad/">Privacidad</a>
