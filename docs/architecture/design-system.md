@@ -1,6 +1,6 @@
 # Eloquent design system
 
-The source of truth for visual values is [`src/styles/tokens.css`](../../src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](../../src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](../../src/styles/home.css), [`src/styles/landing-page-personal.css`](../../src/styles/landing-page-personal.css), and [`src/styles/case-study.css`](../../src/styles/case-study.css); all use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](../../src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
+The source of truth for visual values is [`src/styles/tokens.css`](../../src/styles/tokens.css). Shared layout and component rules live in [`src/styles/global.css`](../../src/styles/global.css). Page composition lives in focused stylesheets such as [`src/styles/home.css`](../../src/styles/home.css), [`src/styles/inventio.css`](../../src/styles/inventio.css), [`src/styles/landing-page-personal.css`](../../src/styles/landing-page-personal.css), and [`src/styles/case-study.css`](../../src/styles/case-study.css); all use the same tokens. Scroll thresholds and reveal settings live in [`src/design/interaction.ts`](../../src/design/interaction.ts). This is Eloquent's editorial system, guided by Material Design principles of consistent roles, readable hierarchy, clear interaction states, responsive layout, and purposeful motion. It does not depend on a component library.
 
 ## Implementation contract
 
@@ -71,7 +71,6 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 - `ProjectCard` owns each preview's semantic DOM, optimized responsive image, descriptive link, and internal styling in `global.css`.
 - `work-index.css` owns only the Work page surface and responsive three-, two-, and one-column grid composition.
 - The collection currently has no visible section heading or count. Its section uses an accessible label, and the project cards supply the collection's visible hierarchy.
-- Until their local Case Study pages are implemented, the Museu de L’Hospitalet and Barcelona Supercomputing Center cards link to their existing published URLs.
 
 ### Dossier contract
 

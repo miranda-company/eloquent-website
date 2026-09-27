@@ -82,6 +82,12 @@
     line-height: var(--leading-copy);
   }
 
+  .service-list .text-link {
+    align-self: flex-start;
+    margin-top: var(--space-6);
+    font-size: var(--text-control);
+  }
+
   .work {
     padding-block: var(--section-space);
     background: var(--color-sage);

@@ -1,10 +1,19 @@
-export const services = [
+interface Service {
+  id: string;
+  shortName: string;
+  title: string;
+  description: string;
+  pageHref?: string;
+}
+
+export const services: readonly Service[] = [
   {
     id: 'servicio-estrategia',
     shortName: 'Inventio',
     title: 'Visión y estrategia de comunicación',
     description:
       'Definimos qué necesita comunicar una organización, por qué importa, quién necesita entenderlo y cómo convertirlo en una narrativa clara, coherente y creíble.',
+    pageHref: '/servicios/inventio/',
   },
   {
     id: 'servicio-crisis',
@@ -27,4 +36,4 @@ export const services = [
     description:
       'Ayudamos a líderes y equipos directivos a construir una voz pública clara, coherente y creíble, alineada con la visión y responsabilidad de la organización.',
   },
-] as const;
+];

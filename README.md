@@ -7,7 +7,7 @@ Static Astro redesign of [eloquent.es](https://eloquent.es). The project replace
 Implemented in the repository:
 
 - Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens.
-- Landing Page Personal service page at `/servicios/landing-page-personal/`.
+- Inventio and Landing Page Personal service pages at `/servicios/inventio/` and `/servicios/landing-page-personal/`.
 - Work index at `/trabajo/` and three Case Studies at `/trabajo/<project-slug>/`.
 - Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
 - Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
@@ -56,6 +56,7 @@ These commands cover Astro and TypeScript diagnostics, linting, design-token use
 | Route                                       | Source                                                    | Status                               |
 | ------------------------------------------- | --------------------------------------------------------- | ------------------------------------ |
 | `/`                                         | `src/pages/index.astro`                                   | Implemented                          |
+| `/servicios/inventio/`                      | `src/pages/servicios/inventio.astro`                      | Implemented                          |
 | `/servicios/landing-page-personal/`         | `src/pages/servicios/landing-page-personal.astro`         | Implemented; example content pending |
 | `/trabajo/`                                 | `src/pages/trabajo/index.astro`                           | Implemented                          |
 | `/trabajo/cn-sant-andreu/`                  | `src/pages/trabajo/cn-sant-andreu.astro`                  | Implemented                          |

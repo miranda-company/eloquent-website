@@ -3,7 +3,8 @@ import EloquentLogo from './EloquentLogo.astro';
 import { services } from '../data/services';
 
 const isHome = Astro.url.pathname === '/';
-const isPersonalPage = Astro.url.pathname === '/servicios/landing-page-personal/';
+const currentPath = Astro.url.pathname;
+const isPersonalPage = currentPath === '/servicios/landing-page-personal/';
 const isWorkPage = Astro.url.pathname.startsWith('/trabajo/');
 const isDossierPage = Astro.url.pathname.startsWith('/dossier/');
 ---
@@ -21,7 +22,12 @@ const isDossierPage = Astro.url.pathname.startsWith('/dossier/');
           {
             services.map((service) => (
               <li>
-                <a href={`/#${service.id}`}>{service.shortName}</a>
+                <a
+                  href={service.pageHref ?? `/#${service.id}`}
+                  aria-current={service.pageHref === currentPath ? 'page' : undefined}
+                >
+                  {service.shortName}
+                </a>
               </li>
             ))
           }

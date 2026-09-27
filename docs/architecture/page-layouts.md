@@ -88,7 +88,7 @@ PageHero
 
 ## Service detail
 
-**Current route:** `/servicios/landing-page-personal/`
+**Routes:** `/servicios/<service-slug>/`
 
 **Purpose:** Explain one service from problem and value through scope, examples, process, audience, price, and contact.
 
@@ -113,7 +113,8 @@ PageHero
 - Facts, inclusions, examples, steps, and prices use semantic lists or grouped sections. Three-column groups reduce to two where useful and one on phones.
 - Example placeholders remain non-interactive until a real destination exists.
 - The final action uses the shared button and contact destination.
-- `landing-page-personal.css` owns unique composition. When another service repeats a pattern, extract it into a shared component.
+- Each service stylesheet owns only its page-specific composition. When another service repeats a
+  pattern, extract it into a shared component rather than copying its DOM or CSS.
 
 ## Work index
 

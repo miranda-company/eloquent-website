@@ -84,6 +84,11 @@ const organization = {
               <span class="service-list__label">{service.shortName}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+              {service.pageHref && (
+                <a class="text-link" href={service.pageHref}>
+                  Conoce {service.shortName} <span aria-hidden="true">↗</span>
+                </a>
+              )}
             </li>
           ))
         }
