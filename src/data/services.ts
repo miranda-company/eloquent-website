@@ -21,6 +21,7 @@ export const services: readonly Service[] = [
     title: 'Preparación para la comunicación de crisis',
     description:
       'Ayudamos a tu equipo a anticipar escenarios, definir roles, mensajes y protocolos para responder con claridad, criterio y coordinación cuando la confianza está en riesgo.',
+    pageHref: '/servicios/kairos/',
   },
   {
     id: 'servicio-ia',
@@ -28,6 +29,7 @@ export const services: readonly Service[] = [
     title: 'Comunicación e Inteligencia Artificial',
     description:
       'Ayudamos a integrar la IA en la comunicación sin perder criterio, voz ni control, con reglas claras y flujos de revisión responsables.',
+    pageHref: '/servicios/kanon/',
   },
   {
     id: 'servicio-apex',
@@ -35,5 +37,6 @@ export const services: readonly Service[] = [
     title: 'Reputación directiva',
     description:
       'Ayudamos a líderes y equipos directivos a construir una voz pública clara, coherente y creíble, alineada con la visión y responsabilidad de la organización.',
+    pageHref: '/servicios/ethos/',
   },
 ];

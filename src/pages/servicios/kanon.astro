@@ -1,0 +1,223 @@
+---
+import StrategicServicePage from '../../components/StrategicServicePage.astro';
+
+const content = {
+  slug: 'kanon',
+  name: 'Kanon',
+  metaTitle: 'Kanon — Comunicación e Inteligencia Artificial | Eloquent',
+  metaDescription:
+    'Integramos la IA en la comunicación con reglas, flujos de revisión y criterios de uso responsable para proteger la voz, los datos y la reputación de tu organización.',
+  serviceType: 'Comunicación e Inteligencia Artificial',
+  schemaDescription:
+    'Ayudamos a organizaciones a integrar la inteligencia artificial en su comunicación con criterio editorial, reglas claras, supervisión humana y flujos de revisión responsables.',
+  contactSubject: 'Consulta Kanon',
+  hero: {
+    eyebrow: 'Kanon · Comunicación e Inteligencia Artificial',
+    title: {
+      before: '¿Está usando tu equipo IA ',
+      emphasis: 'sin un criterio común?',
+    },
+    lead: 'Integramos la IA en la comunicación sin perder criterio, voz ni control, con reglas claras, flujos de revisión y herramientas de uso responsable.',
+    footnote: 'Criterio · voz · revisión · gobernanza',
+  },
+  context: {
+    eyebrow: 'El punto de partida / 01',
+    title: { before: 'La IA ya está dentro. ', emphasis: 'El sistema todavía no.' },
+    statement:
+      'Muchas organizaciones ya utilizan inteligencia artificial, aunque nunca hayan tomado una decisión formal sobre cómo hacerlo.',
+    paragraphs: [
+      'Los equipos la aplican a textos, ideas, traducciones, resúmenes, presentaciones, informes, imágenes o investigación preliminar. Cuando cada persona trabaja con herramientas y criterios distintos, el uso se vuelve fragmentado, difícil de revisar y poco visible para la organización.',
+      'Kanon convierte esa experimentación dispersa en una práctica compartida. Define dónde aporta valor la IA, qué riesgos hay que controlar y qué responsabilidad humana debe acompañar cada uso.',
+    ],
+  },
+  signals: {
+    eyebrow: 'Señales de desorden / 02',
+    title: { before: 'La producción acelera. El criterio ', emphasis: 'no siempre.' },
+    intro:
+      'Estas señales indican que la IA ya forma parte del trabajo, pero todavía no existe un marco común para utilizarla bien.',
+    items: [
+      {
+        title: 'Cada persona usa la IA de forma distinta',
+        description: 'No hay herramientas, criterios ni expectativas compartidas entre equipos.',
+      },
+      {
+        title: 'No está claro qué se puede delegar',
+        description: 'Tareas sensibles y tareas rutinarias reciben el mismo tratamiento.',
+      },
+      {
+        title: 'La revisión depende de cada persona',
+        description: 'No existen controles comunes sobre precisión, fuentes, tono o calidad.',
+      },
+      {
+        title: 'La voz se vuelve genérica',
+        description: 'Los contenidos pierden matiz, personalidad y criterio editorial.',
+      },
+      {
+        title: 'Datos y fuentes no tienen reglas',
+        description: 'La privacidad, el copyright y la trazabilidad se valoran demasiado tarde.',
+      },
+      {
+        title: 'Se produce más, pero no necesariamente mejor',
+        description: 'La velocidad aumenta sin una mejora equivalente en claridad o utilidad.',
+      },
+    ],
+  },
+  transformation: {
+    eyebrow: 'La transformación / 03',
+    title: {
+      before: 'Reglas, revisión y criterio para ',
+      emphasis: 'integrar la IA con responsabilidad.',
+    },
+    before: {
+      label: 'Punto de partida',
+      title: 'Uso informal, resultados inconsistentes y riesgos poco visibles.',
+      copy: 'Cada persona decide qué herramienta usar, qué información compartir y cuándo dar un resultado por válido. La organización gana velocidad, pero pierde trazabilidad y control.',
+    },
+    after: {
+      label: 'Después de Kanon',
+      title: 'Un sistema común para decidir, producir y revisar con IA.',
+      copy: 'El equipo sabe cuándo utilizarla, qué no debe delegar, cómo proteger los datos y qué revisión humana necesita cada pieza antes de publicarse.',
+    },
+    statement:
+      'La IA deja de ser una herramienta improvisada y se convierte en un apoyo responsable para el sistema de comunicación.',
+  },
+  moments: {
+    eyebrow: 'Cuándo activarlo / 04',
+    title: { before: 'Situaciones que exigen ', emphasis: 'gobernanza editorial.' },
+    intro:
+      'Kanon es útil cuando la organización quiere aprovechar la IA sin rebajar la calidad, perder su voz o asumir riesgos que todavía no sabe ver.',
+    items: [
+      'El equipo usa ChatGPT, Claude u otras herramientas sin reglas comunes.',
+      'Existe presión para integrar IA y demostrar eficiencia con rapidez.',
+      'Han aparecido errores, alucinaciones o contenidos demasiado genéricos.',
+      'Preocupa compartir información sensible, privada o confidencial.',
+      'El equipo de comunicación está saturado y necesita mejorar sus procesos.',
+      'Dirección, comunicación, innovación y legal no comparten el mismo criterio.',
+    ],
+    closing:
+      'La pregunta no es solo qué puede hacer la IA, sino qué debe seguir decidiendo, verificando y firmando una persona.',
+  },
+  method: {
+    eyebrow: 'El método / 05',
+    title: { before: 'De la experimentación a ', emphasis: 'una práctica responsable.' },
+    intro:
+      'Trabajamos el uso de IA como un sistema de decisiones, riesgos, procesos y revisión humana. Cada fase aclara una responsabilidad concreta.',
+    steps: [
+      {
+        title: 'Mapear el uso actual',
+        copy: 'Identificamos quién usa IA, con qué herramientas, para qué tareas, con qué datos y con qué nivel de revisión.',
+        question: '¿Cómo se está utilizando realmente la IA hoy?',
+      },
+      {
+        title: 'Detectar oportunidades y riesgos',
+        copy: 'Separamos los usos que aportan valor de los que comprometen precisión, privacidad, fuentes, derechos o reputación.',
+        question: '¿Dónde ayuda la IA y dónde aumenta el riesgo?',
+      },
+      {
+        title: 'Definir principios y límites',
+        copy: 'Acordamos usos permitidos, restringidos y prohibidos, niveles de riesgo y requisitos de transparencia y supervisión.',
+        question: '¿Qué puede delegarse y bajo qué condiciones?',
+      },
+      {
+        title: 'Diseñar flujos de trabajo',
+        copy: 'Definimos entrada, instrucciones, resultado esperado, revisión, aceptación, responsabilidad y trazabilidad.',
+        question: '¿Qué recorrido debe seguir una pieza creada con apoyo de IA?',
+      },
+      {
+        title: 'Crear herramientas de uso y revisión',
+        copy: 'Preparamos prompts, plantillas, checklists, criterios de tono, rúbricas y controles de verificación.',
+        question: '¿Qué necesita el equipo para trabajar con consistencia?',
+      },
+      {
+        title: 'Formar, probar y ajustar',
+        copy: 'Aplicamos el sistema a casos reales, recogemos aprendizajes y actualizamos reglas y herramientas.',
+        question: '¿Cómo mantenemos el criterio cuando cambian los usos y la tecnología?',
+      },
+    ],
+  },
+  deliverables: {
+    eyebrow: 'El resultado / 06',
+    title: { before: 'Herramientas para usar IA ', emphasis: 'con criterio.' },
+    intro:
+      'El alcance se adapta al nivel de madurez, los procesos y los riesgos de cada organización. Estos son los bloques habituales.',
+    groups: [
+      {
+        id: 'diagnostico',
+        title: 'Diagnóstico',
+        items: [
+          'Auditoría de usos, herramientas y procesos actuales.',
+          'Mapa de oportunidades, riesgos y nivel de madurez.',
+          'Inventario de datos, contenidos y puntos de revisión.',
+        ],
+      },
+      {
+        id: 'estrategia',
+        title: 'Estrategia',
+        items: [
+          'Principios de uso responsable y niveles de riesgo.',
+          'Usos permitidos, restringidos y prohibidos.',
+          'Criterios de privacidad, transparencia y supervisión humana.',
+        ],
+      },
+      {
+        id: 'sistema-operativo',
+        title: 'Sistema operativo',
+        items: [
+          'Flujos de trabajo y responsabilidades por tipo de tarea.',
+          'Playbook, biblioteca de prompts y plantillas.',
+          'Checklists de revisión, voz, fuentes y verificación.',
+        ],
+      },
+      {
+        id: 'formacion',
+        title: 'Formación y adopción',
+        items: [
+          'Workshop práctico con casos reales del equipo.',
+          'Guías de buenas prácticas y materiales de consulta.',
+          'Acompañamiento inicial y criterios de actualización.',
+        ],
+      },
+    ],
+  },
+  audience: {
+    eyebrow: 'Para quién / 07',
+    title: { before: 'Equipos que quieren innovar ', emphasis: 'sin perder su voz.' },
+    paragraphs: [
+      'Trabajamos con instituciones, fundaciones, organizaciones culturales, científicas y educativas, organismos públicos, empresas B2B y consultoras expertas que gestionan información técnica, sensible o reputacional.',
+      'Kanon suele empezar con una necesidad compartida por comunicación, marketing, dirección, innovación, contenidos, conocimiento o equipos legales: ganar capacidad sin perder calidad, control ni responsabilidad.',
+    ],
+    statement:
+      'La tecnología puede acelerar el trabajo. El criterio humano sigue siendo responsable de lo que la organización dice y publica.',
+  },
+  scope: {
+    eyebrow: 'El alcance / 08',
+    title: { before: 'Integrar la IA. ', emphasis: 'Mantener la responsabilidad.' },
+    intro:
+      'Kanon trabaja la comunicación, el criterio editorial y la gobernanza de uso. Cuando el proyecto requiere especialización técnica o jurídica, coordinamos el sistema con los equipos responsables.',
+    includesTitle: 'Kanon sí es',
+    includes: [
+      'Criterio para integrar la IA en la comunicación.',
+      'Gobernanza editorial, reglas y flujos de revisión.',
+      'Protección de la voz, los datos, las fuentes y la reputación.',
+      'Formación práctica y herramientas utilizables por el equipo.',
+    ],
+    excludesTitle: 'Kanon no es',
+    excludes: [
+      'Implementación técnica de modelos, software o ciberseguridad.',
+      'Asesoría legal especializada o compliance regulatorio profundo.',
+      'Automatización completa, sustitución de equipos o producción masiva.',
+      'Formación genérica de ChatGPT o una biblioteca de prompts sin estrategia.',
+    ],
+  },
+  final: {
+    eyebrow: 'El siguiente paso',
+    title: { before: 'Antes de automatizar más, definamos ', emphasis: 'cómo usar la IA bien.' },
+    lead: 'Cuéntanos cómo utiliza ahora la IA vuestro equipo, qué riesgos os preocupan y qué procesos de comunicación queréis mejorar.',
+    buttonLabel: 'Hablemos de Kanon',
+    microcopy:
+      'Te responderemos para entender el contexto y proponer un primer alcance de trabajo.',
+  },
+} as const;
+---
+
+<StrategicServicePage {content} />

@@ -1,0 +1,227 @@
+---
+import StrategicServicePage from '../../components/StrategicServicePage.astro';
+
+const content = {
+  slug: 'kairos',
+  name: 'Kairos',
+  metaTitle: 'Kairos — Preparación para la comunicación de crisis | Eloquent',
+  metaDescription:
+    'Anticipamos escenarios críticos y preparamos roles, mensajes y protocolos para que tu organización comunique con criterio cuando la confianza está en riesgo.',
+  serviceType: 'Preparación para la comunicación de crisis',
+  schemaDescription:
+    'Ayudamos a organizaciones a anticipar escenarios críticos, definir roles, mensajes y protocolos, y preparar a sus equipos para comunicar bajo presión.',
+  contactSubject: 'Consulta Kairos',
+  hero: {
+    eyebrow: 'Kairos · Preparación para la comunicación de crisis',
+    title: {
+      before: 'Si pasara mañana, ¿sabría tu equipo ',
+      emphasis: 'cómo responder?',
+    },
+    lead: 'Anticipamos escenarios críticos y preparamos roles, mensajes y protocolos para comunicar con claridad, criterio y coordinación cuando la confianza está en riesgo.',
+    footnote: 'Escenarios · roles · mensajes · simulación',
+  },
+  context: {
+    eyebrow: 'El punto de partida / 01',
+    title: { before: 'Una crisis no deja tiempo para ', emphasis: 'organizarse desde cero.' },
+    statement:
+      'Muchas organizaciones tienen buenos equipos y buenas intenciones, pero no están preparadas para comunicar bajo presión.',
+    paragraphs: [
+      'Cuando aparece una situación crítica, las decisiones se aceleran, la información es incompleta y cada área puede interpretar el problema de una manera distinta. Sin un sistema compartido, la respuesta depende de la improvisación.',
+      'Kairos prepara a la organización antes de que ocurra una crisis. Define qué riesgos merecen atención, quién decide, quién habla y qué criterios permiten sostener la confianza mientras la situación evoluciona.',
+    ],
+  },
+  signals: {
+    eyebrow: 'Señales de vulnerabilidad / 02',
+    title: { before: 'La presión aumenta. La coordinación ', emphasis: 'no aparece sola.' },
+    intro:
+      'Estas señales indican que la organización necesita preparar su respuesta antes de enfrentarse a una situación sensible.',
+    items: [
+      {
+        title: 'Nadie sabe quién decide',
+        description:
+          'Dirección, comunicación, legal y operaciones no comparten un flujo de respuesta.',
+      },
+      {
+        title: 'No está claro quién habla',
+        description:
+          'Faltan portavoces definidos y criterios para activar cada nivel de responsabilidad.',
+      },
+      {
+        title: 'Los mensajes llegan tarde',
+        description:
+          'La organización empieza a redactar cuando la presión pública ya está creciendo.',
+      },
+      {
+        title: 'Cada área interpreta algo distinto',
+        description: 'La falta de una lectura común produce respuestas lentas o contradictorias.',
+      },
+      {
+        title: 'Prudencia se confunde con silencio',
+        description: 'El equipo no sabe cuándo esperar, cuándo informar y cuándo actualizar.',
+      },
+      {
+        title: 'Los riesgos no están priorizados',
+        description:
+          'No existe un mapa que relacione probabilidad, impacto y capacidad de respuesta.',
+      },
+    ],
+  },
+  transformation: {
+    eyebrow: 'La transformación / 03',
+    title: {
+      before: 'Preparación, roles y criterio para ',
+      emphasis: 'sostener la confianza.',
+    },
+    before: {
+      label: 'Punto de partida',
+      title: 'Riesgos conocidos, respuestas improvisadas y decisiones dispersas.',
+      copy: 'La organización sabe que puede ocurrir algo, pero no comparte una respuesta clara sobre quién decide, qué se comunica primero ni cómo se coordinan los equipos.',
+    },
+    after: {
+      label: 'Después de Kairos',
+      title: 'Un sistema común para decidir, coordinar y comunicar bajo presión.',
+      copy: 'El equipo reconoce los escenarios prioritarios, activa los roles adecuados y adapta mensajes base con criterios compartidos para cada público y canal.',
+    },
+    statement:
+      'La organización deja de depender de la reacción y gana estructura para responder con claridad cuando todavía no tiene todas las respuestas.',
+  },
+  moments: {
+    eyebrow: 'Cuándo activarlo / 04',
+    title: { before: 'Situaciones que piden ', emphasis: 'preparación real.' },
+    intro:
+      'Kairos se activa cuando una organización percibe exposición, vulnerabilidad o una decisión próxima que puede poner la confianza a prueba.',
+    items: [
+      'Una crisis reciente o un incidente menor que ha funcionado como aviso.',
+      'Un evento, lanzamiento o decisión con sensibilidad pública o institucional.',
+      'Rumores, quejas o tensiones con usuarios, clientes, comunidad o equipos.',
+      'Crecimiento organizativo que hace insuficiente la coordinación informal.',
+      'Temas sensibles relacionados con salud, datos, ciencia, infancia o sostenibilidad.',
+      'Dependencia de la confianza pública, institucional, financiera o comunitaria.',
+    ],
+    closing:
+      'La mejor señal para empezar es sencilla: no queremos esperar a tener un problema para decidir cómo responder.',
+  },
+  method: {
+    eyebrow: 'El método / 05',
+    title: { before: 'De la vulnerabilidad a ', emphasis: 'una respuesta preparada.' },
+    intro:
+      'Trabajamos la crisis como un sistema de decisiones, públicos, mensajes y coordinación. Cada fase reduce una incertidumbre concreta.',
+    steps: [
+      {
+        title: 'Identificar riesgos y escenarios',
+        copy: 'Mapeamos las situaciones que podrían obligar a la organización a explicarse bajo presión.',
+        question: '¿Qué podría ocurrir y poner en riesgo la confianza?',
+      },
+      {
+        title: 'Priorizar escenarios críticos',
+        copy: 'Valoramos probabilidad, impacto, velocidad, públicos afectados y preparación actual.',
+        question: '¿Qué escenarios necesitan preparación real?',
+      },
+      {
+        title: 'Definir roles y decisiones',
+        copy: 'Aclaramos quién detecta, evalúa, decide, redacta, valida, habla, informa y monitoriza.',
+        question: '¿Quién hace qué cuando hay presión y poco tiempo?',
+      },
+      {
+        title: 'Construir mensajes base',
+        copy: 'Preparamos estructuras, criterios de transparencia, Q&A y mensajes adaptables por público.',
+        question: '¿Qué necesita entender cada público mientras la situación evoluciona?',
+      },
+      {
+        title: 'Simular y entrenar',
+        copy: 'Probamos tiempos, decisiones, coordinación y mensajes con un escenario progresivo.',
+        question: '¿Cómo responde realmente el equipo cuando aparece la presión?',
+      },
+      {
+        title: 'Documentar y actualizar',
+        copy: 'Convertimos lo aprendido en herramientas breves, accesibles y fáciles de mantener.',
+        question: '¿Qué necesita tener el equipo a mano cuando ya no puede empezar de cero?',
+      },
+    ],
+  },
+  deliverables: {
+    eyebrow: 'El resultado / 06',
+    title: { before: 'Herramientas que el equipo ', emphasis: 'puede activar.' },
+    intro:
+      'El alcance se adapta a los riesgos y al nivel de preparación de cada organización. Estos son los bloques habituales.',
+    groups: [
+      {
+        id: 'diagnostico',
+        title: 'Diagnóstico',
+        items: [
+          'Auditoría de preparación ante crisis.',
+          'Mapa de riesgos y vulnerabilidades reputacionales.',
+          'Revisión de protocolos, canales y coordinación interna.',
+        ],
+      },
+      {
+        id: 'estrategia',
+        title: 'Estrategia',
+        items: [
+          'Mapa y priorización de escenarios.',
+          'Principios de respuesta y transparencia.',
+          'Arquitectura de mensajes y públicos afectados.',
+        ],
+      },
+      {
+        id: 'sistema-operativo',
+        title: 'Sistema operativo',
+        items: [
+          'Roles, árbol de decisión y flujo de aprobación.',
+          'Checklist, plantillas, mensajes base y Q&A.',
+          'Guía de canales y contactos clave.',
+        ],
+      },
+      {
+        id: 'simulacion',
+        title: 'Simulación y mejora',
+        items: [
+          'Workshop o simulación de escenario crítico.',
+          'Evaluación de respuesta y aprendizajes.',
+          'Plan de mejora y actualización periódica.',
+        ],
+      },
+    ],
+  },
+  audience: {
+    eyebrow: 'Para quién / 07',
+    title: { before: 'Organizaciones cuya confianza ', emphasis: 'no puede improvisarse.' },
+    paragraphs: [
+      'Trabajamos con instituciones, fundaciones, asociaciones, centros culturales, científicos y educativos, entidades públicas, organizaciones de impacto social y empresas B2B con exposición reputacional.',
+      'Kairos suele empezar con una preocupación compartida por dirección, comunicación, reputación, operaciones o equipos legales: si mañana ocurre algo, no sabemos si estamos preparados para responder bien.',
+    ],
+    statement:
+      'El objetivo es que dirección y equipo compartan criterios, responsabilidades y herramientas antes de necesitarlos.',
+  },
+  scope: {
+    eyebrow: 'El alcance / 08',
+    title: { before: 'Preparar la comunicación. ', emphasis: 'Aclarar los límites.' },
+    intro:
+      'Kairos trabaja la preparación estratégica y operativa de la comunicación. Cuando un escenario requiere especialización adicional, coordinamos el trabajo con los equipos responsables.',
+    includesTitle: 'Kairos sí es',
+    includes: [
+      'Preparación comunicativa y anticipación de escenarios.',
+      'Definición de roles, decisiones y criterios de respuesta.',
+      'Mensajes base, coordinación interna y simulación.',
+      'Herramientas accionables para proteger la confianza.',
+    ],
+    excludesTitle: 'Kairos no es',
+    excludes: [
+      'Asesoría legal, compliance regulatorio o ciberseguridad.',
+      'Gabinete de prensa o gestión de redes 24/7.',
+      'Control de daños cosmético u ocultación de información.',
+      'Un manual extenso que el equipo no pueda utilizar.',
+    ],
+  },
+  final: {
+    eyebrow: 'El siguiente paso',
+    title: { before: 'No esperemos a la crisis para decidir ', emphasis: 'cómo responder.' },
+    lead: 'Cuéntanos qué escenarios os preocupan, qué nivel de preparación existe y qué equipos tendrían que coordinarse si algo ocurriera mañana.',
+    buttonLabel: 'Hablemos de Kairos',
+    microcopy:
+      'Te responderemos para entender el contexto y proponer un primer alcance de preparación.',
+  },
+} as const;
+---
+
+<StrategicServicePage {content} />

@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from './PageHero.astro';
+import '../styles/strategic-service.css';
+
+interface EmphasizedText {
+  before: string;
+  emphasis: string;
+  after?: string;
+}
+
+interface Signal {
+  title: string;
+  description: string;
+}
+
+interface MethodStep {
+  title: string;
+  copy: string;
+  question: string;
+}
+
+interface DeliverableGroup {
+  id: string;
+  title: string;
+  items: readonly string[];
+}
+
+interface StrategicServiceContent {
+  slug: string;
+  name: string;
+  metaTitle: string;
+  metaDescription: string;
+  serviceType: string;
+  schemaDescription: string;
+  contactSubject: string;
+  hero: {
+    eyebrow: string;
+    title: EmphasizedText;
+    lead: string;
+    footnote: string;
+  };
+  context: {
+    eyebrow: string;
+    title: EmphasizedText;
+    statement: string;
+    paragraphs: readonly string[];
+  };
+  signals: {
+    eyebrow: string;
+    title: EmphasizedText;
+    intro: string;
+    items: readonly Signal[];
+  };
+  transformation: {
+    eyebrow: string;
+    title: EmphasizedText;
+    before: { label: string; title: string; copy: string };
+    after: { label: string; title: string; copy: string };
+    statement: string;
+  };
+  moments: {
+    eyebrow: string;
+    title: EmphasizedText;
+    intro: string;
+    items: readonly string[];
+    closing: string;
+  };
+  method: {
+    eyebrow: string;
+    title: EmphasizedText;
+    intro: string;
+    steps: readonly MethodStep[];
+  };
+  deliverables: {
+    eyebrow: string;
+    title: EmphasizedText;
+    intro: string;
+    groups: readonly DeliverableGroup[];
+  };
+  audience: {
+    eyebrow: string;
+    title: EmphasizedText;
+    paragraphs: readonly string[];
+    statement: string;
+  };
+  scope?: {
+    eyebrow: string;
+    title: EmphasizedText;
+    intro: string;
+    includesTitle: string;
+    includes: readonly string[];
+    excludesTitle: string;
+    excludes: readonly string[];
+  };
+  final: {
+    eyebrow: string;
+    title: EmphasizedText;
+    lead: string;
+    buttonLabel: string;
+    microcopy: string;
+  };
+}
+
+interface Props {
+  content: StrategicServiceContent;
+}
+
+const { content } = Astro.props;
+const pageUrl = `https://eloquent.es/servicios/${content.slug}/`;
+const contactHref = `mailto:info@eloquent.es?subject=${encodeURIComponent(content.contactSubject)}`;
+const methodAnchor = `${content.slug}-metodo`;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `${content.name} — ${content.serviceType}`,
+  serviceType: content.serviceType,
+  description: content.schemaDescription,
+  provider: {
+    '@type': 'Organization',
+    name: 'Eloquent',
+    url: 'https://eloquent.es/',
+  },
+  url: pageUrl,
+};
+---
+
+<BaseLayout title={content.metaTitle} description={content.metaDescription}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+  <PageHero
+    titleId={`${content.slug}-title`}
+    eyebrow={content.hero.eyebrow}
+    lead={content.hero.lead}
+  >
+    <Fragment slot="title">
+      {content.hero.title.before}<em>{content.hero.title.emphasis}</em>{content.hero.title.after}
+    </Fragment>
+    <Fragment slot="actions">
+      <a class="button button--light" href={contactHref}>
+        {content.final.buttonLabel}
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a class="text-link text-link--light" href={`#${methodAnchor}`}>Ver cómo trabajamos</a>
+    </Fragment>
+    <Fragment slot="footnote">{content.hero.footnote}</Fragment>
+  </PageHero>
+
+  <section class="strategic-service-context" aria-labelledby={`${content.slug}-context-title`}>
+    <div class="container strategic-service-context__grid">
+      <div data-reveal>
+        <p class="eyebrow">{content.context.eyebrow}</p>
+        <h2 id={`${content.slug}-context-title`}>
+          {content.context.title.before}<em>{content.context.title.emphasis}</em>{
+            content.context.title.after
+          }
+        </h2>
+      </div>
+      <div class="strategic-service-context__copy" data-reveal>
+        <p class="strategic-service-context__statement">{content.context.statement}</p>
+        {content.context.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="strategic-service-signals" aria-labelledby={`${content.slug}-signals-title`}>
+    <div class="container">
+      <p class="eyebrow" data-reveal>{content.signals.eyebrow}</p>
+      <div class="section-heading" data-reveal>
+        <h2 id={`${content.slug}-signals-title`}>
+          {content.signals.title.before}<em>{content.signals.title.emphasis}</em>{
+            content.signals.title.after
+          }
+        </h2>
+        <p>{content.signals.intro}</p>
+      </div>
+      <ul class="strategic-service-signals__list">
+        {
+          content.signals.items.map((signal) => (
+            <li data-reveal>
+              <h3>{signal.title}</h3>
+              <p>{signal.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section
+    class="strategic-service-transformation"
+    aria-labelledby={`${content.slug}-transformation-title`}
+  >
+    <div class="container">
+      <p class="eyebrow" data-reveal>{content.transformation.eyebrow}</p>
+      <h2 id={`${content.slug}-transformation-title`} data-reveal>
+        {content.transformation.title.before}<em>{content.transformation.title.emphasis}</em>{
+          content.transformation.title.after
+        }
+      </h2>
+      <div class="strategic-service-transformation__grid">
+        <article data-reveal>
+          <p class="strategic-service-transformation__label">
+            {content.transformation.before.label}
+          </p>
+          <h3>{content.transformation.before.title}</h3>
+          <p>{content.transformation.before.copy}</p>
+        </article>
+        <article data-reveal>
+          <p class="strategic-service-transformation__label">
+            {content.transformation.after.label}
+          </p>
+          <h3>{content.transformation.after.title}</h3>
+          <p>{content.transformation.after.copy}</p>
+        </article>
+      </div>
+      <p class="strategic-service-transformation__statement" data-reveal>
+        {content.transformation.statement}
+      </p>
+    </div>
+  </section>
+
+  <section class="strategic-service-moments" aria-labelledby={`${content.slug}-moments-title`}>
+    <div class="container">
+      <p class="eyebrow" data-reveal>{content.moments.eyebrow}</p>
+      <div class="section-heading" data-reveal>
+        <h2 id={`${content.slug}-moments-title`}>
+          {content.moments.title.before}<em>{content.moments.title.emphasis}</em>{
+            content.moments.title.after
+          }
+        </h2>
+        <p>{content.moments.intro}</p>
+      </div>
+      <ol class="strategic-service-moments__list">
+        {content.moments.items.map((moment) => <li data-reveal>{moment}</li>)}
+      </ol>
+      <p class="strategic-service-moments__closing" data-reveal>{content.moments.closing}</p>
+    </div>
+  </section>
+
+  <section
+    class="strategic-service-method"
+    id={methodAnchor}
+    aria-labelledby={`${content.slug}-method-title`}
+  >
+    <div class="container">
+      <p class="eyebrow eyebrow--light" data-reveal>{content.method.eyebrow}</p>
+      <div class="section-heading strategic-service-method__heading" data-reveal>
+        <h2 id={`${content.slug}-method-title`}>
+          {content.method.title.before}<em>{content.method.title.emphasis}</em>{
+            content.method.title.after
+          }
+        </h2>
+        <p>{content.method.intro}</p>
+      </div>
+      <ol class="strategic-service-method__steps">
+        {
+          content.method.steps.map((step) => (
+            <li data-reveal>
+              <h3>{step.title}</h3>
+              <p>{step.copy}</p>
+              <p class="strategic-service-method__question">{step.question}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section
+    class="strategic-service-deliverables"
+    aria-labelledby={`${content.slug}-deliverables-title`}
+  >
+    <div class="container">
+      <p class="eyebrow" data-reveal>{content.deliverables.eyebrow}</p>
+      <div class="section-heading" data-reveal>
+        <h2 id={`${content.slug}-deliverables-title`}>
+          {content.deliverables.title.before}<em>{content.deliverables.title.emphasis}</em>{
+            content.deliverables.title.after
+          }
+        </h2>
+        <p>{content.deliverables.intro}</p>
+      </div>
+      <div class="strategic-service-deliverables__grid">
+        {
+          content.deliverables.groups.map((group) => (
+            <section aria-labelledby={`${content.slug}-deliverable-${group.id}`} data-reveal>
+              <h3 id={`${content.slug}-deliverable-${group.id}`}>{group.title}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="strategic-service-audience" aria-labelledby={`${content.slug}-audience-title`}>
+    <div class="container strategic-service-audience__grid">
+      <div data-reveal>
+        <p class="eyebrow">{content.audience.eyebrow}</p>
+        <h2 id={`${content.slug}-audience-title`}>
+          {content.audience.title.before}<em>{content.audience.title.emphasis}</em>{
+            content.audience.title.after
+          }
+        </h2>
+      </div>
+      <div class="strategic-service-audience__copy" data-reveal>
+        {content.audience.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <p class="strategic-service-audience__statement">{content.audience.statement}</p>
+      </div>
+    </div>
+  </section>
+
+  {
+    content.scope && (
+      <section class="strategic-service-scope" aria-labelledby={`${content.slug}-scope-title`}>
+        <div class="container">
+          <p class="eyebrow" data-reveal>
+            {content.scope.eyebrow}
+          </p>
+          <div class="section-heading" data-reveal>
+            <h2 id={`${content.slug}-scope-title`}>
+              {content.scope.title.before}
+              <em>{content.scope.title.emphasis}</em>
+              {content.scope.title.after}
+            </h2>
+            <p>{content.scope.intro}</p>
+          </div>
+          <div class="strategic-service-scope__grid">
+            <article data-reveal>
+              <h3>{content.scope.includesTitle}</h3>
+              <ul>
+                {content.scope.includes.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </article>
+            <article data-reveal>
+              <h3>{content.scope.excludesTitle}</h3>
+              <ul>
+                {content.scope.excludes.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="strategic-service-final" aria-labelledby={`${content.slug}-final-title`}>
+    <div class="container">
+      <p class="eyebrow eyebrow--light" data-reveal>{content.final.eyebrow}</p>
+      <div class="strategic-service-final__grid">
+        <h2 id={`${content.slug}-final-title`} data-reveal>
+          {content.final.title.before}<em>{content.final.title.emphasis}</em>{
+            content.final.title.after
+          }
+        </h2>
+        <div class="strategic-service-final__copy">
+          <p class="strategic-service-final__lead" data-reveal>{content.final.lead}</p>
+          <a class="button button--light" href={contactHref} data-reveal>
+            {content.final.buttonLabel}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <p class="strategic-service-final__microcopy" data-reveal>{content.final.microcopy}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

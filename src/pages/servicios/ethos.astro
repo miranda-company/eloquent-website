@@ -1,0 +1,233 @@
+---
+import StrategicServicePage from '../../components/StrategicServicePage.astro';
+
+const content = {
+  slug: 'ethos',
+  name: 'Ethos',
+  metaTitle: 'Ethos — Reputación directiva | Eloquent',
+  metaDescription:
+    'Convertimos el conocimiento y el criterio de líderes y equipos directivos en una voz pública clara, coherente y creíble, alineada con su organización.',
+  serviceType: 'Reputación directiva',
+  schemaDescription:
+    'Ayudamos a líderes, fundadores y equipos directivos a construir una voz pública clara, coherente y creíble mediante posicionamiento, extracción de conocimiento y un sistema editorial estratégico.',
+  contactSubject: 'Consulta Ethos',
+  hero: {
+    eyebrow: 'Ethos · Reputación directiva',
+    title: {
+      before: '¿La voz pública de tus líderes refuerza ',
+      emphasis: 'la confianza?',
+    },
+    lead: 'Convertimos el conocimiento, el criterio y la experiencia de líderes y equipos directivos en una comunicación pública útil, reconocible y alineada con la organización.',
+    footnote: 'Pensamiento · voz · autoridad · sistema editorial',
+  },
+  context: {
+    eyebrow: 'El punto de partida / 01',
+    title: { before: 'Mucho conocimiento. ', emphasis: 'Poca presencia pública.' },
+    statement:
+      'Muchos líderes tienen experiencia, visión y criterio, pero su presencia pública no refleja realmente lo que saben ni el valor que aportan.',
+    paragraphs: [
+      'No tienen tiempo para escribir de forma constante y, cuando delegan, el resultado puede sonar genérico, artificial o demasiado corporativo. También cuesta distinguir qué parte de su experiencia es útil para sus audiencias y cómo compartirla sin parecer promocionales.',
+      'Ethos extrae ese conocimiento y lo convierte en una voz pública propia. La reputación directiva pasa a reforzar la visión de la organización, abrir conversaciones y generar confianza con continuidad.',
+    ],
+  },
+  signals: {
+    eyebrow: 'Señales de desconexión / 02',
+    title: { before: 'La experiencia existe. La voz ', emphasis: 'no la representa.' },
+    intro:
+      'Estas señales indican que el liderazgo tiene algo valioso que decir, pero todavía no cuenta con el sistema adecuado para expresarlo.',
+    items: [
+      {
+        title: 'La presencia es irregular',
+        description:
+          'La comunicación depende de impulsos, momentos libres o publicaciones aisladas.',
+      },
+      {
+        title: 'Los textos suenan genéricos',
+        description:
+          'La voz del equipo de marketing no termina de representar a la persona directiva.',
+      },
+      {
+        title: 'El conocimiento se queda dentro',
+        description: 'Ideas, aprendizajes y marcos útiles nunca llegan a sus audiencias.',
+      },
+      {
+        title: 'La exposición genera rechazo',
+        description:
+          'Publicar se percibe como autopromoción, arrogancia o búsqueda de visibilidad vacía.',
+      },
+      {
+        title: 'La narrativa no está alineada',
+        description:
+          'La voz directiva y la comunicación corporativa avanzan por caminos distintos.',
+      },
+      {
+        title: 'La autoridad no abre oportunidades',
+        description: 'La experiencia no ayuda lo suficiente a atraer talento, negocio o confianza.',
+      },
+    ],
+  },
+  transformation: {
+    eyebrow: 'La transformación / 03',
+    title: {
+      before: 'Una voz reconocible para convertir experiencia en ',
+      emphasis: 'confianza sostenida.',
+    },
+    before: {
+      label: 'Punto de partida',
+      title: 'Conocimiento valioso, comunicación irregular y una voz poco representativa.',
+      copy: 'El líder sabe mucho, pero su presencia pública depende del tiempo disponible, textos genéricos o publicaciones que no construyen una dirección común.',
+    },
+    after: {
+      label: 'Después de Ethos',
+      title: 'Un posicionamiento claro y un sistema editorial fiel a su manera de pensar.',
+      copy: 'Las ideas se extraen, se organizan y se convierten en contenidos y activos que explican la visión, educan al mercado y refuerzan la reputación de la organización.',
+    },
+    statement:
+      'La comunicación deja de perseguir visibilidad y empieza a construir una autoridad útil, sobria y reconocible.',
+  },
+  moments: {
+    eyebrow: 'Cuándo activarlo / 04',
+    title: { before: 'Situaciones que piden ', emphasis: 'una voz directiva clara.' },
+    intro:
+      'Ethos se vuelve relevante cuando la credibilidad del liderazgo influye directamente en el crecimiento, la reputación o la confianza de la organización.',
+    items: [
+      'La organización crece y necesita que su liderazgo sea más visible y creíble.',
+      'La empresa quiere atraer talento senior, inversión o conversaciones estratégicas.',
+      'El mercado todavía no entiende bien la visión, el producto o la nueva categoría.',
+      'El líder tiene conocimiento experto, pero no sabe cómo convertirlo en comunicación.',
+      'Los contenidos delegados suenan artificiales, promocionales o poco auténticos.',
+      'La voz directiva necesita reforzar la narrativa corporativa sin competir con ella.',
+    ],
+    closing:
+      'La presencia pública funciona cuando permite entender cómo piensa el liderazgo y por qué su criterio merece confianza.',
+  },
+  method: {
+    eyebrow: 'El método / 05',
+    title: { before: 'Del conocimiento experto a ', emphasis: 'una voz pública propia.' },
+    intro:
+      'Trabajamos la reputación como un sistema de posicionamiento, pensamiento, voz y producción editorial. Cada fase reduce fricción sin perder autenticidad.',
+    steps: [
+      {
+        title: 'Diagnosticar la presencia pública',
+        copy: 'Revisamos perfiles, publicaciones, tono, posicionamiento, temas, coherencia y riesgos de exposición.',
+        question: '¿Qué dice hoy la presencia del líder, incluso cuando no comunica?',
+      },
+      {
+        title: 'Extraer pensamiento experto',
+        copy: 'Utilizamos entrevistas estructuradas para identificar visión, aprendizajes, historias, principios y marcos mentales.',
+        question: '¿Qué sabe esta persona que puede ser útil para sus audiencias?',
+      },
+      {
+        title: 'Definir la voz directiva',
+        copy: 'Acordamos tono, temas propios, límites, estilo argumentativo y relación con la marca corporativa.',
+        question: '¿Cómo puede comunicar sin sonar artificial o promocional?',
+      },
+      {
+        title: 'Construir el sistema editorial',
+        copy: 'Diseñamos pilares, formatos, cadencia, entrevistas, revisión y adaptación a cada canal.',
+        question: '¿Qué proceso permite publicar con continuidad y poca fricción?',
+      },
+      {
+        title: 'Crear activos de reputación',
+        copy: 'Convertimos ideas en marcos, artículos, discursos, newsletters, presentaciones y mensajes reutilizables.',
+        question: '¿Cómo hacemos que una buena idea tenga más recorrido y utilidad?',
+      },
+      {
+        title: 'Medir, ajustar y proteger',
+        copy: 'Observamos conversaciones, percepción, oportunidades, alineación y riesgos para mejorar el sistema.',
+        question: '¿La comunicación está generando confianza y resultados relevantes?',
+      },
+    ],
+  },
+  deliverables: {
+    eyebrow: 'El resultado / 06',
+    title: { before: 'Una reputación construida con ', emphasis: 'criterio y continuidad.' },
+    intro:
+      'El alcance se adapta al punto de partida, las audiencias y el papel público de cada líder. Estos son los bloques habituales.',
+    groups: [
+      {
+        id: 'diagnostico',
+        title: 'Diagnóstico',
+        items: [
+          'Auditoría de presencia directiva y perfil de LinkedIn.',
+          'Análisis de huella, percepción y riesgos reputacionales.',
+          'Diagnóstico de voz y coherencia con la organización.',
+        ],
+      },
+      {
+        id: 'estrategia',
+        title: 'Estrategia',
+        items: [
+          'Posicionamiento y narrativa directiva.',
+          'Mapa de temas, audiencias y mensajes.',
+          'Principios de voz, tono y límites de exposición.',
+        ],
+      },
+      {
+        id: 'sistema-editorial',
+        title: 'Sistema editorial',
+        items: [
+          'Pilares, calendario y sistema de entrevistas.',
+          'Banco de ideas, mensajes y marcos propios.',
+          'Contenidos y adaptaciones para canales clave.',
+        ],
+      },
+      {
+        id: 'seguimiento',
+        title: 'Seguimiento',
+        items: [
+          'Informe de señales cualitativas y oportunidades.',
+          'Revisión de conversaciones, tono y riesgos.',
+          'Ajustes de estrategia y soporte editorial.',
+        ],
+      },
+    ],
+  },
+  audience: {
+    eyebrow: 'Para quién / 07',
+    title: {
+      before: 'Líderes con conocimiento real y ',
+      emphasis: 'poco tiempo para comunicarlo.',
+    },
+    paragraphs: [
+      'Trabajamos con CEOs y fundadores B2B, líderes de empresas tecnológicas, socios de agencias y consultoras, expertos en sectores complejos y directivos de organizaciones institucionales, culturales, científicas o de impacto.',
+      'Ethos encaja cuando la credibilidad personal influye en ventas, talento, inversión, reputación o confianza institucional, y existe una voluntad real de aportar conocimiento en lugar de perseguir atención.',
+    ],
+    statement:
+      'No convertimos a un CEO en creador de contenido. Hacemos visible su criterio sin perder sobriedad ni autenticidad.',
+  },
+  scope: {
+    eyebrow: 'El alcance / 08',
+    title: { before: 'Construir autoridad. ', emphasis: 'Evitar el ruido.' },
+    intro:
+      'Ethos trabaja la claridad de pensamiento, la voz pública y el sistema editorial que sostienen una reputación directiva creíble.',
+    includesTitle: 'Ethos sí es',
+    includes: [
+      'Reputación directiva y posicionamiento con sustancia.',
+      'Extracción y organización de conocimiento experto.',
+      'Voz pública alineada con la organización.',
+      'Sistema editorial estratégico y sostenible.',
+    ],
+    excludesTitle: 'Ethos no es',
+    excludes: [
+      'Marca personal vacía, coaching para influencers o engagement bait.',
+      'Gestión genérica de redes o ghostwriting sin estrategia.',
+      'Automatización masiva, posts motivacionales o autoridad fabricada.',
+      'PR agresivo o exposición pública sin límites ni criterio.',
+    ],
+  },
+  final: {
+    eyebrow: 'El siguiente paso',
+    title: {
+      before: 'Tu experiencia ya existe. Hagamos que ',
+      emphasis: 'se entienda y genere confianza.',
+    },
+    lead: 'Cuéntanos qué necesita representar vuestro liderazgo, a qué audiencias quiere llegar y qué conversaciones debería ayudar a abrir.',
+    buttonLabel: 'Hablemos de Ethos',
+    microcopy:
+      'Te responderemos para entender el contexto y proponer un primer alcance de reputación directiva.',
+  },
+} as const;
+---
+
+<StrategicServicePage {content} />

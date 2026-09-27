@@ -113,8 +113,8 @@ PageHero
 - Facts, inclusions, examples, steps, and prices use semantic lists or grouped sections. Three-column groups reduce to two where useful and one on phones.
 - Example placeholders remain non-interactive until a real destination exists.
 - The final action uses the shared button and contact destination.
-- Each service stylesheet owns only its page-specific composition. When another service repeats a
-  pattern, extract it into a shared component rather than copying its DOM or CSS.
+- Inventio, Kairos, Kanon, and Ethos use `StrategicServicePage` and `strategic-service.css` for their shared semantic DOM, responsive composition, metadata, and visual contract. Their route files contain only service-specific content.
+- A service with a materially different narrative may use a focused page component and stylesheet. Repeated patterns must move into shared components rather than duplicating DOM or CSS.
 
 ## Work index
 

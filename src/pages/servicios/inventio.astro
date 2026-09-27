@@ -1,347 +1,202 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../../components/PageHero.astro';
-import '../../styles/inventio.css';
+import StrategicServicePage from '../../components/StrategicServicePage.astro';
 
-const contactHref = 'mailto:info@eloquent.es?subject=Consulta%20Inventio';
-const pageUrl = 'https://eloquent.es/servicios/inventio/';
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Inventio — Visión y estrategia de comunicación',
-  serviceType: 'Consultoría de visión y estrategia de comunicación',
-  description:
+const content = {
+  slug: 'inventio',
+  name: 'Inventio',
+  metaTitle: 'Inventio — Visión y estrategia de comunicación | Eloquent',
+  metaDescription:
+    'Ordenamos la comunicación de tu organización y la convertimos en una narrativa clara, una estructura de mensajes y una hoja de ruta usable.',
+  serviceType: 'Visión y estrategia de comunicación',
+  schemaDescription:
     'Ayudamos a organizaciones a definir qué necesitan comunicar y a convertirlo en una narrativa clara, coherente y creíble.',
-  provider: {
-    '@type': 'Organization',
-    name: 'Eloquent',
-    url: 'https://eloquent.es/',
+  contactSubject: 'Consulta Inventio',
+  hero: {
+    eyebrow: 'Inventio · Visión y estrategia de comunicación',
+    title: {
+      before: '¿Qué necesita quedar claro ',
+      emphasis: 'en tu organización?',
+    },
+    lead: 'Definimos qué necesitas comunicar, por qué importa, quién necesita entenderlo y cómo convertirlo en una narrativa clara, coherente y creíble.',
+    footnote: 'Visión · narrativa · sistema de comunicación',
   },
-  url: pageUrl,
-};
-
-const confusionSignals = [
-  {
-    title: 'No existe una narrativa común',
-    description: 'Cada equipo explica la organización de una manera distinta.',
-  },
-  {
-    title: 'Los mensajes son genéricos',
-    description: 'La comunicación describe actividad, pero no hace visible el valor real.',
-  },
-  {
-    title: 'La web no explica el conjunto',
-    description: 'Proyectos, servicios y conocimiento aparecen como piezas desconectadas.',
-  },
-  {
-    title: 'Los públicos no saben qué entender primero',
-    description: 'Falta jerarquía para orientar la comprensión y la acción.',
-  },
-  {
-    title: 'El contenido añade más ruido',
-    description: 'Se producen nuevas piezas sin resolver la confusión de fondo.',
-  },
-  {
-    title: 'La comunicación depende de urgencias',
-    description: 'Las decisiones se toman por intuición y sin criterios compartidos.',
-  },
-] as const;
-
-const activationMoments = [
-  'Un nuevo posicionamiento, una nueva dirección o un cambio de etapa.',
-  'El lanzamiento de una línea estratégica, un servicio o una iniciativa compleja.',
-  'Un rediseño web, un rebranding o una actualización de identidad.',
-  'El crecimiento de la organización o la integración de equipos, áreas y servicios.',
-  'La necesidad de explicar mejor conocimiento técnico, científico o institucional.',
-  'La falta de alineación entre dirección, comunicación y equipo operativo.',
-] as const;
-
-const methodSteps = [
-  {
-    title: 'Entender el contexto',
-    copy: 'Conocemos el momento de la organización, sus objetivos, públicos, historia, materiales y decisiones estratégicas.',
-    question: '¿Qué está intentando explicar la organización y por qué ahora?',
-  },
-  {
-    title: 'Mapear el sistema',
-    copy: 'Revisamos cómo se manifiesta la comunicación en la web, presentaciones, contenidos, informes, canales y flujos de trabajo.',
-    question: '¿Dónde se construye claridad y dónde se genera confusión?',
-  },
-  {
-    title: 'Detectar la confusión',
-    copy: 'Identificamos mensajes genéricos, contradicciones, exceso de información, públicos poco definidos y claims sin evidencia.',
-    question: '¿Qué impide entender el valor de la organización?',
-  },
-  {
-    title: 'Clarificar la narrativa',
-    copy: 'Definimos la idea central, la propuesta de valor, los mensajes prioritarios, el tono, las pruebas y un lenguaje común.',
-    question: '¿Qué necesita decir la organización para que su trabajo pueda entenderse?',
-  },
-  {
-    title: 'Convertirla en sistema',
-    copy: 'Traducimos la estrategia en herramientas concretas para la web, los contenidos, las presentaciones y los canales.',
-    question: '¿Qué necesita el equipo para comunicar con coherencia?',
-  },
-  {
-    title: 'Alinear y transferir',
-    copy: 'Presentamos el sistema, trabajamos con el equipo y priorizamos las decisiones necesarias para empezar a aplicarlo.',
-    question: '¿Cómo mantenemos esta claridad en el tiempo?',
-  },
-] as const;
-
-const deliverableGroups = [
-  {
-    title: 'Diagnóstico',
-    items: [
-      'Auditoría de comunicación y claridad narrativa.',
-      'Revisión de web, mensajes, canales y evidencia.',
-      'Mapa de confusión y problemas de coherencia.',
+  context: {
+    eyebrow: 'El punto de partida / 01',
+    title: { before: 'El problema suele ser ', emphasis: 'la estructura.' },
+    statement:
+      'Muchas organizaciones hacen un trabajo valioso, pero no consiguen explicarlo con suficiente claridad.',
+    paragraphs: [
+      'Tienen proyectos, conocimiento, servicios, informes, experiencia, equipos y contenidos. Sin embargo, la web dice una cosa, las presentaciones otra y cada área cuenta la organización de una forma distinta.',
+      'Inventio ordena el pensamiento de la organización antes de producir más comunicación. Nos ayuda a entender qué debe quedar claro, para quién y con qué evidencia.',
     ],
   },
-  {
-    title: 'Estrategia',
+  signals: {
+    eyebrow: 'Señales de confusión / 02',
+    title: { before: 'La actividad crece. La comprensión ', emphasis: 'no siempre.' },
+    intro:
+      'Estas señales suelen indicar que la organización necesita ordenar su comunicación antes de seguir creando campañas, presentaciones, webs o contenidos.',
     items: [
-      'Propuesta de valor y mensaje central.',
-      'Arquitectura narrativa y mapa de públicos.',
-      'Mensajes prioritarios, tono y territorios temáticos.',
+      {
+        title: 'No existe una narrativa común',
+        description: 'Cada equipo explica la organización de una manera distinta.',
+      },
+      {
+        title: 'Los mensajes son genéricos',
+        description: 'La comunicación describe actividad, pero no hace visible el valor real.',
+      },
+      {
+        title: 'La web no explica el conjunto',
+        description: 'Proyectos, servicios y conocimiento aparecen como piezas desconectadas.',
+      },
+      {
+        title: 'Los públicos no saben qué entender primero',
+        description: 'Falta jerarquía para orientar la comprensión y la acción.',
+      },
+      {
+        title: 'El contenido añade más ruido',
+        description: 'Se producen nuevas piezas sin resolver la confusión de fondo.',
+      },
+      {
+        title: 'La comunicación depende de urgencias',
+        description: 'Las decisiones se toman por intuición y sin criterios compartidos.',
+      },
     ],
   },
-  {
-    title: 'Sistema',
+  transformation: {
+    eyebrow: 'La transformación / 03',
+    title: {
+      before: 'Una narrativa común. Un sistema para ',
+      emphasis: 'comunicar con criterio.',
+    },
+    before: {
+      label: 'Punto de partida',
+      title: 'Conocimiento y valor dispersos entre piezas, equipos y canales.',
+      copy: 'Cuesta responder con precisión qué hace la organización, para quién es útil, por qué importa, qué la diferencia y qué evidencia sostiene lo que afirma.',
+    },
+    after: {
+      label: 'Después de Inventio',
+      title: 'Una estructura de mensajes y una hoja de ruta compartida.',
+      copy: 'El equipo sabe qué necesita decir, qué debe priorizar, qué públicos importan y cómo alinear la web, los contenidos, las presentaciones y los canales.',
+    },
+    statement:
+      'La comunicación deja de ser una suma de piezas y empieza a funcionar como un sistema de claridad.',
+  },
+  moments: {
+    eyebrow: 'Cuándo activarlo / 04',
+    title: { before: 'Momentos que exigen ', emphasis: 'una historia más clara.' },
+    intro:
+      'Inventio resulta útil cuando una organización cambia, crece o necesita explicar mejor el valor que ya está generando.',
     items: [
-      'Matriz de mensajes y arquitectura de contenidos.',
-      'Criterios editoriales y estructura narrativa para la web.',
-      'Guía de uso y hoja de ruta de comunicación.',
+      'Un nuevo posicionamiento, una nueva dirección o un cambio de etapa.',
+      'El lanzamiento de una línea estratégica, un servicio o una iniciativa compleja.',
+      'Un rediseño web, un rebranding o una actualización de identidad.',
+      'El crecimiento de la organización o la integración de equipos, áreas y servicios.',
+      'La necesidad de explicar mejor conocimiento técnico, científico o institucional.',
+      'La falta de alineación entre dirección, comunicación y equipo operativo.',
+    ],
+    closing:
+      'Es el momento de parar y ordenar el relato antes de crear otra web, otra campaña o una nueva presentación.',
+  },
+  method: {
+    eyebrow: 'El método / 05',
+    title: { before: 'De la confusión a ', emphasis: 'un sistema usable.' },
+    intro:
+      'Analizamos la comunicación como un sistema: contexto, públicos, mensajes, evidencia, canales y decisiones. Cada fase responde a una pregunta concreta.',
+    steps: [
+      {
+        title: 'Entender el contexto',
+        copy: 'Conocemos el momento de la organización, sus objetivos, públicos, historia, materiales y decisiones estratégicas.',
+        question: '¿Qué está intentando explicar la organización y por qué ahora?',
+      },
+      {
+        title: 'Mapear el sistema',
+        copy: 'Revisamos cómo se manifiesta la comunicación en la web, presentaciones, contenidos, informes, canales y flujos de trabajo.',
+        question: '¿Dónde se construye claridad y dónde se genera confusión?',
+      },
+      {
+        title: 'Detectar la confusión',
+        copy: 'Identificamos mensajes genéricos, contradicciones, exceso de información, públicos poco definidos y claims sin evidencia.',
+        question: '¿Qué impide entender el valor de la organización?',
+      },
+      {
+        title: 'Clarificar la narrativa',
+        copy: 'Definimos la idea central, la propuesta de valor, los mensajes prioritarios, el tono, las pruebas y un lenguaje común.',
+        question: '¿Qué necesita decir la organización para que su trabajo pueda entenderse?',
+      },
+      {
+        title: 'Convertirla en sistema',
+        copy: 'Traducimos la estrategia en herramientas concretas para la web, los contenidos, las presentaciones y los canales.',
+        question: '¿Qué necesita el equipo para comunicar con coherencia?',
+      },
+      {
+        title: 'Alinear y transferir',
+        copy: 'Presentamos el sistema, trabajamos con el equipo y priorizamos las decisiones necesarias para empezar a aplicarlo.',
+        question: '¿Cómo mantenemos esta claridad en el tiempo?',
+      },
     ],
   },
-  {
-    title: 'Activación',
-    items: [
-      'Workshop de alineación con el equipo.',
-      'Presentación ejecutiva y revisión de materiales clave.',
-      'Priorización de decisiones y próximos pasos.',
+  deliverables: {
+    eyebrow: 'El resultado / 06',
+    title: { before: 'Una estrategia que el equipo ', emphasis: 'pueda usar.' },
+    intro:
+      'El alcance se define según el momento de la organización. Estos son los bloques que podemos combinar para construir una respuesta útil.',
+    groups: [
+      {
+        id: 'diagnostico',
+        title: 'Diagnóstico',
+        items: [
+          'Auditoría de comunicación y claridad narrativa.',
+          'Revisión de web, mensajes, canales y evidencia.',
+          'Mapa de confusión y problemas de coherencia.',
+        ],
+      },
+      {
+        id: 'estrategia',
+        title: 'Estrategia',
+        items: [
+          'Propuesta de valor y mensaje central.',
+          'Arquitectura narrativa y mapa de públicos.',
+          'Mensajes prioritarios, tono y territorios temáticos.',
+        ],
+      },
+      {
+        id: 'sistema',
+        title: 'Sistema',
+        items: [
+          'Matriz de mensajes y arquitectura de contenidos.',
+          'Criterios editoriales y estructura narrativa para la web.',
+          'Guía de uso y hoja de ruta de comunicación.',
+        ],
+      },
+      {
+        id: 'activacion',
+        title: 'Activación',
+        items: [
+          'Workshop de alineación con el equipo.',
+          'Presentación ejecutiva y revisión de materiales clave.',
+          'Priorización de decisiones y próximos pasos.',
+        ],
+      },
     ],
   },
-] as const;
+  audience: {
+    eyebrow: 'Para quién / 07',
+    title: { before: 'Organizaciones con conocimiento complejo y ', emphasis: 'valor real.' },
+    paragraphs: [
+      'Trabajamos con instituciones, organizaciones culturales, centros científicos y educativos, fundaciones, entidades de impacto social, organizaciones públicas y empresas B2B con servicios complejos.',
+      'Inventio suele empezar con una preocupación compartida por dirección, comunicación, estrategia o equipos digitales: hacemos cosas importantes, pero no estamos logrando explicarlas bien.',
+    ],
+    statement:
+      'El objetivo es que dirección y equipo puedan contar la misma historia con claridad, evidencia y criterio.',
+  },
+  final: {
+    eyebrow: 'El siguiente paso',
+    title: { before: 'Antes de producir más, aclaremos ', emphasis: 'qué necesitas decir.' },
+    lead: 'Cuéntanos qué está cambiando en tu organización, qué resulta difícil de explicar y qué decisiones de comunicación necesitas tomar.',
+    buttonLabel: 'Hablemos de Inventio',
+    microcopy: 'Te responderemos para entender el contexto y valorar qué alcance puede ayudarte.',
+  },
+} as const;
 ---
 
-<BaseLayout
-  title="Inventio — Visión y estrategia de comunicación | Eloquent"
-  description="Ordenamos la comunicación de tu organización y la convertimos en una narrativa clara, una estructura de mensajes y una hoja de ruta usable."
->
-  <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-
-  <PageHero
-    titleId="inventio-title"
-    eyebrow="Inventio · Visión y estrategia de comunicación"
-    lead="Definimos qué necesitas comunicar, por qué importa, quién necesita entenderlo y cómo convertirlo en una narrativa clara, coherente y creíble."
-  >
-    <Fragment slot="title">¿Qué necesita quedar claro <em>en tu organización?</em></Fragment>
-    <Fragment slot="actions">
-      <a class="button button--light" href={contactHref}>
-        Hablemos de Inventio <span aria-hidden="true">↗</span>
-      </a>
-      <a class="text-link text-link--light" href="#metodo">Ver cómo trabajamos</a>
-    </Fragment>
-    <Fragment slot="footnote">Visión · narrativa · sistema de comunicación</Fragment>
-  </PageHero>
-
-  <section class="inventio-context" aria-labelledby="context-title">
-    <div class="container inventio-context__grid">
-      <div data-reveal>
-        <p class="eyebrow">El punto de partida / 01</p>
-        <h2 id="context-title">El problema suele ser <em>la estructura.</em></h2>
-      </div>
-      <div class="inventio-context__copy" data-reveal>
-        <p class="inventio-context__statement">
-          Muchas organizaciones hacen un trabajo valioso, pero no consiguen explicarlo con
-          suficiente claridad.
-        </p>
-        <p>
-          Tienen proyectos, conocimiento, servicios, informes, experiencia, equipos y contenidos.
-          Sin embargo, la web dice una cosa, las presentaciones otra y cada área cuenta la
-          organización de una forma distinta.
-        </p>
-        <p>
-          Inventio ordena el pensamiento de la organización antes de producir más comunicación. Nos
-          ayuda a entender qué debe quedar claro, para quién y con qué evidencia.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="inventio-signals" aria-labelledby="signals-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal>Señales de confusión / 02</p>
-      <div class="section-heading" data-reveal>
-        <h2 id="signals-title">La actividad crece. La comprensión <em>no siempre.</em></h2>
-        <p>
-          Estas señales suelen indicar que la organización necesita ordenar su comunicación antes de
-          seguir creando campañas, presentaciones, webs o contenidos.
-        </p>
-      </div>
-      <ul class="inventio-signals__list">
-        {
-          confusionSignals.map((signal) => (
-            <li data-reveal>
-              <h3>{signal.title}</h3>
-              <p>{signal.description}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-
-  <section class="inventio-transformation" aria-labelledby="transformation-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal>La transformación / 03</p>
-      <h2 id="transformation-title" data-reveal>
-        Una narrativa común. Un sistema para <em>comunicar con criterio.</em>
-      </h2>
-      <div class="inventio-transformation__grid">
-        <article data-reveal>
-          <p class="inventio-transformation__label">Punto de partida</p>
-          <h3>Conocimiento y valor dispersos entre piezas, equipos y canales.</h3>
-          <p>
-            Cuesta responder con precisión qué hace la organización, para quién es útil, por qué
-            importa, qué la diferencia y qué evidencia sostiene lo que afirma.
-          </p>
-        </article>
-        <article data-reveal>
-          <p class="inventio-transformation__label">Después de Inventio</p>
-          <h3>Una estructura de mensajes y una hoja de ruta compartida.</h3>
-          <p>
-            El equipo sabe qué necesita decir, qué debe priorizar, qué públicos importan y cómo
-            alinear la web, los contenidos, las presentaciones y los canales.
-          </p>
-        </article>
-      </div>
-      <p class="inventio-transformation__statement" data-reveal>
-        La comunicación deja de ser una suma de piezas y empieza a funcionar como un sistema de
-        claridad.
-      </p>
-    </div>
-  </section>
-
-  <section class="inventio-moments" aria-labelledby="moments-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal>Cuándo activarlo / 04</p>
-      <div class="section-heading" data-reveal>
-        <h2 id="moments-title">Momentos que exigen <em>una historia más clara.</em></h2>
-        <p>
-          Inventio resulta útil cuando una organización cambia, crece o necesita explicar mejor el
-          valor que ya está generando.
-        </p>
-      </div>
-      <ol class="inventio-moments__list">
-        {activationMoments.map((moment) => <li data-reveal>{moment}</li>)}
-      </ol>
-      <p class="inventio-moments__closing" data-reveal>
-        Es el momento de parar y ordenar el relato antes de crear otra web, otra campaña o una nueva
-        presentación.
-      </p>
-    </div>
-  </section>
-
-  <section class="inventio-method" id="metodo" aria-labelledby="method-title">
-    <div class="container">
-      <p class="eyebrow eyebrow--light" data-reveal>El método / 05</p>
-      <div class="section-heading inventio-method__heading" data-reveal>
-        <h2 id="method-title">De la confusión a <em>un sistema usable.</em></h2>
-        <p>
-          Analizamos la comunicación como un sistema: contexto, públicos, mensajes, evidencia,
-          canales y decisiones. Cada fase responde a una pregunta concreta.
-        </p>
-      </div>
-      <ol class="inventio-method__steps">
-        {
-          methodSteps.map((step) => (
-            <li data-reveal>
-              <h3>{step.title}</h3>
-              <p>{step.copy}</p>
-              <p class="inventio-method__question">{step.question}</p>
-            </li>
-          ))
-        }
-      </ol>
-    </div>
-  </section>
-
-  <section class="inventio-deliverables" aria-labelledby="deliverables-title">
-    <div class="container">
-      <p class="eyebrow" data-reveal>El resultado / 06</p>
-      <div class="section-heading" data-reveal>
-        <h2 id="deliverables-title">Una estrategia que el equipo <em>pueda usar.</em></h2>
-        <p>
-          El alcance se define según el momento de la organización. Estos son los bloques que
-          podemos combinar para construir una respuesta útil.
-        </p>
-      </div>
-      <div class="inventio-deliverables__grid">
-        {
-          deliverableGroups.map((group) => (
-            <section aria-labelledby={`deliverable-${group.title.toLowerCase()}`} data-reveal>
-              <h3 id={`deliverable-${group.title.toLowerCase()}`}>{group.title}</h3>
-              <ul>
-                {group.items.map((item) => (
-                  <li>{item}</li>
-                ))}
-              </ul>
-            </section>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="inventio-audience" aria-labelledby="audience-title">
-    <div class="container inventio-audience__grid">
-      <div data-reveal>
-        <p class="eyebrow">Para quién / 07</p>
-        <h2 id="audience-title">
-          Organizaciones con conocimiento complejo y <em>valor real.</em>
-        </h2>
-      </div>
-      <div class="inventio-audience__copy" data-reveal>
-        <p>
-          Trabajamos con instituciones, organizaciones culturales, centros científicos y educativos,
-          fundaciones, entidades de impacto social, organizaciones públicas y empresas B2B con
-          servicios complejos.
-        </p>
-        <p>
-          Inventio suele empezar con una preocupación compartida por dirección, comunicación,
-          estrategia o equipos digitales: hacemos cosas importantes, pero no estamos logrando
-          explicarlas bien.
-        </p>
-        <p class="inventio-audience__statement">
-          El objetivo es que dirección y equipo puedan contar la misma historia con claridad,
-          evidencia y criterio.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="inventio-final" aria-labelledby="final-title">
-    <div class="container">
-      <p class="eyebrow eyebrow--light" data-reveal>El siguiente paso</p>
-      <div class="inventio-final__grid">
-        <h2 id="final-title" data-reveal>
-          Antes de producir más, aclaremos <em>qué necesitas decir.</em>
-        </h2>
-        <div class="inventio-final__copy">
-          <p class="inventio-final__lead" data-reveal>
-            Cuéntanos qué está cambiando en tu organización, qué resulta difícil de explicar y qué
-            decisiones de comunicación necesitas tomar.
-          </p>
-          <a class="button button--light" href={contactHref} data-reveal>
-            Hablemos de Inventio <span aria-hidden="true">↗</span>
-          </a>
-          <p class="inventio-final__microcopy" data-reveal>
-            Te responderemos para entender el contexto y valorar qué alcance puede ayudarte.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<StrategicServicePage {content} />
