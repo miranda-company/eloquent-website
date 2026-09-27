@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import HeroVectorField from '../components/HeroVectorField.astro';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
 import '../styles/home.css';
@@ -33,6 +34,7 @@ const organization = {
     eyebrow="Consultoría de comunicación y experiencia digital"
     lead="Clarificamos lo que saben, lo que hacen y por qué importa, transformándolo en comunicación clara, creíble y útil."
   >
+    <Fragment slot="background"><HeroVectorField /></Fragment>
     <Fragment slot="title">Ayudamos a organizaciones a <em>explicarse mejor.</em></Fragment>
     <Fragment slot="actions">
       <a class="button button--light" href="mailto:info@eloquent.es">

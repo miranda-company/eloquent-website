@@ -16,9 +16,11 @@ const { titleId, eyebrow, lead, intro, breadcrumbs = [] } = Astro.props;
 const hasCopy = Boolean(lead || intro);
 const hasActions = Astro.slots.has('actions');
 const hasFootnote = Astro.slots.has('footnote');
+const hasBackground = Astro.slots.has('background');
 ---
 
 <section class="page-hero" aria-labelledby={titleId}>
+  {hasBackground && <slot name="background" />}
   <div class="container page-hero__inner">
     {
       breadcrumbs.length > 0 && (

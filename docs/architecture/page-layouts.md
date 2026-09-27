@@ -79,7 +79,7 @@ PageHero
 └── about section
 ```
 
-- `PageHero` contains the primary proposition and actions.
+- `PageHero` contains the primary proposition and actions. On the homepage it may include the decorative `HeroVectorField`; the canvas remains behind the semantic content, uses design tokens, ignores pointer input as a control, and renders a static state when reduced motion is requested.
 - Proposition, featured Dossier, and about use editorial split grids that become one column at the shared tablet breakpoint.
 - Services come from `src/data/services.ts` and use `shortName` as the card label. The list is four columns, then two, then one.
 - Selected work comes from `src/data/projects.ts` and uses `ProjectCard`. The homepage may curate a subset but does not duplicate project data or card markup.

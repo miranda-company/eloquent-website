@@ -1,0 +1,124 @@
+<div class="hero-vector-field" aria-hidden="true">
+  <canvas data-hero-vector-field></canvas>
+</div>
+
+<script>
+  interface VectorFieldConfig {
+    spacing: number;
+    lineLength: number;
+    lineWidth: number;
+    pointerRadius: number;
+    baseOpacity: number;
+    activeOpacity: number;
+    defaultAngle: number;
+  }
+
+  const initializeVectorField = (canvas: HTMLCanvasElement) => {
+    if (canvas.dataset.initialized === 'true') return;
+
+    const hero = canvas.closest<HTMLElement>('.page-hero');
+    const context = canvas.getContext('2d');
+
+    if (!hero || !context) return;
+
+    canvas.dataset.initialized = 'true';
+
+    const styles = getComputedStyle(document.documentElement);
+    const readToken = (name: string) => Number.parseFloat(styles.getPropertyValue(name));
+    const config: VectorFieldConfig = {
+      spacing: readToken('--vector-field-spacing'),
+      lineLength: readToken('--vector-field-line-length'),
+      lineWidth: readToken('--vector-field-line-width'),
+      pointerRadius: readToken('--vector-field-pointer-radius'),
+      baseOpacity: readToken('--vector-field-base-opacity'),
+      activeOpacity: readToken('--vector-field-active-opacity'),
+      defaultAngle: Math.PI / 4,
+    };
+    const strokeColor = styles.getPropertyValue('--color-accent').trim();
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const pointer = { x: -config.pointerRadius, y: -config.pointerRadius, active: false };
+    let width = 0;
+    let height = 0;
+    let frameId = 0;
+
+    const draw = () => {
+      frameId = 0;
+      context.clearRect(0, 0, width, height);
+      context.strokeStyle = strokeColor;
+      context.lineWidth = config.lineWidth;
+      context.lineCap = 'round';
+
+      for (let y = config.spacing / 2; y < height; y += config.spacing) {
+        for (let x = config.spacing / 2; x < width; x += config.spacing) {
+          const dx = pointer.x - x;
+          const dy = pointer.y - y;
+          const distance = Math.hypot(dx, dy);
+          const influence =
+            pointer.active && !motionQuery.matches && distance < config.pointerRadius
+              ? 1 - distance / config.pointerRadius
+              : 0;
+          const angleToPointer = Math.atan2(dy, dx);
+          const difference = Math.atan2(
+            Math.sin(angleToPointer - config.defaultAngle),
+            Math.cos(angleToPointer - config.defaultAngle),
+          );
+          const angle = config.defaultAngle + difference * influence;
+
+          context.save();
+          context.translate(x, y);
+          context.rotate(angle);
+          context.globalAlpha =
+            config.baseOpacity + (config.activeOpacity - config.baseOpacity) * influence;
+          context.beginPath();
+          context.moveTo(-config.lineLength / 2, 0);
+          context.lineTo(config.lineLength / 2, 0);
+          context.stroke();
+          context.restore();
+        }
+      }
+    };
+
+    const requestDraw = () => {
+      if (frameId === 0) frameId = window.requestAnimationFrame(draw);
+    };
+
+    const resize = () => {
+      const bounds = hero.getBoundingClientRect();
+      const devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      width = bounds.width;
+      height = bounds.height;
+      canvas.width = Math.round(width * devicePixelRatio);
+      canvas.height = Math.round(height * devicePixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      context.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+      requestDraw();
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (motionQuery.matches) return;
+      const bounds = hero.getBoundingClientRect();
+      pointer.x = event.clientX - bounds.left;
+      pointer.y = event.clientY - bounds.top;
+      pointer.active = true;
+      requestDraw();
+    };
+
+    const resetPointer = () => {
+      pointer.active = false;
+      requestDraw();
+    };
+
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(hero);
+    hero.addEventListener('pointermove', handlePointerMove, { passive: true });
+    hero.addEventListener('pointerleave', resetPointer);
+    hero.addEventListener('pointercancel', resetPointer);
+    motionQuery.addEventListener('change', resetPointer);
+    resize();
+  };
+
+  document
+    .querySelectorAll<HTMLCanvasElement>('[data-hero-vector-field]')
+    .forEach(initializeVectorField);
+</script>

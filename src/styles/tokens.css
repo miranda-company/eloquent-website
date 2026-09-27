@@ -188,6 +188,14 @@
   --motion-hover-lift: 2px;
   --motion-arrow-shift: var(--space-1);
   --motion-image-scale: 1.015;
+
+  /* Interactive vector field */
+  --vector-field-spacing: 35;
+  --vector-field-line-length: 12;
+  --vector-field-line-width: 1.5;
+  --vector-field-pointer-radius: 250;
+  --vector-field-base-opacity: 0.13;
+  --vector-field-active-opacity: 0.78;
 }
 
 @media (max-width: 600px) {
