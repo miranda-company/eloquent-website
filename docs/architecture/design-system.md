@@ -171,7 +171,7 @@ The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` 
 
 Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
 
-Text uses `--text-*` sizes, `--leading-*` line heights, and `--tracking-*` letter spacing. The `--measure-*` tokens limit line lengths. `--container-width` is `85rem`, equivalent to 1360px at the default 16px root size, and supplies the maximum width for grids and visual sections. Responsive `--page-gutter` values keep space at the viewport edges. Use `--prose-width` (`70ch`) for sustained reading.
+Text uses `--text-*` sizes, `--leading-*` line heights, and `--tracking-*` letter spacing. `h1` and `h2` use display-heading tracking; `h3` through `h6` use `--tracking-subheading` (`-0.03em`). The `--measure-*` tokens limit line lengths. `--container-width` is `85rem`, equivalent to 1360px at the default 16px root size, and supplies the maximum width for grids and visual sections. Responsive `--page-gutter` values keep space at the viewport edges. Use `--prose-width` (`70ch`) for sustained reading.
 
 ## Building or changing a component
 

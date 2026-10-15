@@ -90,6 +90,15 @@ PageHero
 
 **Routes:** `/servicios/<service-slug>/`
 
+Public service slugs describe the service category in clear Spanish rather than using only the commercial product name. The product name remains visible in page content and metadata. When a published slug changes, keep the former route as a permanent redirect and update every internal link, canonical URL, structured-data URL, sitemap entry, and route inventory.
+
+Current strategic service routes:
+
+- Inventio: `/servicios/vision-y-estrategia-de-comunicacion/`
+- Kairos: `/servicios/preparacion-comunicacion-de-crisis/`
+- Kanon: `/servicios/comunicacion-e-inteligencia-artificial/`
+- Ethos: `/servicios/reputacion-directiva/`
+
 **Purpose:** Explain one service from problem and value through scope, examples, process, audience, price, and contact.
 
 ```text

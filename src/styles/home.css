@@ -64,13 +64,14 @@
   }
 
   .service-list__label {
-    margin-bottom: auto;
+    margin-bottom: var(--space-2-5);
     color: var(--color-text-muted);
     font-size: var(--text-sm);
     font-weight: var(--weight-strong);
   }
 
   .service-list h3 {
+    min-height: var(--service-card-title-height);
     max-width: var(--measure-service-title);
   }
 
@@ -84,7 +85,8 @@
 
   .service-list .text-link {
     align-self: flex-start;
-    margin-top: var(--space-6);
+    margin-top: auto;
+    padding-top: var(--space-6);
     font-size: var(--text-control);
   }
 
@@ -268,10 +270,6 @@
       min-height: var(--service-card-height-compact);
       scroll-margin-top: var(--service-anchor-offset-compact);
     }
-
-    .service-list__label {
-      margin-bottom: var(--space-8);
-    }
   }
 
   @media (max-width: 600px) {
@@ -287,6 +285,19 @@
 
     .service-list {
       grid-template-columns: 1fr;
+    }
+
+    .service-list li {
+      min-height: auto;
+    }
+
+    .service-list h3 {
+      min-height: auto;
+    }
+
+    .service-list .text-link {
+      margin-top: var(--space-6);
+      padding-top: 0;
     }
 
     .work-list {

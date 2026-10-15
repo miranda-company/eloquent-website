@@ -7,7 +7,7 @@ Static Astro redesign of [eloquent.es](https://eloquent.es). The project replace
 Implemented in the repository:
 
 - Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens.
-- Inventio, Kairos, Kanon, Ethos, and Landing Page Personal service pages at `/servicios/inventio/`, `/servicios/kairos/`, `/servicios/kanon/`, `/servicios/ethos/`, and `/servicios/landing-page-personal/`.
+- Inventio, Kairos, Kanon, Ethos, and Landing Page Personal service pages at `/servicios/vision-y-estrategia-de-comunicacion/`, `/servicios/preparacion-comunicacion-de-crisis/`, `/servicios/comunicacion-e-inteligencia-artificial/`, `/servicios/reputacion-directiva/`, and `/servicios/landing-page-personal/`.
 - Work index at `/trabajo/` and three Case Studies at `/trabajo/<project-slug>/`.
 - Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
 - Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
@@ -53,25 +53,29 @@ These commands cover Astro and TypeScript diagnostics, linting, design-token use
 
 ## Route inventory
 
-| Route                                       | Source                                                    | Status                               |
-| ------------------------------------------- | --------------------------------------------------------- | ------------------------------------ |
-| `/`                                         | `src/pages/index.astro`                                   | Implemented                          |
-| `/servicios/inventio/`                      | `src/pages/servicios/inventio.astro`                      | Implemented                          |
-| `/servicios/kairos/`                        | `src/pages/servicios/kairos.astro`                        | Implemented                          |
-| `/servicios/landing-page-personal/`         | `src/pages/servicios/landing-page-personal.astro`         | Implemented; example content pending |
-| `/servicios/kanon/`                         | `src/pages/servicios/kanon.astro`                         | Implemented                          |
-| `/servicios/ethos/`                         | `src/pages/servicios/ethos.astro`                         | Implemented                          |
-| `/trabajo/`                                 | `src/pages/trabajo/index.astro`                           | Implemented                          |
-| `/trabajo/cn-sant-andreu/`                  | `src/pages/trabajo/cn-sant-andreu.astro`                  | Implemented                          |
-| `/trabajo/museu-de-lhospitalet/`            | `src/pages/trabajo/museu-de-lhospitalet.astro`            | Implemented                          |
-| `/trabajo/barcelona-supercomputing-center/` | `src/pages/trabajo/barcelona-supercomputing-center.astro` | Implemented                          |
-| `/dossier/`                                 | `src/pages/dossier/index.astro`                           | Implemented                          |
-| `/dossier/<issue-slug>/`                    | `src/pages/dossier/[slug].astro`                          | Generated from issue files           |
-| `/dossier/contenidos/`                      | `src/pages/dossier/contenidos/index.astro`                | Implemented                          |
-| `/dossier/contenidos/<article-slug>/`       | `src/pages/dossier/contenidos/[slug].astro`               | Generated from article files         |
-| `/aviso-legal/`                             | `src/pages/aviso-legal.astro`                             | Implemented                          |
-| `/politica-de-privacidad/`                  | `src/pages/politica-de-privacidad.astro`                  | Implemented                          |
-| `/politica-de-cookies/`                     | `src/pages/politica-de-cookies.astro`                     | Implemented                          |
+| Route                                                | Source                                                             | Status                               |
+| ---------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------ |
+| `/`                                                  | `src/pages/index.astro`                                            | Implemented                          |
+| `/servicios/vision-y-estrategia-de-comunicacion/`    | `src/pages/servicios/vision-y-estrategia-de-comunicacion.astro`    | Implemented                          |
+| `/servicios/preparacion-comunicacion-de-crisis/`     | `src/pages/servicios/preparacion-comunicacion-de-crisis.astro`     | Implemented                          |
+| `/servicios/landing-page-personal/`                  | `src/pages/servicios/landing-page-personal.astro`                  | Implemented; example content pending |
+| `/servicios/comunicacion-e-inteligencia-artificial/` | `src/pages/servicios/comunicacion-e-inteligencia-artificial.astro` | Implemented                          |
+| `/servicios/reputacion-directiva/`                   | `src/pages/servicios/reputacion-directiva.astro`                   | Implemented                          |
+| `/servicios/inventio/`                               | `astro.config.mjs`                                                 | Redirect to canonical service route  |
+| `/servicios/kairos/`                                 | `astro.config.mjs`                                                 | Redirect to canonical service route  |
+| `/servicios/kanon/`                                  | `astro.config.mjs`                                                 | Redirect to canonical service route  |
+| `/servicios/ethos/`                                  | `astro.config.mjs`                                                 | Redirect to canonical service route  |
+| `/trabajo/`                                          | `src/pages/trabajo/index.astro`                                    | Implemented                          |
+| `/trabajo/cn-sant-andreu/`                           | `src/pages/trabajo/cn-sant-andreu.astro`                           | Implemented                          |
+| `/trabajo/museu-de-lhospitalet/`                     | `src/pages/trabajo/museu-de-lhospitalet.astro`                     | Implemented                          |
+| `/trabajo/barcelona-supercomputing-center/`          | `src/pages/trabajo/barcelona-supercomputing-center.astro`          | Implemented                          |
+| `/dossier/`                                          | `src/pages/dossier/index.astro`                                    | Implemented                          |
+| `/dossier/<issue-slug>/`                             | `src/pages/dossier/[slug].astro`                                   | Generated from issue files           |
+| `/dossier/contenidos/`                               | `src/pages/dossier/contenidos/index.astro`                         | Implemented                          |
+| `/dossier/contenidos/<article-slug>/`                | `src/pages/dossier/contenidos/[slug].astro`                        | Generated from article files         |
+| `/aviso-legal/`                                      | `src/pages/aviso-legal.astro`                                      | Implemented                          |
+| `/politica-de-privacidad/`                           | `src/pages/politica-de-privacidad.astro`                           | Implemented                          |
+| `/politica-de-cookies/`                              | `src/pages/politica-de-cookies.astro`                              | Implemented                          |
 
 ## Repository contracts
 

@@ -8,6 +8,7 @@ Rebuild Eloquent as a static Astro site on the current server. Archive the publi
 
 - Author each Dossier issue and article in its own `.md` file. Use `.mdx` only for reusable visual components. Use Astro's typed content collections and official MDX integration. An issue stores its title, number, summary, and ordered article references; an article stores its title, summary, original publication date, author, and optional image. Validate references at build time and derive “appears in” links from issue files.
 - Preserve the existing Dossier, article archive, work, case study, and legal URLs. Give each reused article one canonical URL. Configure a true HTTP 410 response for the empty `/dossier/comunicacion-de-crisis/` issue, and redirect the existing `www` host to `eloquent.es`.
+- Strategic service URLs use descriptive Spanish slugs. Keep `/servicios/inventio/`, `/servicios/kairos/`, `/servicios/kanon/`, and `/servicios/ethos/` as permanent redirects to their canonical descriptive routes. Astro generates static redirect fallbacks; the production server must return true HTTP 301 responses for these mappings.
 - Retain the complete original copy in the archive. Refine published copy layout by layout for clearer headings, summaries, bylines, factual support, and useful internal links while preserving Eloquent's voice. Do not invent credentials, citations, or publication dates.
 
 ## Design and approval workflow

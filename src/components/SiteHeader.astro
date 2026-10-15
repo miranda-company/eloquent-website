@@ -4,7 +4,6 @@ import { services } from '../data/services';
 
 const isHome = Astro.url.pathname === '/';
 const currentPath = Astro.url.pathname;
-const isPersonalPage = currentPath === '/servicios/landing-page-personal/';
 const isWorkPage = Astro.url.pathname.startsWith('/trabajo/');
 const isDossierPage = Astro.url.pathname.startsWith('/dossier/');
 ---
@@ -31,14 +30,6 @@ const isDossierPage = Astro.url.pathname.startsWith('/dossier/');
               </li>
             ))
           }
-          <li>
-            <a
-              href="/servicios/landing-page-personal/"
-              aria-current={isPersonalPage ? 'page' : undefined}
-            >
-              Landing Page Personal
-            </a>
-          </li>
         </ul>
       </details>
       <a href="/trabajo/" aria-current={isWorkPage ? 'page' : undefined}>Trabajo</a>
