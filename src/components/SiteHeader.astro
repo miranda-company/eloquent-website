@@ -25,7 +25,7 @@ const isDossierPage = Astro.url.pathname.startsWith('/dossier/');
                   href={service.pageHref ?? `/#${service.id}`}
                   aria-current={service.pageHref === currentPath ? 'page' : undefined}
                 >
-                  {service.shortName}
+                  {service.navigationLabel}
                 </a>
               </li>
             ))

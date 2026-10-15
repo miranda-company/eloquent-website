@@ -116,7 +116,7 @@ PageHero
 └── final call to action
 ```
 
-- `PageHero` supplies the service `h1`, concise lead, and primary actions.
+- `PageHero` supplies the service `h1`, concise lead, and primary actions. Strategic service heroes highlight the commercial service name with the accent color and keep the descriptive service type in the standard eyebrow style.
 - Each section answers one decision-making question. New service pages may omit irrelevant sections, while retained sections preserve this broad narrative order.
 - Split editorial sections use a direct two-column grid and collapse at 850px.
 - Facts, inclusions, examples, steps, and prices use semantic lists or grouped sections. Three-column groups reduce to two where useful and one on phones.

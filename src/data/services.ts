@@ -1,6 +1,7 @@
 interface Service {
   id: string;
   shortName: string;
+  navigationLabel: string;
   title: string;
   description: string;
   pageHref?: string;
@@ -10,6 +11,7 @@ export const services: readonly Service[] = [
   {
     id: 'servicio-estrategia',
     shortName: 'Inventio',
+    navigationLabel: 'Visión y estrategia',
     title: 'Visión y estrategia de comunicación',
     description:
       'Definimos qué necesita comunicar una organización, por qué importa, quién necesita entenderlo y cómo convertirlo en una narrativa clara, coherente y creíble.',
@@ -18,6 +20,7 @@ export const services: readonly Service[] = [
   {
     id: 'servicio-crisis',
     shortName: 'Kairos',
+    navigationLabel: 'Com. de crisis',
     title: 'Preparación para la comunicación de crisis',
     description:
       'Ayudamos a tu equipo a anticipar escenarios, definir roles, mensajes y protocolos para responder con claridad, criterio y coordinación cuando la confianza está en riesgo.',
@@ -26,6 +29,7 @@ export const services: readonly Service[] = [
   {
     id: 'servicio-ia',
     shortName: 'Kanon',
+    navigationLabel: 'Com. e IA',
     title: 'Comunicación e Inteligencia Artificial',
     description:
       'Ayudamos a integrar la IA en la comunicación sin perder criterio, voz ni control, con reglas claras y flujos de revisión responsables.',
@@ -34,6 +38,7 @@ export const services: readonly Service[] = [
   {
     id: 'servicio-apex',
     shortName: 'Ethos',
+    navigationLabel: 'Reputación directiva',
     title: 'Reputación directiva',
     description:
       'Ayudamos a líderes y equipos directivos a construir una voz pública clara, coherente y creíble, alineada con la visión y responsabilidad de la organización.',

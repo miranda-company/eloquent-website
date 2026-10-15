@@ -35,7 +35,6 @@ interface StrategicServiceContent {
   schemaDescription: string;
   contactSubject: string;
   hero: {
-    eyebrow: string;
     title: EmphasizedText;
     lead: string;
     footnote: string;
@@ -130,7 +129,8 @@ const structuredData = {
 
   <PageHero
     titleId={`${content.slug}-title`}
-    eyebrow={content.hero.eyebrow}
+    eyebrow={content.serviceType}
+    eyebrowHighlight={content.name}
     lead={content.hero.lead}
   >
     <Fragment slot="title">

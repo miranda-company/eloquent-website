@@ -867,6 +867,12 @@
     margin-top: var(--space-7);
   }
 
+  .page-hero__eyebrow-highlight {
+    padding-inline: var(--space-1);
+    color: var(--color-ink);
+    background: var(--color-accent);
+  }
+
   .page-hero__title:first-child {
     margin-top: 0;
   }
