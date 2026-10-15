@@ -6,7 +6,7 @@ interface BreadcrumbItem {
 
 interface Props {
   titleId: string;
-  eyebrow: string;
+  eyebrow?: string;
   lead?: string;
   intro?: string;
   breadcrumbs?: readonly BreadcrumbItem[];
@@ -16,6 +16,7 @@ const { titleId, eyebrow, lead, intro, breadcrumbs = [] } = Astro.props;
 const hasCopy = Boolean(lead || intro);
 const hasActions = Astro.slots.has('actions');
 const hasFootnote = Astro.slots.has('footnote');
+const hasFooter = Astro.slots.has('footer');
 const hasBackground = Astro.slots.has('background');
 ---
 
@@ -36,7 +37,7 @@ const hasBackground = Astro.slots.has('background');
       )
     }
     <div class="page-hero__body">
-      <p class="eyebrow eyebrow--light">{eyebrow}</p>
+      {eyebrow && <p class="eyebrow eyebrow--light">{eyebrow}</p>}
       <h1 class="page-hero__title" id={titleId}><slot name="title" /></h1>
       {
         hasCopy && (
@@ -61,5 +62,12 @@ const hasBackground = Astro.slots.has('background');
         )
       }
     </div>
+    {
+      hasFooter && (
+        <div class="page-hero__footer">
+          <slot name="footer" />
+        </div>
+      )
+    }
   </div>
 </section>

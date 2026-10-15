@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+import ajuntamentLogo from '../assets/client-logos/logo-ajuntament-lh.png';
+import bscLogo from '../assets/client-logos/logo-bsc.png';
+import cnSantAndreuLogo from '../assets/client-logos/logo-cn-sant-andreu.png';
+import efbLogo from '../assets/client-logos/logo-efb.png';
+import grupoHemLogo from '../assets/client-logos/logo-gpo-hem.png';
+import hispanosConVozLogo from '../assets/client-logos/logo-hcv.png';
+import icmLogo from '../assets/client-logos/logo-icm.png';
+import museuLogo from '../assets/client-logos/logo-museu-lh.png';
+import syraLogo from '../assets/client-logos/logo-syra.png';
+import teclaSalaLogo from '../assets/client-logos/logo-tecla-sala.png';
+import unWomenLogo from '../assets/client-logos/logo-un.png';
+
+const logos = [
+  { src: ajuntamentLogo, name: "Ajuntament de L'Hospitalet" },
+  { src: bscLogo, name: 'Barcelona Supercomputing Center' },
+  { src: cnSantAndreuLogo, name: 'Club Natació Sant Andreu' },
+  { src: efbLogo, name: 'European Federation of Biotechnology' },
+  { src: grupoHemLogo, name: 'Grupo HEM' },
+  { src: hispanosConVozLogo, name: 'Hispanos con Voz' },
+  { src: icmLogo, name: 'Institut de Ciències del Mar' },
+  { src: museuLogo, name: "Museu de L'Hospitalet" },
+  { src: syraLogo, name: 'Syra Coffee' },
+  { src: teclaSalaLogo, name: 'TeclaSala' },
+  { src: unWomenLogo, name: 'UN Women' },
+] as const;
+
+const imageWidths = [160, 240];
+---
+
+<div class="client-logo-carousel">
+  <div class="client-logo-carousel__track">
+    {
+      [false, true].map((duplicate) => (
+        <ul
+          class="client-logo-carousel__group"
+          aria-label={duplicate ? undefined : 'Organizaciones con las que hemos trabajado'}
+          aria-hidden={duplicate ? 'true' : undefined}
+        >
+          {logos.map((logo) => (
+            <li>
+              <Image
+                src={logo.src}
+                alt={duplicate ? '' : logo.name}
+                widths={imageWidths}
+                sizes="(max-width: 600px) 160px, 240px"
+                format="webp"
+                quality={80}
+                loading="eager"
+              />
+            </li>
+          ))}
+        </ul>
+      ))
+    }
+  </div>
+</div>

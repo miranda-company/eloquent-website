@@ -55,12 +55,12 @@ Breakpoint values stay in media queries because custom properties cannot be used
 
 ## Hero assignments
 
-| Page type                                                            | Hero                 | Contract                                                                                                        |
-| -------------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Homepage, service page, Work index, Dossier landing, article archive | `PageHero`           | Dark standard hero with eyebrow and `h1`; lead, intro, actions, breadcrumbs, and footnote are optional          |
-| Case Study                                                           | `CaseStudyHero`      | Full-width project image, readable overlay, `h1`, lead, and metadata strip                                      |
-| Dossier issue                                                        | `DossierIssueHero`   | Back link, exploration number, `h1`, Markdown introduction, and article count                                   |
-| Dossier article                                                      | `DossierArticleHero` | Article `h1`, summary, author, publication and update dates, issue relationships, and optional full-width image |
+| Page type                                                            | Hero                 | Contract                                                                                                               |
+| -------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Homepage, service page, Work index, Dossier landing, article archive | `PageHero`           | Dark standard hero with `h1`; eyebrow, lead, intro, actions, breadcrumbs, footnote, and structured footer are optional |
+| Case Study                                                           | `CaseStudyHero`      | Full-width project image, readable overlay, `h1`, lead, and metadata strip                                             |
+| Dossier issue                                                        | `DossierIssueHero`   | Back link, exploration number, `h1`, Markdown introduction, and article count                                          |
+| Dossier article                                                      | `DossierArticleHero` | Article `h1`, summary, author, publication and update dates, issue relationships, and optional full-width image        |
 
 Hero typography and internal spacing belong to shared component rules in `global.css`. A page stylesheet may position a hero as a whole but must not override its title size, copy width, or internal spacing.
 
@@ -79,7 +79,7 @@ PageHero
 └── about section
 ```
 
-- `PageHero` contains the primary proposition and actions. On the homepage it may include the decorative `HeroVectorField`; the canvas remains behind the semantic content, uses design tokens, ignores pointer input as a control, and renders a static state when reduced motion is requested.
+- `PageHero` contains the primary proposition and actions. The homepage omits the optional eyebrow, so its H1 starts flush with the top of the hero body. It includes the decorative `HeroVectorField` and the `ClientLogoCarousel` in its structured footer. The canvas remains behind the semantic content, uses design tokens, ignores pointer input as a control, and renders a static state when reduced motion is requested. The logo carousel presents one accessible client list, duplicates it only for the visual loop, and stops moving when reduced motion is requested.
 - Proposition, featured Dossier, and about use editorial split grids that become one column at the shared tablet breakpoint.
 - Services come from `src/data/services.ts` and use `shortName` as the card label. The list is four columns, then two, then one.
 - Selected work comes from `src/data/projects.ts` and uses `ProjectCard`. The homepage may curate a subset but does not duplicate project data or card markup.

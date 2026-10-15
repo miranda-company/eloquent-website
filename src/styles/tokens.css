@@ -22,6 +22,7 @@
   --color-line-on-dark-footer: rgba(255, 255, 255, 0.2);
   --color-line-on-dark-strong: rgba(255, 255, 255, 0.22);
   --color-overlay: rgba(0, 0, 0, 0.88);
+  --opacity-client-logo: 0.72;
   --scrim-case-study: linear-gradient(
     180deg,
     rgba(23, 27, 24, 0.06) 10%,
@@ -128,6 +129,8 @@
   --lightbox-image-inline-size: 88vw;
   --lightbox-image-block-size: 82vh;
   --case-study-hero-height: clamp(36rem, 76svh, 55rem);
+  --client-logo-height: clamp(var(--space-7), 3vw, var(--space-10));
+  --client-logo-gap: clamp(var(--space-12), 6vw, var(--space-24));
   --service-card-height: 22rem;
   --service-card-height-compact: 15rem;
   --service-card-title-height: 3lh;
@@ -182,6 +185,7 @@
   --motion-header: 240ms;
   --motion-reveal: 800ms;
   --motion-hero-delay: 140ms;
+  --motion-logo-loop: 36s;
   --motion-reduced: 0.01ms;
   --ease-standard: ease;
   --ease-out: ease-out;
