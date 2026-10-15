@@ -55,12 +55,12 @@ Breakpoint values stay in media queries because custom properties cannot be used
 
 ## Hero assignments
 
-| Page type                                                            | Hero                 | Contract                                                                                                               |
-| -------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Homepage, service page, Work index, Dossier landing, article archive | `PageHero`           | Dark standard hero with `h1`; eyebrow, lead, intro, actions, breadcrumbs, footnote, and structured footer are optional |
-| Case Study                                                           | `CaseStudyHero`      | Full-width project image, readable overlay, `h1`, lead, and metadata strip                                             |
-| Dossier issue                                                        | `DossierIssueHero`   | Back link, exploration number, `h1`, Markdown introduction, and article count                                          |
-| Dossier article                                                      | `DossierArticleHero` | Article `h1`, summary, author, publication and update dates, issue relationships, and optional full-width image        |
+| Page type                                                            | Hero                 | Contract                                                                                                                          |
+| -------------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage, service page, Work index, Dossier landing, article archive | `PageHero`           | Dark standard hero with `h1`; eyebrow, lead, intro, actions, breadcrumbs, footnote, and structured footer are optional            |
+| Case Study                                                           | `CaseStudyHero`      | Full-width project image, readable overlay, `h1`, lead, and metadata strip                                                        |
+| Dossier issue                                                        | `DossierIssueHero`   | Back link, exploration number, `h1`, Markdown introduction, and article count                                                     |
+| Dossier article                                                      | `DossierArticleHero` | Article `h1`, summary, optionally linked author, publication and update dates, issue relationships, and optional full-width image |
 
 Hero typography and internal spacing belong to shared component rules in `global.css`. A page stylesheet may position a hero as a whole but must not override its title size, copy width, or internal spacing.
 
@@ -240,7 +240,7 @@ article.dossier-article
 ```
 
 - Each route renders one canonical article. Issue membership is derived from issue references, never copied into article frontmatter.
-- The hero owns title, summary, author, publication date, update date, issue links, and optional feature image.
+- The hero owns title, summary, author, optional author link, publication date, update date, issue links, and optional feature image. The typed author object is the single source for visible metadata and `Article` structured data; a missing URL renders plain text, while a supplied verified URL opens in a new tab.
 - The feature image spans the viewport and meets the content section without extra bottom spacing.
 - Content uses a three-to-nine desktop proportion and becomes one column at 850px.
 - Navigation precedes prose in the DOM and remains first on small screens.

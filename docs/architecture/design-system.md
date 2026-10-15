@@ -103,10 +103,10 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 - Astro content collection references validate every issue-to-article relationship during type checking and builds.
 - `ArticlePreview` owns one article link's semantic DOM, publication metadata, title, summary, and internal styling in `global.css`. Its compact variant supports constrained editorial lists; its archive variant lets titles and summaries use the full row width; its media variant lets text use the full card column and supports issue collections with optimized images in a responsive three-, two-, and one-column grid.
 - `DossierIssueHero` owns the issue navigation, exploration number, H1, Markdown introduction, article count, and responsive behavior.
-- `DossierArticleHero` owns the article H1, summary, author, publication and update dates, derived issue links, full-width optimized feature image, and responsive behavior.
+- `DossierArticleHero` owns the article H1, summary, author, optional author link, publication and update dates, derived issue links, full-width optimized feature image, and responsive behavior.
 - The dynamic article route renders every canonical Markdown body inside one restrained prose template and publishes matching `Article` structured data.
 - `dossier-index.css`, `dossier-issue.css`, `dossier-archive.css`, and `dossier-article.css` own only their respective page compositions.
-- The article archive sorts canonical articles by original publication date, newest first, and reuses the compact `ArticlePreview` variant.
+- The article archive sorts canonical articles by original publication date, newest first, and uses the full-row `ArticlePreview` archive variant.
 - Issue, archive, and article previews link to local canonical routes.
 
 ### Case Study contract
@@ -131,7 +131,7 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | BaseLayout             | Document shell, metadata, consent defaults, shared chrome, lightbox dialog, reveal behavior, and back-to-top control                                              |
 | SiteHeader             | Primary navigation, services menu, logo, and contact action                                                                                                       |
-| SiteFooter             | Shared contact, legal navigation, analytics preference control, DCC link, and logo                                                                                |
+| SiteFooter             | Shared contact, brand statement, legal navigation, consent-preference control, copyright, and logo                                                                |
 | EloquentLogo           | One accessible, reusable logo implementation                                                                                                                      |
 | PageHero               | H1 with optional eyebrow, breadcrumbs, decorative background, lead and introduction, actions, footnote, structured footer, responsive layout, and entrance motion |
 | HeroVectorField        | Decorative, pointer-reactive canvas field using design tokens, resize-aware rendering, and a static reduced-motion state                                          |
@@ -144,11 +144,11 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 | CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections                                                      |
 | ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination                                                       |
 | DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout                                                 |
-| DossierArticleHero     | Shared article title, summary, publication metadata, issue relationships, and optimized feature image                                                             |
+| DossierArticleHero     | Shared article title, summary, optional linked author, publication metadata, issue relationships, and optimized feature image                                     |
 | LegalPageLayout        | Shared legal hero, optional status summary, contents navigation, article slot, and responsive composition                                                         |
 | LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                                                                      |
 | ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                                                              |
-| ConsentBanner          | Explicit analytics choice, persistent preference, policy link, and consent-change event                                                                           |
+| ConsentBanner          | Independent analytics and advertising choices, persistent preferences, policy link, withdrawal, and consent-change event                                          |
 | .container             | Shared horizontal gutters and maximum content width                                                                                                               |
 | .eyebrow               | Section label typography                                                                                                                                          |
 | .button and .text-link | Shared action hierarchy and interaction states                                                                                                                    |

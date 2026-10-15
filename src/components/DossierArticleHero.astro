@@ -7,11 +7,16 @@ interface IssueLink {
   href: string;
 }
 
+interface Author {
+  name: string;
+  url?: string;
+}
+
 interface Props {
   titleId: string;
   title: string;
   summary: string;
-  author: string;
+  author: Author;
   date: Date;
   updated: Date;
   image?: ImageMetadata;
@@ -43,7 +48,22 @@ const imageWidths = [640, 960, 1360, 1920];
       <dl class="dossier-article-hero__meta">
         <div>
           <dt>Autor</dt>
-          <dd>{author}</dd>
+          <dd>
+            {
+              author.url ? (
+                <a
+                  href={author.url}
+                  target="_blank"
+                  rel="author external noopener noreferrer"
+                  aria-label={`${author.name} (abre en una pestaña nueva)`}
+                >
+                  {author.name}
+                </a>
+              ) : (
+                author.name
+              )
+            }
+          </dd>
         </div>
         <div>
           <dt>Publicado</dt>

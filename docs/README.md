@@ -26,3 +26,12 @@ This directory contains the detailed implementation contracts and operational gu
 ## Maintenance rule
 
 Update the relevant document in the same change as the code or content it governs. Keep reusable instructions in this directory and site-specific status in the appropriate operational record. Do not create a second document for a contract that already has an owner.
+
+When a change crosses concerns, update every owner in the same change:
+
+- Route, implementation status, setup, or command changes: root `README.md` and, when scope changes, `PLAN.md`.
+- Repository workflow or required verification changes: `AGENTS.md`.
+- Tokens, shared components, typography, color, spacing, or interaction changes: `architecture/design-system.md`.
+- Semantic page structure, responsive composition, or stylesheet ownership changes: `architecture/page-layouts.md`.
+- Dossier frontmatter or writing rules: `content/dossier-content-guide.md`.
+- Consent, tags, providers, legal disclosures, or retention changes: the applicable file under `privacy/` and the rendered legal pages.

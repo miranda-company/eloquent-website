@@ -11,7 +11,10 @@ const articles = defineCollection({
         summary: z.string().min(1),
         date: z.coerce.date(),
         updated: z.coerce.date(),
-        author: z.string().min(1),
+        author: z.object({
+          name: z.string().min(1),
+          url: z.url().optional(),
+        }),
         image: image().optional(),
       })
       .refine((article) => article.updated >= article.date, {

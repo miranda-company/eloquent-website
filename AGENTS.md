@@ -28,7 +28,7 @@ The archived WordPress copy, media, and URL inventory under `archive/wordpress-2
 Use the repository root for commands. The tracked lockfile is `package-lock.json`; use npm when installing or changing dependencies.
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
@@ -58,10 +58,11 @@ npm run build
 
 ## Content, URLs, and metadata
 
-- Preserve existing public URL slugs and trailing slashes. Keep one canonical URL for reused content.
+- Preserve public URLs and trailing slashes. When an approved canonical slug changes, add and document a permanent redirect from every former public route. Keep one canonical URL for reused content.
 - Do not invent claims, credentials, results, quotations, citations, authors, or publication dates.
 - Keep the original publication material in the archive even when approved page copy is shortened.
 - Author Dossier issues and articles as individual `.md` files. Use `.mdx` only when reusable visual components are required.
+- Keep each Dossier article author in one `author` object with a required `name` and optional verified `url`. Do not create parallel author-name and author-URL fields. Keep visible metadata and `Article` structured data sourced from that same object.
 - Keep page titles, descriptions, canonical URLs, social metadata, visible headings, and structured data consistent.
 - Add `BreadcrumbList` structured data only when breadcrumbs are visible. Add factual schema only when supported by the rendered content.
 - Use descriptive links and accurate alternative text. Avoid generic link labels when the destination can be named.
@@ -92,5 +93,5 @@ npm run build
 - Keep commits focused and use concise imperative commit messages consistent with the existing history.
 - Do not commit, push, deploy, or create a pull request unless the user requests it.
 - Do not edit or commit generated `dist/`, `.astro/`, `node_modules/`, logs, or operating-system files.
-- Update `README.md`, `PLAN.md`, `docs/architecture/design-system.md`, or `docs/content/dossier-content-guide.md` when a change affects their contracts or current-status statements.
+- Update `README.md`, `PLAN.md`, the relevant file under `docs/`, and this file when a change affects repository workflow, architecture, content schemas, routes, privacy behavior, or current-status statements. Keep the root README as the current project inventory and `docs/README.md` as the documentation index.
 - Update review screenshots only when a visual layout change makes the existing captures stale.

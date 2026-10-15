@@ -55,7 +55,8 @@ const articleSchema = {
   dateModified: modificationDate,
   author: {
     '@type': 'Person',
-    name: article.data.author,
+    name: article.data.author.name,
+    ...(article.data.author.url && { url: article.data.author.url }),
   },
   publisher: {
     '@type': 'Organization',

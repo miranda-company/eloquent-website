@@ -3,7 +3,9 @@ title: 'No puedes construir confianza si no las conoces'
 summary: 'El primer paso para generar valor es entender muy bien a las personas a las que tu organización se dirige. Aquí tienes una metodología que te permitirá conocerlas.'
 date: 2026-02-05
 updated: 2026-07-11
-author: 'Rodolfo Miranda Company'
+author:
+  name: 'Rodolfo Miranda Company'
+  url: 'https://www.linkedin.com/in/rodolfo-miranda-company/'
 image: '../../assets/dossier/post-featured-img-7.jpg'
 ---
 

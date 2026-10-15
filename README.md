@@ -10,6 +10,7 @@ Implemented in the repository:
 - Inventio, Kairos, Kanon, Ethos, and Landing Page Personal service pages at `/servicios/vision-y-estrategia-de-comunicacion/`, `/servicios/preparacion-comunicacion-de-crisis/`, `/servicios/comunicacion-e-inteligencia-artificial/`, `/servicios/reputacion-directiva/`, and `/servicios/landing-page-personal/`.
 - Work index at `/trabajo/` and three Case Studies at `/trabajo/<project-slug>/`.
 - Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
+- Dossier article authors stored as typed objects with a required name and optional verified profile URL; the shared hero and `Article` structured data use the same source.
 - Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
 - A reusable cookie-preference interface, Google Consent Mode v2, and conditional loading of Google Tag Manager and GA4.
 - Sitemap generation, canonical metadata, crawler rules, structured data, responsive images, reduced-motion support, and no-JavaScript content rendering.
@@ -106,7 +107,7 @@ Shared components live in `src/components/`, own their semantic DOM and internal
 
 ## Dossier content
 
-Issues are stored in `src/content/issues/`; articles are stored in `src/content/articles/`. Use `.md` by default and `.mdx` only when an entry needs a reusable visual component. Issue files contain ordered article references, while each article exists once at its canonical URL. The build validates frontmatter and references through `src/content.config.ts`.
+Issues are stored in `src/content/issues/`; articles are stored in `src/content/articles/`. Use `.md` by default and `.mdx` only when an entry needs a reusable visual component. Issue files contain ordered article references, while each article exists once at its canonical URL. An article author is one `author` object with a required `name` and optional verified `url`; omitting the URL renders plain text. The build validates frontmatter and references through `src/content.config.ts`.
 
 See [Dossier content guide](docs/content/dossier-content-guide.md) before adding or changing content. The original publication text remains available in the archive's `text/` directory, with unchanged REST and HTML captures alongside it.
 

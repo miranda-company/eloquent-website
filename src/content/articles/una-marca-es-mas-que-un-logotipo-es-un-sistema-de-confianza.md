@@ -3,7 +3,9 @@ title: 'Una marca es más que un logotipo, es un sistema de confianza'
 summary: 'En una época de infinitas opciones y ruido, tener una marca bien gestionada es la diferencia.'
 date: 2026-01-15
 updated: 2026-08-06
-author: 'Rodolfo Miranda Company'
+author:
+  name: 'Rodolfo Miranda Company'
+  url: 'https://www.linkedin.com/in/rodolfo-miranda-company/'
 image: '../../assets/dossier/post-featured-img-4.jpg'
 ---
 

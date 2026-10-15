@@ -3,7 +3,9 @@ title: '¿Qué sucede cuando la comunicación no tiene estrategia?'
 summary: 'Si sientes que tu comunicación está desarticulada y le falta dirección, es probable que no tengas una estrategia.'
 date: 2026-03-20
 updated: 2026-09-25
-author: 'Rodolfo Miranda Company'
+author:
+  name: 'Rodolfo Miranda Company'
+  url: 'https://www.linkedin.com/in/rodolfo-miranda-company/'
 image: '../../assets/dossier/post-featured-img-1.jpg'
 ---
 

@@ -3,7 +3,9 @@ title: 'Cómo aclarar el valor de tu organización'
 summary: '¿Te es difícil explicar qué hace tu organización exactamente? Es probable que no tengas definida tu propuesta de valor. Con este método lo podrás hacer.'
 date: 2026-03-03
 updated: 2026-09-16
-author: 'Rodolfo Miranda Company'
+author:
+  name: 'Rodolfo Miranda Company'
+  url: 'https://www.linkedin.com/in/rodolfo-miranda-company/'
 image: '../../assets/dossier/post-featured-img-6.jpg'
 ---
 

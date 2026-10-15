@@ -12,12 +12,14 @@ title: 'Article title'
 summary: 'A concise description of the article.'
 date: 2026-03-03
 updated: 2026-09-25
-author: 'Verified author name'
+author:
+  name: 'Verified author name'
+  url: 'https://example.com/verified-author-profile/'
 image: '../../assets/dossier/optional-image.jpg'
 ---
 ```
 
-The article body follows the frontmatter. Use descriptive headings, link to supporting sources for factual claims, and keep publication dates and author names faithful to the archived publication. Set `updated` to the date of the latest substantive content change; it cannot be earlier than `date`. The `image` field is optional and uses a relative path to a local image so Astro can validate and optimize it.
+The article body follows the frontmatter. Use descriptive headings, link to supporting sources for factual claims, and keep publication dates and author names faithful to the archived publication. The author's `url` is optional: use a verified professional profile or author page when available; omit it to render the author as plain text. Author links open in a new tab. Set `updated` to the date of the latest substantive content change; it cannot be earlier than `date`. The `image` field is optional and uses a relative path to a local image so Astro can validate and optimize it.
 
 The shared article layout supplies the page `h1`, summary, byline, dates, issue links, and navigation. Do not repeat them in the Markdown body. Use `h2` for the article body's main sections and `h3` only below an `h2`; never add an `h1`. The first body element may be a paragraph or `h2` because the shared prose template removes its top margin. Do not add layout HTML, container classes, or spacing styles to Markdown content.
 
