@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import AssetImage from './AssetImage.astro';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -26,15 +26,7 @@ const publicationLabel = new Intl.DateTimeFormat('es-ES', {
       {
         media && (
           <figure class="article-preview__media">
-            <Image
-              src={media}
-              alt=""
-              widths={[480, 720, 960]}
-              sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"
-              format="webp"
-              quality={76}
-              loading="lazy"
-            />
+            <AssetImage src={media} alt="" />
           </figure>
         )
       }

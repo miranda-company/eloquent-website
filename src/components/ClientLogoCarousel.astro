@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import AssetImage from './AssetImage.astro';
 import ajuntamentLogo from '../assets/client-logos/logo-ajuntament-lh.png';
 import bscLogo from '../assets/client-logos/logo-bsc.png';
 import cnSantAndreuLogo from '../assets/client-logos/logo-cn-sant-andreu.png';
@@ -25,8 +25,6 @@ const logos = [
   { src: teclaSalaLogo, name: 'TeclaSala' },
   { src: unWomenLogo, name: 'UN Women' },
 ] as const;
-
-const imageWidths = [160, 240];
 ---
 
 <div class="client-logo-carousel">
@@ -40,15 +38,7 @@ const imageWidths = [160, 240];
         >
           {logos.map((logo) => (
             <li>
-              <Image
-                src={logo.src}
-                alt={duplicate ? '' : logo.name}
-                widths={imageWidths}
-                sizes="(max-width: 600px) 160px, 240px"
-                format="webp"
-                quality={80}
-                loading="eager"
-              />
+              <AssetImage src={logo.src} alt={duplicate ? '' : logo.name} />
             </li>
           ))}
         </ul>

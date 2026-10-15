@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import AssetImage from './AssetImage.astro';
 
 interface MetaItem {
   label: string;
@@ -18,20 +18,14 @@ interface Props {
 }
 
 const { titleId, eyebrow, lead, image, imageAlt, meta, projectHref = '#proyecto' } = Astro.props;
-
-const imageWidths = [640, 1024, 1440, 1920];
 ---
 
 <section class="case-study-hero" aria-labelledby={titleId}>
   <div class="case-study-hero__visual">
-    <Image
+    <AssetImage
       class="case-study-hero__image"
       src={image}
       alt={imageAlt}
-      widths={imageWidths}
-      sizes="100vw"
-      format="webp"
-      quality={70}
       loading="eager"
       fetchpriority="high"
     />

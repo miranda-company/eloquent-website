@@ -55,7 +55,7 @@ npm run build
 - Use the shared `.container`, spacing scale, typography, surface roles, interaction states, and responsive breakpoints documented in `docs/architecture/design-system.md`.
 - Prefer focused components and direct names. Add comments only for non-obvious intent.
 - Let Prettier and ESLint define syntax details. Do not introduce another formatter, CSS framework, component library, or client framework without an approved requirement.
-- Use Astro image components for local content images, responsive sources, dimensions, and lazy loading. Reserve eager loading for the primary above-the-fold image.
+- Use `AssetImage` for local content images. It emits the uploaded asset once with intrinsic dimensions, asynchronous decoding, and lazy loading by default. Upload web-ready, correctly compressed source files; reserve eager loading for the primary above-the-fold image.
 
 ## Content, URLs, and metadata
 

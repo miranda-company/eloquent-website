@@ -13,7 +13,7 @@ Implemented in the repository:
 - Dossier article authors stored as typed objects with a required name and optional verified profile URL; the shared hero and `Article` structured data use the same source.
 - Legal notice, privacy policy, and cookie policy at `/aviso-legal/`, `/politica-de-privacidad/`, and `/politica-de-cookies/`.
 - A reusable cookie-preference interface, Google Consent Mode v2, and conditional loading of Google Tag Manager and GA4.
-- Sitemap generation, canonical metadata, crawler rules, structured data, responsive images, reduced-motion support, and no-JavaScript content rendering.
+- Sitemap generation, canonical metadata, crawler rules, structured data, intrinsically sized lazy-loaded images, reduced-motion support, and no-JavaScript content rendering.
 - An immutable archive of the WordPress copy, media, REST responses, HTML, and URL inventory under `archive/wordpress-2026-09-16/`.
 
 Content still awaiting completion:

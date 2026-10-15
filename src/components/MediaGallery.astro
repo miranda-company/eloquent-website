@@ -12,13 +12,9 @@ interface Props {
   label: string;
   layout?: 'single' | 'duo' | 'triptych';
   surface?: 'paper' | 'surface' | 'sage' | 'accent' | 'dark';
-  eager?: boolean;
 }
 
-const { images, label, layout = 'single', surface = 'paper', eager = false } = Astro.props;
-const imageWidths = [480, 900, 1360, 1920];
-const fullImageSizes = '100vw';
-const splitImageSizes = '(max-width: 600px) 100vw, 50vw';
+const { images, label, layout = 'single', surface = 'paper' } = Astro.props;
 ---
 
 <div
@@ -29,24 +25,13 @@ const splitImageSizes = '(max-width: 600px) 100vw, 50vw';
   <div class="container">
     <ul class="media-gallery__list">
       {
-        images.map((image, index) => {
-          const spansGrid = layout === 'triptych' && index === 0;
-          const sizes = layout === 'single' || spansGrid ? fullImageSizes : splitImageSizes;
-
-          return (
-            <li data-reveal>
-              <figure>
-                <LightboxImage
-                  src={image.src}
-                  alt={image.alt}
-                  widths={imageWidths}
-                  sizes={sizes}
-                  eager={eager}
-                />
-              </figure>
-            </li>
-          );
-        })
+        images.map((image) => (
+          <li data-reveal>
+            <figure>
+              <LightboxImage src={image.src} alt={image.alt} />
+            </figure>
+          </li>
+        ))
       }
     </ul>
   </div>

@@ -94,7 +94,7 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 ### Work index contract
 
 - `src/data/projects.ts` is the shared source for project titles, summaries, destinations, classifications, images, and alternative text used by the homepage and Work index.
-- `ProjectCard` owns each preview's semantic DOM, optimized responsive image, descriptive link, and internal styling in `global.css`.
+- `ProjectCard` owns each preview's semantic DOM, single-source image, descriptive link, and internal styling in `global.css`.
 - `work-index.css` owns only the Work page surface and responsive three-, two-, and one-column grid composition.
 - The collection currently has no visible section heading or count. Its section uses an accessible label, and the project cards supply the collection's visible hierarchy.
 
@@ -103,9 +103,9 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 - `src/content/issues/` is the source for issue titles, numbers, summaries, introductions, and ordered article references.
 - `src/content/articles/` stores each canonical article once. An issue reuses an article by reference; it never copies the article body.
 - Astro content collection references validate every issue-to-article relationship during type checking and builds.
-- `ArticlePreview` owns one article link's semantic DOM, publication metadata, title, summary, and internal styling in `global.css`. Its compact variant supports constrained editorial lists; its archive variant lets titles and summaries use the full row width; its media variant lets text use the full card column and supports issue collections with optimized images in a responsive three-, two-, and one-column grid.
+- `ArticlePreview` owns one article link's semantic DOM, publication metadata, title, summary, and internal styling in `global.css`. Its compact variant supports constrained editorial lists; its archive variant lets titles and summaries use the full row width; its media variant lets text use the full card column and supports issue collections with single-source images in a responsive three-, two-, and one-column grid.
 - `DossierIssueHero` owns the issue navigation, exploration number, H1, Markdown introduction, article count, and responsive behavior.
-- `DossierArticleHero` owns the article H1, summary, author, optional author link, publication and update dates, derived issue links, full-width optimized feature image, and responsive behavior.
+- `DossierArticleHero` owns the article H1, summary, author, optional author link, publication and update dates, derived issue links, full-width feature image, and responsive behavior.
 - The dynamic article route renders every canonical Markdown body inside one restrained prose template and publishes matching `Article` structured data.
 - `dossier-index.css`, `dossier-issue.css`, `dossier-archive.css`, and `dossier-article.css` own only their respective page compositions.
 - The article archive sorts canonical articles by original publication date, newest first, and uses the full-row `ArticlePreview` archive variant.
@@ -115,13 +115,16 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 
 - `CaseStudyHero` owns the full-width project image, readable overlay, H1, lead, and compact metadata strip.
 - `EditorialSection` uses the shared section heading and accepts prose-width content, wide content, or an optional evidence rail. Its semantic reading order remains heading, narrative, then evidence when the responsive layout becomes one column.
-- `MediaGallery` owns the semantic list and optimized responsive thumbnails. Pages provide image data and layout intent (`single`, `duo`, or `triptych`).
+- `MediaGallery` owns the semantic list and lightbox-enabled thumbnails. Pages provide image data and layout intent (`single`, `duo`, or `triptych`).
 - Case Study-specific narrative patterns such as facts, findings, phases, and results live in `case-study.css` and use shared tokens. They do not redefine shared component internals.
 - Verified qualitative findings may use structured cards. Numerical outcomes are shown only when the source material supports them.
 
 ### Image enlargement contract
 
-- Use `LightboxImage` for Case Study evidence and gallery images. It renders an optimized responsive thumbnail inside a normal link to the original asset.
+- `AssetImage` is the shared renderer for imported raster assets. It emits one uploaded file per source image and preserves intrinsic width and height to prevent layout shift.
+- Images default to lazy loading and asynchronous decoding. Only the primary image visible above the fold uses eager loading and high fetch priority.
+- The build does not generate responsive width or format variants. Source images must therefore be compressed, correctly cropped, and no larger than needed for their largest rendered context before upload.
+- Use `LightboxImage` for Case Study evidence and gallery images. It renders the uploaded asset inside a normal link to that same full image.
 - `ImageLightbox` is rendered once by `BaseLayout`. JavaScript enhances a lightbox link with the native `dialog` element and loads the full image only when opened.
 - Click and keyboard activation open the dialog. The close control, Escape key, and backdrop close it; native dialog behavior restores focus to the trigger.
 - The trigger supplies accurate alternative text and a useful caption. When JavaScript or `dialog.showModal()` is unavailable, the normal full-image link remains usable.
@@ -137,16 +140,17 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 | EloquentLogo           | One accessible, reusable logo implementation                                                                                                                      |
 | PageHero               | H1 with optional eyebrow, breadcrumbs, decorative background, lead and introduction, actions, footnote, structured footer, responsive layout, and entrance motion |
 | HeroVectorField        | Decorative, pointer-reactive canvas field using design tokens, resize-aware rendering, and a static reduced-motion state                                          |
-| ClientLogoCarousel     | Accessible client-logo list with a continuous decorative duplicate, optimized images, and a static reduced-motion state                                           |
+| ClientLogoCarousel     | Accessible client-logo list with a continuous decorative duplicate, single-source images, and a static reduced-motion state                                       |
 | StrategicServicePage   | Shared data-driven DOM, metadata, editorial sections, optional scope boundaries, and responsive layout for strategic services                                     |
 | CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                                                                          |
 | EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                                                             |
-| MediaGallery           | Semantic single, paired, or triptych collections composed from optimized, lightbox-enabled images                                                                 |
-| ProjectCard            | One project preview with optimized media, sector, title, summary, and a descriptive destination link                                                              |
+| MediaGallery           | Semantic single, paired, or triptych collections composed from single-source, lightbox-enabled images                                                             |
+| AssetImage             | Single-source local image with intrinsic dimensions, asynchronous decoding, and configurable loading priority                                                     |
+| ProjectCard            | One project preview with single-source media, sector, title, summary, and a descriptive destination link                                                          |
 | CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections                                                      |
 | ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination                                                       |
 | DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout                                                 |
-| DossierArticleHero     | Shared article title, summary, optional linked author, publication metadata, issue relationships, and optimized feature image                                     |
+| DossierArticleHero     | Shared article title, summary, optional linked author, publication metadata, issue relationships, and full-width feature image                                    |
 | LegalPageLayout        | Shared legal hero, optional status summary, contents navigation, article slot, and responsive composition                                                         |
 | LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                                                                      |
 | ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                                                              |

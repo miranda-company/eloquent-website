@@ -1,17 +1,13 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import HeroVectorField from '../components/HeroVectorField.astro';
 import ClientLogoCarousel from '../components/ClientLogoCarousel.astro';
+import AssetImage from '../components/AssetImage.astro';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
 import '../styles/home.css';
 
-const featuredImageWidths = [480, 920, 1360];
-const cardImageWidths = [480, 720];
-const featuredImageSizes = '100vw';
-const cardImageSizes = '(max-width: 600px) 100vw, 50vw';
 const [swimProject, museumProject, bscProject] = projects;
 
 const organization = {
@@ -109,15 +105,7 @@ const organization = {
         <li data-reveal>
           <a href={swimProject.href}>
             <figure>
-              <Image
-                src={swimProject.image}
-                alt={swimProject.imageAlt}
-                widths={featuredImageWidths}
-                sizes={featuredImageSizes}
-                format="webp"
-                quality={65}
-                loading="lazy"
-              />
+              <AssetImage src={swimProject.image} alt={swimProject.imageAlt} />
               <figcaption>
                 <span>{swimProject.sector}</span>
                 <h3>{swimProject.title} <span aria-hidden="true">↗</span></h3>
@@ -129,15 +117,7 @@ const organization = {
         <li data-reveal>
           <a href={museumProject.href}>
             <figure>
-              <Image
-                src={museumProject.image}
-                alt={museumProject.imageAlt}
-                widths={cardImageWidths}
-                sizes={cardImageSizes}
-                format="webp"
-                quality={65}
-                loading="lazy"
-              />
+              <AssetImage src={museumProject.image} alt={museumProject.imageAlt} />
               <figcaption>
                 <span>{museumProject.sector}</span>
                 <h3>{museumProject.title} <span aria-hidden="true">↗</span></h3>
@@ -149,15 +129,7 @@ const organization = {
         <li data-reveal>
           <a href={bscProject.href}>
             <figure>
-              <Image
-                src={bscProject.image}
-                alt={bscProject.imageAlt}
-                widths={cardImageWidths}
-                sizes={cardImageSizes}
-                format="webp"
-                quality={65}
-                loading="lazy"
-              />
+              <AssetImage src={bscProject.image} alt={bscProject.imageAlt} />
               <figcaption>
                 <span>{bscProject.sector}</span>
                 <h3>{bscProject.title} <span aria-hidden="true">↗</span></h3>
