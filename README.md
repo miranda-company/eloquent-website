@@ -50,7 +50,7 @@ npm run format
 npm run build
 ```
 
-These commands cover Astro and TypeScript diagnostics, linting, design-token use, formatting, and the production build.
+These commands cover Astro and TypeScript diagnostics, linting, design-token use, canonical CSS cascade-layer order, formatting, and the production build.
 
 ## Route inventory
 
@@ -96,6 +96,8 @@ Read the relevant contracts before making changes:
 ## Architecture
 
 Shared components live in `src/components/`, own their semantic DOM and internal styling, and consume the variables in `src/styles/tokens.css`. Page stylesheets may compose shared components but must not redefine their internals.
+
+Every stylesheet except `tokens.css` declares the complete `reset, base, components, sections, responsive` cascade order. This keeps page typography and spacing stable when Astro changes whether CSS is inlined or extracted during a production build. The design check enforces the declaration.
 
 - `BaseLayout.astro` owns metadata, the shared header and footer, consent defaults, the conditional GTM loader, the cookie-preference interface, and the image lightbox.
 - `PageHero.astro` provides the common homepage, service, Work-index, and Dossier-landing hero contract.

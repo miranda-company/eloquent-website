@@ -1,4 +1,4 @@
-@layer sections, responsive;
+@layer reset, base, components, sections, responsive;
 
 @layer sections {
   .legal-overview,

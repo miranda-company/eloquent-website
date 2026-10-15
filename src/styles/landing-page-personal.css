@@ -1,3 +1,5 @@
+@layer reset, base, components, sections, responsive;
+
 @layer sections {
   .personal-growth h2 em,
   .personal-final h2 em {

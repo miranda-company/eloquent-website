@@ -8,9 +8,17 @@ const localValue =
   /#[\da-f]{3,8}\b|\b(?:rgb|hsl)a?\(|(?<![\w-])\d*\.?\d+(?:rem|px|vw|vh|ch|em|ms)\b/i;
 const localVariable = /^\s*--[\w-]+\s*:/;
 const violations = [];
+const canonicalLayerOrder = '@layer reset, base, components, sections, responsive;';
 
 for (const file of styleFiles) {
-  const lines = (await readFile(new URL(file, stylesDirectory), 'utf8')).split('\n');
+  const source = await readFile(new URL(file, stylesDirectory), 'utf8');
+  const lines = source.split('\n');
+
+  if (!source.includes(canonicalLayerOrder)) {
+    violations.push(
+      `${file}: declare "${canonicalLayerOrder}" so production CSS preserves layer priority`,
+    );
+  }
 
   lines.forEach((line, index) => {
     const trimmed = line.trim();
@@ -24,9 +32,9 @@ for (const file of styleFiles) {
 }
 
 if (violations.length > 0) {
-  console.error('Move these visual values into src/styles/tokens.css:\n');
+  console.error('Design-system contract violations:\n');
   console.error(violations.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('Component CSS uses design tokens.');
+  console.log('Component CSS uses design tokens and preserves canonical cascade layers.');
 }

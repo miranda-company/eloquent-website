@@ -1,3 +1,5 @@
+@layer reset, base, components, sections, responsive;
+
 @layer sections {
   .case-study-prose {
     max-width: var(--prose-width);

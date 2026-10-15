@@ -50,6 +50,7 @@ npm run build
 - Reuse or extend shared components before adding page-specific markup. Keep component APIs small and typed.
 - Keep semantic DOM and reading order stable. Use `section`, `article`, `figure`, headings, and lists according to their meaning.
 - Use `src/styles/tokens.css` for shared visual values. Shared component rules belong in `src/styles/global.css`; page stylesheets only own page-specific composition.
+- Preserve the canonical cascade order `reset, base, components, sections, responsive` in every stylesheet except `tokens.css`. Astro may reorder inline and extracted CSS in production; `npm run design:check` verifies every stylesheet declares the complete order.
 - Do not add raw colors, spacing, font sizes, radii, shadows, or motion durations to component CSS. Run `npm run design:check` after CSS changes.
 - Use the shared `.container`, spacing scale, typography, surface roles, interaction states, and responsive breakpoints documented in `docs/architecture/design-system.md`.
 - Prefer focused components and direct names. Add comments only for non-obvious intent.

@@ -2,23 +2,14 @@
 title: 'No puedes construir confianza si no las conoces'
 summary: 'El primer paso para generar valor es entender muy bien a las personas a las que tu organización se dirige. Aquí tienes una metodología que te permitirá conocerlas.'
 date: 2026-02-05
-updated: 2026-07-11
+updated: 2026-11-15
 author:
   name: 'Rodolfo Miranda Company'
   url: 'https://www.linkedin.com/in/rodolfo-miranda-company/'
 image: '../../assets/dossier/post-featured-img-7.jpg'
 ---
 
-Muchas organizaciones comunican sin entender bien a las personas a las que intentan llegar. No saben lo suficiente sobre ellas y no han meditado sobre algunas preguntas que son muy importantes para lograr una comunicación estratégica:
-
-¿Quiénes son estas personas?\
-¿Qué les preocupa?\
-¿Qué necesitan entender?\
-¿Qué saben ya?\
-¿Qué entienden mal?\
-¿Qué haría que confiaran en nosotros?\
-¿Qué lenguaje les resulta natural?\
-¿Qué información necesitan antes de tomar una decisión?
+Muchas organizaciones comunican sin entender bien a las personas a las que intentan llegar. No saben lo suficiente sobre ellas y no han meditado sobre algunas preguntas que son muy importantes para lograr una comunicación estratégica.
 
 Cuándo la organización habla solo desde su perspectiva y no empatiza con su público, entonces la audiencia experimenta confusión, indiferencia o desconfianza.
 
@@ -162,4 +153,4 @@ Las organizaciones que entienden a sus audiencias se comunican con más precisi�
 
 Con este conocimiento, la organización no solo habla de aspectos propios, sino que se enfoca en lo que las personas en verdad necesitan. Y es através de este enfoque que se genera entendimiento, confianza y valor.
 
-**La comunicación importa.**
+**La comunicación importa 🖤**

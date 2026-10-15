@@ -42,6 +42,8 @@ This contract applies to every feature, component, element, section, and page. N
 
 Dependencies point upward in this table: pages use components, components use elements and tokens, and page styles never reach into a shared component to redefine its internal typography or spacing.
 
+All stylesheets except `tokens.css` declare the canonical cascade order `reset, base, components, sections, responsive` before adding rules. Astro may inline a page stylesheet before the extracted shared stylesheet in production; repeating the complete order at every stylesheet entry point keeps base rules below section and responsive rules regardless of bundle order. `npm run design:check` enforces this contract.
+
 ### Reuse rules
 
 1. Search the component inventory and global element classes before writing markup or CSS.
