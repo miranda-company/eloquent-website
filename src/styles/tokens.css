@@ -29,6 +29,12 @@
     rgba(23, 27, 24, 0.22) 42%,
     rgba(23, 27, 24, 0.92) 100%
   );
+  --scrim-hero-vector: radial-gradient(
+    ellipse 70% 68% at center,
+    var(--color-ink) 0%,
+    var(--color-ink) 20%,
+    transparent 100%
+  );
 
   /* Font families, sizes, weight, and rhythm */
   --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;

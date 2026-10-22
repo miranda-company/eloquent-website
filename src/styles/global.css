@@ -811,9 +811,20 @@
     background: var(--color-ink);
   }
 
+  .page-hero--balanced {
+    padding-block: var(--hero-top-space);
+  }
+
   .page-hero__inner {
     position: relative;
     z-index: 1;
+  }
+
+  .page-hero__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-vector-field {
@@ -827,7 +838,7 @@
   .hero-vector-field::after {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, var(--color-ink) 0%, transparent 72%);
+    background: var(--scrim-hero-vector);
     content: '';
   }
 

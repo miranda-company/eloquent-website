@@ -11,9 +11,18 @@ interface Props {
   lead?: string;
   intro?: string;
   breadcrumbs?: readonly BreadcrumbItem[];
+  balancedSpacing?: boolean;
 }
 
-const { titleId, eyebrow, eyebrowHighlight, lead, intro, breadcrumbs = [] } = Astro.props;
+const {
+  titleId,
+  eyebrow,
+  eyebrowHighlight,
+  lead,
+  intro,
+  breadcrumbs = [],
+  balancedSpacing = false,
+} = Astro.props;
 const hasEyebrow = Boolean(eyebrow || eyebrowHighlight);
 const hasCopy = Boolean(lead || intro);
 const hasActions = Astro.slots.has('actions');
@@ -22,7 +31,10 @@ const hasFooter = Astro.slots.has('footer');
 const hasBackground = Astro.slots.has('background');
 ---
 
-<section class="page-hero" aria-labelledby={titleId}>
+<section
+  class:list={['page-hero', { 'page-hero--balanced': balancedSpacing }]}
+  aria-labelledby={titleId}
+>
   {hasBackground && <slot name="background" />}
   <div class="container page-hero__inner">
     {
