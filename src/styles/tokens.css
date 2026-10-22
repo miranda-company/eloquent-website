@@ -31,8 +31,8 @@
   );
   --scrim-hero-vector: radial-gradient(
     ellipse 70% 68% at center,
-    var(--color-ink) 0%,
-    var(--color-ink) 20%,
+    rgba(23, 27, 24, 0.58) 0%,
+    rgba(23, 27, 24, 0.58) 18%,
     transparent 100%
   );
 
@@ -206,8 +206,8 @@
   --vector-field-line-length: 12;
   --vector-field-line-width: 1.5;
   --vector-field-pointer-radius: 250;
-  --vector-field-base-opacity: 0.13;
-  --vector-field-active-opacity: 0.78;
+  --vector-field-base-opacity: 0.24;
+  --vector-field-active-opacity: 0.88;
 }
 
 @media (max-width: 600px) {
