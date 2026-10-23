@@ -51,11 +51,6 @@
     column-gap: var(--space-20);
   }
 
-  .strategic-service-context h2,
-  .strategic-service-audience h2 {
-    margin-top: var(--space-6);
-  }
-
   .strategic-service-context__copy,
   .strategic-service-audience__copy {
     max-width: var(--prose-width);
@@ -106,10 +101,6 @@
     margin-top: var(--space-4);
     color: var(--color-text-muted);
     line-height: var(--leading-copy);
-  }
-
-  .strategic-service-transformation h2 {
-    margin-top: var(--space-6);
   }
 
   .strategic-service-transformation__grid {
@@ -190,6 +181,13 @@
 
   .strategic-service-method {
     scroll-margin-top: var(--service-anchor-offset);
+  }
+
+  .strategic-service-signals .section-heading,
+  .strategic-service-moments .section-heading,
+  .strategic-service-deliverables .section-heading,
+  .strategic-service-scope .section-heading {
+    margin-top: 0;
   }
 
   .strategic-service-method__heading > p {
@@ -281,10 +279,6 @@
 
   .strategic-service-deliverables__grid li:last-child {
     border-bottom: var(--stroke) solid var(--color-line);
-  }
-
-  .strategic-service-final__grid {
-    margin-top: var(--space-6);
   }
 
   .strategic-service-final__lead {

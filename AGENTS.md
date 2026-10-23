@@ -56,6 +56,7 @@ npm run build
 - Prefer focused components and direct names. Add comments only for non-obvious intent.
 - Let Prettier and ESLint define syntax details. Do not introduce another formatter, CSS framework, component library, or client framework without an approved requirement.
 - Use `AssetImage` for local content images. It emits the uploaded asset once with intrinsic dimensions, asynchronous decoding, and lazy loading by default. Upload web-ready, correctly compressed source files; reserve eager loading for the primary above-the-fold image.
+- Keep Inventio, Kairos, Kanon, and Ethos on `StrategicServicePage`; their route files supply content only. The shared hero and method section render eyebrows, while the other sections begin with their heading.
 
 ## Content, URLs, and metadata
 
@@ -73,6 +74,7 @@ npm run build
 ## Accessibility and interaction
 
 - All controls must work with a keyboard and have visible focus states and accessible names.
+- Render unavailable media teasers as noninteractive content with a visible status. Replace them with a descriptive link or working button only when a verified destination or playback behavior exists.
 - Preserve logical heading order, useful landmarks, sufficient contrast, touch targets, and readable line lengths.
 - Respect `prefers-reduced-motion`. Primary content must remain readable and navigable without JavaScript.
 - For the image lightbox, preserve the normal full-image link fallback. Verify click and keyboard opening, the close control, Escape and backdrop closing, focus restoration, captions, alternative text, and responsive sizing.

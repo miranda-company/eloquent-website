@@ -6,8 +6,8 @@ Static Astro redesign of [eloquent.es](https://eloquent.es). The project replace
 
 Implemented in the repository:
 
-- Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens.
-- Inventio, Kairos, Kanon, Ethos, and Landing Page Personal service pages at `/servicios/vision-y-estrategia-de-comunicacion/`, `/servicios/preparacion-comunicacion-de-crisis/`, `/servicios/comunicacion-e-inteligencia-artificial/`, `/servicios/reputacion-directiva/`, and `/servicios/landing-page-personal/`.
+- Shared responsive shell, homepage, header, footer, navigation, motion, and design tokens. The homepage includes the vector-field hero, client-logo carousel, and a responsive episode teaser.
+- Inventio, Kairos, Kanon, Ethos, and Landing Page Personal service pages at `/servicios/vision-y-estrategia-de-comunicacion/`, `/servicios/preparacion-comunicacion-de-crisis/`, `/servicios/comunicacion-e-inteligencia-artificial/`, `/servicios/reputacion-directiva/`, and `/servicios/landing-page-personal/`. The four strategic services share one typed page template.
 - Work index at `/trabajo/` and three Case Studies at `/trabajo/<project-slug>/`.
 - Dossier landing, issue, article archive, and article layouts backed by typed Markdown or MDX collections.
 - Dossier article authors stored as typed objects with a required name and optional verified profile URL; the shared hero and `Article` structured data use the same source.
@@ -18,6 +18,7 @@ Implemented in the repository:
 
 Content still awaiting completion:
 
+- The homepage episode teaser is marked `Próximamente` until a verified audio, video, or destination URL is supplied.
 - The three Landing Page Personal examples use image placeholders and have no external destinations.
 - The content collection currently contains one Dossier issue and four canonical articles.
 
@@ -100,7 +101,8 @@ Shared components live in `src/components/`, own their semantic DOM and internal
 Every stylesheet except `tokens.css` declares the complete `reset, base, components, sections, responsive` cascade order. This keeps page typography and spacing stable when Astro changes whether CSS is inlined or extracted during a production build. The design check enforces the declaration.
 
 - `BaseLayout.astro` owns metadata, the shared header and footer, consent defaults, the conditional GTM loader, the cookie-preference interface, and the image lightbox.
-- `PageHero.astro` provides the common homepage, service, Work-index, and Dossier-landing hero contract.
+- `PageHero.astro` provides the common homepage, service, Work-index, and Dossier-landing hero contract, including optional balanced vertical spacing.
+- `StrategicServicePage.astro` owns the shared structure and metadata for Inventio, Kairos, Kanon, and Ethos. Their route files contain service-specific content; only the hero and method render eyebrows.
 - `ProjectCard.astro` renders project previews from `src/data/projects.ts`.
 - `DossierIssueHero.astro`, `DossierArticleHero.astro`, and `ArticlePreview.astro` own the Dossier presentation patterns.
 - `CaseStudyHero.astro`, `EditorialSection.astro`, `MediaGallery.astro`, and `LightboxImage.astro` compose Case Studies.

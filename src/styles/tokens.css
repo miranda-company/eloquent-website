@@ -11,6 +11,7 @@
   --color-sage: #e5e9df;
   --color-accent: #dff09a;
   --color-accent-hover: #f1ffc4;
+  --color-widget-border: #d0df8f;
   --color-card-hover: #f5f8e8;
   --color-focus: #59752c;
   --color-on-dark-lead: #d7ddd6;
@@ -112,6 +113,7 @@
   --collection-top-space: clamp(var(--space-16), 7vw, var(--space-28));
   --collection-gap: clamp(var(--space-8), 4vw, var(--space-16));
   --card-padding: clamp(var(--space-5-5), 2.25vw, var(--space-9));
+  --widget-padding: clamp(var(--space-4), 2vw, var(--space-6));
   --footer-bottom-space: clamp(var(--space-24), 12vw, var(--space-48));
   --floating-bottom-space: clamp(var(--space-5), 4vw, var(--space-12));
   --nav-gap: clamp(var(--space-5), 3vw, var(--space-12));
@@ -129,6 +131,7 @@
   --button-height: var(--space-14);
   --button-min-width: 13rem;
   --back-to-top-size: 3.25rem;
+  --media-play-size: clamp(var(--space-18), 8vw, var(--space-24));
   --lightbox-close-size: var(--space-12);
   --lightbox-inline-size: 92vw;
   --lightbox-block-size: 90vh;
@@ -149,7 +152,7 @@
   --measure-proposition-title: 14ch;
   --measure-about-title: 15ch;
   --measure-section-intro: 31ch;
-  --measure-proposition-note: 36ch;
+  --measure-media-label: 36ch;
   --measure-service-copy: 39ch;
   --measure-proposition-lead: 46ch;
   --measure-dossier-copy: 46ch;
@@ -164,6 +167,7 @@
 
   /* Edges, elevation, and stacking */
   --stroke: 1px;
+  --stroke-widget: 2px;
   --stroke-chevron: 1.5px;
   --stroke-focus: 3px;
   --focus-offset: 5px;
@@ -171,6 +175,7 @@
   --chevron-angle-closed: 45deg;
   --chevron-angle-open: 225deg;
   --radius-button: var(--space-1);
+  --radius-widget: var(--space-3);
   --radius-round: 50%;
   --shadow-header: 0 var(--space-2) var(--space-6) rgba(0, 0, 0, 0.16);
   --shadow-menu: 0 var(--space-4) var(--space-8) rgba(0, 0, 0, 0.14);

@@ -87,7 +87,7 @@ Each section owns its full-width surface and vertical padding. Its first layout 
 
 Every indexable page uses BaseLayout and supplies a distinct title, description, canonical URL, and appropriate social metadata. It composes SiteHeader, the hero component assigned to its page type, reusable sections, and SiteFooter through shared implementations. BaseLayout also owns the single shared image-lightbox dialog. Pages own their copy and structured data; shared components own recurring markup, styling, and behavior.
 
-The optional parts of a component do not change its core contract. `PageHero` always renders its H1. It renders the eyebrow, optional highlighted eyebrow prefix, decorative background, copy container, breadcrumbs, actions, footnote, and structured footer only when the page supplies that content, avoiding empty DOM elements. When the eyebrow is omitted, the H1 starts flush with the top of the hero body. Strategic service pages use the highlighted prefix for the commercial service name and the standard eyebrow color for the descriptive service type.
+The optional parts of a component do not change its core contract. `PageHero` always renders its H1. It renders the eyebrow, optional highlighted eyebrow prefix, decorative background, copy container, breadcrumbs, actions, footnote, and structured footer only when the page supplies that content, avoiding empty DOM elements. When the eyebrow is omitted, the H1 starts flush with the top of the hero body. Pages without a structured hero footer may set `balancedSpacing` to use the standard hero spacing equally above and below the body. Strategic service pages use the highlighted prefix for the commercial service name and the standard eyebrow color for the descriptive service type.
 
 The [page layout contracts](page-layouts.md) document defines the complete page-level contract for the homepage, service detail, Work index, Case Study, Dossier landing, Dossier issue, article archive, Dossier article, and legal pages. It is the source of truth for semantic section order, hero assignment, collection layout, responsive behavior, and page-style ownership. Update it together with any structural implementation change.
 
@@ -132,33 +132,33 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 
 ### Current component inventory
 
-| Component or element   | Responsibility                                                                                                                                                    |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| BaseLayout             | Document shell, metadata, consent defaults, shared chrome, lightbox dialog, reveal behavior, and back-to-top control                                              |
-| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                                                                       |
-| SiteFooter             | Shared contact, brand statement, legal navigation, consent-preference control, copyright, and logo                                                                |
-| EloquentLogo           | One accessible, reusable logo implementation                                                                                                                      |
-| PageHero               | H1 with optional eyebrow, breadcrumbs, decorative background, lead and introduction, actions, footnote, structured footer, responsive layout, and entrance motion |
-| HeroVectorField        | Decorative, pointer-reactive canvas field using design tokens, resize-aware rendering, and a static reduced-motion state                                          |
-| ClientLogoCarousel     | Accessible client-logo list with a continuous decorative duplicate, single-source images, and a static reduced-motion state                                       |
-| StrategicServicePage   | Shared data-driven DOM, metadata, editorial sections, optional scope boundaries, and responsive layout for strategic services                                     |
-| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                                                                          |
-| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                                                             |
-| MediaGallery           | Semantic single, paired, or triptych collections composed from single-source, lightbox-enabled images                                                             |
-| AssetImage             | Single-source local image with intrinsic dimensions, asynchronous decoding, and configurable loading priority                                                     |
-| ProjectCard            | One project preview with single-source media, sector, title, summary, and a descriptive destination link                                                          |
-| CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections                                                      |
-| ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination                                                       |
-| DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout                                                 |
-| DossierArticleHero     | Shared article title, summary, optional linked author, publication metadata, issue relationships, and full-width feature image                                    |
-| LegalPageLayout        | Shared legal hero, optional status summary, contents navigation, article slot, and responsive composition                                                         |
-| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                                                                      |
-| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                                                              |
-| ConsentBanner          | Independent analytics and advertising choices, persistent preferences, policy link, withdrawal, and consent-change event                                          |
-| .container             | Shared horizontal gutters and maximum content width                                                                                                               |
-| .eyebrow               | Section label typography                                                                                                                                          |
-| .button and .text-link | Shared action hierarchy and interaction states                                                                                                                    |
-| .section-heading       | Reusable heading and supporting-content alignment                                                                                                                 |
+| Component or element   | Responsibility                                                                                                                                                   |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BaseLayout             | Document shell, metadata, consent defaults, shared chrome, lightbox dialog, reveal behavior, and back-to-top control                                             |
+| SiteHeader             | Primary navigation, services menu, logo, and contact action                                                                                                      |
+| SiteFooter             | Shared contact, brand statement, legal navigation, consent-preference control, copyright, and logo                                                               |
+| EloquentLogo           | One accessible, reusable logo implementation                                                                                                                     |
+| PageHero               | H1 with optional eyebrow, breadcrumbs, decorative background, lead and introduction, actions, footnote, structured footer, balanced spacing, and entrance motion |
+| HeroVectorField        | Decorative, pointer-reactive canvas field using design tokens, resize-aware rendering, and a static reduced-motion state                                         |
+| ClientLogoCarousel     | Accessible client-logo list with a continuous decorative duplicate, single-source images, and a static reduced-motion state                                      |
+| StrategicServicePage   | Shared data-driven DOM, metadata, hero-and-method eyebrow contract, optional scope boundaries, and responsive layout for strategic services                      |
+| CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                                                                         |
+| EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                                                            |
+| MediaGallery           | Semantic single, paired, or triptych collections composed from single-source, lightbox-enabled images                                                            |
+| AssetImage             | Single-source local image with intrinsic dimensions, asynchronous decoding, and configurable loading priority                                                    |
+| ProjectCard            | One project preview with single-source media, sector, title, summary, and a descriptive destination link                                                         |
+| CollectionHeading      | Shared eyebrow, H2, supporting copy, two-column alignment, and responsive stacking for editorial collections                                                     |
+| ArticlePreview         | Compact or media-rich Dossier article link with sequence, publication date, title, summary, and destination                                                      |
+| DossierIssueHero       | Shared issue navigation, exploration metadata, title, Markdown introduction, article count, and responsive layout                                                |
+| DossierArticleHero     | Shared article title, summary, optional linked author, publication metadata, issue relationships, and full-width feature image                                   |
+| LegalPageLayout        | Shared legal hero, optional status summary, contents navigation, article slot, and responsive composition                                                        |
+| LightboxImage          | Progressive image-enlargement trigger with a normal full-image link fallback                                                                                     |
+| ImageLightbox          | Shared native dialog, enlarged image, caption, close behavior, and keyboard handling                                                                             |
+| ConsentBanner          | Independent analytics and advertising choices, persistent preferences, policy link, withdrawal, and consent-change event                                         |
+| .container             | Shared horizontal gutters and maximum content width                                                                                                              |
+| .eyebrow               | Section label typography                                                                                                                                         |
+| .button and .text-link | Shared action hierarchy and interaction states                                                                                                                   |
+| .section-heading       | Reusable heading and supporting-content alignment                                                                                                                |
 
 ## Where to change things
 
@@ -176,7 +176,7 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 
 The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` is `1rem`, and `--space-8` is `2rem`. Half steps handle compact controls. Use semantic fluid tokens when the value changes with the viewport: `--section-space` supplies standard section rhythm, `--section-space-compact` supplies tighter collection rhythm, `--collection-top-space` separates collection content, and `--page-gutter` controls responsive page edges.
 
-Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
+Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis; and `--color-widget-border` (`#d0df8f`) frames self-contained media and utility widgets. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
 
 Text uses `--text-*` sizes, `--leading-*` line heights, and `--tracking-*` letter spacing. `h1` and `h2` use display-heading tracking; `h3` through `h6` use `--tracking-subheading` (`-0.03em`). The `--measure-*` tokens limit line lengths. `--container-width` is `85rem`, equivalent to 1360px at the default 16px root size, and supplies the maximum width for grids and visual sections. Responsive `--page-gutter` values keep space at the viewport edges. Use `--prose-width` (`70ch`) for sustained reading.
 
