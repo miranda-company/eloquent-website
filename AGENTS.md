@@ -57,6 +57,8 @@ npm run build
 - Let Prettier and ESLint define syntax details. Do not introduce another formatter, CSS framework, component library, or client framework without an approved requirement.
 - Use `AssetImage` for local content images. It emits the uploaded asset once with intrinsic dimensions, asynchronous decoding, and lazy loading by default. Upload web-ready, correctly compressed source files; reserve eager loading for the primary above-the-fold image.
 - Keep Inventio, Kairos, Kanon, and Ethos on `StrategicServicePage`; their route files supply content only. The shared hero and method section render eyebrows, while the other sections begin with their heading.
+- Use `@lucide/astro` for new interface icons and import only the named icons a component renders. Keep the Eloquent logo in its dedicated SVG component.
+- Use `AudioPlayer` for local audio. Keep its title and metadata in static HTML, preserve native controls as the no-JavaScript fallback, and let the component own playback, seeking, timing, and failure states.
 
 ## Content, URLs, and metadata
 
@@ -74,6 +76,7 @@ npm run build
 ## Accessibility and interaction
 
 - All controls must work with a keyboard and have visible focus states and accessible names.
+- Mark decorative icons `aria-hidden="true"`. Give an icon-only control an accessible name on its link or button.
 - Render unavailable media teasers as noninteractive content with a visible status. Replace them with a descriptive link or working button only when a verified destination or playback behavior exists.
 - Preserve logical heading order, useful landmarks, sufficient contrast, touch targets, and readable line lengths.
 - Respect `prefers-reduced-motion`. Primary content must remain readable and navigable without JavaScript.

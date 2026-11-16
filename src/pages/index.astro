@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import HeroVectorField from '../components/HeroVectorField.astro';
 import ClientLogoCarousel from '../components/ClientLogoCarousel.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
 import AssetImage from '../components/AssetImage.astro';
 import { projects } from '../data/projects';
 import { services } from '../data/services';
@@ -51,18 +52,12 @@ const organization = {
         un entorno saturado e incierto. En este escenario, la comunicación estratégica es la
         herramienta que puede marcar la diferencia.
       </p>
-      <div class="proposition__media" data-reveal>
-        <span class="proposition__play-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 5.5v13l10-6.5z"></path>
-          </svg>
-        </span>
-        <p class="proposition__media-label">
-          <strong>Los retos de comunicar en un mundo dominado por la IA y la desconfianza.</strong>
-          <span>La comunicación importa ep.001 | Eloquent</span>
-          <span class="proposition__media-status">Próximamente</span>
-        </p>
-      </div>
+      <AudioPlayer
+        src="/audio/la-comunicacion-importa-ep-001.mp3"
+        title="Los retos de comunicar en un mundo dominado por la IA y la desconfianza."
+        meta="La comunicación importa ep.001 | Eloquent"
+        data-reveal
+      />
     </div>
   </section>
 

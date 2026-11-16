@@ -22,6 +22,12 @@ Eloquent follows **Modern Corporate Minimalism**, shaped by the **Swiss Design t
 
 The vector field is currently approved **only for the homepage hero**. Service heroes continue to use the standard `PageHero` surface without a canvas. Future service animations may use related geometric ideas, but each one requires explicit approval and must reuse design tokens, preserve text readability, respect reduced motion, and avoid duplicating the homepage treatment without a meaningful reason.
 
+### Iconography
+
+Use `@lucide/astro` for new interface icons and import each icon by name in the component that renders it. This keeps icon markup static and allows the build to exclude unused icons. Lucide icons inherit `currentColor`; size, color, and interaction states come from the design tokens and the owning component.
+
+Decorative icons use `aria-hidden="true"`. When an icon is the only visible content in a link or button, the control supplies an accurate accessible name. The Eloquent logo remains a dedicated custom SVG component. Existing typographic arrows can remain until an approved component change replaces them consistently.
+
 ### Visual guardrails
 
 Avoid generic technology aesthetics such as decorative gradients, glass effects, glowing interfaces, arbitrary three-dimensional objects, dense dashboard styling, or motion without an explanatory role. Do not add geometric elements merely to fill space. The result should remain minimal, legible, and recognizably Eloquent.
@@ -141,6 +147,7 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 | PageHero               | H1 with optional eyebrow, breadcrumbs, decorative background, lead and introduction, actions, footnote, structured footer, balanced spacing, and entrance motion |
 | HeroVectorField        | Decorative, pointer-reactive canvas field using design tokens, resize-aware rendering, and a static reduced-motion state                                         |
 | ClientLogoCarousel     | Accessible client-logo list with a continuous decorative duplicate, single-source images, and a static reduced-motion state                                      |
+| AudioPlayer            | Local-audio title and metadata, native no-JavaScript controls, enhanced play/pause and seek controls, timing, and failure state                                  |
 | StrategicServicePage   | Shared data-driven DOM, metadata, hero-and-method eyebrow contract, optional scope boundaries, and responsive layout for strategic services                      |
 | CaseStudyHero          | Full-width project image, overlaid case-study title and lead, and project metadata strip                                                                         |
 | EditorialSection       | Shared heading, prose or wide content, optional evidence rail, surface roles, and responsive behavior                                                            |
@@ -176,7 +183,7 @@ The [page layout contracts](page-layouts.md) document defines the complete page-
 
 The spacing scale uses quarter-rem steps: `--space-1` is `0.25rem`, `--space-4` is `1rem`, and `--space-8` is `2rem`. Half steps handle compact controls. Use semantic fluid tokens when the value changes with the viewport: `--section-space` supplies standard section rhythm, `--section-space-compact` supplies tighter collection rhythm, `--collection-top-space` separates collection content, and `--page-gutter` controls responsive page edges.
 
-Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis; and `--color-widget-border` (`#d0df8f`) frames self-contained media and utility widgets. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
+Color names describe roles. `--color-ink` is primary text and dark surfaces; `--color-paper` is the warm page background; `--color-surface` is the light card surface; `--color-accent` marks actions and editorial emphasis; `--color-audio-player-background` (`#eeffad`) identifies the audio-player surface; and `--color-widget-border` (`#d0df8f`) frames self-contained media and utility widgets. On dark surfaces, use the `--color-on-dark-*` roles. Hover, focus, and border colors have their own roles so they can change without editing components.
 
 Text uses `--text-*` sizes, `--leading-*` line heights, and `--tracking-*` letter spacing. `h1` and `h2` use display-heading tracking; `h3` through `h6` use `--tracking-subheading` (`-0.03em`). The `--measure-*` tokens limit line lengths. `--container-width` is `85rem`, equivalent to 1360px at the default 16px root size, and supplies the maximum width for grids and visual sections. Responsive `--page-gutter` values keep space at the viewport edges. Use `--prose-width` (`70ch`) for sustained reading.
 

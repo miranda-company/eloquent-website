@@ -72,7 +72,7 @@ Hero typography and internal spacing belong to shared component rules in `global
 
 ```text
 PageHero
-├── proposition section with episode teaser
+├── proposition section with AudioPlayer
 ├── services section
 ├── selected work section
 ├── featured Dossier section
@@ -80,7 +80,7 @@ PageHero
 ```
 
 - `PageHero` contains the primary proposition and actions. The homepage omits the optional eyebrow, so its H1 starts flush with the top of the hero body. It includes the decorative `HeroVectorField` and the `ClientLogoCarousel` in its structured footer. The canvas remains behind the semantic content, uses design tokens, ignores pointer input as a control, and renders a static state when reduced motion is requested. The logo carousel presents one accessible client list, duplicates it only for the visual loop, and stops moving when reduced motion is requested.
-- Proposition, featured Dossier, and about use editorial split grids that become one column at the shared tablet breakpoint. The proposition may include an episode teaser beside its lead. Before media is available, the teaser keeps its play symbol decorative and shows a visible `Próximamente` status. Once a verified destination or player exists, replace the decorative symbol with a descriptive link or working button.
+- Proposition, featured Dossier, and about use editorial split grids that become one column at the shared tablet breakpoint. The proposition composes `AudioPlayer` beside its lead. The component keeps its title and metadata in static HTML, uses native controls without JavaScript, and progressively enhances them with an Ear control that shows Play on hover and Pause during playback, plus a seek range, elapsed time, duration, and an unavailable state. Its internal rules live in `global.css`; `home.css` positions only the component root.
 - Services come from `src/data/services.ts` and use `shortName` as the card label. The list is four columns, then two, then one.
 - Selected work comes from `src/data/projects.ts` and uses `ProjectCard`. The homepage may curate a subset but does not duplicate project data or card markup.
 - Section order carries the page narrative and changes only with explicit layout approval.

@@ -1,0 +1,173 @@
+---
+import { Ear, Pause, Play } from '@lucide/astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+  src: string;
+  title: string;
+  meta: string;
+}
+
+const { src, title, meta, class: className, ...attributes } = Astro.props;
+---
+
+<div class:list={['audio-player', className]} data-audio-player {...attributes}>
+  <div class="audio-player__header">
+    <button
+      class="audio-player__toggle"
+      type="button"
+      aria-label={`Reproducir ${title}`}
+      data-state="paused"
+      data-audio-toggle
+      hidden
+    >
+      <span class="audio-player__icon audio-player__icon--ear" aria-hidden="true"><Ear /></span>
+      <span class="audio-player__icon audio-player__icon--play" aria-hidden="true"><Play /></span>
+      <span class="audio-player__icon audio-player__icon--pause" aria-hidden="true"><Pause /></span>
+    </button>
+
+    <p class="audio-player__copy">
+      <strong>{title}</strong>
+      <span>{meta}</span>
+    </p>
+  </div>
+
+  <audio class="audio-player__native" src={src} preload="metadata" controls data-audio-element>
+    Tu navegador no permite reproducir este audio.
+  </audio>
+
+  <div class="audio-player__timeline" data-audio-timeline hidden>
+    <span data-audio-elapsed>0:00</span>
+    <input
+      class="audio-player__seek"
+      type="range"
+      min="0"
+      max="0"
+      step="0.1"
+      value="0"
+      aria-label={`Posición de ${title}`}
+      aria-valuetext="0:00 de 0:00"
+      data-audio-seek
+      disabled
+    />
+    <span data-audio-duration>0:00</span>
+  </div>
+
+  <p class="audio-player__status" role="status" data-audio-status hidden>Audio no disponible</p>
+</div>
+
+<script>
+  const formatTime = (seconds: number): string => {
+    if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+
+    const wholeSeconds = Math.floor(seconds);
+    const hours = Math.floor(wholeSeconds / 3600);
+    const minutes = Math.floor((wholeSeconds % 3600) / 60);
+    const remainingSeconds = wholeSeconds % 60;
+
+    if (hours > 0) {
+      return `${hours}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    }
+
+    return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`;
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-audio-player]').forEach((root) => {
+    if (root.dataset.audioPlayerReady === 'true') return;
+
+    const audio = root.querySelector<HTMLAudioElement>('[data-audio-element]');
+    const toggle = root.querySelector<HTMLButtonElement>('[data-audio-toggle]');
+    const timeline = root.querySelector<HTMLElement>('[data-audio-timeline]');
+    const seek = root.querySelector<HTMLInputElement>('[data-audio-seek]');
+    const elapsed = root.querySelector<HTMLElement>('[data-audio-elapsed]');
+    const duration = root.querySelector<HTMLElement>('[data-audio-duration]');
+    const status = root.querySelector<HTMLElement>('[data-audio-status]');
+
+    if (!audio || !toggle || !timeline || !seek || !elapsed || !duration || !status) {
+      return;
+    }
+
+    root.dataset.audioPlayerReady = 'true';
+    root.classList.add('is-enhanced');
+    toggle.hidden = false;
+    timeline.hidden = false;
+    audio.controls = false;
+
+    const title =
+      root.querySelector<HTMLElement>('.audio-player__copy strong')?.textContent?.trim() ??
+      'el audio';
+
+    const updatePlaybackState = (): void => {
+      const isPlaying = !audio.paused && !audio.ended;
+      toggle.dataset.state = isPlaying ? 'playing' : 'paused';
+      toggle.setAttribute('aria-label', `${isPlaying ? 'Pausar' : 'Reproducir'} ${title}`);
+    };
+
+    const updateTimeline = (): void => {
+      const currentTime = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+      const totalDuration = Number.isFinite(audio.duration) ? audio.duration : 0;
+
+      seek.value = String(currentTime);
+      seek.style.setProperty(
+        '--audio-player-progress',
+        `${totalDuration > 0 ? (currentTime / totalDuration) * 100 : 0}%`,
+      );
+      elapsed.textContent = formatTime(currentTime);
+      seek.setAttribute(
+        'aria-valuetext',
+        `${formatTime(currentTime)} de ${formatTime(totalDuration)}`,
+      );
+    };
+
+    const loadMetadata = (): void => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+
+      seek.max = String(audio.duration);
+      seek.disabled = false;
+      duration.textContent = formatTime(audio.duration);
+      updateTimeline();
+    };
+
+    const showFailure = (): void => {
+      audio.pause();
+      toggle.disabled = true;
+      seek.disabled = true;
+      status.hidden = false;
+      updatePlaybackState();
+    };
+
+    toggle.addEventListener('click', async () => {
+      if (!audio.paused && !audio.ended) {
+        audio.pause();
+        return;
+      }
+
+      if (audio.ended) audio.currentTime = 0;
+
+      try {
+        await audio.play();
+      } catch {
+        showFailure();
+      }
+    });
+
+    seek.addEventListener('input', () => {
+      audio.currentTime = Number(seek.value);
+      updateTimeline();
+    });
+
+    audio.addEventListener('loadedmetadata', loadMetadata);
+    audio.addEventListener('durationchange', loadMetadata);
+    audio.addEventListener('timeupdate', updateTimeline);
+    audio.addEventListener('play', updatePlaybackState);
+    audio.addEventListener('pause', updatePlaybackState);
+    audio.addEventListener('ended', () => {
+      updatePlaybackState();
+      updateTimeline();
+    });
+    audio.addEventListener('error', showFailure);
+
+    if (audio.readyState >= HTMLMediaElement.HAVE_METADATA) loadMetadata();
+    if (audio.error) showFailure();
+  });
+</script>
